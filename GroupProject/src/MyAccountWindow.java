@@ -399,8 +399,22 @@ public class MyAccountWindow {
         separator_4.setBounds(72, 447, 100, 3);
         frame.getContentPane().add(separator_4);
         
+        JLabel emailInUseLabel = new JLabel("Email already exists");
+        emailInUseLabel.setForeground(Color.RED);
+        emailInUseLabel.setBounds(366, 405, 162, 16);
+        frame.getContentPane().add(emailInUseLabel);
         
-        JLabel lblLogo = new JLabel("");
+        JLabel invalidCardNoLabel = new JLabel("Invalid Number");
+        invalidCardNoLabel.setForeground(Color.RED);
+        invalidCardNoLabel.setBounds(368, 450, 100, 16);
+        frame.getContentPane().add(invalidCardNoLabel);
+        
+        JLabel invalidCVVLabel = new JLabel("Invalid Number");
+        invalidCVVLabel.setForeground(Color.RED);
+        invalidCVVLabel.setBounds(682, 450, 100, 16);
+        frame.getContentPane().add(invalidCVVLabel);
+        
+        JLabel lblLogo = new JLabel();
         lblLogo.setIcon(new ImageIcon(LoginPage.class.getResource("Logo.jpg")));
         lblLogo.setBounds(186, 583, 200, 96);
         frame.getContentPane().add(lblLogo);
@@ -409,6 +423,5 @@ public class MyAccountWindow {
 		backgroundLabel.setBounds(0, 0, 1280, 690);
         backgroundLabel.setIcon(new ImageIcon(HomePage.class.getResource("Silhouette-Rock-Concert-Wallpaper1.jpg")));
         frame.getContentPane().add(backgroundLabel);
-		
 	}
 }

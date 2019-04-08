@@ -206,8 +206,6 @@ public class BookingsWindow {
         backgroundLabel.setBounds(0, 0, 1280, 690);
         backgroundLabel.setIcon(new ImageIcon(HomePage.class.getResource("Silhouette-Rock-Concert-Wallpaper1.jpg")));
         frame.getContentPane().add(backgroundLabel);
-        
-       
-        
+          
 	}
 }

@@ -233,6 +233,11 @@ public class ChangePassword {
         frame.getContentPane().add(label);
         label.setVisible(false);
         
+        JLabel lblBetween5and16 = new JLabel("between 5 and 16 characters");
+        lblBetween5and16.setForeground(SystemColor.inactiveCaption);
+        lblBetween5and16.setBounds(493, 253, 179, 16);
+        frame.getContentPane().add(lblBetween5and16);
+        
         
         JLabel lblLogo = new JLabel("");
         lblLogo.setIcon(new ImageIcon(LoginPage.class.getResource("Logo.jpg")));
@@ -243,6 +248,10 @@ public class ChangePassword {
         backgroundLabel.setBounds(0, 0, 1280, 690);
         backgroundLabel.setIcon(new ImageIcon(HomePage.class.getResource("Silhouette-Rock-Concert-Wallpaper1.jpg")));
         frame.getContentPane().add(backgroundLabel);
+        
+        JLabel lblNewLabel = new JLabel("New label");
+        lblNewLabel.setBounds(500, 253, 56, 16);
+        frame.getContentPane().add(lblNewLabel);
         
         
 	}
