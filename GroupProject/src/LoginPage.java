@@ -216,7 +216,7 @@ public class LoginPage {
         lblImageLabel.setIcon(new ImageIcon(LoginPage.class.getResource("Silhouette-Rock-Concert-Wallpaper1.jpg")));
         lblImageLabel.setBounds(0, 0, 1297, 693);
         frame.getContentPane().add(lblImageLabel);
-        
+        //what the fuck is wrong
 
     }
 
