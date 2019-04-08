@@ -319,7 +319,7 @@ public class Register {
         textField_10.setVisible(true);
 
 
-        JLabel lblEmailAllreadyExists = new JLabel("Email Allready Exists");
+        JLabel lblEmailAllreadyExists = new JLabel("Email Already Exists");
         lblEmailAllreadyExists.setForeground(Color.RED);
         lblEmailAllreadyExists.setBounds(119, 361, 124, 14);
         frame.getContentPane().add(lblEmailAllreadyExists);
@@ -333,7 +333,7 @@ public class Register {
         lblBetweenAnd.setVisible(true);
 
 
-        JLabel lblUsernameAllreadyExists = new JLabel("Username Allready Exists");
+        JLabel lblUsernameAllreadyExists = new JLabel("Username Already Exists");
         lblUsernameAllreadyExists.setForeground(Color.RED);
         lblUsernameAllreadyExists.setBounds(119, 437, 150, 14);
         frame.getContentPane().add(lblUsernameAllreadyExists);
