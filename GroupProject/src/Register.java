@@ -1,39 +1,27 @@
-import java.awt.Color;
-import java.awt.Cursor;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.JComboBox;
-import javax.swing.JTextField;
-import javax.swing.JCheckBox;
-import javax.swing.JButton;
+import javax.swing.*;
 import javax.swing.border.MatteBorder;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.ActionEvent;
-import java.awt.SystemColor;
-import javax.swing.JSeparator;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
 
 public class Register {
     private JFrame frame;
-    private JTextField textField;
-    private JTextField textField_1;
-    private JTextField textField_2;
-    private JTextField textField_3;
-    private JTextField textField_4;
-    private JTextField textField_5;
-    private JTextField textField_6;
-    private JTextField textField_7;
-    private JTextField textField_8;
-    private JTextField textField_9;
-    private JTextField textField_10;
-    private JTextField textField_11;
-    private JTextField textField_12;
-    private JTextField textField_13;
-    private JTextField textField_14;
-    private JTextField textField_15;
+    private JTextField firstNameField;
+    private JTextField lastNameField;
+    private JTextField addressOneField;
+    private JTextField addressTwoField;
+    private JTextField townField;
+    private JTextField postcodeField;
+    private JTextField emailField;
+    private JTextField phoneNoField;
+    private JTextField usernameField;
+    private JTextField passwordField;
+    private JTextField confirmPasswordField;
+    private JTextField orgNameField;
+    private JTextField orgEmailField;
+    private JTextField cardNoField;
+    private JTextField CVVField;
+    private JTextField webAddressField;
 
     /**
      * Launch the application.
@@ -75,6 +63,69 @@ public class Register {
         frame.setUndecorated(true);
 
 
+
+        JLabel lblEmailAlreadyExists = new JLabel("Email Allready Exists");
+        lblEmailAlreadyExists.setForeground(Color.RED);
+        lblEmailAlreadyExists.setBounds(119, 361, 124, 14);
+        frame.getContentPane().add(lblEmailAlreadyExists);
+        lblEmailAlreadyExists.setVisible(false);
+
+
+        JLabel lblBetweenAnd = new JLabel("(between 5 and 16 characters)");
+        lblBetweenAnd.setForeground(SystemColor.inactiveCaption);
+        lblBetweenAnd.setBounds(119, 475, 209, 14);
+        frame.getContentPane().add(lblBetweenAnd);
+        lblBetweenAnd.setVisible(true);
+
+
+        JLabel lblUsernameAlreadyExists = new JLabel("Username Allready Exists");
+        lblUsernameAlreadyExists.setForeground(Color.RED);
+        lblUsernameAlreadyExists.setBounds(119, 437, 150, 14);
+        frame.getContentPane().add(lblUsernameAlreadyExists);
+        lblUsernameAlreadyExists.setVisible(false);
+
+
+        JLabel lblIncorrectPassword = new JLabel("Incorrect Password");
+        lblIncorrectPassword.setForeground(Color.RED);
+        lblIncorrectPassword.setBounds(119, 513, 124, 14);
+        frame.getContentPane().add(lblIncorrectPassword);
+        lblIncorrectPassword.setVisible(false);
+
+
+        JLabel lblIncorrectPassword_1 = new JLabel("Incorrect Password");
+        lblIncorrectPassword_1.setForeground(Color.RED);
+        lblIncorrectPassword_1.setBounds(393, 513, 137, 14);
+        frame.getContentPane().add(lblIncorrectPassword_1);
+        lblIncorrectPassword_1.setVisible(false);
+
+        JLabel lblTitleLabel = new JLabel("Please fill in all the fields marked with *");
+        lblTitleLabel.setForeground(SystemColor.activeCaption);
+        lblTitleLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
+        lblTitleLabel.setBounds(38, 23, 638, 32);
+        frame.getContentPane().add(lblTitleLabel);
+        lblTitleLabel.setVisible(true);
+
+
+        JLabel lblInvalidCardNumber = new JLabel("Invalid Number");
+        lblInvalidCardNumber.setForeground(Color.RED);
+        lblInvalidCardNumber.setBounds(119, 582, 100, 14);
+        frame.getContentPane().add(lblInvalidCardNumber);
+        lblInvalidCardNumber.setVisible(false);
+
+
+        JLabel lblInvalidCVV = new JLabel("Invalid Number");
+        lblInvalidCVV.setForeground(Color.RED);
+        lblInvalidCVV.setBounds(393, 582, 110, 14);
+        frame.getContentPane().add(lblInvalidCVV);
+        lblInvalidCVV.setVisible(false);
+
+
+        JLabel lblAllFields = new JLabel("All * fields are required !");
+        lblAllFields.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblAllFields.setForeground(Color.RED);
+        lblAllFields.setBounds(976, 561, 214, 14);
+        frame.getContentPane().add(lblAllFields);
+        lblAllFields.setVisible(false);
 
         JButton btnExitButton = new JButton("X");
         btnExitButton.addActionListener(new ActionListener() {
@@ -121,15 +172,15 @@ public class Register {
         lblTitle.setVisible(true);
 
 
-        JComboBox<String> comboBox = new JComboBox<String>();
-        comboBox.setBackground(SystemColor.activeCaption);
-        comboBox.setToolTipText("");
-        comboBox.setMaximumRowCount(2);
-        comboBox.setBounds(119, 67, 56, 17);
-        comboBox.addItem("Mr");
-        comboBox.addItem("Ms");
-        frame.getContentPane().add(comboBox);
-        comboBox.setVisible(true);
+        JComboBox<String> titleComboBox = new JComboBox<String>();
+        titleComboBox.setBackground(SystemColor.activeCaption);
+        titleComboBox.setToolTipText("");
+        titleComboBox.setMaximumRowCount(2);
+        titleComboBox.setBounds(119, 67, 56, 17);
+        titleComboBox.addItem("Mr");
+        titleComboBox.addItem("Ms");
+        frame.getContentPane().add(titleComboBox);
+        titleComboBox.setVisible(true);
 
 
         JLabel lblFirstName = new JLabel("First Name *");
@@ -140,13 +191,13 @@ public class Register {
         lblFirstName.setVisible(true);
 
 
-        textField = new JTextField();
-        textField.setBackground(SystemColor.activeCaption);
-        textField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-        textField.setBounds(119, 129, 150, 20);
-        frame.getContentPane().add(textField);
-        textField.setColumns(10);
-        textField.setVisible(true);
+        firstNameField = new JTextField();
+        firstNameField.setBackground(SystemColor.activeCaption);
+        firstNameField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
+        firstNameField.setBounds(119, 129, 150, 20);
+        frame.getContentPane().add(firstNameField);
+        firstNameField.setColumns(10);
+        firstNameField.setVisible(true);
 
 
         JLabel lblLastName = new JLabel("Last Name *");
@@ -157,13 +208,13 @@ public class Register {
         lblLastName.setVisible(true);
 
 
-        textField_1 = new JTextField();
-        textField_1.setBackground(SystemColor.activeCaption);
-        textField_1.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-        textField_1.setBounds(393, 129, 150, 20);
-        frame.getContentPane().add(textField_1);
-        textField_1.setColumns(10);
-        textField_1.setVisible(true);
+        lastNameField = new JTextField();
+        lastNameField.setBackground(SystemColor.activeCaption);
+        lastNameField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
+        lastNameField.setBounds(393, 129, 150, 20);
+        frame.getContentPane().add(lastNameField);
+        lastNameField.setColumns(10);
+        lastNameField.setVisible(true);
 
 
         JLabel lblAddressOne = new JLabel("Address 1 *");
@@ -174,13 +225,13 @@ public class Register {
         lblAddressOne.setVisible(true);
 
 
-        textField_2 = new JTextField();
-        textField_2.setBackground(SystemColor.activeCaption);
-        textField_2.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-        textField_2.setBounds(119, 199, 150, 20);
-        frame.getContentPane().add(textField_2);
-        textField_2.setColumns(10);
-        textField_2.setVisible(true);
+        addressOneField = new JTextField();
+        addressOneField.setBackground(SystemColor.activeCaption);
+        addressOneField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
+        addressOneField.setBounds(119, 199, 150, 20);
+        frame.getContentPane().add(addressOneField);
+        addressOneField.setColumns(10);
+        addressOneField.setVisible(true);
 
 
         JLabel lblAddressTwo = new JLabel("Address 2");
@@ -191,13 +242,13 @@ public class Register {
         lblAddressTwo.setVisible(true);
 
 
-        textField_3 = new JTextField();
-        textField_3.setBackground(SystemColor.activeCaption);
-        textField_3.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-        textField_3.setBounds(393, 199, 150, 20);
-        frame.getContentPane().add(textField_3);
-        textField_3.setColumns(10);
-        textField_3.setVisible(true);
+        addressTwoField = new JTextField();
+        addressTwoField.setBackground(SystemColor.activeCaption);
+        addressTwoField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
+        addressTwoField.setBounds(393, 199, 150, 20);
+        frame.getContentPane().add(addressTwoField);
+        addressTwoField.setColumns(10);
+        addressTwoField.setVisible(true);
 
 
         JLabel lblTown = new JLabel("Town *");
@@ -208,13 +259,13 @@ public class Register {
         lblTown.setVisible(true);
 
 
-        textField_4 = new JTextField();
-        textField_4.setBackground(SystemColor.activeCaption);
-        textField_4.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-        textField_4.setBounds(119, 268, 150, 20);
-        frame.getContentPane().add(textField_4);
-        textField_4.setColumns(10);
-        textField_4.setVisible(true);
+        townField = new JTextField();
+        townField.setBackground(SystemColor.activeCaption);
+        townField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
+        townField.setBounds(119, 268, 150, 20);
+        frame.getContentPane().add(townField);
+        townField.setColumns(10);
+        townField.setVisible(true);
 
 
         JLabel lblPostCode = new JLabel("Post Code *");
@@ -225,13 +276,13 @@ public class Register {
         lblPostCode.setVisible(true);
 
 
-        textField_5 = new JTextField();
-        textField_5.setBackground(SystemColor.activeCaption);
-        textField_5.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-        textField_5.setBounds(393, 268, 150, 20);
-        frame.getContentPane().add(textField_5);
-        textField_5.setColumns(10);
-        textField_5.setVisible(true);
+        postcodeField = new JTextField();
+        postcodeField.setBackground(SystemColor.activeCaption);
+        postcodeField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
+        postcodeField.setBounds(393, 268, 150, 20);
+        frame.getContentPane().add(postcodeField);
+        postcodeField.setColumns(10);
+        postcodeField.setVisible(true);
 
 
         JLabel lblEmail = new JLabel("E-mail *");
@@ -242,13 +293,27 @@ public class Register {
         lblEmail.setVisible(true);
 
 
-        textField_6 = new JTextField();
-        textField_6.setBackground(SystemColor.activeCaption);
-        textField_6.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-        textField_6.setBounds(119, 342, 150, 20);
-        frame.getContentPane().add(textField_6);
-        textField_6.setColumns(10);
-        textField_6.setVisible(true);
+        emailField = new JTextField();
+        emailField.setBackground(SystemColor.activeCaption);
+        emailField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
+        emailField.setBounds(119, 342, 150, 20);
+        frame.getContentPane().add(emailField);
+        emailField.setColumns(10);
+        emailField.setVisible(true);
+        emailField.addFocusListener(new FocusListener() {
+            public void focusGained(FocusEvent e) {};
+            public void focusLost(FocusEvent e) {
+                User user = new User();
+                user.setEmail(emailField.getText());
+                if (user.checkFieldInDB("Email",user.getEmail())) {
+                    lblEmailAlreadyExists.setVisible(true);
+                    emailField.setText("");
+                }
+                else {lblEmailAlreadyExists.setVisible(false);}
+                System.out.println(user.checkFieldInDB("Email",user.getEmail()));
+
+            }
+        });
 
 
         JLabel lblPhoneNo = new JLabel("Phone No");
@@ -259,13 +324,13 @@ public class Register {
         lblPhoneNo.setVisible(true);
 
 
-        textField_7 = new JTextField();
-        textField_7.setBackground(SystemColor.activeCaption);
-        textField_7.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-        textField_7.setBounds(393, 342, 150, 20);
-        frame.getContentPane().add(textField_7);
-        textField_7.setColumns(10);
-        textField_7.setVisible(true);
+        phoneNoField = new JTextField();
+        phoneNoField.setBackground(SystemColor.activeCaption);
+        phoneNoField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
+        phoneNoField.setBounds(393, 342, 150, 20);
+        frame.getContentPane().add(phoneNoField);
+        phoneNoField.setColumns(10);
+        phoneNoField.setVisible(true);
 
 
         JLabel lblUsername = new JLabel("Username *");
@@ -276,13 +341,27 @@ public class Register {
         lblUsername.setVisible(true);
 
 
-        textField_8 = new JTextField();
-        textField_8.setBackground(SystemColor.activeCaption);
-        textField_8.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-        textField_8.setBounds(119, 416, 150, 20);
-        frame.getContentPane().add(textField_8);
-        textField_8.setColumns(10);
-        textField_8.setVisible(true);
+        usernameField = new JTextField();
+        usernameField.setBackground(SystemColor.activeCaption);
+        usernameField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
+        usernameField.setBounds(119, 416, 150, 20);
+        frame.getContentPane().add(usernameField);
+        usernameField.setColumns(10);
+        usernameField.setVisible(true);
+        usernameField.addFocusListener(new FocusListener() {
+            public void focusGained(FocusEvent e) {};
+            public void focusLost(FocusEvent e) {
+                User user = new User();
+                user.setUsername(usernameField.getText());
+                if (user.checkFieldInDB("Username",user.getUsername())) {
+                    lblUsernameAlreadyExists.setVisible(true);
+                    usernameField.setText("");
+                }
+                else {lblUsernameAlreadyExists.setVisible(false);}
+
+
+            }
+        });
 
 
         JLabel lblPassword = new JLabel("Password *");
@@ -293,13 +372,25 @@ public class Register {
         lblPassword.setVisible(true);
 
 
-        textField_9 = new JTextField();
-        textField_9.setBackground(SystemColor.activeCaption);
-        textField_9.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-        textField_9.setBounds(119, 494, 150, 20);
-        frame.getContentPane().add(textField_9);
-        textField_9.setColumns(10);
-        textField_9.setVisible(true);
+        passwordField = new JTextField();
+        passwordField.setBackground(SystemColor.activeCaption);
+        passwordField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
+        passwordField.setBounds(119, 494, 150, 20);
+        frame.getContentPane().add(passwordField);
+        passwordField.setColumns(10);
+        passwordField.setVisible(true);
+        passwordField.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {}
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (passwordField.getText().length()<5 || passwordField.getText().length()>16){
+                    lblIncorrectPassword.setVisible(true);
+                    passwordField.setText(""); }
+                else{lblIncorrectPassword.setVisible(false);}
+            }
+        });
 
 
         JLabel lblConfirmPassword = new JLabel("Conf Password *");
@@ -310,48 +401,28 @@ public class Register {
         lblConfirmPassword.setVisible(true);
 
 
-        textField_10 = new JTextField();
-        textField_10.setBackground(SystemColor.activeCaption);
-        textField_10.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-        textField_10.setBounds(393, 494, 150, 20);
-        frame.getContentPane().add(textField_10);
-        textField_10.setColumns(10);
-        textField_10.setVisible(true);
+        confirmPasswordField = new JTextField();
+        confirmPasswordField.setBackground(SystemColor.activeCaption);
+        confirmPasswordField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
+        confirmPasswordField.setBounds(393, 494, 150, 20);
+        frame.getContentPane().add(confirmPasswordField);
+        confirmPasswordField.setColumns(10);
+        confirmPasswordField.setVisible(true);
+        confirmPasswordField.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {}
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (!passwordField.getText().equals(confirmPasswordField.getText())){
+                    lblIncorrectPassword_1.setVisible(true);
+                    confirmPasswordField.setText(""); }
+                else{lblIncorrectPassword_1.setVisible(false);}
+            }
+        });
 
 
-        JLabel lblEmailAllreadyExists = new JLabel("Email Already Exists");
-        lblEmailAllreadyExists.setForeground(Color.RED);
-        lblEmailAllreadyExists.setBounds(119, 361, 124, 14);
-        frame.getContentPane().add(lblEmailAllreadyExists);
-        lblEmailAllreadyExists.setVisible(false);
 
-
-        JLabel lblBetweenAnd = new JLabel("(between 5 and 16 characters)");
-        lblBetweenAnd.setForeground(SystemColor.inactiveCaption);
-        lblBetweenAnd.setBounds(108, 475, 188, 14);
-        frame.getContentPane().add(lblBetweenAnd);
-        lblBetweenAnd.setVisible(true);
-
-
-        JLabel lblUsernameAllreadyExists = new JLabel("Username Already Exists");
-        lblUsernameAllreadyExists.setForeground(Color.RED);
-        lblUsernameAllreadyExists.setBounds(119, 437, 150, 14);
-        frame.getContentPane().add(lblUsernameAllreadyExists);
-        lblUsernameAllreadyExists.setVisible(false);
-
-
-        JLabel lblIncorrectPassword = new JLabel("Incorrect Password");
-        lblIncorrectPassword.setForeground(Color.RED);
-        lblIncorrectPassword.setBounds(119, 513, 124, 14);
-        frame.getContentPane().add(lblIncorrectPassword);
-        lblIncorrectPassword.setVisible(false);
-
-
-        JLabel lblIncorrectPassword_1 = new JLabel("Incorrect Password");
-        lblIncorrectPassword_1.setForeground(Color.RED);
-        lblIncorrectPassword_1.setBounds(393, 513, 137, 14);
-        frame.getContentPane().add(lblIncorrectPassword_1);
-        lblIncorrectPassword_1.setVisible(false);
 
 
         JLabel lblOrganizationName = new JLabel("Organization Name *");
@@ -402,58 +473,93 @@ public class Register {
         lblCvv.setVisible(true);
 
 
-        textField_11 = new JTextField();
-        textField_11.setBackground(SystemColor.activeCaption);
-        textField_11.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-        textField_11.setBounds(771, 195, 150, 20);
-        frame.getContentPane().add(textField_11);
-        textField_11.setColumns(10);
-        textField_11.setVisible(false);
+        orgNameField = new JTextField();
+        orgNameField.setBackground(SystemColor.activeCaption);
+        orgNameField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
+        orgNameField.setBounds(771, 195, 150, 20);
+        frame.getContentPane().add(orgNameField);
+        orgNameField.setColumns(10);
+        orgNameField.setVisible(false);
 
 
-        textField_12 = new JTextField();
-        textField_12.setBackground(SystemColor.activeCaption);
-        textField_12.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-        textField_12.setBounds(1097, 195, 150, 20);
-        frame.getContentPane().add(textField_12);
-        textField_12.setColumns(10);
-        textField_12.setVisible(false);
+        orgEmailField = new JTextField();
+        orgEmailField.setBackground(SystemColor.activeCaption);
+        orgEmailField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
+        orgEmailField.setBounds(1097, 195, 150, 20);
+        frame.getContentPane().add(orgEmailField);
+        orgEmailField.setColumns(10);
+        orgEmailField.setVisible(false);
 
 
-        JComboBox<String> comboBox_1 = new JComboBox<String>();
-        comboBox_1.setBackground(SystemColor.activeCaption);
-        comboBox_1.setBounds(1096, 265, 151, 20);
-        comboBox_1.setMaximumRowCount(2);
-        comboBox_1.addItem("On Booking");
-        comboBox_1.addItem("Monthly Invoice");
-        frame.getContentPane().add(comboBox_1);
-        comboBox_1.setVisible(false);
+        JComboBox<String> paymentComboBox = new JComboBox<String>();
+        paymentComboBox.setBackground(SystemColor.activeCaption);
+        paymentComboBox.setBounds(1096, 265, 151, 20);
+        paymentComboBox.setMaximumRowCount(2);
+        paymentComboBox.addItem("On Booking");
+        paymentComboBox.addItem("Monthly Invoice");
+        frame.getContentPane().add(paymentComboBox);
+        paymentComboBox.setVisible(false);
+
+        cardNoField = new JTextField();
+        cardNoField.setBackground(SystemColor.activeCaption);
+        cardNoField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
+        cardNoField.setBounds(119, 563, 150, 20);
+        frame.getContentPane().add(cardNoField);
+        cardNoField.setColumns(10);
+        cardNoField.setVisible(true);
+        cardNoField.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {}
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try{
+                    Long.parseLong(cardNoField.getText());
+                    if (!(cardNoField.getText().length()==16)){
+                        lblInvalidCardNumber.setText("Invalid Card Number");
+                        lblInvalidCardNumber.setVisible(true);
+                    }
+                }
+                catch(NumberFormatException k){
+                    lblInvalidCardNumber.setVisible(true);
+                    cardNoField.setText("");}
+            }
+        });
 
 
-        textField_13 = new JTextField();
-        textField_13.setBackground(SystemColor.activeCaption);
-        textField_13.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-        textField_13.setBounds(119, 563, 150, 20);
-        frame.getContentPane().add(textField_13);
-        textField_13.setColumns(10);
-        textField_13.setVisible(true);
+        CVVField = new JTextField();
+        CVVField.setBackground(SystemColor.activeCaption);
+        CVVField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
+        CVVField.setBounds(393, 563, 150, 20);
+        frame.getContentPane().add(CVVField);
+        CVVField.setColumns(10);
+        CVVField.setVisible(true);
+        CVVField.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {}
 
+            @Override
+            public void focusLost(FocusEvent e) {
+                try{
+                    Integer.parseInt(CVVField.getText());
+                    if (!(CVVField.getText().length()==3)){
+                        lblInvalidCVV.setText("Invalid Card Number");
+                        lblInvalidCVV.setVisible(true);
+                    }
+                }
+                catch(NumberFormatException k){
+                    lblInvalidCVV.setVisible(true);
+                    CVVField.setText("");}
+            }
+        });
 
-        textField_14 = new JTextField();
-        textField_14.setBackground(SystemColor.activeCaption);
-        textField_14.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-        textField_14.setBounds(393, 563, 150, 20);
-        frame.getContentPane().add(textField_14);
-        textField_14.setColumns(10);
-        textField_14.setVisible(true);
-
-        textField_15 = new JTextField();
-        textField_15.setBackground(SystemColor.activeCaption);
-        textField_15.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-        textField_15.setBounds(771, 265, 150, 20);
-        frame.getContentPane().add(textField_15);
-        textField_15.setColumns(10);
-        textField_15.setVisible(false);
+        webAddressField = new JTextField();
+        webAddressField.setBackground(SystemColor.activeCaption);
+        webAddressField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
+        webAddressField.setBounds(771, 265, 150, 20);
+        frame.getContentPane().add(webAddressField);
+        webAddressField.setColumns(10);
+        webAddressField.setVisible(false);
 
 
         JCheckBox chckbxNewCheckBox_1 = new JCheckBox("Corporate Organization");
@@ -465,23 +571,23 @@ public class Register {
             public void actionPerformed(ActionEvent arg0) {
                 if(chckbxNewCheckBox_1.isSelected()) {
                     lblOrganizationName.setVisible(true);
-                    textField_11.setVisible(true);
+                    orgNameField.setVisible(true);
                     lblOrganizationEmail.setVisible(true);
-                    textField_12.setVisible(true);
+                    orgEmailField.setVisible(true);
                     lblPaymentMethod.setVisible(true);
-                    comboBox_1.setVisible(true);
+                    paymentComboBox.setVisible(true);
                     lblWebAddress.setVisible(true);
-                    textField_15.setVisible(true);
+                    webAddressField.setVisible(true);
                 }
                 else {
                     lblOrganizationName.setVisible(false);
-                    textField_11.setVisible(false);
+                    orgNameField.setVisible(false);
                     lblOrganizationEmail.setVisible(false);
-                    textField_12.setVisible(false);
+                    orgEmailField.setVisible(false);
                     lblPaymentMethod.setVisible(false);
-                    comboBox_1.setVisible(false);
+                    paymentComboBox.setVisible(false);
                     lblWebAddress.setVisible(false);
-                    textField_15.setVisible(false);
+                    webAddressField.setVisible(false);
                 }
             }
         });
@@ -508,6 +614,53 @@ public class Register {
         btnRegisterButton.setBounds(981, 516, 120, 40);
         frame.getContentPane().add(btnRegisterButton);
         btnRegisterButton.setVisible(true);
+        btnRegisterButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ArrayList<JTextField> tfArray;
+                tfArray = new ArrayList<>();
+                tfArray.add(firstNameField);
+                tfArray.add(lastNameField);
+                tfArray.add(addressOneField);
+                tfArray.add(townField);
+                tfArray.add(postcodeField);
+                tfArray.add(emailField);
+                tfArray.add(usernameField);
+                tfArray.add(passwordField);
+                tfArray.add(confirmPasswordField);
+                tfArray.add(cardNoField);
+                tfArray.add(CVVField);
+
+                if (chckbxNewCheckBox_1.isSelected()){
+                    tfArray.add(orgNameField);}
+                boolean checker = true;
+                for(JTextField field : tfArray) {
+                    System.out.println(field.getText());
+                    if (field.getText().equals("")) {
+                        checker = false;
+                    }
+                }
+                if (checker){
+                    if (chckbxNewCheckBox_1.isSelected()){
+                        User newUser = new User(Integer.parseInt(cardNoField.getText()),Integer.parseInt(CVVField.getText()),
+                                titleComboBox.getSelectedItem().toString(), firstNameField.getText(), lastNameField.getText(),
+                                addressOneField.getText(), addressTwoField.getText(), townField.getText(), postcodeField.getText(),
+                                usernameField.getText(), passwordField.getText(), emailField.getText(), phoneNoField.getText(),
+                                orgNameField.getText(),webAddressField.getText(), orgEmailField.getText(),
+                                paymentComboBox.getSelectedItem().toString());
+                        newUser.insertCustomerData();}
+                    else{
+                        User newUser = new User(Long.parseLong(cardNoField.getText()),Integer.parseInt(CVVField.getText()),
+                                titleComboBox.getSelectedItem().toString(), firstNameField.getText(), lastNameField.getText(),
+                                addressOneField.getText(), addressTwoField.getText(), townField.getText(), postcodeField.getText(),
+                                usernameField.getText(), passwordField.getText(), emailField.getText(), phoneNoField.getText());
+                        newUser.insertCustomerData(); }
+                    JOptionPane.showMessageDialog(null,"Registration successful! Please Login!");
+                    new LoginPage();
+                    frame.setVisible(false); }
+                else{lblAllFields.setVisible(true);}
+            }
+        });
 
 
         JButton btnCancelButton = new JButton("Cancel");
@@ -528,34 +681,7 @@ public class Register {
         btnCancelButton.setVisible(true);
 
 
-        JLabel lblTitleLabel = new JLabel("Please fill in all the fields marked with *");
-        lblTitleLabel.setForeground(SystemColor.activeCaption);
-        lblTitleLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
-        lblTitleLabel.setBounds(38, 23, 638, 32);
-        frame.getContentPane().add(lblTitleLabel);
-        lblTitleLabel.setVisible(true);
 
-
-        JLabel lblInvalidNumber = new JLabel("Invalid Number");
-        lblInvalidNumber.setForeground(Color.RED);
-        lblInvalidNumber.setBounds(119, 582, 100, 14);
-        frame.getContentPane().add(lblInvalidNumber);
-        lblInvalidNumber.setVisible(false);
-
-
-        JLabel lblInvalidNumber_1 = new JLabel("Invalid Number");
-        lblInvalidNumber_1.setForeground(Color.RED);
-        lblInvalidNumber_1.setBounds(393, 582, 110, 14);
-        frame.getContentPane().add(lblInvalidNumber_1);
-        lblInvalidNumber_1.setVisible(false);
-
-
-        JLabel lblAllFields = new JLabel("All * fields are required !");
-        lblAllFields.setFont(new Font("Tahoma", Font.BOLD, 14));
-        lblAllFields.setForeground(Color.RED);
-        lblAllFields.setBounds(976, 561, 214, 14);
-        frame.getContentPane().add(lblAllFields);
-        lblAllFields.setVisible(false);
 
 
         JSeparator separator = new JSeparator();
@@ -581,7 +707,7 @@ public class Register {
         JLabel lblImageLabel = new JLabel("Image");
         lblImageLabel.setFont(new Font("Tahoma", Font.PLAIN, 11));
         lblImageLabel.setForeground(Color.BLACK);
-        lblImageLabel.setIcon(new ImageIcon("C:\\Users\\Rhadoo\\IdeaProjects\\GlobalMusic\\src\\Silhouette-Rock-Concert-Wallpaper1.jpg"));
+        lblImageLabel.setIcon(new ImageIcon(HomePage.class.getResource("Silhouette-Rock-Concert-Wallpaper1.jpg")));
         lblImageLabel.setBounds(0, 0, 1297, 693);
         frame.getContentPane().add(lblImageLabel);
 
