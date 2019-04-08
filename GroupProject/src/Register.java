@@ -328,7 +328,7 @@ public class Register {
 
         JLabel lblBetweenAnd = new JLabel("(between 5 and 16 characters)");
         lblBetweenAnd.setForeground(SystemColor.inactiveCaption);
-        lblBetweenAnd.setBounds(119, 475, 209, 14);
+        lblBetweenAnd.setBounds(108, 475, 188, 14);
         frame.getContentPane().add(lblBetweenAnd);
         lblBetweenAnd.setVisible(true);
 
