@@ -130,9 +130,12 @@ public class HomePage {
         });
         frame.getContentPane().add(searchTxtField);
 
-        JPanel panel_1 = new JPanel();
-        panel_1.setBounds(373, 189, 844, 374);
-        frame.getContentPane().add(panel_1);
+        JScrollPane scrollPane = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setBounds(373, 189, 844, 374);
+        scrollPane.setBackground(Color.BLACK);
+        frame.add(scrollPane);
+
+        scrollPane.getViewport().add(new ResultPanel());
 
         DatePickerSettings dateSettings = new DatePickerSettings();
         dateSettings.setFormatForDatesCommonEra("dd/MM/yyyy");
