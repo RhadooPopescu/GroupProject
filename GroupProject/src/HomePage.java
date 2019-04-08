@@ -135,7 +135,7 @@ public class HomePage {
         scrollPane.setBackground(Color.BLACK);
         frame.add(scrollPane);
 
-        scrollPane.getViewport().add(new ResultPanel());
+        scrollPane.setViewportView(new ResultPanel());
 
         DatePickerSettings dateSettings = new DatePickerSettings();
         dateSettings.setFormatForDatesCommonEra("dd/MM/yyyy");
