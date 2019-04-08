@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.SystemColor;
@@ -15,17 +16,16 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JTextField;
+import javax.swing.BoxLayout;
 
 public class AdminView {
 
 	private JFrame frame;
-    private JTable table;
-    private JTextField textField;
+    private JTextField textChooseUsername;
+    private JTable tableConfirmBooking;
 
 
     /**
@@ -124,98 +124,87 @@ public class AdminView {
         lblChooseUsername.setForeground(SystemColor.inactiveCaption);
         lblChooseUsername.setFont(new Font("Tahoma", Font.BOLD, 14));
         frame.getContentPane().add(lblChooseUsername);
-
-
-        JPanel panel_4 = new JPanel();
-        panel_4.setBackground(SystemColor.inactiveCaption);
-        panel_4.setBounds(548, 173, 550, 222);
-        frame.getContentPane().add(panel_4);
-
-        JScrollPane scrollPane_1 = new JScrollPane();
-        GroupLayout gl_panel_1 = new GroupLayout(panel_4);
-        gl_panel_1.setHorizontalGroup(
-                gl_panel_1.createParallelGroup(Alignment.LEADING)
-                        .addGroup(Alignment.TRAILING, gl_panel_1.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(scrollPane_1, GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
-                                .addContainerGap())
-        );
-        gl_panel_1.setVerticalGroup(
-                gl_panel_1.createParallelGroup(Alignment.LEADING)
-                        .addGroup(Alignment.TRAILING, gl_panel_1.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(scrollPane_1, GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
-                                .addContainerGap())
-        );
-
-        table = new JTable();
-        table.setBackground(SystemColor.inactiveCaption);
-        table.setModel(new DefaultTableModel(
-                new Object[][] {
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                },
-                new String[] {
-                        "New column", "New column", "New column", "New column", "New column", "New column"
-                }
-        ));
-        scrollPane_1.setViewportView(table);
-        panel_4.setLayout(gl_panel_1);
-        panel_4.setVisible(false);
-
-        JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(548, 173, 550, 222);
-        frame.getContentPane().add(scrollPane);
-        scrollPane.setVisible(false);
-
-        JPanel panel = new JPanel();
-        scrollPane.setViewportView(panel);
-
-        JPanel panel_2 = new JPanel();
-
+        
+        
+        JScrollPane scrollPaneViewEvent = new JScrollPane();
+        scrollPaneViewEvent.setBounds(548, 173, 550, 222);
+        frame.getContentPane().add(scrollPaneViewEvent);
+        scrollPaneViewEvent.setVisible(false);
+        
+        
+        JPanel panelViewEvent = new JPanel();
+        scrollPaneViewEvent.setViewportView(panelViewEvent);
+        panelViewEvent.setLayout(new BoxLayout(panelViewEvent, BoxLayout.Y_AXIS));
+        
         JPanel panel_1 = new JPanel();
-
-        JPanel panel_3 = new JPanel();
-        GroupLayout gl_panel = new GroupLayout(panel);
-        gl_panel.setHorizontalGroup(
-                gl_panel.createParallelGroup(Alignment.LEADING)
-                        .addGroup(gl_panel.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-                                        .addComponent(panel_3, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
-                                        .addComponent(panel_2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(panel_1, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE))
-                                .addGap(17))
-        );
-        gl_panel.setVerticalGroup(
-                gl_panel.createParallelGroup(Alignment.LEADING)
-                        .addGroup(gl_panel.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-                                .addGap(18)
-                                .addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 54, GroupLayout.PREFERRED_SIZE)
-                                .addGap(18)
-                                .addComponent(panel_3, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(19, Short.MAX_VALUE))
-        );
+        panel_1.setPreferredSize(new Dimension(50,50));
+        panelViewEvent.add(panel_1);
+        panel_1.setLayout(null);
+        
+        JLabel lblPanel_1 = new JLabel("New label");
+        lblPanel_1.setBounds(0, 0, 150, 55);
+        panel_1.add(lblPanel_1);
+        
+        JPanel panel_2 = new JPanel();
+        panel_2.setPreferredSize(new Dimension(50,50));
+        panelViewEvent.add(panel_2);
         panel_2.setLayout(null);
+        
+        JLabel lblPanel_2 = new JLabel("New label");
+        lblPanel_2.setBounds(0, 0, 150, 55);
+        panel_2.add(lblPanel_2);
+        
+        JPanel panel_3 = new JPanel();
+        panel_3.setPreferredSize(new Dimension(50,50));
+        panelViewEvent.add(panel_3);
+        panel_3.setLayout(null);
+        
+        JLabel lblPanel_3 = new JLabel("New label");
+        lblPanel_3.setBounds(0, 0, 150, 55);
+        panel_3.add(lblPanel_3);
+        
+        
+        
+        JScrollPane scrollPaneConfirmBooking = new JScrollPane();
+        scrollPaneConfirmBooking.setBounds(548, 173, 550, 222);
+        frame.getContentPane().add(scrollPaneConfirmBooking);
+        scrollPaneConfirmBooking.setVisible(false);
+        
+        tableConfirmBooking = new JTable();
+        tableConfirmBooking.setBackground(SystemColor.inactiveCaption);
+        tableConfirmBooking.setForeground(SystemColor.inactiveCaption);
+        tableConfirmBooking.setModel(new DefaultTableModel(
+        	new Object[][] {
+        		{null, null, null, null, null, null},
+        		{null, null, null, null, null, null},
+        		{null, null, null, null, null, null},
+        		{null, null, null, null, null, null},
+        		{null, null, null, null, null, null},
+        		{null, null, null, null, null, null},
+        		{null, null, null, null, null, null},
+        		{null, null, null, null, null, null},
+        		{null, null, null, null, null, null},
+        		{null, null, null, null, null, null},
+        		{null, null, null, null, null, null},
+        		{null, null, null, null, null, null},
+        		{null, null, null, null, null, null},
+        		{null, null, null, null, null, null},
+        		{null, null, null, null, null, null},
+        		{null, null, null, null, null, null},
+        		{null, null, null, null, null, null},
+        		{null, null, null, null, null, null},
+        	},
+        	new String[] {
+        		"New column", "New column", "New column", "New column", "New column", "New column"
+        	}
+        ));
+        scrollPaneConfirmBooking.setViewportView(tableConfirmBooking);
 
         JButton btnViewEventList = new JButton("View Event List");
         btnViewEventList.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                scrollPane.setVisible(true);
-                panel_4.setVisible(false);
+                scrollPaneViewEvent.setVisible(true);
+                scrollPaneConfirmBooking.setVisible(false);
             }
         });
         btnViewEventList.setBounds(27, 173, 190, 53);
@@ -238,38 +227,19 @@ public class AdminView {
         btnConfirmBooking.setContentAreaFilled(false);
         btnConfirmBooking.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                scrollPane.setVisible(false);
-                panel_4.setVisible(true);
+                scrollPaneViewEvent.setVisible(false);
+                scrollPaneConfirmBooking.setVisible(true);
             }
         });
         frame.getContentPane().add(btnConfirmBooking);
         btnConfirmBooking.setVisible(true);
 
-        JLabel lblNewLabel_1 = new JLabel("New label");
-        lblNewLabel_1.setBackground(SystemColor.activeCaption);
-        lblNewLabel_1.setBounds(0, 0, 521, 54);
-        panel_2.add(lblNewLabel_1);
-        panel_3.setLayout(null);
-
-        JLabel lblNewLabel_2 = new JLabel("New label");
-        lblNewLabel_2.setBackground(SystemColor.inactiveCaption);
-        lblNewLabel_2.setBounds(0, 0, 521, 50);
-        panel_3.add(lblNewLabel_2);
-        panel_1.setLayout(null);
-
-        JLabel lblNewLabel = new JLabel("New label");
-        lblNewLabel.setForeground(Color.BLACK);
-        lblNewLabel.setBackground(SystemColor.textHighlight);
-        lblNewLabel.setBounds(0, 0, 521, 50);
-        panel_1.add(lblNewLabel);
-        panel.setLayout(gl_panel);
-
 
         JButton btnGenerateInvoice = new JButton("Generate Invoice");
         btnGenerateInvoice.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                scrollPane.setVisible(false);
-                panel_4.setVisible(false);
+                scrollPaneViewEvent.setVisible(false);
+                scrollPaneConfirmBooking.setVisible(false);
             }
         });
         btnGenerateInvoice.setBounds(27, 332, 190, 53);
@@ -282,12 +252,12 @@ public class AdminView {
         frame.getContentPane().add(btnGenerateInvoice);
 
 
-        textField = new JTextField();
-        textField.setBackground(SystemColor.activeCaption);
-        textField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-        textField.setBounds(190, 49, 198, 31);
-        frame.getContentPane().add(textField);
-        textField.setColumns(10);
+        textChooseUsername = new JTextField();
+        textChooseUsername.setBackground(SystemColor.activeCaption);
+        textChooseUsername.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
+        textChooseUsername.setBounds(190, 49, 198, 31);
+        frame.getContentPane().add(textChooseUsername);
+        textChooseUsername.setColumns(10);
 
 
         JButton btnSearchButton = new JButton("");
@@ -304,33 +274,34 @@ public class AdminView {
 
 
 
-        JSeparator separator = new JSeparator();
-        separator.setBounds(41, 212, 159, 3);
-        separator.setBackground(SystemColor.inactiveCaption);
-        separator.setForeground(SystemColor.inactiveCaption);
-        separator.setOpaque(true);
-        frame.getContentPane().add(separator);
+        JSeparator separatorViewEvent = new JSeparator();
+        separatorViewEvent.setBounds(41, 212, 159, 3);
+        separatorViewEvent.setBackground(SystemColor.inactiveCaption);
+        separatorViewEvent.setForeground(SystemColor.inactiveCaption);
+        separatorViewEvent.setOpaque(true);
+        frame.getContentPane().add(separatorViewEvent);
 
-        JSeparator separator_1 = new JSeparator();
-        separator_1.setBounds(41, 291, 159, 3);
-        separator_1.setBackground(SystemColor.inactiveCaption);
-        separator_1.setForeground(SystemColor.inactiveCaption);
-        separator_1.setOpaque(true);
-        frame.getContentPane().add(separator_1);
+        JSeparator separatorConfirmBooking = new JSeparator();
+        separatorConfirmBooking.setBounds(41, 291, 159, 3);
+        separatorConfirmBooking.setBackground(SystemColor.inactiveCaption);
+        separatorConfirmBooking.setForeground(SystemColor.inactiveCaption);
+        separatorConfirmBooking.setOpaque(true);
+        frame.getContentPane().add(separatorConfirmBooking);
 
-        JSeparator separator_2 = new JSeparator();
-        separator_2.setBounds(41, 370, 165, 3);
-        separator_2.setBackground(SystemColor.inactiveCaption);
-        separator_2.setForeground(SystemColor.inactiveCaption);
-        separator_2.setOpaque(true);
-        frame.getContentPane().add(separator_2);
+        JSeparator separatorGenerateInvoice = new JSeparator();
+        separatorGenerateInvoice.setBounds(41, 370, 165, 3);
+        separatorGenerateInvoice.setBackground(SystemColor.inactiveCaption);
+        separatorGenerateInvoice.setForeground(SystemColor.inactiveCaption);
+        separatorGenerateInvoice.setOpaque(true);
+        frame.getContentPane().add(separatorGenerateInvoice);
 
-        JSeparator separator_3 = new JSeparator();
-        separator_3.setBounds(42, 448, 87, 3);
-        separator_3.setBackground(SystemColor.inactiveCaption);
-        separator_3.setForeground(SystemColor.inactiveCaption);
-        separator_3.setOpaque(true);
-        frame.getContentPane().add(separator_3);
+        JSeparator separatorLogOut = new JSeparator();
+        separatorLogOut.setBounds(42, 448, 87, 3);
+        separatorLogOut.setBackground(SystemColor.inactiveCaption);
+        separatorLogOut.setForeground(SystemColor.inactiveCaption);
+        separatorLogOut.setOpaque(true);
+        frame.getContentPane().add(separatorLogOut);
+        
         
         
         JLabel lblLogo = new JLabel("");
@@ -344,8 +315,9 @@ public class AdminView {
         lblImageLabel.setIcon(new ImageIcon(LoginPage.class.getResource("Silhouette-Rock-Concert-Wallpaper1.jpg")));       
         lblImageLabel.setBounds(0, 0, 1297, 693);
         frame.getContentPane().add(lblImageLabel);
+        
+        
 
 
     }
-
 }

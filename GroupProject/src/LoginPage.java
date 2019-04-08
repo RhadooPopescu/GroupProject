@@ -1,26 +1,16 @@
-import java.awt.EventQueue;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
+import javax.swing.*;
+import javax.swing.border.MatteBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.awt.Cursor;
-import javax.swing.border.MatteBorder;
-import java.awt.SystemColor;
-import javax.swing.JSeparator;
 
 public class LoginPage {
 
 	private JFrame frame;
     private JTextField usernameField;
-    private JTextField passwordField;
+    private JPasswordField passwordField;
 
     /**
      * Launch the application.
@@ -66,11 +56,55 @@ public class LoginPage {
         frame.getContentPane().add(usernameField);
         usernameField.setColumns(10);
 
+        passwordField = new JPasswordField();
+        passwordField.setBackground(SystemColor.activeCaption);
+        passwordField.setBorder(new MatteBorder(3, 3, 3, 3, (Color) SystemColor.activeCaption));
+        passwordField.setBounds(654, 284, 247, 31);
+        frame.getContentPane().add(passwordField);
+
+        JLabel lblIncorrectPassword = new JLabel("Incorrect Password");
+        lblIncorrectPassword.setForeground(Color.RED);
+        lblIncorrectPassword.setBounds(684, 328, 165, 23);
+        frame.getContentPane().add(lblIncorrectPassword);
+        lblIncorrectPassword.setVisible(false);
+
+        JLabel lblIncorrectUsername = new JLabel("Incorrect Username");
+        lblIncorrectUsername.setForeground(Color.RED);
+        lblIncorrectUsername.setBounds(684, 244, 165, 23);
+        frame.getContentPane().add(lblIncorrectUsername);
+        lblIncorrectUsername.setVisible(false);
+
         JButton btnLogin = new JButton("Login");
         btnLogin.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-            	new HomePage();
-            	frame.setVisible(false);
+            public void actionPerformed(ActionEvent e) {
+                User user = new User();
+                user.setUsername(usernameField.getText());
+                user.setPassword(new String(passwordField.getPassword()));
+                if (user.loginCheck()) {
+                    if (user.getType(user.getUsername()).equalsIgnoreCase("Customer") ||
+                            user.getType(user.getUsername()).equalsIgnoreCase("organization"))
+                    {
+                        new HomePage();
+                        frame.setVisible(false);
+                    }
+                    else if (user.getType(user.getUsername()).equalsIgnoreCase("organizer"))
+                    {
+                        new EventOrganizer();
+                        frame.setVisible(false);
+                    }
+                    else{
+                        new AdminView();
+                        frame.setVisible(false);
+                    }
+                } else if (user.checkFieldInDB("Username",user.getUsername())) {
+                    lblIncorrectUsername.setVisible(false);
+                    lblIncorrectPassword.setVisible(true);
+                    passwordField.setText("");
+                } else if (!user.checkFieldInDB("Username",user.getUsername())) {
+
+                    lblIncorrectPassword.setVisible(false);
+                    lblIncorrectUsername.setVisible(true);
+                    usernameField.setText("");}
             }
         });
         btnLogin.setBounds(796, 360, 120, 40);
@@ -97,11 +131,7 @@ public class LoginPage {
         frame.getContentPane().add(lblNewLabel_1);
 
 
-        passwordField = new JPasswordField();
-        passwordField.setBackground(SystemColor.activeCaption);
-        passwordField.setBorder(new MatteBorder(3, 3, 3, 3, (Color) SystemColor.activeCaption));
-        passwordField.setBounds(654, 284, 247, 31);
-        frame.getContentPane().add(passwordField);
+
 
         JButton btnRegister = new JButton("Register");
         btnRegister.addActionListener(new ActionListener() {
@@ -120,18 +150,6 @@ public class LoginPage {
         frame.getContentPane().add(btnRegister);
 
 
-
-        JLabel lblIncorrectPassword = new JLabel("Incorrect Password");
-        lblIncorrectPassword.setForeground(Color.RED);
-        lblIncorrectPassword.setBounds(684, 328, 165, 23);
-        frame.getContentPane().add(lblIncorrectPassword);
-        lblIncorrectPassword.setVisible(false);
-
-        JLabel lblIncorrectUsername = new JLabel("Incorrect Username");
-        lblIncorrectUsername.setForeground(Color.RED);
-        lblIncorrectUsername.setBounds(684, 244, 165, 23);
-        frame.getContentPane().add(lblIncorrectUsername);
-        lblIncorrectUsername.setVisible(false);
 
 
         JButton btnExitButton = new JButton("X");

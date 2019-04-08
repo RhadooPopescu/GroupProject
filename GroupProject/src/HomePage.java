@@ -1,4 +1,3 @@
-import java.awt.EventQueue;
 import javax.swing.*;
 import java.awt.Font;
 import java.awt.SystemColor;
@@ -21,19 +20,19 @@ public class HomePage {
     /**
      * Launch the application.
      */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                	HomePage window = new HomePage();
-                    window.frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-        }
-    
+//    public static void main(String[] args) {
+//        EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                try {
+//                	HomePage window = new HomePage();
+//                    window.frame.setVisible(true);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
+//        }
+//    
 
     /**
      * Create the application.
