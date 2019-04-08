@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ResultPanel extends Container
+public class ResultPanel extends Panel
 {
     private JPanel panel;
     private JLabel nameLabel, dateLabel, imageLabel, bandsLabel, venueLabel, priceLabel;
@@ -22,15 +22,15 @@ public class ResultPanel extends Container
 
         //scrollPane.setSize(200,200);
         setBackground(Color.black);
-        setLayout(group);
-        group.setAutoCreateContainerGaps(true);
-        group.setAutoCreateGaps(true);
+        setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
+        //group.setAutoCreateContainerGaps(true);
+        //group.setAutoCreateGaps(true);
 
 
         createPanels();
 
-        group.setHorizontalGroup(pg);
-        group.setVerticalGroup(sg);
+        //group.setHorizontalGroup(pg);
+        //group.setVerticalGroup(sg);
 
 
     }
@@ -105,8 +105,7 @@ public class ResultPanel extends Container
             venueLabel.setBounds(290, 16, 229, 30);
             panel.add(venueLabel);
 
-            pg.addComponent(panel);
-            sg.addComponent(panel);
+            add(panel);
         }
     }
     private List<List<String>> getEventBands(){
