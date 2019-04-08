@@ -1,0 +1,205 @@
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Cursor;
+import javax.swing.border.MatteBorder;
+import java.awt.SystemColor;
+import javax.swing.JSeparator;
+
+public class LoginPage {
+
+	private JFrame frame;
+    private JTextField usernameField;
+    private JTextField passwordField;
+
+    /**
+     * Launch the application.
+     */
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    LoginPage window = new LoginPage();
+                    window.frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    /**
+     * Create the application.
+     */
+    public LoginPage() {
+        initialize();
+        frame.setVisible(true);
+    }
+
+    /**
+     * Initialize the contents of the frame.
+     */
+    public void initialize() {
+        frame = new JFrame();
+        frame.setResizable(false);
+        frame.setTitle("Global Music");
+        frame.setBounds(100, 100, 1280, 690);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.getContentPane().setLayout(null);
+        frame.setUndecorated(true);
+
+        usernameField = new JTextField();
+        usernameField.setBackground(SystemColor.activeCaption);
+        usernameField.setBorder(new MatteBorder(3, 3, 3, 3, (Color) SystemColor.activeCaption));
+        usernameField.setBounds(654, 202, 247, 31);
+        frame.getContentPane().add(usernameField);
+        usernameField.setColumns(10);
+
+        JButton btnLogin = new JButton("Login");
+        btnLogin.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+            	new HomePage();
+            	frame.setVisible(false);
+            }
+        });
+        btnLogin.setBounds(796, 360, 120, 40);
+        btnLogin.setForeground(SystemColor.inactiveCaption);
+        btnLogin.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        btnLogin.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        btnLogin.setOpaque(false);
+        btnLogin.setBorderPainted(false);
+        btnLogin.setContentAreaFilled(false);
+        frame.getContentPane().add(btnLogin);
+
+        JLabel lblUsername = new JLabel("Username");
+        lblUsername.setForeground(SystemColor.inactiveCaption);
+        lblUsername.setBackground(Color.BLACK);
+        lblUsername.setFont(new Font("Tahoma", Font.BOLD, 16));
+        lblUsername.setBounds(488, 191, 122, 48);
+        frame.getContentPane().add(lblUsername);
+
+        JLabel lblNewLabel_1 = new JLabel("Password");
+        lblNewLabel_1.setForeground(SystemColor.inactiveCaption);
+        lblNewLabel_1.setBackground(Color.BLACK);
+        lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 16));
+        lblNewLabel_1.setBounds(488, 278, 122, 39);
+        frame.getContentPane().add(lblNewLabel_1);
+
+
+        passwordField = new JPasswordField();
+        passwordField.setBackground(SystemColor.activeCaption);
+        passwordField.setBorder(new MatteBorder(3, 3, 3, 3, (Color) SystemColor.activeCaption));
+        passwordField.setBounds(654, 284, 247, 31);
+        frame.getContentPane().add(passwordField);
+
+        JButton btnRegister = new JButton("Register");
+        btnRegister.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new Register();
+                frame.setVisible(false);
+            }
+        });
+        btnRegister.setForeground(SystemColor.inactiveCaption);
+        btnRegister.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        btnRegister.setBounds(641, 360, 120, 40);
+        btnRegister.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        btnRegister.setOpaque(false);
+        btnRegister.setBorderPainted(false);
+        btnRegister.setContentAreaFilled(false);
+        frame.getContentPane().add(btnRegister);
+
+
+
+        JLabel lblIncorrectPassword = new JLabel("Incorrect Password");
+        lblIncorrectPassword.setForeground(Color.RED);
+        lblIncorrectPassword.setBounds(684, 328, 165, 23);
+        frame.getContentPane().add(lblIncorrectPassword);
+        lblIncorrectPassword.setVisible(false);
+
+        JLabel lblIncorrectUsername = new JLabel("Incorrect Username");
+        lblIncorrectUsername.setForeground(Color.RED);
+        lblIncorrectUsername.setBounds(684, 244, 165, 23);
+        frame.getContentPane().add(lblIncorrectUsername);
+        lblIncorrectUsername.setVisible(false);
+
+
+        JButton btnExitButton = new JButton("X");
+        btnExitButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+        btnExitButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
+        btnExitButton.setForeground(SystemColor.inactiveCaption);
+        btnExitButton.setBounds(1205, 13, 63, 53);
+        btnExitButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        btnExitButton.setOpaque(false);
+        btnExitButton.setBorderPainted(false);
+        btnExitButton.setContentAreaFilled(false);
+        frame.getContentPane().add(btnExitButton);
+
+
+        JSeparator separator = new JSeparator();
+        separator.setBackground(SystemColor.inactiveCaption);
+        separator.setForeground(SystemColor.inactiveCaption);
+        separator.setBounds(652, 392, 100, 3);
+        separator.setOpaque(true);
+        frame.getContentPane().add(separator);
+
+
+
+        JSeparator separator_1 = new JSeparator();
+        separator_1.setBackground(SystemColor.inactiveCaption);
+        separator_1.setForeground(SystemColor.inactiveCaption);
+        separator_1.setBounds(811, 392, 90, 3);
+        separator_1.setOpaque(true);
+        frame.getContentPane().add(separator_1);
+        
+        
+        JButton minimizeButton = new JButton("___");
+        minimizeButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        	}
+        });
+        minimizeButton.setForeground(SystemColor.inactiveCaption);
+        minimizeButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent arg0) {
+                frame.setExtendedState(JFrame.ICONIFIED);
+            }
+        });
+        minimizeButton.setOpaque(false);
+        minimizeButton.setContentAreaFilled(false);
+        minimizeButton.setBorderPainted(false);
+        minimizeButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        minimizeButton.setBounds(1154, 20, 63, 38);
+        frame.getContentPane().add(minimizeButton);
+
+        
+        JLabel lblLogo = new JLabel("");
+        lblLogo.setIcon(new ImageIcon(LoginPage.class.getResource("Logo.jpg")));
+        lblLogo.setBounds(186, 583, 200, 96);
+        frame.getContentPane().add(lblLogo);
+
+        JLabel lblImageLabel = new JLabel("Image");
+        lblImageLabel.setFont(new Font("Tahoma", Font.PLAIN, 11));
+        lblImageLabel.setForeground(Color.BLACK);
+        lblImageLabel.setIcon(new ImageIcon(LoginPage.class.getResource("Silhouette-Rock-Concert-Wallpaper1.jpg")));
+        lblImageLabel.setBounds(0, 0, 1297, 693);
+        frame.getContentPane().add(lblImageLabel);
+        
+
+    }
+
+}

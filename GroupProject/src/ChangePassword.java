@@ -1,0 +1,249 @@
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JSeparator;
+import javax.swing.border.MatteBorder;
+import javax.swing.JPasswordField;
+
+public class ChangePassword {
+
+	private JFrame frame;
+	private JPasswordField oldPassField;
+	private JPasswordField newPassField;
+	private JPasswordField confPassField;
+
+	/**
+	 * Create the window
+	 */
+	public ChangePassword() {
+		initialize();
+		frame.setVisible(true);
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 1280, 690);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setUndecorated(true);
+	    frame.setLocationRelativeTo(null);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel changePassLabel = new JLabel("Account Security");
+		changePassLabel.setForeground(SystemColor.inactiveCaption);
+		changePassLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		changePassLabel.setBounds(372, 180, 197, 38);
+		frame.getContentPane().add(changePassLabel);
+		
+		JButton searchButton = new JButton("Search events");
+		searchButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new HomePage();
+				frame.setVisible(false);
+			}
+		});
+        searchButton.setForeground(SystemColor.inactiveCaption);
+        searchButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        searchButton.setBounds(27, 173, 190, 53);
+        searchButton.setOpaque(false);
+        searchButton.setContentAreaFilled(false);
+        searchButton.setBorderPainted(false);
+        searchButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        frame.getContentPane().add(searchButton);
+
+        JButton myAccountButton = new JButton("My Account");
+        myAccountButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		new MyAccountWindow();
+        		frame.setVisible(false);
+        	}
+        });
+        myAccountButton.setForeground(SystemColor.inactiveCaption);
+        myAccountButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        myAccountButton.setOpaque(false);
+        myAccountButton.setContentAreaFilled(false);
+        myAccountButton.setBorderPainted(false);
+        myAccountButton.setBounds(27, 253, 190, 53);
+        myAccountButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        frame.getContentPane().add(myAccountButton);
+
+        JButton bookingsButton = new JButton("My bookings");
+        bookingsButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		new BookingsWindow();
+        		frame.setVisible(false);
+        	}
+        });
+        bookingsButton.setForeground(SystemColor.inactiveCaption);
+        bookingsButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        bookingsButton.setOpaque(false);
+        bookingsButton.setContentAreaFilled(false);
+        bookingsButton.setBorderPainted(false);
+        bookingsButton.setBounds(37, 341, 168, 53);
+        bookingsButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        frame.getContentPane().add(bookingsButton);
+        
+        JButton exitButton = new JButton("X");
+        exitButton.setForeground(SystemColor.inactiveCaption);
+        exitButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+        exitButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
+        exitButton.setBorderPainted(false);
+        exitButton.setOpaque(false);
+        exitButton.setContentAreaFilled(false);
+        exitButton.setBounds(1205, 13, 63, 53);
+        exitButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        frame.getContentPane().add(exitButton);
+
+        JButton minimizeButton = new JButton("___");
+        minimizeButton.setForeground(SystemColor.inactiveCaption);
+        minimizeButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent arg0) {
+                frame.setExtendedState(JFrame.ICONIFIED);
+            }
+        });
+        minimizeButton.setOpaque(false);
+        minimizeButton.setContentAreaFilled(false);
+        minimizeButton.setBorderPainted(false);
+        minimizeButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        minimizeButton.setBounds(1154, 20, 63, 38);
+        frame.getContentPane().add(minimizeButton);
+        
+        JButton logOutButton = new JButton("Log Out");
+        logOutButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		new LoginPage();
+        		frame.setVisible(false);
+        	}
+        });
+        logOutButton.setBounds(39, 421, 168, 53);
+        logOutButton.setForeground(SystemColor.inactiveCaption);
+        logOutButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        logOutButton.setOpaque(false);
+        logOutButton.setContentAreaFilled(false);
+        logOutButton.setBorderPainted(false);
+        logOutButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        frame.getContentPane().add(logOutButton);
+        
+        JLabel oldPassLabel = new JLabel("Old Password");
+        oldPassLabel.setForeground(SystemColor.inactiveCaption);
+        oldPassLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+        oldPassLabel.setBounds(401, 275, 87, 16);
+        frame.getContentPane().add(oldPassLabel);
+        
+        oldPassField = new JPasswordField();
+        oldPassField.setBounds(500, 272, 152, 22);
+        oldPassField.setBorder(new MatteBorder(3, 3, 3, 3, (Color) SystemColor.activeCaption));
+        oldPassField.setBackground(SystemColor.activeCaption);
+        frame.getContentPane().add(oldPassField);
+        
+        JLabel newPassLabel = new JLabel("New Password");
+        newPassLabel.setBounds(394, 320, 94, 16);
+        newPassLabel.setForeground(SystemColor.inactiveCaption);
+        newPassLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+        frame.getContentPane().add(newPassLabel);
+        
+        newPassField = new JPasswordField();
+        newPassField.setBounds(500, 317, 152, 22);
+        newPassField.setBorder(new MatteBorder(3, 3, 3, 3, (Color) SystemColor.activeCaption));
+        newPassField.setBackground(SystemColor.activeCaption);
+        frame.getContentPane().add(newPassField);
+        
+        JLabel confPassLabel = new JLabel("Confirm Password");
+        confPassLabel.setBounds(372, 366, 116, 16);
+        confPassLabel.setForeground(SystemColor.inactiveCaption);
+        confPassLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+        frame.getContentPane().add(confPassLabel);
+        
+        confPassField = new JPasswordField();
+        confPassField.setBounds(500, 363, 152, 22);
+        confPassField.setBorder(new MatteBorder(3, 3, 3, 3, (Color) SystemColor.activeCaption));
+        confPassField.setBackground(SystemColor.activeCaption);
+        frame.getContentPane().add(confPassField);
+        
+        JButton saveButton = new JButton("Save");
+        saveButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        	}
+        });
+        saveButton.setBounds(527, 428, 97, 25);
+        saveButton.setForeground(SystemColor.inactiveCaption);
+        saveButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        saveButton.setOpaque(false);
+        saveButton.setContentAreaFilled(false);
+        saveButton.setBorderPainted(false);
+        saveButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        frame.getContentPane().add(saveButton);
+        
+        JSeparator saveSeparator = new JSeparator();
+        saveSeparator.setForeground(SystemColor.text);
+        saveSeparator.setBackground(SystemColor.inactiveCaption);
+        saveSeparator.setOpaque(true);
+        saveSeparator.setBounds(537, 452, 78, 3);
+        frame.getContentPane().add(saveSeparator);
+        
+        JSeparator separator = new JSeparator();
+        separator.setBackground(SystemColor.inactiveCaption);
+        separator.setOpaque(true);
+        separator.setBounds(45, 212, 162, 3);
+        frame.getContentPane().add(separator);
+        
+        JSeparator separator_1 = new JSeparator();
+        separator_1.setBackground(SystemColor.inactiveCaption);
+        separator_1.setOpaque(true);
+        separator_1.setBounds(60, 291, 125, 3);
+        frame.getContentPane().add(separator_1);
+        
+        JSeparator separator_3 = new JSeparator();
+        separator_3.setOpaque(true);
+        separator_3.setBackground(SystemColor.inactiveCaption);
+        separator_3.setBounds(57, 379, 130, 3);
+        frame.getContentPane().add(separator_3);
+        
+        JSeparator separator_4 = new JSeparator();
+        separator_4.setBackground(SystemColor.inactiveCaption);
+        separator_4.setOpaque(true);
+        separator_4.setBounds(72, 460, 100, 3);
+        frame.getContentPane().add(separator_4);
+        
+        JLabel incorrectPassLabel = new JLabel("* incorrect password");
+        incorrectPassLabel.setForeground(Color.RED);
+        incorrectPassLabel.setBounds(512, 293, 124, 16);
+        frame.getContentPane().add(incorrectPassLabel);
+        incorrectPassLabel.setVisible(false);
+        
+        JLabel label = new JLabel("* passwords don't match");
+        label.setForeground(Color.RED);
+        label.setBounds(503, 385, 152, 16);
+        frame.getContentPane().add(label);
+        label.setVisible(false);
+        
+        
+        JLabel lblLogo = new JLabel("");
+        lblLogo.setIcon(new ImageIcon(LoginPage.class.getResource("Logo.jpg")));
+        lblLogo.setBounds(186, 583, 200, 96);
+        frame.getContentPane().add(lblLogo);
+        
+        JLabel backgroundLabel = new JLabel("New label");
+        backgroundLabel.setBounds(0, 0, 1280, 690);
+        backgroundLabel.setIcon(new ImageIcon(HomePage.class.getResource("Silhouette-Rock-Concert-Wallpaper1.jpg")));
+        frame.getContentPane().add(backgroundLabel);
+        
+        
+	}
+}
