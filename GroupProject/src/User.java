@@ -196,7 +196,6 @@ public class User {
 
     public static void main(String[] args) {
         ArrayList<String> test = userList();
-
         System.out.println(test.get(0));
     }
 }
