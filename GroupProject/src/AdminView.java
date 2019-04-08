@@ -120,7 +120,7 @@ public class AdminView {
         frame.getContentPane().add(btnLogOut);
 
         JLabel lblChooseUsername = new JLabel("Choose Username");
-        lblChooseUsername.setBounds(27, 62, 153, 14);
+        lblChooseUsername.setBounds(48, 56, 130, 14);
         lblChooseUsername.setForeground(SystemColor.inactiveCaption);
         lblChooseUsername.setFont(new Font("Tahoma", Font.BOLD, 14));
         frame.getContentPane().add(lblChooseUsername);

@@ -199,7 +199,6 @@ public class LoginPage {
         lblImageLabel.setBounds(0, 0, 1297, 693);
         frame.getContentPane().add(lblImageLabel);
         
-
     }
 
 }
