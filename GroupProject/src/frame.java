@@ -1,10 +1,12 @@
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
 import java.awt.Dimension;
+import java.awt.Color;
 
 public class frame {
 
@@ -50,19 +52,30 @@ public class frame {
 		scrollPane.setViewportView(panel);
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setPreferredSize(new Dimension(50, 50));
-		panel.add(panel_1);
+		for(int x = 0; x<10;x++) {
+			JPanel panelll = new JPanel();
+			panelll.setBackground(Color.CYAN);
+			panelll.setPreferredSize(new Dimension(50,50));
+			JLabel label1421 = new JLabel("Cacat");
+			panelll.add(label1421);
+			panel.add(panelll);
+		}
 		
-		JPanel panel_2 = new JPanel();
-		panel_2.setPreferredSize(new Dimension(50, 50));
-		panel.add(panel_2);
-		
-		JPanel panel_3 = new JPanel();
-		panel.add(panel_3);
-		
-		JPanel panel_4 = new JPanel();
-		panel.add(panel_4);
+//		JPanel panel_1 = new JPanel();
+//		panel_1.setBackground(Color.CYAN);
+//		panel_1.setPreferredSize(new Dimension(50, 50));
+//		panel.add(panel_1);
+//		
+//		JPanel panel_2 = new JPanel();
+//		panel_2.setBackground(Color.MAGENTA);
+//		panel_2.setPreferredSize(new Dimension(50, 50));
+//		panel.add(panel_2);
+//		
+//		JPanel panel_3 = new JPanel();
+//		panel.add(panel_3);
+//		
+//		JPanel panel_4 = new JPanel();
+//		panel.add(panel_4);
 		
 	}
 }
