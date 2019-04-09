@@ -37,7 +37,7 @@ public class ResultPanel extends Container
 
     private List<List<String>> getUpcomingResults(){
         ResultSet rs = null;
-        List<String> list = new ArrayList<>();
+        //List<String> list = new ArrayList<>();
         List<List<String>> results = new ArrayList<>();
 
         try {
@@ -47,9 +47,9 @@ public class ResultPanel extends Container
                 String date = rs.getString("DateOfEvent");
                 String image = rs.getString("Image");
                 System.out.println("Name: "+name+" Date: "+date+" Image: "+image);
-                String[] list2 = new String[] {name,date,image};
-                System.out.println(Arrays.asList(list2));
-                results.add(Arrays.asList(list2));
+                String[] list = new String[] {name,date,image};
+                System.out.println(Arrays.asList(list));
+                results.add(Arrays.asList(list));
             }
             System.out.println(results);
         }
@@ -124,7 +124,7 @@ public class ResultPanel extends Container
         }
         try{
             ResultSet rs = Connect.selectStm("SELECT E.Name Event, B.Name Band FROM tbl_event E, tbl_band B, " +
-                    "tbl_event_band EB WHERE E.EventRefNo = EB.EventID AND B.BandID = EB.BandID;");
+                    "tbl_event_band EB WHERE E.EventID = EB.EventID AND B.BandID = EB.BandID;");
             while(rs.next()) {
                 for (int i = 0; i < events.size(); i++) {
                     if (rs.getString("Event").equalsIgnoreCase(events.get(i).get(0))) {
@@ -141,9 +141,7 @@ public class ResultPanel extends Container
     public static void main(String[] args){
         ResultPanel panel = new ResultPanel();
         List<List<String>> resluts = panel.getEventBands();
-        System.out.println(
-                resluts
-        );
+        System.out.println(resluts);
     }
 
 }
