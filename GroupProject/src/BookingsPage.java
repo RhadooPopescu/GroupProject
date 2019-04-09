@@ -224,11 +224,11 @@ public class BookingsPage {
         frame.getContentPane().add(lblDuration);
         
         
-        JTextArea txtrVenue = new JTextArea();
-        txtrVenue.setLineWrap(true);
-        txtrVenue.setText("Venue      Address      ");
-        txtrVenue.setBounds(46, 500, 92, 68);
-        frame.getContentPane().add(txtrVenue);
+        JTextArea txtVenue = new JTextArea();
+        txtVenue.setLineWrap(true);
+        txtVenue.setText("Venue      Address      ");
+        txtVenue.setBounds(46, 500, 92, 68);
+        frame.getContentPane().add(txtVenue);
         
         
         JLabel lblAvailableTickets = new JLabel("Available Tickets");
@@ -350,13 +350,13 @@ public class BookingsPage {
         frame.getContentPane().add(btnCancel);
         
         
-        
         JSeparator separatorCancel = new JSeparator();
         separatorCancel.setBounds(489, 638, 92, 3);
         separatorCancel.setBackground(SystemColor.inactiveCaption);
         separatorCancel.setForeground(SystemColor.inactiveCaption);
         separatorCancel.setOpaque(true);
         frame.getContentPane().add(separatorCancel);
+        
         
         JSeparator separatorProceed = new JSeparator();
         separatorProceed.setBounds(717, 638, 207, 3);
@@ -371,6 +371,7 @@ public class BookingsPage {
         lblLogo.setBounds(186, 583, 200, 96);
         frame.getContentPane().add(lblLogo);
 
+        
         JLabel lblImageLabel = new JLabel("Image");
         lblImageLabel.setFont(new Font("Tahoma", Font.PLAIN, 11));
         lblImageLabel.setForeground(Color.BLACK);
