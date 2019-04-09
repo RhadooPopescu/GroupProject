@@ -8,7 +8,7 @@ import javax.swing.BoxLayout;
 import java.awt.Dimension;
 import java.awt.Color;
 
-public class frame {
+public class FrameTest {
 
 	private JFrame frame;
 
@@ -19,7 +19,7 @@ public class frame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frame window = new frame();
+					FrameTest window = new FrameTest();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -31,7 +31,7 @@ public class frame {
 	/**
 	 * Create the application.
 	 */
-	public frame() {
+	public FrameTest() {
 		initialize();
 	}
 
