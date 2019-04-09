@@ -14,14 +14,14 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 
-public class BookingsWindow {
+public class BookingsHistory {
 
 	private JFrame frame;
 	private JTable table;
     /*
 	 * Create the window
 	 */
-	public BookingsWindow() {
+	public BookingsHistory() {
 		initialize();
 		frame.setVisible(true);
 	}

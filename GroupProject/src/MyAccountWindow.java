@@ -122,7 +122,7 @@ public class MyAccountWindow {
         JButton bookingsButton = new JButton("My bookings");
         bookingsButton.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
-        		new BookingsWindow();
+        		new BookingsHistory();
         		frame.setVisible(false);
         	}
         });
@@ -403,16 +403,19 @@ public class MyAccountWindow {
         emailInUseLabel.setForeground(Color.RED);
         emailInUseLabel.setBounds(366, 405, 162, 16);
         frame.getContentPane().add(emailInUseLabel);
+        emailInUseLabel.setVisible(false);
         
         JLabel invalidCardNoLabel = new JLabel("Invalid Number");
         invalidCardNoLabel.setForeground(Color.RED);
         invalidCardNoLabel.setBounds(368, 450, 100, 16);
         frame.getContentPane().add(invalidCardNoLabel);
+        invalidCardNoLabel.setVisible(false);
         
         JLabel invalidCVVLabel = new JLabel("Invalid Number");
         invalidCVVLabel.setForeground(Color.RED);
         invalidCVVLabel.setBounds(682, 450, 100, 16);
         frame.getContentPane().add(invalidCVVLabel);
+        invalidCVVLabel.setVisible(false);
         
         JLabel lblLogo = new JLabel();
         lblLogo.setIcon(new ImageIcon(LoginPage.class.getResource("Logo.jpg")));

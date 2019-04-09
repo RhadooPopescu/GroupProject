@@ -81,7 +81,7 @@ public class ChangePassword {
         JButton bookingsButton = new JButton("My bookings");
         bookingsButton.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
-        		new BookingsWindow();
+        		new BookingsHistory();
         		frame.setVisible(false);
         	}
         });
