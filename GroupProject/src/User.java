@@ -3,7 +3,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class User {
-    private int ID, cardCode;
+    private int userID, cardCVV;
     private long cardNo;
     private String title, fName, lName, address1, address2, town, postcode, username, password;
     private String email, phoneNo, orgName, webAddress, orgEmail, paymentMethod, userType;
@@ -11,11 +11,11 @@ public class User {
     public User() {
     }
 
-    public User(long cardNo, int cardCode, String title, String fName, String lName, String address1,
+    public User(long cardNo, int cardCVV, String title, String fName, String lName, String address1,
                 String address2, String town, String postcode, String username, String password, String email,
                 String phoneNo) {
         this.cardNo = cardNo;
-        this.cardCode = cardCode;
+        this.cardCVV = cardCVV;
         this.title = title;
         this.fName = fName;
         this.lName = lName;
@@ -30,11 +30,11 @@ public class User {
         this.userType = "customer";
     }
 
-    public User(long cardNo, int cardCode, String title, String fName, String lName, String address1,
+    public User(long cardNo, int cardCVV, String title, String fName, String lName, String address1,
                 String address2, String town, String postcode, String username, String password, String email,
                 String phoneNo, String orgName, String webAddress, String orgEmail, String paymentMethod) {
         this.cardNo = cardNo;
-        this.cardCode = cardCode;
+        this.cardCVV = cardCVV;
         this.title = title;
         this.fName = fName;
         this.lName = lName;
@@ -54,11 +54,11 @@ public class User {
     }
 
     public int getID() {
-        return ID;
+        return userID;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setID(int userID) {
+        this.userID = userID;
     }
 
     public String getUsername() {
@@ -99,14 +99,14 @@ public class User {
             query = "INSERT INTO tbl_user(UserID,Title,Fname,LNAme,Address1,Address2,Town,PostCode,Username,Pass,Email" +
                     ",PhoneNo,CardNo,CVVCode,Type) VALUES(DEFAULT,'" + this.title + "','" + this.fName + "','" + this.lName + "','"
                     + this.address1 + "','" + this.address2 + "','" + this.town + "','" + this.postcode + "','" + this.username + "','"
-                    + this.password + "','" + this.email + "','" + this.phoneNo + "'," + this.cardNo + "," + this.cardCode + ",'" + this.userType +
+                    + this.password + "','" + this.email + "','" + this.phoneNo + "'," + this.cardNo + "," + this.cardCVV + ",'" + this.userType +
                     "');";
         } else {
             query = "INSERT INTO tbl_user(UserID,Title,Fname,LNAme,Address1,Address2,Town,PostCode,Username,Pass,Email" +
                     ",PhoneNo,CardNo,CVVCode,Type,OrganizationName,WebAddress,OrgEmail,PaymentMethod) VALUES(DEFAULT,'"
                     + this.title + "','" + this.fName + "','" + this.lName + "','" + this.address1 + "','" + this.address2 +
                     "','" + this.town + "','" + this.postcode + "','" + this.username + "','" + this.password + "','" + this.email + "','" +
-                    this.phoneNo + "'," + this.cardNo + "," + this.cardCode + ",'" + this.userType + "','" + this.orgName + "','" +
+                    this.phoneNo + "'," + this.cardNo + "," + this.cardCVV + ",'" + this.userType + "','" + this.orgName + "','" +
                     this.webAddress + "','" + this.orgEmail + "','" + this.paymentMethod + "');";
         }
 
@@ -149,8 +149,8 @@ public class User {
         return false;
     }
 
-    public static void deleteUser(int ID) {
-        String query = "DELETE FROM tbl_user WHERE ID='" + ID + "';";
+    public static void deleteUser(int userID) {
+        String query = "DELETE FROM tbl_user WHERE ID='" + userID + "';";
         try {
             Connect.updateData(query);
         } catch (SQLException e) {
@@ -160,7 +160,7 @@ public class User {
         }
     }
 
-    public static ArrayList userList() {
+    public static ArrayList<String> userList() {
         String query = "SELECT Username FROM tbl_user;";
         ArrayList<String> users = new ArrayList<>();
         try {

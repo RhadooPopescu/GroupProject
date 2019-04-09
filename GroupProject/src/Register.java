@@ -518,6 +518,8 @@ public class Register {
                     if (!(cardNoField.getText().length()==16)){
                         lblInvalidCardNumber.setText("Invalid Card Number");
                         lblInvalidCardNumber.setVisible(true);
+                    } else {
+                    	lblInvalidCardNumber.setVisible(false);
                     }
                 }
                 catch(NumberFormatException k){
@@ -545,6 +547,8 @@ public class Register {
                     if (!(CVVField.getText().length()==3)){
                         lblInvalidCVV.setText("Invalid Card Number");
                         lblInvalidCVV.setVisible(true);
+                    } else {
+                    	lblInvalidCVV.setVisible(false);
                     }
                 }
                 catch(NumberFormatException k){
@@ -599,12 +603,6 @@ public class Register {
 
 
         JButton btnRegisterButton = new JButton("Register");
-        btnRegisterButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                //new AdminView();
-                //frame.setVisible(false);
-            }
-        });
         btnRegisterButton.setForeground(SystemColor.inactiveCaption);
         btnRegisterButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
         btnRegisterButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -617,27 +615,30 @@ public class Register {
         btnRegisterButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ArrayList<JTextField> tfArray;
-                tfArray = new ArrayList<>();
-                tfArray.add(firstNameField);
-                tfArray.add(lastNameField);
-                tfArray.add(addressOneField);
-                tfArray.add(townField);
-                tfArray.add(postcodeField);
-                tfArray.add(emailField);
-                tfArray.add(usernameField);
-                tfArray.add(passwordField);
-                tfArray.add(confirmPasswordField);
-                tfArray.add(cardNoField);
-                tfArray.add(CVVField);
+                ArrayList<JTextField> textFieldArray;
+                textFieldArray = new ArrayList<>();
+                textFieldArray.add(firstNameField);
+                textFieldArray.add(lastNameField);
+                textFieldArray.add(addressOneField);
+                textFieldArray.add(townField);
+                textFieldArray.add(postcodeField);
+                textFieldArray.add(emailField);
+                textFieldArray.add(usernameField);
+                textFieldArray.add(passwordField);
+                textFieldArray.add(confirmPasswordField);
+                textFieldArray.add(cardNoField);
+                textFieldArray.add(CVVField);
 
                 if (chckbxNewCheckBox_1.isSelected()){
-                    tfArray.add(orgNameField);}
+                    textFieldArray.add(orgNameField);}
                 boolean checker = true;
-                for(JTextField field : tfArray) {
+                for(JTextField field : textFieldArray) {
                     System.out.println(field.getText());
                     if (field.getText().equals("")) {
                         checker = false;
+                        field.setBackground(new Color(255, 228, 225));
+                    } else {
+                    	field.setBackground(SystemColor.inactiveCaption);
                     }
                 }
                 if (checker){
@@ -681,9 +682,6 @@ public class Register {
         btnCancelButton.setVisible(true);
 
 
-
-
-
         JSeparator separator = new JSeparator();
         separator.setBounds(786, 549, 90, 3);
         separator.setBackground(SystemColor.inactiveCaption);
@@ -691,12 +689,14 @@ public class Register {
         separator.setOpaque(true);
         frame.getContentPane().add(separator);
 
+        
         JSeparator separator_1 = new JSeparator();
         separator_1.setBounds(993, 549, 100, 3);
         separator_1.setBackground(SystemColor.inactiveCaption);
         separator_1.setForeground(SystemColor.inactiveCaption);
         separator_1.setOpaque(true);
         frame.getContentPane().add(separator_1);
+        
         
         JLabel lblLogo = new JLabel("");
         lblLogo.setIcon(new ImageIcon(LoginPage.class.getResource("Logo.jpg")));
