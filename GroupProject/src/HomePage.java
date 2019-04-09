@@ -7,6 +7,10 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.ZoneId;
+
 import com.github.lgooddatepicker.components.DatePicker;
 import com.github.lgooddatepicker.components.DatePickerSettings;
 import javax.swing.border.MatteBorder;
@@ -125,7 +129,7 @@ public class HomePage {
         searchTxtField.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                searchTxtField.setText("    ");
+                searchTxtField.setText("");
             }
         });
         frame.getContentPane().add(searchTxtField);
@@ -145,7 +149,13 @@ public class HomePage {
         datePicker.getComponentToggleCalendarButton().setText("Date");
         datePicker.setBounds(529, 114, 168, 22);
         frame.getContentPane().add(datePicker);
-        
+//        LocalDate date = datePicker.getDate();
+//        try {
+//        	System.out.println(date.toString());
+//        }catch (NullPointerException e) {
+//        	System.out.println("No date yet");
+//        }
+       
         JButton exitButton = new JButton("X");
         exitButton.setForeground(SystemColor.inactiveCaption);
         exitButton.addActionListener(new ActionListener() {
