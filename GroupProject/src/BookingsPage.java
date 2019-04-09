@@ -14,7 +14,6 @@ import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 import javax.swing.JTextArea;
 import javax.swing.JComboBox;
-import javax.swing.SwingConstants;
 import javax.swing.JSeparator;
 
 public class BookingsPage {
@@ -133,6 +132,7 @@ public class BookingsPage {
         lblBandGenere_1.setBounds(10, 182, 46, 14);
         panel.add(lblBandGenere_1);
         
+        
         JButton btnWebsiteBand_1 = new JButton("Website");
         btnWebsiteBand_1.setBounds(-8, 201, 87, 23);
         btnWebsiteBand_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -142,6 +142,7 @@ public class BookingsPage {
         btnWebsiteBand_1.setContentAreaFilled(false);
         btnWebsiteBand_1.setBorderPainted(false);
         panel.add(btnWebsiteBand_1);
+        
         
         JButton btnWebsiteBand_2 = new JButton("Website");
         btnWebsiteBand_2.setBounds(166, 201, 89, 23);
@@ -153,13 +154,16 @@ public class BookingsPage {
         btnWebsiteBand_2.setBorderPainted(false);
         panel.add(btnWebsiteBand_2);
         
+        
         JLabel lblBandGenere_2 = new JLabel("Genere");
         lblBandGenere_2.setBounds(187, 182, 46, 14);
         panel.add(lblBandGenere_2);
         
+        
         JLabel lblBandName_2 = new JLabel("Name");
         lblBandName_2.setBounds(187, 151, 77, 14);
         panel.add(lblBandName_2);
+        
         
         JButton btnWebsiteBand_3 = new JButton("Website");
         btnWebsiteBand_3.setBounds(362, 201, 89, 23);
@@ -187,6 +191,7 @@ public class BookingsPage {
         lblBandName_4.setBounds(587, 151, 77, 14);
         panel.add(lblBandName_4);
         
+        
         JButton btnWebsiteBand_4 = new JButton("Website");
         btnWebsiteBand_4.setBounds(567, 203, 89, 23);
         btnWebsiteBand_4.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -197,11 +202,13 @@ public class BookingsPage {
         btnWebsiteBand_4.setBorderPainted(false);
         panel.add(btnWebsiteBand_4);
         
+        
         JLabel lblName = new JLabel("Name");
         lblName.setBounds(46, 372, 46, 14);
         lblName.setForeground(SystemColor.inactiveCaption);
         lblName.setFont(new Font("Tahoma", Font.BOLD, 14));
         frame.getContentPane().add(lblName);
+        
         
         JLabel lblDate = new JLabel("Date");
         lblDate.setBounds(46, 414, 46, 14);
@@ -209,11 +216,13 @@ public class BookingsPage {
         lblDate.setFont(new Font("Tahoma", Font.BOLD, 14));
         frame.getContentPane().add(lblDate);
         
+        
         JLabel lblDuration = new JLabel("Duration");
         lblDuration.setBounds(46, 462, 75, 14);
         lblDuration.setForeground(SystemColor.inactiveCaption);
         lblDuration.setFont(new Font("Tahoma", Font.BOLD, 14));
         frame.getContentPane().add(lblDuration);
+        
         
         JTextArea txtrVenue = new JTextArea();
         txtrVenue.setLineWrap(true);
@@ -221,11 +230,13 @@ public class BookingsPage {
         txtrVenue.setBounds(46, 500, 92, 68);
         frame.getContentPane().add(txtrVenue);
         
+        
         JLabel lblAvailableTickets = new JLabel("Available Tickets");
         lblAvailableTickets.setBounds(46, 589, 130, 14);
         lblAvailableTickets.setForeground(SystemColor.inactiveCaption);
         lblAvailableTickets.setFont(new Font("Tahoma", Font.BOLD, 14));
         frame.getContentPane().add(lblAvailableTickets);
+        
         
         JLabel lblFullPriceTickets = new JLabel("Full Price Tickets");
         lblFullPriceTickets.setBounds(385, 372, 125, 14);
@@ -233,11 +244,13 @@ public class BookingsPage {
         lblFullPriceTickets.setFont(new Font("Tahoma", Font.BOLD, 14));
         frame.getContentPane().add(lblFullPriceTickets);
         
+        
         JLabel lblPrice = new JLabel("Price");
         lblPrice.setBounds(624, 372, 46, 14);
         lblPrice.setForeground(SystemColor.inactiveCaption);
         lblPrice.setFont(new Font("Tahoma", Font.BOLD, 14));
         frame.getContentPane().add(lblPrice);
+        
         
         JLabel lblStudentDiscountPrice = new JLabel("Student Discount Price");
         lblStudentDiscountPrice.setBounds(389, 430, 171, 14);
@@ -245,21 +258,38 @@ public class BookingsPage {
         lblStudentDiscountPrice.setFont(new Font("Tahoma", Font.BOLD, 14));
         frame.getContentPane().add(lblStudentDiscountPrice);
         
+        
         JLabel lblPriceStudent = new JLabel("Price");
         lblPriceStudent.setBounds(628, 430, 46, 14);
         lblPriceStudent.setForeground(SystemColor.inactiveCaption);
         lblPriceStudent.setFont(new Font("Tahoma", Font.BOLD, 14));
         frame.getContentPane().add(lblPriceStudent);
         
-        JComboBox comboBox = new JComboBox();
-        comboBox.setBackground(SystemColor.activeCaption);
-        comboBox.setBounds(773, 371, 84, 20);
-        frame.getContentPane().add(comboBox);
         
-        JComboBox comboBox_1 = new JComboBox();
-        comboBox_1.setBackground(SystemColor.activeCaption);
-        comboBox_1.setBounds(773, 427, 84, 20);
-        frame.getContentPane().add(comboBox_1);
+        JLabel lblStudentIdNeeded = new JLabel("Student ID Needed at location");
+        lblStudentIdNeeded.setForeground(new Color(255, 69, 0));
+        lblStudentIdNeeded.setBounds(389, 452, 171, 14);
+        frame.getContentPane().add(lblStudentIdNeeded);
+        
+        
+        JComboBox<String> comboBoxFullPrice = new JComboBox<String>();
+        comboBoxFullPrice.setBackground(SystemColor.activeCaption);
+        comboBoxFullPrice.setBounds(773, 371, 84, 20);
+        frame.getContentPane().add(comboBoxFullPrice);
+        
+        
+        JComboBox<String> comboBoxStudentPrice = new JComboBox<String>();
+        comboBoxStudentPrice.setBackground(SystemColor.activeCaption);
+        comboBoxStudentPrice.setBounds(773, 427, 84, 20);
+        frame.getContentPane().add(comboBoxStudentPrice);
+        
+        
+        JComboBox<String> comboBoxCorporatePrice = new JComboBox<String>();
+        comboBoxCorporatePrice.setBackground(SystemColor.activeCaption);
+        comboBoxCorporatePrice.setBounds(773, 495, 84, 20);
+        frame.getContentPane().add(comboBoxCorporatePrice);
+        
+        
         
         JLabel lblCorporateTicketPrice = new JLabel("Corporate Ticket Price");
         lblCorporateTicketPrice.setBounds(389, 498, 171, 14);
@@ -267,16 +297,14 @@ public class BookingsPage {
         lblCorporateTicketPrice.setFont(new Font("Tahoma", Font.BOLD, 14));
         frame.getContentPane().add(lblCorporateTicketPrice);
         
+        
         JLabel lblPriceCorporate = new JLabel("Price");
         lblPriceCorporate.setBounds(628, 498, 46, 14);
         lblPriceCorporate.setForeground(SystemColor.inactiveCaption);
         lblPriceCorporate.setFont(new Font("Tahoma", Font.BOLD, 14));
         frame.getContentPane().add(lblPriceCorporate);
         
-        JComboBox comboBox_2 = new JComboBox();
-        comboBox_2.setBackground(SystemColor.activeCaption);
-        comboBox_2.setBounds(773, 495, 84, 20);
-        frame.getContentPane().add(comboBox_2);
+        
         
         JLabel lblTotals = new JLabel("Totals");
         lblTotals.setBounds(389, 554, 75, 14);
@@ -284,17 +312,21 @@ public class BookingsPage {
         lblTotals.setFont(new Font("Tahoma", Font.BOLD, 14));
         frame.getContentPane().add(lblTotals);
         
+        
         JLabel lblNoOfTickets = new JLabel("No Of Tickets");
         lblNoOfTickets.setBounds(628, 554, 97, 14);
         lblNoOfTickets.setForeground(SystemColor.inactiveCaption);
         lblNoOfTickets.setFont(new Font("Tahoma", Font.BOLD, 14));
         frame.getContentPane().add(lblNoOfTickets);
         
+        
         JLabel lblAmount = new JLabel("Amount");
         lblAmount.setBounds(773, 554, 84, 14);
         lblAmount.setForeground(SystemColor.inactiveCaption);
         lblAmount.setFont(new Font("Tahoma", Font.BOLD, 14));
         frame.getContentPane().add(lblAmount);
+        
+        
         
         JButton btnProceedToBooking = new JButton("Proceed To Booking");
         btnProceedToBooking.setBounds(707, 615, 234, 23);
@@ -317,11 +349,6 @@ public class BookingsPage {
         btnCancel.setBounds(415, 615, 234, 23);
         frame.getContentPane().add(btnCancel);
         
-        
-        JLabel lblStudentIdNeeded = new JLabel("Student ID Needed at location");
-        lblStudentIdNeeded.setForeground(new Color(255, 69, 0));
-        lblStudentIdNeeded.setBounds(389, 452, 171, 14);
-        frame.getContentPane().add(lblStudentIdNeeded);
         
         
         JSeparator separatorCancel = new JSeparator();
