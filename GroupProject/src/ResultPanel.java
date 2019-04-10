@@ -43,7 +43,7 @@ public class ResultPanel extends Container{
     
     public ResultPanel(String searchCriteria) {
     	//Constructor for searching by strings only for the events name. The search by band I think it's too complicated to include it :))
-    	this.setPreferredSize(new Dimension(200,500));
+    	//this.setPreferredSize(new Dimension(200,500));
     	this.setBackground(Color.black);
     	this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
     	
@@ -51,7 +51,7 @@ public class ResultPanel extends Container{
     }
     
     public ResultPanel(DatePicker datePicker) {
-    	this.setPreferredSize(new Dimension(200,500));
+    	//this.setPreferredSize(new Dimension(200,500));
     	this.setBackground(Color.black);
     	this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
     	
@@ -86,23 +86,31 @@ public class ResultPanel extends Container{
     	ResultSet rs = null;
         //List<String> list = new ArrayList<>();
         List<List<String>> results = new ArrayList<>();
+        String query ="SELECT E.Name 'Event',E.Image, E.DateOfEvent, B.Name 'Band' FROM tbl_event E, tbl_band B, tbl_event_band EB " +
+                "WHERE E.EventID = EB.EventID " +
+                "AND B.BandID = EB.BandID " +
+                "AND (E.Name LIKE '%"+aString+"%' OR B.Name LIKE '%"+aString+"%')" +
+                "AND E.DateOfEvent>NOW()";
 
         try {
-            rs = Connect.selectStm("SELECT * FROM tbl_event WHERE Name = "+ "'"+ aString + "'" + " ORDER BY DateofEvent");
+            rs = Connect.selectStm(query);
             while(rs.next()){
-                String name = rs.getString("Name");
+                String name = rs.getString("Event");
                 String date = rs.getString("DateOfEvent");
                 String image = rs.getString("Image");
+                String band = rs.getString("Band");
                 System.out.println("Name: "+name+" Date: "+date+" Image: "+image);
-                String[] list = new String[] {name,date,image};
+                String[] list = new String[] {name,date,image,band};
                 System.out.println(Arrays.asList(list));
                 results.add(Arrays.asList(list));
             }
+            System.out.println("Query:\n"+query);
             System.out.println(results);
         }
         catch (NullPointerException f){
             System.out.println("fuck off"+f.getStackTrace()[0]);f.getStackTrace();}
-        catch (Exception e){e.getStackTrace();}
+        catch (SQLException e){e.printStackTrace();}
+        catch (ClassNotFoundException g){g.getMessage();}
         return results;
     }
 
@@ -132,8 +140,9 @@ public class ResultPanel extends Container{
     }
     
     private void createPanels(List<List<String>> aList){
-        List<List<String>> results = aList;
-        int size= results.size();
+        System.out.println("Results:\n"+aList);
+        int size= aList.size();
+        this.setPreferredSize(new Dimension(200,150*size));
         for (int i=0;i<size;i++){
             panel = new JPanel();
 
@@ -146,20 +155,20 @@ public class ResultPanel extends Container{
 
             imageLabel = new JLabel("image");
             imageLabel.setBounds(12, 13, 135, 109);
-            ImageIcon img = new ImageIcon((results.get(i).get(2)));
+            ImageIcon img = new ImageIcon((aList.get(i).get(2)));
             Image image = img.getImage().getScaledInstance(135,109,Image.SCALE_SMOOTH);
             imageLabel.setIcon(new ImageIcon(image));
             panel.add(imageLabel);
 
-            nameLabel = new JLabel(results.get(i).get(0));
+            nameLabel = new JLabel(aList.get(i).get(0));
             nameLabel.setBounds(174, 13, 95, 23);
             panel.add(nameLabel);
 
-            bandsLabel = new JLabel("artists");
+            bandsLabel = new JLabel(aList.get(i).get(3));
             bandsLabel.setBounds(185, 85, 345, 41);
             panel.add(bandsLabel);
 
-            dateLabel = new JLabel(results.get(i).get(1));
+            dateLabel = new JLabel(aList.get(i).get(1));
             dateLabel.setBounds(174, 49, 80, 16);
             panel.add(dateLabel);
 
@@ -212,8 +221,7 @@ public class ResultPanel extends Container{
     }
 
     public static void main(String[] args){
-        @SuppressWarnings("unused")
-		ResultPanel panel = new ResultPanel("2019-04-20");
+        new ResultPanel("2019-04-20");
 //        List<List<String>> resluts = panel.getResultsOnlyDate(DatePicker datepicker);
 //        System.out.println(resluts);
     }
