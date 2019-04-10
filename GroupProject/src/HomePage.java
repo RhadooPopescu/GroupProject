@@ -134,15 +134,11 @@ public class HomePage {
         });
         frame.getContentPane().add(searchTxtField);
 
-        JScrollPane scrollPane = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        scrollPane.setBounds(373, 189, 844, 374);
-        scrollPane.setBackground(Color.BLACK);
-        frame.add(scrollPane);
-
-        scrollPane.setViewportView(new ResultPanel());
+        
 
         DatePickerSettings dateSettings = new DatePickerSettings();
         dateSettings.setFormatForDatesCommonEra("dd/MM/yyyy");
+        dateSettings.setAllowKeyboardEditing(false);
 
         DatePicker datePicker = new DatePicker(dateSettings);
         datePicker.getComponentDateTextField().setBackground(SystemColor.activeCaption);
@@ -155,6 +151,12 @@ public class HomePage {
 //        }catch (NullPointerException e) {
 //        	System.out.println("No date yet");
 //        }
+        
+        JScrollPane scrollPane = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setBounds(373, 189, 844, 374);
+        scrollPane.setBackground(Color.BLACK);
+        frame.add(scrollPane);
+        scrollPane.setViewportView(new ResultPanel(datePicker));
        
         JButton exitButton = new JButton("X");
         exitButton.setForeground(SystemColor.inactiveCaption);

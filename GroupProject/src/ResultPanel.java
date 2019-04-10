@@ -1,7 +1,11 @@
 import javax.swing.*;
+
+import com.github.lgooddatepicker.components.DatePicker;
+
 import java.awt.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,23 +20,42 @@ public class ResultPanel extends Container
 //    private GroupLayout.SequentialGroup sg = group.createSequentialGroup();
 
     public ResultPanel(){
-
+    	//////////////////////////////////////
+    	//for UPCOMING RESULTS
+    	////////////////////////////////////////
+    	
+    	
         //con.setMinimumSize(new Dimension(200,500));
-        setPreferredSize(new Dimension(200,500));
+        this.setPreferredSize(new Dimension(200,500));
 
         //scrollPane.setSize(200,200);
-        setBackground(Color.black);
-        setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
+        this.setBackground(Color.black);
+        this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
 //        group.setAutoCreateContainerGaps(true);
 //        group.setAutoCreateGaps(true);
 
 
-        createPanels();
+        createPanels(getUpcomingResults());
 //
 //        group.setHorizontalGroup(pg);
 //        group.setVerticalGroup(sg);
-
-
+    }
+    
+    public ResultPanel(String searchCriteria) {
+    	//Constructor for searching by strings only for the events name. The search by band I think it's too complicated to include it :))
+    	this.setPreferredSize(new Dimension(200,500));
+    	this.setBackground(Color.black);
+    	this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+    	
+    	createPanels(getResultsOnlyString(searchCriteria));
+    }
+    
+    public ResultPanel(DatePicker datePicker) {
+    	this.setPreferredSize(new Dimension(200,500));
+    	this.setBackground(Color.black);
+    	this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+    	
+    	createPanels(getResultsOnlyDate(datePicker));
     }
 
     private List<List<String>> getUpcomingResults(){
@@ -58,9 +81,59 @@ public class ResultPanel extends Container
         catch (Exception e){e.getStackTrace();}
         return results;
     }
+    
+    private List<List<String>> getResultsOnlyString(String aString){
+    	ResultSet rs = null;
+        //List<String> list = new ArrayList<>();
+        List<List<String>> results = new ArrayList<>();
 
-    private void createPanels(){
-        List<List<String>> results = getUpcomingResults();
+        try {
+            rs = Connect.selectStm("SELECT * FROM tbl_event WHERE Name = "+ "'"+ aString + "'" + " ORDER BY DateofEvent");
+            while(rs.next()){
+                String name = rs.getString("Name");
+                String date = rs.getString("DateOfEvent");
+                String image = rs.getString("Image");
+                System.out.println("Name: "+name+" Date: "+date+" Image: "+image);
+                String[] list = new String[] {name,date,image};
+                System.out.println(Arrays.asList(list));
+                results.add(Arrays.asList(list));
+            }
+            System.out.println(results);
+        }
+        catch (NullPointerException f){
+            System.out.println("fuck off"+f.getStackTrace()[0]);f.getStackTrace();}
+        catch (Exception e){e.getStackTrace();}
+        return results;
+    }
+
+    private List<List<String>> getResultsOnlyDate(DatePicker datePicker){
+    	ResultSet rs = null;
+        //List<String> list = new ArrayList<>();
+        List<List<String>> results = new ArrayList<>();
+        LocalDate dateFromDatePicker = datePicker.getDate();
+        
+        try {
+            rs = Connect.selectStm("SELECT * FROM tbl_event WHERE DateOfEvent = "+ "\"" + dateFromDatePicker.toString() + "\"" + " ORDER BY DateofEvent");
+            while(rs.next()){
+                String name = rs.getString("Name");
+                String date = rs.getString("DateOfEvent");
+                String image = rs.getString("Image");
+                System.out.println("Name: "+name+" Date: "+date+" Image: "+image);
+                String[] list = new String[] {name,date,image};
+                System.out.println(Arrays.asList(list));
+                results.add(Arrays.asList(list));
+            }
+            System.out.println(results);
+        }
+        catch (NullPointerException f){
+            System.out.println("fuck off"+f.getStackTrace()[0]);f.getStackTrace();}
+        catch (Exception e){e.getStackTrace();}
+        return results;
+    }
+
+    
+    private void createPanels(List<List<String>> aList){
+        List<List<String>> results = aList;
         int size= results.size();
         for (int i=0;i<size;i++){
             panel = new JPanel();
@@ -139,9 +212,9 @@ public class ResultPanel extends Container
     }
 
     public static void main(String[] args){
-        ResultPanel panel = new ResultPanel();
-        List<List<String>> resluts = panel.getEventBands();
-        System.out.println(resluts);
+        ResultPanel panel = new ResultPanel("2019-04-20");
+//        List<List<String>> resluts = panel.getResultsOnlyDate(DatePicker datepicker);
+//        System.out.println(resluts);
     }
 
 }
