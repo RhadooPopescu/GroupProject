@@ -8,6 +8,7 @@ public class Connect
     public static Connection connect() throws SQLException, ClassNotFoundException
     {
         if (c==null){
+            //Class.forName("com.mysql.jdbc.Driver");
             c = DriverManager.getConnection("jdbc:mysql://localhost/musicfestivalbookings?serverTimezone=UTC","root","" );
         }
         return c;

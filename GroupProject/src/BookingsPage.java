@@ -128,7 +128,7 @@ public class BookingsPage {
         lblBandName_1.setBounds(10, 151, 77, 14);
         panel.add(lblBandName_1);
         
-        JLabel lblBandGenere_1 = new JLabel("Genere");
+        JLabel lblBandGenere_1 = new JLabel("Genre");
         lblBandGenere_1.setBounds(10, 182, 46, 14);
         panel.add(lblBandGenere_1);
         
@@ -155,7 +155,7 @@ public class BookingsPage {
         panel.add(btnWebsiteBand_2);
         
         
-        JLabel lblBandGenere_2 = new JLabel("Genere");
+        JLabel lblBandGenere_2 = new JLabel("Genre");
         lblBandGenere_2.setBounds(187, 182, 46, 14);
         panel.add(lblBandGenere_2);
         
@@ -175,7 +175,7 @@ public class BookingsPage {
         btnWebsiteBand_3.setBorderPainted(false);
         panel.add(btnWebsiteBand_3);
         
-        JLabel lblBandGenere_3 = new JLabel("Genere");
+        JLabel lblBandGenere_3 = new JLabel("Genre");
         lblBandGenere_3.setBounds(383, 182, 46, 14);
         panel.add(lblBandGenere_3);
         
@@ -183,7 +183,7 @@ public class BookingsPage {
         lblBandName_3.setBounds(383, 151, 77, 14);
         panel.add(lblBandName_3);
         
-        JLabel lblBandGenere_4 = new JLabel("Genere");
+        JLabel lblBandGenere_4 = new JLabel("Genre");
         lblBandGenere_4.setBounds(587, 182, 46, 14);
         panel.add(lblBandGenere_4);
         
