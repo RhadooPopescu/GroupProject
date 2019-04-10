@@ -129,8 +129,11 @@ public class Register {
 
         JButton btnExitButton = new JButton("X");
         btnExitButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+        	public void actionPerformed(ActionEvent e) {
+            	int reply = JOptionPane.showConfirmDialog(null, "Are you sure?", "Exit?", JOptionPane.YES_NO_OPTION);
+                if (reply == JOptionPane.YES_OPTION) {
+                  System.exit(0);
+                }
             }
         });
         btnExitButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
