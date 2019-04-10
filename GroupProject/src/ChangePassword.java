@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
 import javax.swing.border.MatteBorder;
 import javax.swing.JPasswordField;
@@ -97,8 +98,11 @@ public class ChangePassword {
         JButton exitButton = new JButton("X");
         exitButton.setForeground(SystemColor.inactiveCaption);
         exitButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+        	public void actionPerformed(ActionEvent e) {
+            	int reply = JOptionPane.showConfirmDialog(null, "Are you sure?", "Exit?", JOptionPane.YES_NO_OPTION);
+                if (reply == JOptionPane.YES_OPTION) {
+                  System.exit(0);
+                }
             }
         });
         exitButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
