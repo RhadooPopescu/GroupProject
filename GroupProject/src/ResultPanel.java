@@ -11,8 +11,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ResultPanel extends Container
-{
+@SuppressWarnings("serial")
+public class ResultPanel extends Container{
     private JPanel panel;
     private JLabel nameLabel, dateLabel, imageLabel, bandsLabel, venueLabel, priceLabel;
 //    private GroupLayout group = new GroupLayout(this);
@@ -182,7 +182,8 @@ public class ResultPanel extends Container
 //            sg.addComponent(panel);
         }
     }
-    private List<List<String>> getEventBands(){
+    @SuppressWarnings("unused")
+	private List<List<String>> getEventBands(){
         List<List<String>> results = getUpcomingResults();
         List<List<String>> events = new ArrayList<>(results.size());
         List<String> bands = new ArrayList<>();
@@ -211,7 +212,8 @@ public class ResultPanel extends Container
     }
 
     public static void main(String[] args){
-        ResultPanel panel = new ResultPanel("2019-04-20");
+        @SuppressWarnings("unused")
+		ResultPanel panel = new ResultPanel("2019-04-20");
 //        List<List<String>> resluts = panel.getResultsOnlyDate(DatePicker datepicker);
 //        System.out.println(resluts);
     }
