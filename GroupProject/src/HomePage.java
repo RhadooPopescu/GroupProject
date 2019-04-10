@@ -158,14 +158,12 @@ public class HomePage {
         JButton searchingButton = new JButton("New button");
         searchingButton.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		if(searchTxtField.getText() != "" & searchTxtField.getText() != "Search" & datePicker.getDate() == null) {
-        			scrollPane.setViewportView(new ResultPanel(searchTxtField.getText()));
-        			upcomingLabel.setText("Results");
+        		if (searchTxtField.getText() != "" & datePicker.getDate() == null) {
+        	        scrollPane.setViewportView(new ResultPanel(searchTxtField.getText()));
+        	        upcomingLabel.setText("Results");
         		}
-        		else if (searchTxtField.getText() == "" | searchTxtField.getText() != "Search" & datePicker.getDate() != null) {
+        		else if (datePicker.getDate() != null)
         			scrollPane.setViewportView(new ResultPanel(datePicker));
-        			upcomingLabel.setText("Results");
-        		}
         	}
         });
         searchingButton.setBounds(737, 112, 97, 25);

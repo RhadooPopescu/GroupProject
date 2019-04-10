@@ -130,7 +130,6 @@ public class ResultPanel extends Container
         catch (Exception e){e.getStackTrace();}
         return results;
     }
-
     
     private void createPanels(List<List<String>> aList){
         List<List<String>> results = aList;
