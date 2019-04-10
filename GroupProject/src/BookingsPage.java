@@ -128,9 +128,9 @@ public class BookingsPage {
         lblBandName_1.setBounds(10, 151, 77, 14);
         panel.add(lblBandName_1);
         
-        JLabel lblBandGenere_1 = new JLabel("Genere");
-        lblBandGenere_1.setBounds(10, 182, 46, 14);
-        panel.add(lblBandGenere_1);
+        JLabel lblBandGenre_1 = new JLabel("Genre");
+        lblBandGenre_1.setBounds(10, 182, 46, 14);
+        panel.add(lblBandGenre_1);
         
         
         JButton btnWebsiteBand_1 = new JButton("Website");
@@ -155,9 +155,9 @@ public class BookingsPage {
         panel.add(btnWebsiteBand_2);
         
         
-        JLabel lblBandGenere_2 = new JLabel("Genere");
-        lblBandGenere_2.setBounds(187, 182, 46, 14);
-        panel.add(lblBandGenere_2);
+        JLabel lblBandGenre_2 = new JLabel("Genre");
+        lblBandGenre_2.setBounds(187, 182, 46, 14);
+        panel.add(lblBandGenre_2);
         
         
         JLabel lblBandName_2 = new JLabel("Name");
@@ -175,17 +175,17 @@ public class BookingsPage {
         btnWebsiteBand_3.setBorderPainted(false);
         panel.add(btnWebsiteBand_3);
         
-        JLabel lblBandGenere_3 = new JLabel("Genere");
-        lblBandGenere_3.setBounds(383, 182, 46, 14);
-        panel.add(lblBandGenere_3);
+        JLabel lblBandGenre_3 = new JLabel("Genre");
+        lblBandGenre_3.setBounds(383, 182, 46, 14);
+        panel.add(lblBandGenre_3);
         
         JLabel lblBandName_3 = new JLabel("Name");
         lblBandName_3.setBounds(383, 151, 77, 14);
         panel.add(lblBandName_3);
         
-        JLabel lblBandGenere_4 = new JLabel("Genere");
-        lblBandGenere_4.setBounds(587, 182, 46, 14);
-        panel.add(lblBandGenere_4);
+        JLabel lblBandGenre_4 = new JLabel("Genre");
+        lblBandGenre_4.setBounds(587, 182, 46, 14);
+        panel.add(lblBandGenre_4);
         
         JLabel lblBandName_4 = new JLabel("Name");
         lblBandName_4.setBounds(587, 151, 77, 14);
