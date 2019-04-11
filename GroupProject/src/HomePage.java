@@ -150,7 +150,7 @@ public class HomePage {
         scrollPane.setBounds(373, 189, 844, 374);
         scrollPane.setBackground(Color.BLACK);
         frame.getContentPane().add(scrollPane);
-        //scrollPane.setViewportView(new ResultPanel());
+        scrollPane.setViewportView(new ResultPanel());
         
         JButton searchingButton = new JButton("New button");
         searchingButton.addActionListener(new ActionListener() {
