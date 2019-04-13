@@ -108,6 +108,7 @@ public class MyAccountWindow {
         searchButton.setBounds(27, 173, 190, 53);
         searchButton.setOpaque(false);
         searchButton.setContentAreaFilled(false);
+        searchButton.setToolTipText("See upcoming or search for your favorite events");
         searchButton.setBorderPainted(false);
         searchButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         frame.getContentPane().add(searchButton);
@@ -125,6 +126,7 @@ public class MyAccountWindow {
         changePassButton.setOpaque(false);
         changePassButton.setContentAreaFilled(false);
         changePassButton.setBorderPainted(false);
+        changePassButton.setToolTipText("Update security details");
         changePassButton.setBounds(27, 250, 204, 53);
         changePassButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         frame.getContentPane().add(changePassButton);
@@ -141,6 +143,7 @@ public class MyAccountWindow {
         bookingsButton.setOpaque(false);
         bookingsButton.setContentAreaFilled(false);
         bookingsButton.setBorderPainted(false);
+        bookingsButton.setToolTipText("View your booked events");
         bookingsButton.setBounds(37, 328, 168, 53);
         bookingsButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         frame.getContentPane().add(bookingsButton);

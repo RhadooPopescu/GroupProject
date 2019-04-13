@@ -7,6 +7,7 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.time.LocalDate;
 
 import com.github.lgooddatepicker.components.DatePicker;
 import com.github.lgooddatepicker.components.DatePickerSettings;
@@ -68,6 +69,7 @@ public class HomePage {
         myAccountButton.setBorderPainted(false);
         myAccountButton.setBounds(27, 189, 190, 53);
         myAccountButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        myAccountButton.setToolTipText("Edit your personal details");
         frame.getContentPane().add(myAccountButton);
         
         JButton changePassButton = new JButton("Change Password");
@@ -83,6 +85,7 @@ public class HomePage {
         changePassButton.setContentAreaFilled(false);
         changePassButton.setBorderPainted(false);
         changePassButton.setBounds(27, 268, 206, 53);
+        changePassButton.setToolTipText("Update security details");
         changePassButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         frame.getContentPane().add(changePassButton);
 
@@ -99,6 +102,7 @@ public class HomePage {
         bookingsButton.setContentAreaFilled(false);
         bookingsButton.setBorderPainted(false);
         bookingsButton.setBounds(37, 346, 168, 53);
+        bookingsButton.setToolTipText("View your booked events");
         bookingsButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         frame.getContentPane().add(bookingsButton);
         
@@ -121,7 +125,7 @@ public class HomePage {
         searchTxtField = new JTextField();
         searchTxtField.setBorder(new MatteBorder(3, 3, 3, 3, (Color) SystemColor.activeCaption));
         searchTxtField.setBackground(SystemColor.activeCaption);
-        searchTxtField.setBounds(397, 71, 300, 30);
+        searchTxtField.setBounds(740, 72, 300, 30);
         frame.getContentPane().add(searchTxtField);
         
         JLabel upcomingLabel = new JLabel("Upcoming");
@@ -133,11 +137,12 @@ public class HomePage {
         DatePickerSettings dateSettings = new DatePickerSettings();
         dateSettings.setFormatForDatesCommonEra("dd/MM/yyyy");
         dateSettings.setAllowKeyboardEditing(false);
+        dateSettings.setAllowEmptyDates(false);
 
         DatePicker datePicker = new DatePicker(dateSettings);
         datePicker.getComponentDateTextField().setBackground(SystemColor.activeCaption);
         datePicker.getComponentToggleCalendarButton().setText("Date");
-        datePicker.setBounds(529, 114, 168, 22);
+        datePicker.setBounds(872, 115, 168, 30);
         frame.getContentPane().add(datePicker);
 //        LocalDate date = datePicker.getDate();
 //        try {
@@ -152,19 +157,37 @@ public class HomePage {
         frame.getContentPane().add(scrollPane);
         scrollPane.setViewportView(new ResultPanel());
         
-        JButton searchingButton = new JButton("New button");
-        searchingButton.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent e) {
-        		if (!searchTxtField.getText().equals("")& datePicker.getDate() == null) {
-        	        scrollPane.setViewportView(new ResultPanel(searchTxtField.getText()));
-        	        upcomingLabel.setText("Results");
-        		}
-        		else if (datePicker.getDate() != null)
-        			scrollPane.setViewportView(new ResultPanel(datePicker));
-        	}
+        JButton btnSearchButton1 = new JButton("");
+        btnSearchButton1.setBorderPainted(false);
+        btnSearchButton1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        btnSearchButton1.setIcon(new ImageIcon(LoginPage.class.getResource("SearchIcon.png"))); 
+        btnSearchButton1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	scrollPane.setViewportView(new ResultPanel(searchTxtField.getText()));
+            }
         });
-        searchingButton.setBounds(737, 112, 97, 25);
-        frame.getContentPane().add(searchingButton);
+        btnSearchButton1.setBounds(1052, 72, 30, 30);
+        frame.getContentPane().add(btnSearchButton1);
+        
+        JButton btnSearchButton2 = new JButton("");
+        btnSearchButton2.setBorderPainted(false);
+        btnSearchButton2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        btnSearchButton2.setIcon(new ImageIcon(LoginPage.class.getResource("SearchIcon.png"))); 
+        btnSearchButton2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+            	try {
+					scrollPane.setViewportView(new ResultPanel(datePicker));
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+            }
+        });
+        btnSearchButton2.setBounds(1052, 115, 30, 30);
+        frame.getContentPane().add(btnSearchButton2);
+        
+        
        
         JButton exitButton = new JButton("X");
         exitButton.setForeground(SystemColor.inactiveCaption);
@@ -230,10 +253,16 @@ public class HomePage {
         frame.getContentPane().add(lblLogo);
         
         JLabel searchLabel = new JLabel("Search");
-        searchLabel.setBounds(322, 78, 63, 16);
+        searchLabel.setBounds(665, 79, 63, 16);
         searchLabel.setForeground(SystemColor.inactiveCaption);
         searchLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
         frame.getContentPane().add(searchLabel);
+        
+        JLabel searchDateLabel = new JLabel("Search by date");
+        searchDateLabel.setBounds(760, 121, 110, 16);
+        searchDateLabel.setForeground(SystemColor.inactiveCaption);
+        searchDateLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        frame.getContentPane().add(searchDateLabel);
         
         JLabel backgroundLabel = new JLabel();
         backgroundLabel.setIcon(new ImageIcon(HomePage.class.getResource("Silhouette-Rock-Concert-Wallpaper1.jpg")));

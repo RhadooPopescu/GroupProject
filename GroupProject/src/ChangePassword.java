@@ -48,6 +48,7 @@ public class ChangePassword {
 		frame.getContentPane().add(changePassLabel);
 		
 		JButton searchButton = new JButton("Search events");
+		searchButton.setToolTipText("See upcoming or search for your favorite events");
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new HomePage();
@@ -64,6 +65,7 @@ public class ChangePassword {
         frame.getContentPane().add(searchButton);
 
         JButton myAccountButton = new JButton("My Account");
+        myAccountButton.setToolTipText("Edit your personal details");
         myAccountButton.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		new MyAccountWindow();
@@ -76,6 +78,7 @@ public class ChangePassword {
         myAccountButton.setContentAreaFilled(false);
         myAccountButton.setBorderPainted(false);
         myAccountButton.setBounds(27, 253, 190, 53);
+        myAccountButton.setToolTipText("Refresh your 'events memory'");
         myAccountButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         frame.getContentPane().add(myAccountButton);
 
@@ -92,6 +95,7 @@ public class ChangePassword {
         bookingsButton.setContentAreaFilled(false);
         bookingsButton.setBorderPainted(false);
         bookingsButton.setBounds(37, 341, 168, 53);
+        bookingsButton.setToolTipText("View your booked events");
         bookingsButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         frame.getContentPane().add(bookingsButton);
         

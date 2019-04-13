@@ -50,11 +50,13 @@ public class BookingsHistory {
         searchButton.setBounds(27, 173, 190, 53);
         searchButton.setOpaque(false);
         searchButton.setContentAreaFilled(false);
+        searchButton.setToolTipText("See upcoming or search for your favorite events");
         searchButton.setBorderPainted(false);
         searchButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         frame.getContentPane().add(searchButton);
 
         JButton myAccountButton = new JButton("My Account");
+        myAccountButton.setToolTipText("Edit your personal details");
         myAccountButton.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		new MyAccountWindow();
@@ -83,6 +85,7 @@ public class BookingsHistory {
         changePassButton.setContentAreaFilled(false);
         changePassButton.setBorderPainted(false);
         changePassButton.setBounds(27, 332, 215, 53);
+        changePassButton.setToolTipText("Update security details");
         changePassButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         frame.getContentPane().add(changePassButton);
         
