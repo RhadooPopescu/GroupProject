@@ -180,8 +180,8 @@ public class Register {
         titleComboBox.setToolTipText("");
         titleComboBox.setMaximumRowCount(2);
         titleComboBox.setBounds(119, 67, 56, 17);
-        titleComboBox.addItem("Mr");
-        titleComboBox.addItem("Ms");
+        titleComboBox.addItem("Mr.");
+        titleComboBox.addItem("Ms.");
         frame.getContentPane().add(titleComboBox);
         titleComboBox.setVisible(true);
 
@@ -356,7 +356,7 @@ public class Register {
             public void focusLost(FocusEvent e) {
                 User user = new User();
                 user.setUsername(usernameField.getText());
-                if (user.checkFieldInDB("Username",user.getUsername())) {
+                if (user.checkFieldInDB("Username",User.username)) {
                     lblUsernameAlreadyExists.setVisible(true);
                     usernameField.setText("");
                 }
@@ -633,7 +633,8 @@ public class Register {
                 textFieldArray.add(CVVField);
 
                 if (chckbxNewCheckBox_1.isSelected()){
-                    textFieldArray.add(orgNameField);}
+                    textFieldArray.add(orgNameField);
+                }
                 boolean checker = true;
                 for(JTextField field : textFieldArray) {
                     System.out.println(field.getText());
@@ -646,7 +647,7 @@ public class Register {
                 }
                 if (checker){
                     if (chckbxNewCheckBox_1.isSelected()){
-                        User newUser = new User(Integer.parseInt(cardNoField.getText()),Integer.parseInt(CVVField.getText()),
+                        User newUser = new User(Long.parseLong(cardNoField.getText()),Integer.parseInt(CVVField.getText()),
                                 titleComboBox.getSelectedItem().toString(), firstNameField.getText(), lastNameField.getText(),
                                 addressOneField.getText(), addressTwoField.getText(), townField.getText(), postcodeField.getText(),
                                 usernameField.getText(), passwordField.getText(), emailField.getText(), phoneNoField.getText(),

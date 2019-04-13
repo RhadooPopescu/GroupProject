@@ -48,8 +48,6 @@ public class ResultPanel extends Container{
     }
     
     public ResultPanel(String searchCriteria) {
-    	//Constructor for searching by strings only for the events name. The search by band I think it's too complicated to include it :))
-    	//this.setPreferredSize(new Dimension(200,500));
     	this.setBackground(Color.black);
     	this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
@@ -102,10 +100,14 @@ public class ResultPanel extends Container{
 
         }
         catch (NullPointerException f){
-            System.out.println("fuck off"+f.getStackTrace()[0]);f.getStackTrace();}
-        catch (SQLException e){e.printStackTrace();}
+            System.out.println("fuck off"+f.getStackTrace()[0]);f.getStackTrace();
+        }
+        catch (SQLException e){
+        	e.printStackTrace();
+        }
         catch (ClassNotFoundException g){
-            System.out.println(g.getMessage());}
+            System.out.println(g.getMessage());
+        }
         return results;
     }
 

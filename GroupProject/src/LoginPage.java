@@ -81,13 +81,13 @@ public class LoginPage {
                 user.setUsername(usernameField.getText());
                 user.setPassword(new String(passwordField.getPassword()));
                 if (user.loginCheck()) {
-                    if (user.getType(user.getUsername()).equalsIgnoreCase("Customer") ||
-                            user.getType(user.getUsername()).equalsIgnoreCase("organization"))
+                    if (user.getType(User.username).equalsIgnoreCase("Customer") ||
+                            user.getType(User.username).equalsIgnoreCase("organization"))
                     {
                         new HomePage();
                         frame.setVisible(false);
                     }
-                    else if (user.getType(user.getUsername()).equalsIgnoreCase("organizer"))
+                    else if (user.getType(User.username).equalsIgnoreCase("organizer"))
                     {
                         new EventOrganizer();
                         frame.setVisible(false);
@@ -96,11 +96,11 @@ public class LoginPage {
                         new AdminView();
                         frame.setVisible(false);
                     }
-                } else if (user.checkFieldInDB("Username",user.getUsername())) {
+                } else if (user.checkFieldInDB("Username",User.username)) {
                     lblIncorrectUsername.setVisible(false);
                     lblIncorrectPassword.setVisible(true);
                     passwordField.setText("");
-                } else if (!user.checkFieldInDB("Username",user.getUsername())) {
+                } else if (!user.checkFieldInDB("Username",User.username)) {
 
                     lblIncorrectPassword.setVisible(false);
                     lblIncorrectUsername.setVisible(true);

@@ -13,6 +13,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 import javax.swing.JSeparator;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
@@ -29,12 +32,11 @@ public class MyAccountWindow {
 	private JTextField postcodeTextField;
 	private JTextField emailTextField;
 	private JTextField phoneNoTextField;
-	private JTextField cardTextField;
+	private JTextField cardNoTextField;
 	private JTextField cvvTextField;
 	private JTextField orgNameTextField;
 	private JTextField orgEmailTextField;
 	private JTextField webAddressTextField;
-	private String username = User.username;
 	
 
 	/**
@@ -280,12 +282,12 @@ public class MyAccountWindow {
 		phoneLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
 		frame.getContentPane().add(phoneLabel);
 		
-		cardTextField = new JTextField();
-		cardTextField.setBorder(new MatteBorder(3, 3, 3, 3, (Color) SystemColor.activeCaption));
-		cardTextField.setBounds(366, 420, 162, 30);
-		cardTextField.setBackground(SystemColor.activeCaption);
-		cardTextField.setColumns(10);
-		frame.getContentPane().add(cardTextField);
+		cardNoTextField = new JTextField();
+		cardNoTextField.setBorder(new MatteBorder(3, 3, 3, 3, (Color) SystemColor.activeCaption));
+		cardNoTextField.setBounds(366, 420, 162, 30);
+		cardNoTextField.setBackground(SystemColor.activeCaption);
+		cardNoTextField.setColumns(10);
+		frame.getContentPane().add(cardNoTextField);
 
 		
 		JLabel cardNoLabel = new JLabel("Card No");
@@ -363,7 +365,7 @@ public class MyAccountWindow {
 		webAddressLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
 		frame.getContentPane().add(webAddressLabel);
 		
-		if (User.getType(username).equalsIgnoreCase("Customer")) {
+		if (User.getType(User.username).equalsIgnoreCase("Customer")) {
 			orgNameTextField.setVisible(false);
 			orgNameLabel.setVisible(false);
 			orgEmailTextField.setVisible(false);
@@ -372,6 +374,47 @@ public class MyAccountWindow {
 			paymentLabel.setVisible(false);
 			webAddressTextField.setVisible(false);
 			webAddressLabel.setVisible(false);
+		}
+		
+		ArrayList<String> details = User.detailsList(User.username);
+		
+		if(User.getType(User.username).equals("organization")) {
+			if (details.get(0).equals("Mr."))
+				titleComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Mr.", "Ms."}));
+			else 		
+				titleComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Ms.", "Mr."}));
+			firstNameTextField.setText(details.get(1));
+			lastNameTextField.setText(details.get(2));
+			address1TextField.setText(details.get(3));
+			address2TextField.setText(details.get(4));
+			townTextField.setText(details.get(5));
+			postcodeTextField.setText(details.get(6));
+			emailTextField.setText(details.get(7));
+			phoneNoTextField.setText(details.get(8));
+			cardNoTextField.setText(details.get(9));
+			cvvTextField.setText(details.get(10));
+			orgNameTextField.setText(details.get(11));
+			orgEmailTextField.setText(details.get(12));
+			webAddressTextField.setText(details.get(14));
+			if (details.get(13).equals("On Booking"))
+				paymentComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"On Booking", "Monthly Invoice"}));
+			else
+				paymentComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Monthly Invoice", "On Booking"}));
+		}else {
+			if (details.get(0).equals("Mr."))
+				titleComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Mr.", "Ms."}));
+			else 		
+				titleComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Ms.", "Mr."}));
+			firstNameTextField.setText(details.get(1));
+			lastNameTextField.setText(details.get(2));
+			address1TextField.setText(details.get(3));
+			address2TextField.setText(details.get(4));
+			townTextField.setText(details.get(5));
+			postcodeTextField.setText(details.get(6));
+			emailTextField.setText(details.get(7));
+			phoneNoTextField.setText(details.get(8));
+			cardNoTextField.setText(details.get(9));
+			cvvTextField.setText(details.get(10));
 		}
 		
 		JButton saveButton = new JButton("Save");

@@ -1,6 +1,7 @@
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class User {
     private int userID, cardCVV;
@@ -66,9 +67,9 @@ public class User {
     	User.username = username;
     }
 
-    public String getUsername() {
-        return username;
-    }
+//    public String getUsername() {
+//        return username;
+//    }
 
 
     public String getPassword() {
@@ -192,12 +193,48 @@ public class User {
             System.out.println(f.getMessage());
         }
         return type;
-
-
+    }
+    
+    public static ArrayList<String> detailsList(String username) {
+    	String query = "SELECT * FROM `tbl_user` WHERE Username = '" + username + "';";
+    	ArrayList<String> details = new ArrayList();
+    	try {
+			ResultSet rs = Connect.selectStm(query);
+			
+	    	while (rs.next()) {
+	    		details.add(rs.getString("Title"));
+	    		details.add(rs.getString("FName"));
+	    		details.add(rs.getString("LName"));
+	    		details.add(rs.getString("Address1"));
+	    		details.add(rs.getString("Address2"));
+	    		details.add(rs.getString("Town"));
+	    		details.add(rs.getString("PostCode"));
+	    		details.add(rs.getString("Email"));
+	    		details.add(rs.getString("PhoneNo"));
+	    		long cardNo = rs.getLong("CardNo");
+	    		details.add(String.valueOf(cardNo));
+	    		int cvv = rs.getInt("CVVCode");
+	    		details.add(String.valueOf(cvv));
+	    		details.add(rs.getString("OrganizationName"));
+	    		details.add(rs.getString("OrgEmail"));
+	    		details.add(rs.getString("PaymentMethod"));
+	    		details.add(rs.getString("WebAddress"));
+	    		
+	    	}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NullPointerException f){
+			f.printStackTrace();
+		}
+    	return details;
     }
 
     public static void main(String[] args) {
-        ArrayList<String> test = userList();
-        System.out.println(test.get(0));
+        ArrayList test = User.detailsList("cerb");
+        System.out.println(test);
     }
 }
