@@ -16,21 +16,13 @@ import java.util.stream.Collectors;
 public class ResultPanel extends Container{
     private JPanel panel;
     private JLabel nameLabel, dateLabel, imageLabel, bandsLabel, venueLabel, priceLabel;
-//    private GroupLayout group = new GroupLayout(this);
-//    private GroupLayout.ParallelGroup pg = group.createParallelGroup();
-//    private GroupLayout.SequentialGroup sg = group.createSequentialGroup();
-     String defaultQuery = "SELECT E.Name, E.Price, B.Name ArtistName, E.DateOfEvent, E.Image, V.Name Venue FROM tbl_venue V, tbl_event E, tbl_event_band EB, tbl_band B WHERE E.VenueID = V.VenueID AND E.EventID = EB.EventID AND B.BandID = EB.BandID AND E.DateOfEvent>NOW() ORDER BY E.DateOfEvent";
 
     public ResultPanel(){
     	//////////////////////////////////////
     	//for UPCOMING RESULTS
     	////////////////////////////////////////
-    	
-    	
-        //con.setMinimumSize(new Dimension(200,500));
-        this.setPreferredSize(new Dimension(200,500));
 
-        //scrollPane.setSize(200,200);
+        this.setPreferredSize(new Dimension(200,500));
         this.setBackground(Color.black);
         this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
 //        group.setAutoCreateContainerGaps(true);
@@ -42,9 +34,7 @@ public class ResultPanel extends Container{
                 "AND E.DateOfEvent>NOW() ORDER BY E.DateOfEvent";
 
         createPanels(query);
-//
-//        group.setHorizontalGroup(pg);
-//        group.setVerticalGroup(sg);
+
     }
     
     public ResultPanel(String searchCriteria) {
@@ -88,14 +78,18 @@ public class ResultPanel extends Container{
                 String venue = rs.getString("Venue");
                 String artist = rs.getString("ArtistName");
                 float price = rs.getFloat("Price");
-
-                boolean has = results.stream().anyMatch(e-> e.contains(name));
+                boolean has = false;
+                for (List<String> list : results){
+                    if (list.get(0).equals(name)){
+                        has =true;
+                    }
+                }
                 if (has){
-                for (int i = 0; i<results.size(); i++){
-                int index = results.indexOf(results.stream().filter(e -> e.contains(name)).findAny().get());
-                results.get(index).add(artist);}
+                        int index = results.indexOf(results.stream().filter(e -> e.contains(name)).findAny().get());
+                        results.get(index).add(artist);
                 } else{
-                results.add(new ArrayList<>(Arrays.asList(new String[]{name,date,image,venue,String.valueOf(price),artist})));}
+                    results.add(new ArrayList<>(Arrays.asList(new String[]{name,date,image,venue,String.valueOf(price),artist})));}
+
             }
 
         }
