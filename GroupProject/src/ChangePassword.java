@@ -53,7 +53,7 @@ public class ChangePassword {
 		searchButton.setToolTipText("See upcoming or search for your favorite events");
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new HomePage();
+				new HomePageView();
 				frame.setVisible(false);
 			}
 		});
@@ -70,7 +70,7 @@ public class ChangePassword {
         myAccountButton.setToolTipText("Edit your personal details");
         myAccountButton.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		new MyAccountWindow();
+        		new MyAccountView();
         		frame.setVisible(false);
         	}
         });
@@ -87,7 +87,7 @@ public class ChangePassword {
         JButton bookingsButton = new JButton("My bookings");
         bookingsButton.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
-        		new BookingsHistory();
+        		new BookingsHistoryView();
         		frame.setVisible(false);
         	}
         });
@@ -137,7 +137,7 @@ public class ChangePassword {
         JButton logOutButton = new JButton("Log Out");
         logOutButton.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
-        		new LoginPage();
+        		new LoginView();
         		frame.setVisible(false);
         	}
         });
@@ -293,13 +293,13 @@ public class ChangePassword {
         frame.getContentPane().add(separator_4);
         
         JLabel lblLogo = new JLabel("");
-        lblLogo.setIcon(new ImageIcon(LoginPage.class.getResource("Logo.jpg")));
+        lblLogo.setIcon(new ImageIcon(LoginView.class.getResource("Logo.jpg")));
         lblLogo.setBounds(186, 583, 200, 96);
         frame.getContentPane().add(lblLogo);
         
         JLabel backgroundLabel = new JLabel("New label");
         backgroundLabel.setBounds(0, 0, 1280, 690);
-        backgroundLabel.setIcon(new ImageIcon(HomePage.class.getResource("Silhouette-Rock-Concert-Wallpaper1.jpg")));
+        backgroundLabel.setIcon(new ImageIcon(HomePageView.class.getResource("Silhouette-Rock-Concert-Wallpaper1.jpg")));
         frame.getContentPane().add(backgroundLabel);
         
         JLabel lblNewLabel = new JLabel("New label");

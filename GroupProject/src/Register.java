@@ -661,7 +661,7 @@ public class Register {
                             paymentComboBox.getSelectedItem().toString());
                     newUser.insertCustomerData();
                     JOptionPane.showMessageDialog(null,"Registration successful! Please Login!");
-                    new LoginPage();
+                    new LoginView();
                     frame.setVisible(false); }
                 else{lblAllFields.setVisible(true);}
             }
@@ -671,7 +671,7 @@ public class Register {
         JButton btnCancelButton = new JButton("Cancel");
         btnCancelButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                new LoginPage();
+                new LoginView();
                 frame.setVisible(false);
             }
         });
@@ -703,7 +703,7 @@ public class Register {
         
         
         JLabel lblLogo = new JLabel("");
-        lblLogo.setIcon(new ImageIcon(LoginPage.class.getResource("Logo.jpg")));
+        lblLogo.setIcon(new ImageIcon(LoginView.class.getResource("Logo.jpg")));
         lblLogo.setBounds(186, 583, 200, 96);
         frame.getContentPane().add(lblLogo);
 
@@ -711,7 +711,7 @@ public class Register {
         JLabel lblImageLabel = new JLabel("Image");
         lblImageLabel.setFont(new Font("Tahoma", Font.PLAIN, 11));
         lblImageLabel.setForeground(Color.BLACK);
-        lblImageLabel.setIcon(new ImageIcon(HomePage.class.getResource("Silhouette-Rock-Concert-Wallpaper1.jpg")));
+        lblImageLabel.setIcon(new ImageIcon(HomePageView.class.getResource("Silhouette-Rock-Concert-Wallpaper1.jpg")));
         lblImageLabel.setBounds(0, 0, 1297, 693);
         frame.getContentPane().add(lblImageLabel);
 
