@@ -246,6 +246,7 @@ public class Register {
 
 
         addressTwoField = new JTextField();
+        addressTwoField.setText("");
         addressTwoField.setBackground(SystemColor.activeCaption);
         addressTwoField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
         addressTwoField.setBounds(393, 199, 150, 20);
@@ -328,6 +329,7 @@ public class Register {
 
 
         phoneNoField = new JTextField();
+        phoneNoField.setText("");
         phoneNoField.setBackground(SystemColor.activeCaption);
         phoneNoField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
         phoneNoField.setBounds(393, 342, 150, 20);
@@ -486,6 +488,7 @@ public class Register {
 
 
         orgEmailField = new JTextField();
+        orgEmailField.setText("");
         orgEmailField.setBackground(SystemColor.activeCaption);
         orgEmailField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
         orgEmailField.setBounds(1097, 195, 150, 20);
@@ -561,6 +564,7 @@ public class Register {
         });
 
         webAddressField = new JTextField();
+        webAddressField.setText("");
         webAddressField.setBackground(SystemColor.activeCaption);
         webAddressField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
         webAddressField.setBounds(771, 265, 150, 20);
