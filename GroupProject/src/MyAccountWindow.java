@@ -34,6 +34,8 @@ public class MyAccountWindow {
 	private JTextField orgNameTextField;
 	private JTextField orgEmailTextField;
 	private JTextField webAddressTextField;
+	private String username = User.username;
+	
 
 	/**
 	 * Launch the application.
@@ -107,6 +109,7 @@ public class MyAccountWindow {
         searchButton.setBorderPainted(false);
         searchButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         frame.getContentPane().add(searchButton);
+        
         
         JButton changePassButton = new JButton("Change Password");
         changePassButton.addActionListener(new ActionListener() {
@@ -305,6 +308,8 @@ public class MyAccountWindow {
 		cvvLabel.setBounds(644, 427, 26, 16);
 		frame.getContentPane().add(cvvLabel);
 		
+		
+		
 		orgNameTextField = new JTextField();
 		orgNameTextField.setBorder(new MatteBorder(3, 3, 3, 3, (Color) SystemColor.activeCaption));
 		orgNameTextField.setBounds(1048, 250, 162, 30);
@@ -357,6 +362,17 @@ public class MyAccountWindow {
 		webAddressLabel.setForeground(SystemColor.inactiveCaption);
 		webAddressLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
 		frame.getContentPane().add(webAddressLabel);
+		
+		if (User.getType(username).equalsIgnoreCase("Customer")) {
+			orgNameTextField.setVisible(false);
+			orgNameLabel.setVisible(false);
+			orgEmailTextField.setVisible(false);
+			orgEmailLabel.setVisible(false);
+			paymentComboBox.setVisible(false);
+			paymentLabel.setVisible(false);
+			webAddressTextField.setVisible(false);
+			webAddressLabel.setVisible(false);
+		}
 		
 		JButton saveButton = new JButton("Save");
 		saveButton.setBounds(747, 507, 97, 25);

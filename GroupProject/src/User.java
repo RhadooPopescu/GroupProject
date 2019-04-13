@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class User {
     private int userID, cardCVV;
     private long cardNo;
-    private String title, fName, lName, address1, address2, town, postcode, username, password;
+    private String title, fName, lName, address1, address2, town, postcode, password;
+    static String username; 
     private String email, phoneNo, orgName, webAddress, orgEmail, paymentMethod, userType;
 
     public User() {
@@ -23,7 +24,7 @@ public class User {
         this.address2 = address2;
         this.town = town;
         this.postcode = postcode;
-        this.username = username;
+        User.username = username;
         this.password = password;
         this.email = email;
         this.phoneNo = phoneNo;
@@ -42,7 +43,7 @@ public class User {
         this.address2 = address2;
         this.town = town;
         this.postcode = postcode;
-        this.username = username;
+        User.username = username;
         this.password = password;
         this.email = email;
         this.phoneNo = phoneNo;
@@ -60,14 +61,15 @@ public class User {
     public void setID(int userID) {
         this.userID = userID;
     }
+    
+    public void setUsername(String username) {
+    	User.username = username;
+    }
 
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
     public String getPassword() {
         return password;
@@ -98,14 +100,14 @@ public class User {
         if (this.userType == "customer") {
             query = "INSERT INTO tbl_user(UserID,Title,Fname,LNAme,Address1,Address2,Town,PostCode,Username,Pass,Email" +
                     ",PhoneNo,CardNo,CVVCode,Type) VALUES(DEFAULT,'" + this.title + "','" + this.fName + "','" + this.lName + "','"
-                    + this.address1 + "','" + this.address2 + "','" + this.town + "','" + this.postcode + "','" + this.username + "','"
+                    + this.address1 + "','" + this.address2 + "','" + this.town + "','" + this.postcode + "','" + User.username + "','"
                     + this.password + "','" + this.email + "','" + this.phoneNo + "'," + this.cardNo + "," + this.cardCVV + ",'" + this.userType +
                     "');";
         } else {
             query = "INSERT INTO tbl_user(UserID,Title,Fname,LNAme,Address1,Address2,Town,PostCode,Username,Pass,Email" +
                     ",PhoneNo,CardNo,CVVCode,Type,OrganizationName,WebAddress,OrgEmail,PaymentMethod) VALUES(DEFAULT,'"
                     + this.title + "','" + this.fName + "','" + this.lName + "','" + this.address1 + "','" + this.address2 +
-                    "','" + this.town + "','" + this.postcode + "','" + this.username + "','" + this.password + "','" + this.email + "','" +
+                    "','" + this.town + "','" + this.postcode + "','" + User.username + "','" + this.password + "','" + this.email + "','" +
                     this.phoneNo + "'," + this.cardNo + "," + this.cardCVV + ",'" + this.userType + "','" + this.orgName + "','" +
                     this.webAddress + "','" + this.orgEmail + "','" + this.paymentMethod + "');";
         }
@@ -135,7 +137,7 @@ public class User {
     }
 
     public boolean loginCheck() {
-        String query = "SELECT * FROM tbl_user WHERE Username='" + this.username + "' AND Pass='" + this.password + "';";
+        String query = "SELECT * FROM tbl_user WHERE Username='" + User.username + "' AND Pass='" + this.password + "';";
         try {
             ResultSet results = Connect.selectStm(query);
             if (results.next()) {
@@ -177,7 +179,7 @@ public class User {
         return users;
     }
 
-    public String getType(String username) {
+    public static String getType(String username) {
         String query = "SELECT Type FROM tbl_user WHERE Username='" + username + "';";
         String type = "";
         try {
