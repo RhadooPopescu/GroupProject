@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
 import javax.swing.border.MatteBorder;
 import javax.swing.JPasswordField;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class ChangePassword {
 
@@ -154,7 +156,25 @@ public class ChangePassword {
         oldPassLabel.setBounds(401, 275, 87, 16);
         frame.getContentPane().add(oldPassLabel);
         
+        JLabel incorrectPassLabel = new JLabel("* incorrect password");
+        incorrectPassLabel.setForeground(Color.RED);
+        incorrectPassLabel.setBounds(514, 253, 124, 16);
+        frame.getContentPane().add(incorrectPassLabel);
+        incorrectPassLabel.setVisible(false);
+        
         oldPassField = new JPasswordField();
+        oldPassField.addFocusListener(new FocusAdapter() {
+        	@Override
+        	public void focusGained(FocusEvent e) {}
+        	
+        	@Override
+        	public void focusLost(FocusEvent e) {
+        		if (!(User.getPass(User.username).equals(String.valueOf(oldPassField.getPassword()))))
+        			incorrectPassLabel.setVisible(true);
+        		else
+        			incorrectPassLabel.setVisible(false);
+        	}
+        });
         oldPassField.setBounds(500, 272, 152, 22);
         oldPassField.setBorder(new MatteBorder(3, 3, 3, 3, (Color) SystemColor.activeCaption));
         oldPassField.setBackground(SystemColor.activeCaption);
@@ -164,9 +184,28 @@ public class ChangePassword {
         newPassLabel.setBounds(394, 320, 94, 16);
         newPassLabel.setForeground(SystemColor.inactiveCaption);
         newPassLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+        
+        JLabel lblBetween5and16 = new JLabel("between 5 and 16 characters");
+        lblBetween5and16.setForeground(SystemColor.inactiveCaption);
+        lblBetween5and16.setBounds(492, 300, 179, 16);
+        frame.getContentPane().add(lblBetween5and16);
+        
         frame.getContentPane().add(newPassLabel);
         
         newPassField = new JPasswordField();
+        newPassField.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {}
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (newPassField.getPassword().length < 5 | newPassField.getPassword().length > 15)
+                	lblBetween5and16.setForeground(Color.RED);
+                else
+                	lblBetween5and16.setForeground(SystemColor.inactiveCaption);
+            }
+        });
+
         newPassField.setBounds(500, 317, 152, 22);
         newPassField.setBorder(new MatteBorder(3, 3, 3, 3, (Color) SystemColor.activeCaption));
         newPassField.setBackground(SystemColor.activeCaption);
@@ -178,7 +217,25 @@ public class ChangePassword {
         confPassLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
         frame.getContentPane().add(confPassLabel);
         
+        JLabel passDontMatchLabel = new JLabel("* passwords don't match");
+        passDontMatchLabel.setForeground(Color.RED);
+        passDontMatchLabel.setBounds(503, 385, 152, 16);
+        frame.getContentPane().add(passDontMatchLabel);
+        passDontMatchLabel.setVisible(false);
+        
         confPassField = new JPasswordField();
+        confPassField.addFocusListener(new FocusAdapter() {
+        	@Override
+        	public void focusGained(FocusEvent e) {}
+        	
+        	@Override
+        	public void focusLost(FocusEvent e) {
+        		if (!(String.valueOf(newPassField.getPassword()).equals(String.valueOf(confPassField.getPassword()))))
+    				passDontMatchLabel.setVisible(true);
+        		else 
+        			passDontMatchLabel.setVisible(false);
+        	}
+        });
         confPassField.setBounds(500, 363, 152, 22);
         confPassField.setBorder(new MatteBorder(3, 3, 3, 3, (Color) SystemColor.activeCaption));
         confPassField.setBackground(SystemColor.activeCaption);
@@ -188,7 +245,7 @@ public class ChangePassword {
         saveButton.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         		if (String.valueOf(oldPassField.getPassword()).equals(User.getPass(User.username)) && String.valueOf(newPassField.getPassword()).equals(
-        				String.copyValueOf(confPassField.getPassword()))) {
+        				String.copyValueOf(confPassField.getPassword())) && newPassField.getPassword().length > 4 && (newPassField.getPassword().length < 16)){
     				User.updatePass(String.valueOf(newPassField.getPassword()), User.username);
     				JOptionPane.showMessageDialog(null,"Password changed!");
         		}
@@ -234,24 +291,6 @@ public class ChangePassword {
         separator_4.setOpaque(true);
         separator_4.setBounds(72, 460, 100, 3);
         frame.getContentPane().add(separator_4);
-        
-        JLabel incorrectPassLabel = new JLabel("* incorrect password");
-        incorrectPassLabel.setForeground(Color.RED);
-        incorrectPassLabel.setBounds(512, 293, 124, 16);
-        frame.getContentPane().add(incorrectPassLabel);
-        incorrectPassLabel.setVisible(false);
-        
-        JLabel label = new JLabel("* passwords don't match");
-        label.setForeground(Color.RED);
-        label.setBounds(503, 385, 152, 16);
-        frame.getContentPane().add(label);
-        label.setVisible(false);
-        
-        JLabel lblBetween5and16 = new JLabel("between 5 and 16 characters");
-        lblBetween5and16.setForeground(SystemColor.inactiveCaption);
-        lblBetween5and16.setBounds(493, 253, 179, 16);
-        frame.getContentPane().add(lblBetween5and16);
-        
         
         JLabel lblLogo = new JLabel("");
         lblLogo.setIcon(new ImageIcon(LoginPage.class.getResource("Logo.jpg")));

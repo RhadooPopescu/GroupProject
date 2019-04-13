@@ -422,8 +422,10 @@ public class Register {
             public void focusLost(FocusEvent e) {
                 if (!passwordField.getText().equals(confirmPasswordField.getText())){
                     lblIncorrectPassword_1.setVisible(true);
-                    confirmPasswordField.setText(""); }
-                else{lblIncorrectPassword_1.setVisible(false);}
+                    confirmPasswordField.setText(""); 
+                }
+                else {lblIncorrectPassword_1.setVisible(false);
+                }
             }
         });
 
