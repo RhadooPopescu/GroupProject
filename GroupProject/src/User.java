@@ -219,7 +219,7 @@ public class User {
     
     public static ArrayList<String> detailsList(String username) {
     	String query = "SELECT * FROM `tbl_user` WHERE Username = '" + username + "';";
-    	ArrayList<String> details = new ArrayList();
+    	ArrayList<String> details = new ArrayList<String>();
     	try {
 			ResultSet rs = Connect.selectStm(query);
 			
@@ -256,7 +256,7 @@ public class User {
     }
 
     public static void main(String[] args) {
-        ArrayList test = User.detailsList("cerb");
+        ArrayList<String> test = User.detailsList("cerb");
         System.out.println(test);
     }
 }

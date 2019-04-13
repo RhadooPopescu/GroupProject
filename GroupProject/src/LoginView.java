@@ -81,13 +81,13 @@ public class LoginView {
                 user.setUsername(usernameField.getText());
                 user.setPassword(new String(passwordField.getPassword()));
                 if (user.loginCheck()) {
-                    if (user.getType(User.username).equalsIgnoreCase("Customer") ||
-                            user.getType(User.username).equalsIgnoreCase("organization"))
+                    if (User.getType(User.username).equalsIgnoreCase("Customer") ||
+                            User.getType(User.username).equalsIgnoreCase("organization"))
                     {
                         new HomePageView();
                         frame.setVisible(false);
                     }
-                    else if (user.getType(User.username).equalsIgnoreCase("organizer"))
+                    else if (User.getType(User.username).equalsIgnoreCase("organizer"))
                     {
                         new EventOrganizerView();
                         frame.setVisible(false);
@@ -133,7 +133,7 @@ public class LoginView {
 
 
 
-        JButton btnRegister = new JButton("RegisterView");
+        JButton btnRegister = new JButton("Register");
         btnRegister.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 new RegisterView();
