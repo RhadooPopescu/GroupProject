@@ -22,6 +22,7 @@ public class Register {
     private JTextField cardNoField;
     private JTextField CVVField;
     private JTextField webAddressField;
+    static boolean checkType = false;
 
     /**
      * Launch the application.
@@ -564,7 +565,6 @@ public class Register {
         });
 
         webAddressField = new JTextField();
-        webAddressField.setText("");
         webAddressField.setBackground(SystemColor.activeCaption);
         webAddressField.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
         webAddressField.setBounds(771, 265, 150, 20);
@@ -638,6 +638,7 @@ public class Register {
 
                 if (chckbxNewCheckBox_1.isSelected()){
                     textFieldArray.add(orgNameField);
+                    Register.checkType = true;
                 }
                 boolean checker = true;
                 for(JTextField field : textFieldArray) {
@@ -650,20 +651,13 @@ public class Register {
                     }
                 }
                 if (checker){
-                    if (chckbxNewCheckBox_1.isSelected()){
-                        User newUser = new User(Long.parseLong(cardNoField.getText()),Integer.parseInt(CVVField.getText()),
-                                titleComboBox.getSelectedItem().toString(), firstNameField.getText(), lastNameField.getText(),
-                                addressOneField.getText(), addressTwoField.getText(), townField.getText(), postcodeField.getText(),
-                                usernameField.getText(), passwordField.getText(), emailField.getText(), phoneNoField.getText(),
-                                orgNameField.getText(),webAddressField.getText(), orgEmailField.getText(),
-                                paymentComboBox.getSelectedItem().toString());
-                        newUser.insertCustomerData();}
-                    else{
-                        User newUser = new User(Long.parseLong(cardNoField.getText()),Integer.parseInt(CVVField.getText()),
-                                titleComboBox.getSelectedItem().toString(), firstNameField.getText(), lastNameField.getText(),
-                                addressOneField.getText(), addressTwoField.getText(), townField.getText(), postcodeField.getText(),
-                                usernameField.getText(), passwordField.getText(), emailField.getText(), phoneNoField.getText());
-                        newUser.insertCustomerData(); }
+                    User newUser = new User(Long.parseLong(cardNoField.getText()),Integer.parseInt(CVVField.getText()),
+                            titleComboBox.getSelectedItem().toString(), firstNameField.getText(), lastNameField.getText(),
+                            addressOneField.getText(), addressTwoField.getText(), townField.getText(), postcodeField.getText(),
+                            usernameField.getText(), passwordField.getText(), emailField.getText(), phoneNoField.getText(),
+                            orgNameField.getText(),webAddressField.getText(), orgEmailField.getText(),
+                            paymentComboBox.getSelectedItem().toString());
+                    newUser.insertCustomerData();
                     JOptionPane.showMessageDialog(null,"Registration successful! Please Login!");
                     new LoginPage();
                     frame.setVisible(false); }

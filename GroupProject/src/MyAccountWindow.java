@@ -377,8 +377,9 @@ public class MyAccountWindow {
 		}
 		
 		ArrayList<String> details = User.detailsList(User.username);
-		
-		
+		//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////THIS PART SHOULD BE IN A TRY/CATCH IS POSSIBLE FOR TESTING WITH NULLS IN THE DATABASE/////////////////////////
+		//////  REGISTRATION WITH NULLS IS NOT POSSIBLE BUT STILL BE AWARE OF THIS WHEN TESTING WITH USERS INSERTED MANUALLY IN THE DATABASE//////////////////////////
 		if (details.get(0).equals("Mr."))
 			titleComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Mr.", "Ms."}));
 		else 		
@@ -400,9 +401,20 @@ public class MyAccountWindow {
 			paymentComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"On Booking", "Monthly Invoice"}));
 		else
 			paymentComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Monthly Invoice", "On Booking"}));
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 		
 		JButton saveButton = new JButton("Save");
+		saveButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				User.updateDetails(User.username, titleComboBox.getSelectedItem().toString(), firstNameTextField.getText(), lastNameTextField.getText(), address1TextField.getText()
+						, address2TextField.getText(), townTextField.getText(), postcodeTextField.getText(), emailTextField.getText(), phoneNoTextField.getText()
+						, Long.parseLong(cardNoTextField.getText()), Integer.parseInt(cvvTextField.getText()), orgNameTextField.getText(), orgEmailTextField.getText(), 
+						webAddressTextField.getText(), paymentComboBox.getSelectedItem().toString());
+				JOptionPane.showMessageDialog(null,"Update succesfull!");
+			}
+		});
 		saveButton.setBounds(747, 507, 97, 25);
 		saveButton.setOpaque(false);
 		saveButton.setContentAreaFilled(false);

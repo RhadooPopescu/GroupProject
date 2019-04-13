@@ -15,25 +15,6 @@ public class User {
 
     public User(long cardNo, int cardCVV, String title, String fName, String lName, String address1,
                 String address2, String town, String postcode, String username, String password, String email,
-                String phoneNo) {
-        this.cardNo = cardNo;
-        this.cardCVV = cardCVV;
-        this.title = title;
-        this.fName = fName;
-        this.lName = lName;
-        this.address1 = address1;
-        this.address2 = address2;
-        this.town = town;
-        this.postcode = postcode;
-        User.username = username;
-        this.password = password;
-        this.email = email;
-        this.phoneNo = phoneNo;
-        this.userType = "customer";
-    }
-
-    public User(long cardNo, int cardCVV, String title, String fName, String lName, String address1,
-                String address2, String town, String postcode, String username, String password, String email,
                 String phoneNo, String orgName, String webAddress, String orgEmail, String paymentMethod) {
         this.cardNo = cardNo;
         this.cardCVV = cardCVV;
@@ -52,7 +33,15 @@ public class User {
         this.webAddress = webAddress;
         this.orgEmail = orgEmail;
         this.paymentMethod = paymentMethod;
-        this.userType = "organization";
+        this.userType = "customer";
+        if (Register.checkType == false) {
+        	this.orgName = "";
+        	this.orgEmail = "";
+        	this.paymentMethod = "";
+        	this.webAddress = "";
+        }
+        if (Register.checkType == true)
+        	this.userType = "organization";
     }
 
     public int getID() {
@@ -98,20 +87,13 @@ public class User {
 
     public void insertCustomerData() {
         String query = "";
-        if (this.userType == "customer") {
-            query = "INSERT INTO tbl_user(UserID,Title,Fname,LNAme,Address1,Address2,Town,PostCode,Username,Pass,Email" +
-                    ",PhoneNo,CardNo,CVVCode,Type) VALUES(DEFAULT,'" + this.title + "','" + this.fName + "','" + this.lName + "','"
-                    + this.address1 + "','" + this.address2 + "','" + this.town + "','" + this.postcode + "','" + User.username + "','"
-                    + this.password + "','" + this.email + "','" + this.phoneNo + "'," + this.cardNo + "," + this.cardCVV + ",'" + this.userType +
-                    "');";
-        } else {
             query = "INSERT INTO tbl_user(UserID,Title,Fname,LNAme,Address1,Address2,Town,PostCode,Username,Pass,Email" +
                     ",PhoneNo,CardNo,CVVCode,Type,OrganizationName,WebAddress,OrgEmail,PaymentMethod) VALUES(DEFAULT,'"
                     + this.title + "','" + this.fName + "','" + this.lName + "','" + this.address1 + "','" + this.address2 +
                     "','" + this.town + "','" + this.postcode + "','" + User.username + "','" + this.password + "','" + this.email + "','" +
                     this.phoneNo + "'," + this.cardNo + "," + this.cardCVV + ",'" + this.userType + "','" + this.orgName + "','" +
                     this.webAddress + "','" + this.orgEmail + "','" + this.paymentMethod + "');";
-        }
+        
 
         try {
             Connect.updateData(query);
@@ -161,6 +143,20 @@ public class User {
         } catch (ClassNotFoundException k) {
             System.out.println(k.getMessage());
         }
+    }
+    
+    static void updateDetails(String username,String title, String firstName, String lastName, String addressOne, String addressTwo, String town, String postcode,
+    		String email, String phoneNumber, long cardNumber, int cvv, String orgName, String orgEmail, String webAddress, String paymentMethod) {
+    	String query = "UPDATE tbl_user SET Title='"+ title +"', FName = '"+ firstName +"', LName = '"+lastName+"', Address1 = '"+addressOne+"', Address2 = '"+addressTwo+""
+    			+ "', Town = '"+town+"', PostCode = '"+postcode+"', Email = '"+email+"', PhoneNo = '"+phoneNumber+"', CardNo = '"+cardNumber+"', CVVCode = '"+cvv+""
+    					+ "', OrganizationName = '"+orgName+"', OrgEmail = '"+orgEmail+"', WebAddress = '"+webAddress+"', PaymentMethod = '"+paymentMethod+"'"
+    							+ "WHERE Username ='" + username + "';";
+    	try {
+			Connect.updateData(query);
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
     public static ArrayList<String> userList() {
