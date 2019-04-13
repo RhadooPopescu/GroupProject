@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 @SuppressWarnings("serial")
@@ -18,6 +19,7 @@ public class ResultPanel extends Container{
 //    private GroupLayout group = new GroupLayout(this);
 //    private GroupLayout.ParallelGroup pg = group.createParallelGroup();
 //    private GroupLayout.SequentialGroup sg = group.createSequentialGroup();
+     String defaultQuery = "SELECT E.Name, E.Price, B.Name ArtistName, E.DateOfEvent, E.Image, V.Name Venue FROM tbl_venue V, tbl_event E, tbl_event_band EB, tbl_band B WHERE E.VenueID = V.VenueID AND E.EventID = EB.EventID AND B.BandID = EB.BandID AND E.DateOfEvent>NOW() ORDER BY E.DateOfEvent";
 
     public ResultPanel(){
     	//////////////////////////////////////
@@ -34,8 +36,12 @@ public class ResultPanel extends Container{
 //        group.setAutoCreateContainerGaps(true);
 //        group.setAutoCreateGaps(true);
 
+        String query = "SELECT E.Name, E.Price, B.Name ArtistName, E.DateOfEvent, E.Image, V.Name Venue" +
+                " FROM tbl_venue V, tbl_event E, tbl_event_band EB, tbl_band B " +
+                "WHERE E.VenueID = V.VenueID AND E.EventID = EB.EventID AND B.BandID = EB.BandID " +
+                "AND E.DateOfEvent>NOW() ORDER BY E.DateOfEvent";
 
-        createPanels(getUpcomingResults());
+        createPanels(query);
 //
 //        group.setHorizontalGroup(pg);
 //        group.setVerticalGroup(sg);
@@ -43,97 +49,72 @@ public class ResultPanel extends Container{
     
     public ResultPanel(String searchCriteria) {
     	//Constructor for searching by strings only for the events name. The search by band I think it's too complicated to include it :))
-    	this.setPreferredSize(new Dimension(200,500));
+    	//this.setPreferredSize(new Dimension(200,500));
     	this.setBackground(Color.black);
     	this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
+        String query ="SELECT E.Name, E.Price, B.Name ArtistName, E.DateOfEvent, E.Image, V.Name Venue" +
+                " FROM tbl_venue V, tbl_event E, tbl_event_band EB, tbl_band B " +
+                "WHERE E.VenueID = V.VenueID AND E.EventID = EB.EventID AND B.BandID = EB.BandID " +
+                "AND (E.Name LIKE '%"+searchCriteria+"%' OR B.Name LIKE '%"+searchCriteria+"%')" +
+                "AND E.DateOfEvent>NOW()";
     	
-    	createPanels(getResultsOnlyString(searchCriteria));
+    	createPanels(query);
     }
     
     public ResultPanel(DatePicker datePicker) {
-    	this.setPreferredSize(new Dimension(200,500));
+    	//this.setPreferredSize(new Dimension(200,500));
     	this.setBackground(Color.black);
     	this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-    	
-    	createPanels(getResultsOnlyDate(datePicker));
-    }
 
-    private List<List<String>> getUpcomingResults(){
-        ResultSet rs = null;
-        //List<String> list = new ArrayList<>();
-        List<List<String>> results = new ArrayList<>();
-
-        try {
-            rs = Connect.selectStm("SELECT * FROM tbl_event WHERE DateOfEvent>NOW() ORDER BY DateofEvent LIMIT 3");
-            while(rs.next()){
-                String name = rs.getString("Name");
-                String date = rs.getString("DateOfEvent");
-                String image = rs.getString("Image");
-                System.out.println("Name: "+name+" Date: "+date+" Image: "+image);
-                String[] list = new String[] {name,date,image};
-                System.out.println(Arrays.asList(list));
-                results.add(Arrays.asList(list));
-            }
-            System.out.println(results);
-        }
-        catch (NullPointerException f){
-            System.out.println("fuck off"+f.getStackTrace()[0]);f.getStackTrace();}
-        catch (Exception e){e.getStackTrace();}
-        return results;
-    }
-    
-    private List<List<String>> getResultsOnlyString(String aString){
-    	ResultSet rs = null;
-        //List<String> list = new ArrayList<>();
-        List<List<String>> results = new ArrayList<>();
-
-        try {
-            rs = Connect.selectStm("SELECT * FROM tbl_event WHERE Name = "+ "'"+ aString + "'" + " ORDER BY DateofEvent");
-            while(rs.next()){
-                String name = rs.getString("Name");
-                String date = rs.getString("DateOfEvent");
-                String image = rs.getString("Image");
-                System.out.println("Name: "+name+" Date: "+date+" Image: "+image);
-                String[] list = new String[] {name,date,image};
-                System.out.println(Arrays.asList(list));
-                results.add(Arrays.asList(list));
-            }
-            System.out.println(results);
-        }
-        catch (NullPointerException f){
-            System.out.println("fuck off"+f.getStackTrace()[0]);f.getStackTrace();}
-        catch (Exception e){e.getStackTrace();}
-        return results;
-    }
-
-    private List<List<String>> getResultsOnlyDate(DatePicker datePicker){
-    	ResultSet rs = null;
-        //List<String> list = new ArrayList<>();
-        List<List<String>> results = new ArrayList<>();
         LocalDate dateFromDatePicker = datePicker.getDate();
-        
+
+        String query ="SELECT E.Name, E.Price, B.Name ArtistName, E.DateOfEvent, E.Image, V.Name Venue" +
+                " FROM tbl_venue V, tbl_event E, tbl_event_band EB, tbl_band B " +
+                "WHERE E.VenueID = V.VenueID AND E.EventID = EB.EventID AND B.BandID = EB.BandID " +
+                "AND DateOfEvent = "+ "\"" + dateFromDatePicker.toString() + "\"" + " ORDER BY DateofEvent";
+    	
+    	createPanels(query);
+    }
+
+    private List<List<String>> getResults(String query){
+        ResultSet rs = null;
+        List<List<String>> results = new ArrayList<>();
+
         try {
-            rs = Connect.selectStm("SELECT * FROM tbl_event WHERE DateOfEvent = "+ "\"" + dateFromDatePicker.toString() + "\"" + " ORDER BY DateofEvent");
+            rs = Connect.selectStm(query);
             while(rs.next()){
                 String name = rs.getString("Name");
                 String date = rs.getString("DateOfEvent");
                 String image = rs.getString("Image");
-                System.out.println("Name: "+name+" Date: "+date+" Image: "+image);
-                String[] list = new String[] {name,date,image};
-                System.out.println(Arrays.asList(list));
-                results.add(Arrays.asList(list));
+                String venue = rs.getString("Venue");
+                String artist = rs.getString("ArtistName");
+                float price = rs.getFloat("Price");
+
+                boolean has = results.stream().anyMatch(e-> e.contains(name));
+                if (has){
+                for (int i = 0; i<results.size(); i++){
+                int index = results.indexOf(results.stream().filter(e -> e.contains(name)).findAny().get());
+                results.get(index).add(artist);}
+                } else{
+                results.add(new ArrayList<>(Arrays.asList(new String[]{name,date,image,venue,String.valueOf(price),artist})));}
             }
-            System.out.println(results);
+
         }
         catch (NullPointerException f){
             System.out.println("fuck off"+f.getStackTrace()[0]);f.getStackTrace();}
-        catch (Exception e){e.getStackTrace();}
+        catch (SQLException e){e.printStackTrace();}
+        catch (ClassNotFoundException g){
+            System.out.println(g.getMessage());}
         return results;
     }
+
     
-    private void createPanels(List<List<String>> aList){
-        List<List<String>> results = aList;
+    private void createPanels(String query){
+        List<List<String>> results = getResults(query);
+        System.out.println(results);
         int size= results.size();
+        this.setPreferredSize(new Dimension(200,150*size));
         for (int i=0;i<size;i++){
             panel = new JPanel();
 
@@ -155,7 +136,7 @@ public class ResultPanel extends Container{
             nameLabel.setBounds(174, 13, 95, 23);
             panel.add(nameLabel);
 
-            bandsLabel = new JLabel("artists");
+            bandsLabel = new JLabel(results.get(i).get(3));
             bandsLabel.setBounds(185, 85, 345, 41);
             panel.add(bandsLabel);
 
@@ -178,42 +159,13 @@ public class ResultPanel extends Container{
             panel.add(venueLabel);
 
             add(panel);
-//            pg.addComponent(panel);
-//            sg.addComponent(panel);
-        }
-    }
-    @SuppressWarnings("unused")
-	private List<List<String>> getEventBands(){
-        List<List<String>> results = getUpcomingResults();
-        List<List<String>> events = new ArrayList<>(results.size());
-        List<String> bands = new ArrayList<>();
 
-        for(int i = 0;i<results.size();i++){
-            System.out.println(results.get(i).get(0));
-            bands.add(results.get(i).get(0));
-            events.add(new ArrayList<>());
-            events.set(i,bands.stream().collect(Collectors.toList()));
-            bands.clear();
         }
-        try{
-            ResultSet rs = Connect.selectStm("SELECT E.Name Event, B.Name Band FROM tbl_event E, tbl_band B, " +
-                    "tbl_event_band EB WHERE E.EventID = EB.EventID AND B.BandID = EB.BandID;");
-            while(rs.next()) {
-                for (int i = 0; i < events.size(); i++) {
-                    if (rs.getString("Event").equalsIgnoreCase(events.get(i).get(0))) {
-                        events.get(i).add(rs.getString("Band"));
-                    }
-                }
-            }
-        }catch (SQLException e){e.printStackTrace();}
-        catch (ClassNotFoundException f){
-            System.out.println(f.getMessage());}
-        return events;
     }
+
 
     public static void main(String[] args){
-        @SuppressWarnings("unused")
-		ResultPanel panel = new ResultPanel("2019-04-20");
+        new ResultPanel("2019-04-20");
 //        List<List<String>> resluts = panel.getResultsOnlyDate(DatePicker datepicker);
 //        System.out.println(resluts);
     }

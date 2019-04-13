@@ -1,4 +1,5 @@
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -24,7 +25,7 @@ public class EventOrganizer {
 	 private JTextField textDuration;
 	 private JTextField textDate;
 	 private JTextField textFieldPrice;
-
+	
 	    /**
 	     * Launch the application.
 	     */
@@ -61,6 +62,7 @@ public class EventOrganizer {
 	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        frame.setLocationRelativeTo(null);
 	        frame.setUndecorated(true);
+	        
 
 
 	        JButton btnExitButton = new JButton("X");
@@ -233,6 +235,11 @@ public class EventOrganizer {
 	        
 	        
 	        JButton btnUploadButton = new JButton("");
+	        btnUploadButton.addActionListener(new ActionListener() {
+	        	public void actionPerformed(ActionEvent arg0) {
+	        		
+	        	}
+	        });
 	        btnUploadButton.setBorderPainted(false);
 	        btnUploadButton.setIcon(new ImageIcon(LoginPage.class.getResource("UploadButton.jpg")));
 	        btnUploadButton.setBounds(987, 312, 159, 23);

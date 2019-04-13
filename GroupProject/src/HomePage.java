@@ -155,7 +155,7 @@ public class HomePage {
         JButton searchingButton = new JButton("New button");
         searchingButton.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		if (searchTxtField.getText() != "" & datePicker.getDate() == null) {
+        		if (!searchTxtField.getText().equals("")& datePicker.getDate() == null) {
         	        scrollPane.setViewportView(new ResultPanel(searchTxtField.getText()));
         	        upcomingLabel.setText("Results");
         		}
