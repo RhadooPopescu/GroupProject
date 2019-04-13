@@ -380,10 +380,6 @@ public class MyAccountView {
 		
 		ArrayList<String> details = User.detailsList(User.username);
 		titleComboBox.setSelectedItem(details.get(0));
-//		if (details.get(0).equals("Mr."))
-//
-//		else
-//			titleComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Ms.", "Mr."}));
 		firstNameTextField.setText(details.get(1));
 		lastNameTextField.setText(details.get(2));
 		address1TextField.setText(details.get(3));
@@ -396,8 +392,9 @@ public class MyAccountView {
 		cvvTextField.setText(details.get(10));
 		orgNameTextField.setText(details.get(11));
 		orgEmailTextField.setText(details.get(12));
-		webAddressTextField.setText(details.get(14));
 		paymentComboBox.setSelectedItem(details.get(13));
+		webAddressTextField.setText(details.get(14));
+		
 
 
 		
