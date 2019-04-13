@@ -1,7 +1,6 @@
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class User {
     private int userID, cardCVV;
@@ -34,13 +33,13 @@ public class User {
         this.orgEmail = orgEmail;
         this.paymentMethod = paymentMethod;
         this.userType = "customer";
-        if (Register.checkType == false) {
+        if (RegisterView.checkType == false) {
         	this.orgName = "";
         	this.orgEmail = "";
         	this.paymentMethod = "";
         	this.webAddress = "";
         }
-        if (Register.checkType == true)
+        if (RegisterView.checkType == true)
         	this.userType = "organization";
     }
 

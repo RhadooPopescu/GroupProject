@@ -116,7 +116,7 @@ public class AdminView {
         btnLogOut.setContentAreaFilled(false);
         btnLogOut.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                new LoginPage();
+                new LoginView();
                 frame.setVisible(false);
             }
         });
@@ -267,7 +267,7 @@ public class AdminView {
         JButton btnSearchButton = new JButton("");
         btnSearchButton.setBorderPainted(false);
         btnSearchButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnSearchButton.setIcon(new ImageIcon(LoginPage.class.getResource("SearchIcon.png"))); 
+        btnSearchButton.setIcon(new ImageIcon(LoginView.class.getResource("Images/SearchIcon.png")));
         btnSearchButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
@@ -309,14 +309,14 @@ public class AdminView {
         
         
         JLabel lblLogo = new JLabel("");
-        lblLogo.setIcon(new ImageIcon(LoginPage.class.getResource("Logo.jpg")));
+        lblLogo.setIcon(new ImageIcon(LoginView.class.getResource("Images/Logo.jpg")));
         lblLogo.setBounds(186, 583, 200, 96);
         frame.getContentPane().add(lblLogo);
 
 
         JLabel lblImageLabel = new JLabel("Image");
         lblImageLabel.setForeground(Color.BLACK);
-        lblImageLabel.setIcon(new ImageIcon(LoginPage.class.getResource("Silhouette-Rock-Concert-Wallpaper1.jpg")));       
+        lblImageLabel.setIcon(new ImageIcon(LoginView.class.getResource("Images/Silhouette-Rock-Concert-Wallpaper1.jpg")));
         lblImageLabel.setBounds(0, 0, 1297, 693);
         frame.getContentPane().add(lblImageLabel);
         
