@@ -183,6 +183,12 @@ public class ChangePassword {
         JButton saveButton = new JButton("Save");
         saveButton.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
+        		if (String.valueOf(oldPassField.getPassword()).equals(User.getPass(User.username)) && String.valueOf(newPassField.getPassword()).equals(
+        				String.copyValueOf(confPassField.getPassword()))) {
+    				User.updatePass(String.valueOf(newPassField.getPassword()), User.username);
+    				JOptionPane.showMessageDialog(null,"Password changed!");
+        		}
+        		
         	}
         });
         saveButton.setBounds(527, 428, 97, 25);

@@ -191,6 +191,33 @@ public class User {
         return type;
     }
     
+    static String getPass(String username) {
+    	String query = "Select Pass FROM tbl_user WHERE Username = '" + username + "';";
+    	String pass = "";
+    	
+    	try {
+    		ResultSet rs = Connect.selectStm(query);
+        	rs.next();
+        	pass = rs.getString("Pass");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException f) {
+            System.out.println(f.getMessage());
+        }
+    	return pass;
+    }
+    
+    static void updatePass(String newPass, String username) {
+    	String query = "UPDATE tbl_user SET Pass='" + newPass + "' WHERE Username='" + username + "'"; 
+
+    	try {
+			Connect.updateData(query);
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+    
     public static ArrayList<String> detailsList(String username) {
     	String query = "SELECT * FROM `tbl_user` WHERE Username = '" + username + "';";
     	ArrayList<String> details = new ArrayList();
