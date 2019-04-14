@@ -1,3 +1,6 @@
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class Agent {
 	
@@ -10,5 +13,55 @@ public class Agent {
 		this.name = name;
 		this.email = email;
 		this.phoneNo = phoneNo;
+		if (email.equals(null)){
+			this.email = "";
+		if (phoneNo.equals(null)) {
+			this.phoneNo = "";
+		}
+		}
+	}
+	
+	public Agent() {
+	}	
+	
+	static ArrayList<String> getAgentsList() {
+		String query = "SELECT Name FROM 'tbl_agent;";
+		ArrayList<String> agentsList = new ArrayList<String>();
+		try {
+            ResultSet results = Connect.selectStm(query);
+            while (results.next()) {
+                String agent = results.getString("Username");
+                agentsList.add(agent);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException k) {
+            System.out.println(k.getMessage());
+        }
+        return agentsList;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPhoneNo() {
+		return phoneNo;
+	}
+
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }

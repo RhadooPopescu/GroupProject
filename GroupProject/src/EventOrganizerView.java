@@ -362,7 +362,7 @@ public class EventOrganizerView {
 	        JLabel lblImageLabel = new JLabel("Image");
 	        lblImageLabel.setForeground(Color.BLACK);
 	        lblImageLabel.setIcon(new ImageIcon(LoginView.class.getResource("Images/Silhouette-Rock-Concert-Wallpaper1.jpg")));
-	        lblImageLabel.setBounds(0, 0, 1297, 693);
+	        lblImageLabel.setBounds(0, 0, 1280, 690);
 	        frame.getContentPane().add(lblImageLabel);
 	        
 	        
