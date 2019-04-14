@@ -219,5 +219,8 @@ public class LoginView {
         lblImageLabel.setIcon(new ImageIcon(LoginView.class.getResource("Images/Silhouette-Rock-Concert-Wallpaper1.jpg")));
         lblImageLabel.setBounds(0, 0, 1297, 693);
         frame.getContentPane().add(lblImageLabel);
+        
+        frame.getRootPane().setDefaultButton(btnLogin);
+
     }
 }

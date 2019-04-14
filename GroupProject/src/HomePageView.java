@@ -156,23 +156,23 @@ public class HomePageView {
         frame.getContentPane().add(scrollPane);
         scrollPane.setViewportView(new ResultPanel());
         
-        JButton btnSearchButton1 = new JButton("");
-        btnSearchButton1.setBorderPainted(false);
-        btnSearchButton1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnSearchButton1.setIcon(new ImageIcon(LoginView.class.getResource("Images/SearchIcon.png")));
-        btnSearchButton1.addActionListener(new ActionListener() {
+        JButton searchButton1 = new JButton("");
+        searchButton1.setBorderPainted(false);
+        searchButton1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        searchButton1.setIcon(new ImageIcon(LoginView.class.getResource("Images/SearchIcon.png")));
+        searchButton1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	scrollPane.setViewportView(new ResultPanel(searchTxtField.getText()));
             }
         });
-        btnSearchButton1.setBounds(1052, 72, 30, 30);
-        frame.getContentPane().add(btnSearchButton1);
+        searchButton1.setBounds(1052, 72, 30, 30);
+        frame.getContentPane().add(searchButton1);
         
-        JButton btnSearchButton2 = new JButton("");
-        btnSearchButton2.setBorderPainted(false);
-        btnSearchButton2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnSearchButton2.setIcon(new ImageIcon(LoginView.class.getResource("Images/SearchIcon.png")));
-        btnSearchButton2.addActionListener(new ActionListener() {
+        JButton searchButton2 = new JButton("");
+        searchButton2.setBorderPainted(false);
+        searchButton2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        searchButton2.setIcon(new ImageIcon(LoginView.class.getResource("Images/SearchIcon.png")));
+        searchButton2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	
             	try {
@@ -183,8 +183,8 @@ public class HomePageView {
 				}
             }
         });
-        btnSearchButton2.setBounds(1052, 115, 30, 30);
-        frame.getContentPane().add(btnSearchButton2);
+        searchButton2.setBounds(1052, 115, 30, 30);
+        frame.getContentPane().add(searchButton2);
         
         
        
@@ -262,6 +262,8 @@ public class HomePageView {
         searchDateLabel.setForeground(SystemColor.inactiveCaption);
         searchDateLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
         frame.getContentPane().add(searchDateLabel);
+        
+        frame.getRootPane().setDefaultButton(searchButton1);
         
         JLabel backgroundLabel = new JLabel();
         backgroundLabel.setIcon(new ImageIcon(HomePageView.class.getResource("Images/Silhouette-Rock-Concert-Wallpaper1.jpg")));
