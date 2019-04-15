@@ -344,7 +344,7 @@ public class MyAccountView {
 		JComboBox<String> paymentComboBox = new JComboBox<String>();
 		paymentComboBox.setBackground(SystemColor.activeCaption);
 		paymentComboBox.setToolTipText("");
-		paymentComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"","On Booking", "Monthly Invoice"}));
+		paymentComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"On Booking", "Monthly Invoice"}));
 		paymentComboBox.setBounds(1048, 334, 162, 30);
 		frame.getContentPane().add(paymentComboBox);
 		

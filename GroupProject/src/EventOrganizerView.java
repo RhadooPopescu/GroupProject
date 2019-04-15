@@ -308,6 +308,10 @@ public class EventOrganizerView {
 	        
 	        
 	        JButton btnSaveButton = new JButton("Save");
+	        btnSaveButton.addActionListener(new ActionListener() {
+	        	public void actionPerformed(ActionEvent arg0) {
+	        	}
+	        });
 	        btnSaveButton.setOpaque(false);
 	        btnSaveButton.setForeground(SystemColor.inactiveCaption);
 	        btnSaveButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
