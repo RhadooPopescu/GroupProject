@@ -5,40 +5,43 @@ import java.util.ArrayList;
 public class Agent {
 	
 
-	private String name = "";
-	private String email = "";
-	private String phoneNo = "";
+	private String name;
+	private String email;
+	private String phoneNo;
 	
 	public Agent(String name, String email, String phoneNo) {
 		this.name = name;
 		
 		this.phoneNo = phoneNo;
-		if (phoneNo.equals(null)) {
+		if (phoneNo == null) {
 			this.phoneNo = "";
 			
 		this.email = email;
-		if (email.equals(null)){
+		if (email == null){
 			this.email = "";
-		
+			}
 		}
-		}
+		String query = "INSERT INTO tbl_agent(AgentID,Name,PhoneNo,Email)" + 
+				"VALUES(DEFAULT,'" + this.name + "','" + this.phoneNo + "','" + this.email + "');";
+		try {
+            Connect.updateData(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException k) {
+            System.out.println(k.getMessage());
+        }
 	}
 	
 	public Agent() {
 	}	
 	
-	public void addAgent() {
-		String query = "INSERT INTO tbl_agent(AgentID,Name,PhoneNo,Email)\r\n" + 
-				"VALUES(DEFAULT,'" + this.name + "','" + this.phoneNo + "','" + this.email + "');";
-	}
-	
 	static ArrayList<String> getAgentsList() {
-		String query = "SELECT Name FROM 'tbl_agent;";
+		String query = "SELECT tbl_agent.Name FROM `tbl_agent`";
 		ArrayList<String> agentsList = new ArrayList<String>();
 		try {
             ResultSet results = Connect.selectStm(query);
             while (results.next()) {
-                String agent = results.getString("Username");
+                String agent = results.getString("Name");
                 agentsList.add(agent);
             }
         } catch (SQLException e) {
@@ -71,5 +74,20 @@ public class Agent {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	static int getAgentId(String name) {
+		String query = "SELECT AgentID FROM tbl_agent WHERE Name ='" + name + "';";
+		int ID = 0;
+		try {
+            ResultSet rs = Connect.selectStm(query);
+            rs.next();
+            ID = Integer.parseInt(rs.getString("AgentID"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException f) {
+            System.out.println(f.getMessage());
+        }
+        return ID;
 	}
 }

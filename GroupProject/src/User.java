@@ -22,7 +22,7 @@ public class User {
         this.lName = lName;
         this.address1 = address1;
         this.address2 = address2;
-        if (address2.equals(null)) {
+        if (address2 == null) {
         	this.address2 = "";
         }
         this.town = town;
@@ -31,7 +31,7 @@ public class User {
         this.password = password;
         this.email = email;
         this.phoneNo = phoneNo;
-        if (phoneNo.equals(null)) {
+        if (phoneNo == null) {
         	this.phoneNo = "";
         }
         this.orgName = orgName;

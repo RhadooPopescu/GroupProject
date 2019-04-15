@@ -264,7 +264,7 @@ public class EventOrganizerView {
 	        
 	        
 	        
-//	        ArrayList<String> aList = User.detailsList("cerbozaur");   JUST AN EXAMPLE FOR POPULATING THE COMBOBOX ELEGANTLY
+//	        ArrayList<String> aList = User.detailsList("cerbozaur");   
 //	        aList.add(0, "Add or Choose");  getting the desired details and just adding the default option for opening a new window as the first one. poof.
 	        
 	        JComboBox<String> comboBoxBand_1 = new JComboBox<String>();
@@ -272,9 +272,7 @@ public class EventOrganizerView {
 	        comboBoxBand_1.setModel(new DefaultComboBoxModel<String>(new String[] {"Add or Choose","Option 1","Option 2"}));
 	        comboBoxBand_1.addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent e) {
-	        		JComboBox comboBox = (JComboBox) e.getSource();
-
-	                Object selected = comboBox.getSelectedItem();
+	                Object selected = comboBoxBand_1.getSelectedItem();
 	                if(selected.toString().equals("Add or Choose"))
 	                	new NewBandView();
 

@@ -108,11 +108,15 @@ public class NewBandView {
 		frame.getContentPane().add(cancelButton);
 		
 		JSeparator separator = new JSeparator();
-		separator.setBounds(113, 227, 56, 2);
+		separator.setBackground(SystemColor.inactiveCaption);
+		separator.setOpaque(true);
+		separator.setBounds(113, 227, 56, 3);
 		frame.getContentPane().add(separator);
 		
 		JSeparator separator_1 = new JSeparator();
-		separator_1.setBounds(250, 227, 70, 2);
+		separator_1.setOpaque(true);
+		separator_1.setBackground(SystemColor.inactiveCaption);
+		separator_1.setBounds(250, 227, 70, 3);
 		frame.getContentPane().add(separator_1);
 		
 		nameTxtField = new JTextField();
@@ -137,9 +141,18 @@ public class NewBandView {
 		linkTxtField.setColumns(10);
 		
 		JComboBox agentComboBox = new JComboBox();
-		agentComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Add or Choose"}));
+		ArrayList<String> aList = Agent.getAgentsList();
+		aList.add(0, "Add or Choose");
+		agentComboBox.setModel(new DefaultComboBoxModel(aList.toArray()));
 		agentComboBox.setBackground(SystemColor.activeCaption);
 		agentComboBox.setBounds(93, 116, 116, 22);
+		agentComboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Object selected = agentComboBox.getSelectedItem();
+                if(selected.toString().equals("Add or Choose"))
+                	new NewAgentView();
+			}
+		});
 		frame.getContentPane().add(agentComboBox);
 		
 		JButton uploadButton = new JButton();
@@ -178,10 +191,6 @@ public class NewBandView {
 		imageLabel.setBounds(308, 76, 36, 16);
 		frame.getContentPane().add(imageLabel);
 		
-		ArrayList<String> aList = User.detailsList("cerbozaur");
-		aList.add(0, "Add or Choose");
-		agentComboBox.setModel(new DefaultComboBoxModel(aList.toArray()));
-		
 		JButton addButton = new JButton("Add Band");
 		addButton.setForeground(SystemColor.inactiveCaption);
 		addButton.setOpaque(false);
@@ -190,9 +199,14 @@ public class NewBandView {
         addButton.setBorderPainted(false);
 		addButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if ( (nameTxtField.getText().equals(null) | nameTxtField.getText().equals("")) | (genreTxtField.getText().equals(null) | 
-						genreTxtField.getText().equals("")) | agentComboBox.getSelectedItem().toString().equals("Add or Choose")) {
+				if ( (nameTxtField.getText() == null | nameTxtField.getText().isEmpty()) | (genreTxtField.getText() == null | 
+						genreTxtField.getText().isEmpty()) | agentComboBox.getSelectedItem().toString().equals("Add or Choose")) {
 					JOptionPane.showMessageDialog(null,"Please fill in all the * fields.");
+				}
+				else {
+					int agentID = Agent.getAgentId(agentComboBox.getSelectedItem().toString());					
+					new Band(nameTxtField.getText(),genreTxtField.getText(),linkTxtField.getText(),agentID);
+					JOptionPane.showMessageDialog(null,"Band added.");
 				}
 			}
 		});
