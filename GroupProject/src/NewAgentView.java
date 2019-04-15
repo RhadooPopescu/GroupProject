@@ -136,6 +136,7 @@ public class NewAgentView {
 					new Agent(nameTxtField.getText(),phoneTxtField.getText(),emailTxtField.getText());
 					JOptionPane.showMessageDialog(null,"Agent added.");
 					Agent.getAgentsList().add(nameTxtField.getText());
+					agentName = nameTxtField.getText();
 					frame.dispose();
 				}
 			}

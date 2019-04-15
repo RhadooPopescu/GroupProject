@@ -71,8 +71,6 @@ public class NewBandView {
 		windowTitleLabel.setBounds(12, 13, 85, 16);
 		frame.getContentPane().add(windowTitleLabel);
 		
-
-		
 		JLabel nameLabel = new JLabel("Name*");
 		nameLabel.setForeground(SystemColor.inactiveCaption);
 		nameLabel.setBounds(25, 61, 56, 16);
