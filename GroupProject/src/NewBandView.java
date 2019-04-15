@@ -5,11 +5,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import java.awt.SystemColor;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.awt.event.ActionEvent;
 import javax.swing.JSeparator;
@@ -71,17 +73,17 @@ public class NewBandView {
 		
 
 		
-		JLabel nameLabel = new JLabel("Name");
+		JLabel nameLabel = new JLabel("Name*");
 		nameLabel.setForeground(SystemColor.inactiveCaption);
 		nameLabel.setBounds(25, 61, 56, 16);
 		frame.getContentPane().add(nameLabel);
 		
-		JLabel genreLabel = new JLabel("Genre");
+		JLabel genreLabel = new JLabel("Genre*");
 		genreLabel.setForeground(SystemColor.inactiveCaption);
 		genreLabel.setBounds(25, 90, 56, 16);
 		frame.getContentPane().add(genreLabel);
 		
-		JLabel agentLabel = new JLabel("Agent");
+		JLabel agentLabel = new JLabel("Agent*");
 		agentLabel.setForeground(SystemColor.inactiveCaption);
 		agentLabel.setBounds(25, 119, 56, 16);
 		frame.getContentPane().add(agentLabel);
@@ -104,19 +106,6 @@ public class NewBandView {
 			}
 		});
 		frame.getContentPane().add(cancelButton);
-		
-		JButton addButton = new JButton("Add Band");
-		addButton.setForeground(SystemColor.inactiveCaption);
-		addButton.setOpaque(false);
-        addButton.setContentAreaFilled(false);
-        addButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        addButton.setBorderPainted(false);
-		addButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		addButton.setBounds(236, 204, 98, 25);
-		frame.getContentPane().add(addButton);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(113, 227, 56, 2);
@@ -188,6 +177,27 @@ public class NewBandView {
 		imageLabel.setForeground(SystemColor.inactiveCaption);
 		imageLabel.setBounds(308, 76, 36, 16);
 		frame.getContentPane().add(imageLabel);
+		
+		ArrayList<String> aList = User.detailsList("cerbozaur");
+		aList.add(0, "Add or Choose");
+		agentComboBox.setModel(new DefaultComboBoxModel(aList.toArray()));
+		
+		JButton addButton = new JButton("Add Band");
+		addButton.setForeground(SystemColor.inactiveCaption);
+		addButton.setOpaque(false);
+        addButton.setContentAreaFilled(false);
+        addButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        addButton.setBorderPainted(false);
+		addButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if ( (nameTxtField.getText().equals(null) | nameTxtField.getText().equals("")) | (genreTxtField.getText().equals(null) | 
+						genreTxtField.getText().equals("")) | agentComboBox.getSelectedItem().toString().equals("Add or Choose")) {
+					JOptionPane.showMessageDialog(null,"Please fill in all the * fields.");
+				}
+			}
+		});
+		addButton.setBounds(236, 204, 98, 25);
+		frame.getContentPane().add(addButton);
 		
 		JLabel backgroundLabel = new JLabel("New label");
 		backgroundLabel.setIcon(new ImageIcon(NewBandView.class.getResource("/Images/rsz_silhouette-rock-concert-wallpaper1.jpg")));
