@@ -22,12 +22,18 @@ public class User {
         this.lName = lName;
         this.address1 = address1;
         this.address2 = address2;
+        if (address2.equals(null)) {
+        	this.address2 = "";
+        }
         this.town = town;
         this.postcode = postcode;
         User.username = username;
         this.password = password;
         this.email = email;
         this.phoneNo = phoneNo;
+        if (phoneNo.equals(null)) {
+        	this.phoneNo = "";
+        }
         this.orgName = orgName;
         this.webAddress = webAddress;
         this.orgEmail = orgEmail;
@@ -146,6 +152,7 @@ public class User {
     
     static void updateDetails(String username,String title, String firstName, String lastName, String addressOne, String addressTwo, String town, String postcode,
     		String email, String phoneNumber, long cardNumber, int cvv, String orgName, String orgEmail, String webAddress, String paymentMethod) {
+    	
     	String query = "UPDATE tbl_user SET Title='"+ title +"', FName = '"+ firstName +"', LName = '"+lastName+"', Address1 = '"+addressOne+"', Address2 = '"+addressTwo+""
     			+ "', Town = '"+town+"', PostCode = '"+postcode+"', Email = '"+email+"', PhoneNo = '"+phoneNumber+"', CardNo = '"+cardNumber+"', CVVCode = '"+cvv+""
     					+ "', OrganizationName = '"+orgName+"', OrgEmail = '"+orgEmail+"', WebAddress = '"+webAddress+"', PaymentMethod = '"+paymentMethod+"'"
@@ -256,7 +263,7 @@ public class User {
     }
 
     public static void main(String[] args) {
-        ArrayList<String> test = User.detailsList("cerb");
+        ArrayList<String> test = User.detailsList("cerbisor");
         System.out.println(test);
     }
 }

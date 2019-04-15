@@ -344,7 +344,7 @@ public class MyAccountView {
 		JComboBox<String> paymentComboBox = new JComboBox<String>();
 		paymentComboBox.setBackground(SystemColor.activeCaption);
 		paymentComboBox.setToolTipText("");
-		paymentComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"On Booking", "Monthly Invoice"}));
+		paymentComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"","On Booking", "Monthly Invoice"}));
 		paymentComboBox.setBounds(1048, 334, 162, 30);
 		frame.getContentPane().add(paymentComboBox);
 		
@@ -404,8 +404,8 @@ public class MyAccountView {
 			public void actionPerformed(ActionEvent arg0) {
 				User.updateDetails(User.username, titleComboBox.getSelectedItem().toString(), firstNameTextField.getText(), lastNameTextField.getText(), address1TextField.getText()
 						, address2TextField.getText(), townTextField.getText(), postcodeTextField.getText(), emailTextField.getText(), phoneNoTextField.getText()
-						, Long.parseLong(cardNoTextField.getText()), Integer.parseInt(cvvTextField.getText()), orgNameTextField.getText(), orgEmailTextField.getText(), 
-						webAddressTextField.getText(), paymentComboBox.getSelectedItem().toString());
+						, Long.parseLong(cardNoTextField.getText()), Integer.parseInt(cvvTextField.getText()), orgNameTextField.getText(), orgEmailTextField.getText(), webAddressTextField.getText(),
+						paymentComboBox.getSelectedItem().toString());
 				JOptionPane.showMessageDialog(null,"Update succesfull!");
 			}
 		});

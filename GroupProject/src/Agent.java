@@ -11,18 +11,26 @@ public class Agent {
 	
 	public Agent(String name, String email, String phoneNo) {
 		this.name = name;
-		this.email = email;
+		
 		this.phoneNo = phoneNo;
-		if (email.equals(null)){
-			this.email = "";
 		if (phoneNo.equals(null)) {
 			this.phoneNo = "";
+			
+		this.email = email;
+		if (email.equals(null)){
+			this.email = "";
+		
 		}
 		}
 	}
 	
 	public Agent() {
 	}	
+	
+	public void addAgent() {
+		String query = "INSERT INTO tbl_agent(AgentID,Name,PhoneNo,Email)\r\n" + 
+				"VALUES(DEFAULT,'" + this.name + "','" + this.phoneNo + "','" + this.email + "');";
+	}
 	
 	static ArrayList<String> getAgentsList() {
 		String query = "SELECT Name FROM 'tbl_agent;";

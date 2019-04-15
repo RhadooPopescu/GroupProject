@@ -229,9 +229,10 @@ public class NewBookingView {
         
         
         JTextArea txtVenue = new JTextArea();
+        txtVenue.setBackground(SystemColor.inactiveCaption);
         txtVenue.setLineWrap(true);
         txtVenue.setText("Venue      Address      ");
-        txtVenue.setBounds(46, 500, 92, 68);
+        txtVenue.setBounds(46, 500, 97, 68);
         frame.getContentPane().add(txtVenue);
         
         
@@ -270,9 +271,9 @@ public class NewBookingView {
         frame.getContentPane().add(lblPriceStudent);
         
         
-        JLabel lblStudentIdNeeded = new JLabel("Student ID Needed at location");
-        lblStudentIdNeeded.setForeground(new Color(255, 69, 0));
-        lblStudentIdNeeded.setBounds(389, 452, 171, 14);
+        JLabel lblStudentIdNeeded = new JLabel("Student ID Needed At Location");
+        lblStudentIdNeeded.setForeground(Color.RED);
+        lblStudentIdNeeded.setBounds(389, 452, 179, 14);
         frame.getContentPane().add(lblStudentIdNeeded);
         
         
@@ -333,7 +334,11 @@ public class NewBookingView {
         
         
         JButton btnProceedToBooking = new JButton("Proceed To Booking");
-        btnProceedToBooking.setBounds(707, 615, 234, 23);
+        btnProceedToBooking.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        	}
+        });
+        btnProceedToBooking.setBounds(715, 615, 209, 23);
         btnProceedToBooking.setForeground(SystemColor.inactiveCaption);
         btnProceedToBooking.setFont(new Font("Tahoma", Font.PLAIN, 20));
         btnProceedToBooking.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -344,13 +349,18 @@ public class NewBookingView {
         
         
         JButton btnCancel = new JButton("Cancel");
+        btnCancel.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		new HomePageView();
+        	}
+        });
         btnCancel.setOpaque(false);
         btnCancel.setForeground(SystemColor.inactiveCaption);
         btnCancel.setFont(new Font("Tahoma", Font.PLAIN, 20));
         btnCancel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnCancel.setContentAreaFilled(false);
         btnCancel.setBorderPainted(false);
-        btnCancel.setBounds(415, 615, 234, 23);
+        btnCancel.setBounds(489, 615, 92, 23);
         frame.getContentPane().add(btnCancel);
         
         
