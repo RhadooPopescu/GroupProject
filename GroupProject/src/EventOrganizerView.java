@@ -6,12 +6,14 @@ import java.awt.Cursor;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import javax.swing.JTextField;
@@ -261,7 +263,23 @@ public class EventOrganizerView {
 	        frame.getContentPane().add(lblBand_1);
 	        
 	        
+	        
+//	        ArrayList<String> aList = User.detailsList("cerbozaur");   JUST AN EXAMPLE FOR POPULATING THE COMBOBOX ELEGANTLY
+//	        aList.add(0, "Add or Choose");  getting the desired details and just adding the default option for opening a new window as the first one. poof.
+	        
 	        JComboBox<String> comboBoxBand_1 = new JComboBox<String>();
+//	        comboBoxBand_1.setModel(new DefaultComboBoxModel(aList.toArray()));
+	        comboBoxBand_1.setModel(new DefaultComboBoxModel<String>(new String[] {"Add or Choose","Option 1","Option 2"}));
+	        comboBoxBand_1.addActionListener(new ActionListener() {
+	        	public void actionPerformed(ActionEvent e) {
+	        		JComboBox comboBox = (JComboBox) e.getSource();
+
+	                Object selected = comboBox.getSelectedItem();
+	                if(selected.toString().equals("Add or Choose"))
+	                	new NewBandView();
+
+	        	}
+	        });
 	        comboBoxBand_1.setBounds(605, 438, 159, 20);
 	        comboBoxBand_1.setBackground(SystemColor.activeCaption);
 	        frame.getContentPane().add(comboBoxBand_1);
