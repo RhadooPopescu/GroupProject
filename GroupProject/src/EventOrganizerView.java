@@ -1,5 +1,4 @@
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -13,12 +12,14 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
+import java.util.Scanner;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import javax.swing.JTextField;
 import javax.swing.border.MatteBorder;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
 
 public class EventOrganizerView {
 
@@ -239,6 +240,27 @@ public class EventOrganizerView {
 	        JButton btnUploadButton = new JButton("");
 	        btnUploadButton.addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent arg0) {
+	        		JFileChooser fileChooser = new JFileChooser();
+					fileChooser.setFileFilter(new FileNameExtensionFilter("JPG images","jpg"));
+					StringBuilder sb = new StringBuilder();
+
+					try {
+						if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
+							java.io.File file = fileChooser.getSelectedFile();
+							Scanner input = new Scanner(file);
+							
+							while (input.hasNext()) {
+								sb.append(input.nextLine());
+								sb.append("\n");
+							}
+							input.close();
+						}
+						else {
+							sb.append("No file selected.");
+						}
+					}catch(Exception e1) {
+						e1.printStackTrace();
+					}
 	        		
 	        	}
 	        });

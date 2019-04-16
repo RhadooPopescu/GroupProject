@@ -1,7 +1,6 @@
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import java.awt.SystemColor;
 import javax.swing.JLabel;
@@ -17,6 +16,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.border.MatteBorder;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import java.awt.Rectangle;
@@ -138,7 +138,7 @@ public class NewBandView {
 		frame.getContentPane().add(linkTxtField);
 		linkTxtField.setColumns(10);
 		
-		JComboBox agentComboBox = new JComboBox();
+		JComboBox<String> agentComboBox = new JComboBox<String>();
 		ArrayList<String> aList = Agent.getAgentsList();
 		aList.add(0, "Add or Choose");
 		agentComboBox.setModel(new DefaultComboBoxModel(aList.toArray()));
@@ -157,6 +157,7 @@ public class NewBandView {
 		uploadButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser fileChooser = new JFileChooser();
+				fileChooser.setFileFilter(new FileNameExtensionFilter("JPG images","jpg"));
 				StringBuilder sb = new StringBuilder();
 
 				try {

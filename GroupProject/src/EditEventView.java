@@ -11,11 +11,14 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Scanner;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import javax.swing.JTextField;
 import javax.swing.border.MatteBorder;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
 
 public class EditEventView {
 
@@ -230,6 +233,31 @@ public class EditEventView {
 	        
 	        
 	        JButton btnUploadButton = new JButton("");
+	        btnUploadButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					JFileChooser fileChooser = new JFileChooser();
+					fileChooser.setFileFilter(new FileNameExtensionFilter("JPG images","jpg"));
+					StringBuilder sb = new StringBuilder();
+
+					try {
+						if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
+							java.io.File file = fileChooser.getSelectedFile();
+							Scanner input = new Scanner(file);
+							
+							while (input.hasNext()) {
+								sb.append(input.nextLine());
+								sb.append("\n");
+							}
+							input.close();
+						}
+						else {
+							sb.append("No file selected.");
+						}
+					}catch(Exception e1) {
+						e1.printStackTrace();
+					}
+				}
+			});
 	        btnUploadButton.setBorderPainted(false);
 	        btnUploadButton.setIcon(new ImageIcon(LoginView.class.getResource("Images/UploadButton.jpg")));
 	        btnUploadButton.setBounds(987, 312, 159, 23);
