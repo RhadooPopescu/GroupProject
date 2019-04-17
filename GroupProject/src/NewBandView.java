@@ -21,12 +21,13 @@ import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import java.awt.Rectangle;
 
-public class NewBandView {
+public class NewBandView extends JFrame {
 
 	private JFrame frame;
 	private JTextField nameTxtField;
 	private JTextField genreTxtField;
 	private JTextField linkTxtField;
+	static JComboBox<String> agentComboBox;
 
 	/**
 	 * Launch the application.
@@ -138,16 +139,16 @@ public class NewBandView {
 		frame.getContentPane().add(linkTxtField);
 		linkTxtField.setColumns(10);
 		
-		JComboBox<String> agentComboBox = new JComboBox<String>();
+		agentComboBox = new JComboBox<String>();
 		ArrayList<String> aList = Agent.getAgentsList();
-		aList.add(0, "Add or Choose");
+		aList.add(0, "-Add new Agent-");
 		agentComboBox.setModel(new DefaultComboBoxModel(aList.toArray()));
 		agentComboBox.setBackground(SystemColor.activeCaption);
 		agentComboBox.setBounds(93, 116, 116, 22);
 		agentComboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Object selected = agentComboBox.getSelectedItem();
-                if(selected.toString().equals("Add or Choose"))
+                if(selected.toString().equals("-Add new Agent-"))
                 	new NewAgentView();
 			}
 		});

@@ -7,6 +7,7 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.time.LocalDate;
 
 import com.github.lgooddatepicker.components.DatePicker;
 import com.github.lgooddatepicker.components.DatePickerSettings;
@@ -139,16 +140,11 @@ public class HomePageView {
         dateSettings.setAllowEmptyDates(false);
 
         DatePicker datePicker = new DatePicker(dateSettings);
+        dateSettings.setDateRangeLimits(LocalDate.now(),null);
         datePicker.getComponentDateTextField().setBackground(SystemColor.activeCaption);
         datePicker.getComponentToggleCalendarButton().setText("Date");
         datePicker.setBounds(872, 115, 168, 30);
         frame.getContentPane().add(datePicker);
-//        LocalDate date = datePicker.getDate();
-//        try {
-//        	System.out.println(date.toString());
-//        }catch (NullPointerException e) {
-//        	System.out.println("No date yet");
-//        }
         
         JScrollPane scrollPane = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         scrollPane.setBounds(373, 189, 844, 374);

@@ -9,18 +9,17 @@ public class Agent {
 	private String email;
 	private String phoneNo;
 	
-	public Agent(String name, String email, String phoneNo) {
+	public Agent(String name, String phoneNo, String email) {
 		this.name = name;
 		
 		this.phoneNo = phoneNo;
 		if (phoneNo == null) {
-			this.phoneNo = "";
+			this.phoneNo = "";}
 			
 		this.email = email;
 		if (email == null){
-			this.email = "";
-			}
-		}
+			this.email = "";}
+
 		String query = "INSERT INTO tbl_agent(AgentID,Name,PhoneNo,Email)" + 
 				"VALUES(DEFAULT,'" + this.name + "','" + this.phoneNo + "','" + this.email + "');";
 		try {
