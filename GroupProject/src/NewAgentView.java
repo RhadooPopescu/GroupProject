@@ -5,13 +5,7 @@ import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JSeparator;
-import javax.swing.JTextField;
+import javax.swing.*;
 import javax.swing.border.MatteBorder;
 import java.awt.Color;
 import java.awt.Rectangle;
@@ -135,7 +129,10 @@ public class NewAgentView {
 				else {
 					new Agent(nameTxtField.getText(),phoneTxtField.getText(),emailTxtField.getText());
 					JOptionPane.showMessageDialog(null,"Agent added.");
-					Agent.getAgentsList().add(nameTxtField.getText());
+					DefaultComboBoxModel model = new DefaultComboBoxModel(Agent.getAgentsList().toArray());
+					model.insertElementAt("-Add new Agent-",0);
+					NewBandView.agentComboBox.setModel(model);
+					NewBandView.agentComboBox.setSelectedIndex(model.getSize()-1);
 					agentName = nameTxtField.getText();
 					NewBandView band = new NewBandView();
 					band.agentsList = Agent.getAgentsList();

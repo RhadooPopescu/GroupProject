@@ -21,7 +21,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import java.awt.Rectangle;
 
-public class NewBandView {
+public class NewBandView extends JFrame {
 
 	private JFrame frame;
 	private JTextField nameTxtField;
