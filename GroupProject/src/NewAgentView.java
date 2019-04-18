@@ -125,13 +125,13 @@ public class NewAgentView {
 			public void actionPerformed(ActionEvent arg0) {
 				if (nameTxtField.getText().equals(null) | nameTxtField.getText().equals(""))
 					JOptionPane.showMessageDialog(null,"Please fill in all the * fields.");
-				
+
 				else {
 					new Agent(nameTxtField.getText(),phoneTxtField.getText(),emailTxtField.getText());
 					JOptionPane.showMessageDialog(null,"Agent added.");
 					DefaultComboBoxModel model = new DefaultComboBoxModel(Agent.getAgentsList().toArray());
 					model.insertElementAt("-Add new Agent-",0);
-					NewBandView.agentComboBox.setModel(model);
+					NewBandView.agentComboBox.setModel(model); //no errors here :P
 					NewBandView.agentComboBox.setSelectedIndex(model.getSize()-1);
 					agentName = nameTxtField.getText();
 					NewBandView band = new NewBandView();

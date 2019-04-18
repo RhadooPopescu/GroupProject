@@ -27,8 +27,7 @@ public class NewBandView extends JFrame {
 	private JTextField nameTxtField;
 	private JTextField genreTxtField;
 	private JTextField linkTxtField;
-	public ArrayList<String> agentsList;
-
+	static JComboBox<String> agentComboBox; //this is a combobox
 	/**
 	 * Launch the application.
 	 */
@@ -139,16 +138,16 @@ public class NewBandView extends JFrame {
 		frame.getContentPane().add(linkTxtField);
 		linkTxtField.setColumns(10);
 		
-		JComboBox<String> agentComboBox = new JComboBox<String>();
-		this.agentsList = Agent.getAgentsList();
-		this.agentsList.add(0, "Add or Choose");
-		agentComboBox.setModel(new DefaultComboBoxModel(this.agentsList.toArray()));
+		agentComboBox = new JComboBox<String>();
+		ArrayList<String> aList = Agent.getAgentsList();
+		aList.add(0, "-Add new Agent-");
+		agentComboBox.setModel(new DefaultComboBoxModel(aList.toArray()));
 		agentComboBox.setBackground(SystemColor.activeCaption);
 		agentComboBox.setBounds(93, 116, 116, 22);
 		agentComboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Object selected = agentComboBox.getSelectedItem();
-                if(selected.toString().equals("Add or Choose"))
+                if(selected.toString().equals("-Add new Agent-"))
                 	new NewAgentView();
 			}
 		});
