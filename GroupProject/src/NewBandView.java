@@ -23,11 +23,12 @@ import java.awt.Rectangle;
 
 public class NewBandView extends JFrame {
 
+	static JComboBox agentComboBox;
 	private JFrame frame;
 	private JTextField nameTxtField;
 	private JTextField genreTxtField;
 	private JTextField linkTxtField;
-	public ArrayList<String> agentsList;
+	static ArrayList<String> agentsList;
 
 	/**
 	 * Launch the application.
@@ -139,16 +140,16 @@ public class NewBandView extends JFrame {
 		frame.getContentPane().add(linkTxtField);
 		linkTxtField.setColumns(10);
 		
-		JComboBox<String> agentComboBox = new JComboBox<String>();
+		agentComboBox = new JComboBox<String>();
 		this.agentsList = Agent.getAgentsList();
-		this.agentsList.add(0, "Add or Choose");
+		this.agentsList.add(0, "-Add new Agent-");
 		agentComboBox.setModel(new DefaultComboBoxModel(this.agentsList.toArray()));
 		agentComboBox.setBackground(SystemColor.activeCaption);
 		agentComboBox.setBounds(93, 116, 116, 22);
 		agentComboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Object selected = agentComboBox.getSelectedItem();
-                if(selected.toString().equals("Add or Choose"))
+                if(selected.toString().equals("-Add new Agent-"))
                 	new NewAgentView();
 			}
 		});

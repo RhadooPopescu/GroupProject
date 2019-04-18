@@ -134,8 +134,7 @@ public class NewAgentView {
 					NewBandView.agentComboBox.setModel(model);
 					NewBandView.agentComboBox.setSelectedIndex(model.getSize()-1);
 					agentName = nameTxtField.getText();
-					NewBandView band = new NewBandView();
-					band.agentsList = Agent.getAgentsList();
+					NewBandView.agentsList = Agent.getAgentsList();
 					frame.dispose();
 				}
 			}
