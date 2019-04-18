@@ -199,7 +199,7 @@ public class NewBandView extends JFrame {
 		addButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if ( (nameTxtField.getText() == null | nameTxtField.getText().isEmpty()) | (genreTxtField.getText() == null | 
-						genreTxtField.getText().isEmpty()) | agentComboBox.getSelectedItem().toString().equals("Add or Choose")) {
+						genreTxtField.getText().isEmpty()) | agentComboBox.getSelectedItem().toString().equals("-Add new Agent-")) {
 					JOptionPane.showMessageDialog(null,"Please fill in all the * fields.");
 				}
 				else {
