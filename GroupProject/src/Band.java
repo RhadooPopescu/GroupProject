@@ -1,4 +1,6 @@
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class Band {
 	
@@ -22,6 +24,23 @@ public class Band {
         } catch (ClassNotFoundException k) {
             System.out.println(k.getMessage());
         }
+	}
+	
+	static ArrayList<String> getBands(){
+		String query = "SELECT Name FROM tbl_band;";
+		ArrayList<String> bandsList = new ArrayList<String>();
+		try {
+            ResultSet results = Connect.selectStm(query);
+            while (results.next()) {
+                String agent = results.getString("Name");
+                bandsList.add(agent);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException k) {
+            System.out.println(k.getMessage());
+        }
+        return bandsList;
 	}
 }
 

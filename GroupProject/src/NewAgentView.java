@@ -137,6 +137,8 @@ public class NewAgentView {
 					JOptionPane.showMessageDialog(null,"Agent added.");
 					Agent.getAgentsList().add(nameTxtField.getText());
 					agentName = nameTxtField.getText();
+					NewBandView band = new NewBandView();
+					band.agentsList = Agent.getAgentsList();
 					frame.dispose();
 				}
 			}

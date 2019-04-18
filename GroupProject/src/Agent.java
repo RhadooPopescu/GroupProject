@@ -36,7 +36,7 @@ public class Agent {
 	}	
 	
 	static ArrayList<String> getAgentsList() {
-		String query = "SELECT tbl_agent.Name FROM `tbl_agent`";
+		String query = "SELECT Name FROM `tbl_agent`;";
 		ArrayList<String> agentsList = new ArrayList<String>();
 		try {
             ResultSet results = Connect.selectStm(query);

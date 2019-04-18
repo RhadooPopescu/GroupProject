@@ -12,6 +12,7 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
@@ -20,6 +21,7 @@ import javax.swing.border.MatteBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
+import javax.swing.JPanel;
 
 public class EventOrganizerView {
 
@@ -28,6 +30,10 @@ public class EventOrganizerView {
 	 private JTextField textDuration;
 	 private JTextField textDate;
 	 private JTextField textFieldPrice;
+	 private JTextField venueNameTextField;
+	 private JTextField venueAddressTextField;
+	 private JTextField venueCapacityTextField;
+	 private ArrayList<String> bandsList;
 	
 	    /**
 	     * Launch the application.
@@ -286,12 +292,11 @@ public class EventOrganizerView {
 	        
 	        
 	        
-//	        ArrayList<String> aList = User.detailsList("cerbozaur");   
-//	        aList.add(0, "Add or Choose");  getting the desired details and just adding the default option for opening a new window as the first one. poof.
+	        this.bandsList = Band.getBands();
+	        this.bandsList.add(0, "Add or Choose");  //getting the desired details and just adding the default option for opening a new window as the first one.
 	        
 	        JComboBox<String> comboBoxBand_1 = new JComboBox<String>();
-//	        comboBoxBand_1.setModel(new DefaultComboBoxModel(aList.toArray()));
-	        comboBoxBand_1.setModel(new DefaultComboBoxModel<String>(new String[] {"Add or Choose","Option 1","Option 2"}));
+	        comboBoxBand_1.setModel(new DefaultComboBoxModel(this.bandsList.toArray()));
 	        comboBoxBand_1.addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent e) {
 	                Object selected = comboBoxBand_1.getSelectedItem();
@@ -398,14 +403,14 @@ public class EventOrganizerView {
 	        lblLogo.setIcon(new ImageIcon(LoginView.class.getResource("Images/Logo.jpg")));
 	        lblLogo.setBounds(186, 583, 200, 96);
 	        frame.getContentPane().add(lblLogo);
-	        
-	        
 
 	        JLabel lblImageLabel = new JLabel("Image");
 	        lblImageLabel.setForeground(Color.BLACK);
 	        lblImageLabel.setIcon(new ImageIcon(LoginView.class.getResource("Images/Silhouette-Rock-Concert-Wallpaper1.jpg")));
 	        lblImageLabel.setBounds(0, 0, 1280, 690);
 	        frame.getContentPane().add(lblImageLabel);
+	        
+	        
 	        
 	        
 	        

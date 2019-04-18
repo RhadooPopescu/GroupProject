@@ -27,6 +27,7 @@ public class NewBandView {
 	private JTextField nameTxtField;
 	private JTextField genreTxtField;
 	private JTextField linkTxtField;
+	public ArrayList<String> agentsList;
 
 	/**
 	 * Launch the application.
@@ -139,9 +140,9 @@ public class NewBandView {
 		linkTxtField.setColumns(10);
 		
 		JComboBox<String> agentComboBox = new JComboBox<String>();
-		ArrayList<String> aList = Agent.getAgentsList();
-		aList.add(0, "Add or Choose");
-		agentComboBox.setModel(new DefaultComboBoxModel(aList.toArray()));
+		this.agentsList = Agent.getAgentsList();
+		this.agentsList.add(0, "Add or Choose");
+		agentComboBox.setModel(new DefaultComboBoxModel(this.agentsList.toArray()));
 		agentComboBox.setBackground(SystemColor.activeCaption);
 		agentComboBox.setBounds(93, 116, 116, 22);
 		agentComboBox.addActionListener(new ActionListener() {
