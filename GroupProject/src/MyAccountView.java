@@ -172,6 +172,7 @@ public class MyAccountView {
 		JComboBox<String> titleComboBox = new JComboBox<String>();
 		titleComboBox.setBackground(SystemColor.activeCaption);
 		titleComboBox.setToolTipText("");
+		titleComboBox.setEditable(false);
 		titleComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Mr.", "Ms."}));
 		titleComboBox.setBounds(368, 209, 47, 22);
 		frame.getContentPane().add(titleComboBox);
@@ -344,6 +345,7 @@ public class MyAccountView {
 		JComboBox<String> paymentComboBox = new JComboBox<String>();
 		paymentComboBox.setBackground(SystemColor.activeCaption);
 		paymentComboBox.setToolTipText("");
+		paymentComboBox.setEditable(false);
 		paymentComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"On Booking", "Monthly Invoice"}));
 		paymentComboBox.setBounds(1048, 334, 162, 30);
 		frame.getContentPane().add(paymentComboBox);
@@ -402,10 +404,12 @@ public class MyAccountView {
 		JButton saveButton = new JButton("Save");
 		saveButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				User.updateDetails(User.username, titleComboBox.getSelectedItem().toString(), firstNameTextField.getText(), lastNameTextField.getText(), address1TextField.getText()
-						, address2TextField.getText(), townTextField.getText(), postcodeTextField.getText(), emailTextField.getText(), phoneNoTextField.getText()
-						, Long.parseLong(cardNoTextField.getText()), Integer.parseInt(cvvTextField.getText()), orgNameTextField.getText(), orgEmailTextField.getText(), webAddressTextField.getText(),
-						paymentComboBox.getSelectedItem().toString());
+				User.updateDetails(User.username, titleComboBox.getSelectedItem().toString(), firstNameTextField.getText().replace("'", "''"), 
+						lastNameTextField.getText().replace("'", "''"), address1TextField.getText().replace("'", "''"), address2TextField.getText().replace("'", "''"), 
+						townTextField.getText().replace("'", "''"), postcodeTextField.getText().replace("'", "''"), emailTextField.getText().replace("'", "''"), 
+						phoneNoTextField.getText().replace("'", "''"), Long.parseLong(cardNoTextField.getText().replace("'", "''")), 
+						Integer.parseInt(cvvTextField.getText().replace("'", "''")), orgNameTextField.getText().replace("'", "''"), orgEmailTextField.getText().replace("'", "''"),
+						webAddressTextField.getText(),paymentComboBox.getSelectedItem().toString());
 				JOptionPane.showMessageDialog(null,"Update succesfull!");
 			}
 		});

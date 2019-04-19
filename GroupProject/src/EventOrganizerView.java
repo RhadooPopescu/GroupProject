@@ -217,6 +217,7 @@ public class EventOrganizerView {
 	        
 	        JComboBox<String> comboBoxVenue = new JComboBox<String>();
 	        comboBoxVenue.setBounds(987, 188, 159, 20);
+	        comboBoxVenue.setEditable(false);
 	        comboBoxVenue.setBackground(SystemColor.activeCaption);
 	        frame.getContentPane().add(comboBoxVenue);
 	        

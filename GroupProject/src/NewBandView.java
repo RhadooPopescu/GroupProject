@@ -144,6 +144,7 @@ public class NewBandView extends JFrame {
 		agentComboBox.setModel(new DefaultComboBoxModel(aList.toArray()));
 		agentComboBox.setBackground(SystemColor.activeCaption);
 		agentComboBox.setBounds(93, 116, 116, 22);
+		agentComboBox.setEditable(false);
 		agentComboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Object selected = agentComboBox.getSelectedItem();
@@ -204,7 +205,7 @@ public class NewBandView extends JFrame {
 				}
 				else {
 					int agentID = Agent.getAgentId(agentComboBox.getSelectedItem().toString());					
-					new Band(nameTxtField.getText(),genreTxtField.getText(),linkTxtField.getText(),agentID);
+					new Band(nameTxtField.getText().replace("'", "''"),genreTxtField.getText().replace("'", "''"),linkTxtField.getText().replace("'", "''"),agentID);
 					JOptionPane.showMessageDialog(null,"Band added.");
 				}
 			}

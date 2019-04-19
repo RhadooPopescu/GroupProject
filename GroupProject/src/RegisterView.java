@@ -183,6 +183,7 @@ public class RegisterView {
         titleComboBox.setBounds(119, 67, 56, 17);
         titleComboBox.addItem("Mr.");
         titleComboBox.addItem("Ms.");
+        titleComboBox.setEditable(false);
         frame.getContentPane().add(titleComboBox);
         titleComboBox.setVisible(true);
 
@@ -309,7 +310,7 @@ public class RegisterView {
             public void focusGained(FocusEvent e) {};
             public void focusLost(FocusEvent e) {
                 User user = new User();
-                user.setEmail(emailField.getText());
+                user.setEmail(emailField.getText().replace("'", "''"));
                 if (user.checkFieldInDB("Email",user.getEmail())) {
                     lblEmailAlreadyExists.setVisible(true);
                     emailField.setText("");
@@ -504,6 +505,7 @@ public class RegisterView {
         paymentComboBox.setMaximumRowCount(2);
         paymentComboBox.addItem("On Booking");
         paymentComboBox.addItem("Monthly Invoice");
+        paymentComboBox.setEditable(false);
         frame.getContentPane().add(paymentComboBox);
         paymentComboBox.setVisible(false);
 
@@ -651,11 +653,12 @@ public class RegisterView {
                     }
                 }
                 if (checker){
-                    User newUser = new User(Long.parseLong(cardNoField.getText()),Integer.parseInt(CVVField.getText()),
-                            titleComboBox.getSelectedItem().toString(), firstNameField.getText(), lastNameField.getText(),
-                            addressOneField.getText(), addressTwoField.getText(), townField.getText(), postcodeField.getText(),
-                            usernameField.getText(), passwordField.getText(), emailField.getText(), phoneNoField.getText(),
-                            orgNameField.getText(),webAddressField.getText(), orgEmailField.getText(),
+                    User newUser = new User(Long.parseLong(cardNoField.getText().replace("'", "''")),Integer.parseInt(CVVField.getText().replace("'", "''")),
+                            titleComboBox.getSelectedItem().toString(), firstNameField.getText().replace("'", "''"), lastNameField.getText().replace("'", "''"),
+                            addressOneField.getText().replace("'", "''"), addressTwoField.getText().replace("'", "''"), townField.getText().replace("'", "''"), 
+                            postcodeField.getText().replace("'", "''"),usernameField.getText().replace("'", "''"), passwordField.getText().replace("'", "''"), 
+                            emailField.getText().replace("'", "''"), phoneNoField.getText().replace("'", "''"),orgNameField.getText().replace("'", "''"),
+                            webAddressField.getText().replace("'", "''"), orgEmailField.getText().replace("'", "''"),
                             paymentComboBox.getSelectedItem().toString());
                     newUser.insertCustomerData();
                     JOptionPane.showMessageDialog(null,"Registration successful! Please Login!");

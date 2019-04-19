@@ -158,7 +158,7 @@ public class HomePageView {
         searchButton1.setIcon(new ImageIcon(LoginView.class.getResource("Images/SearchIcon.png")));
         searchButton1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	scrollPane.setViewportView(new ResultPanel(searchTxtField.getText()));
+            	scrollPane.setViewportView(new ResultPanel(searchTxtField.getText().replace("'", "''")));
             }
         });
         searchButton1.setBounds(1052, 72, 30, 30);
