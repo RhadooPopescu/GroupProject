@@ -66,7 +66,7 @@ public class NewBandView extends JFrame {
 		frame.setUndecorated(true);
 		
 		JLabel windowTitleLabel = new JLabel("Band details");
-		windowTitleLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		windowTitleLabel.setFont(new Font("Open Sans", Font.PLAIN, 16));
 		windowTitleLabel.setForeground(SystemColor.inactiveCaption);
 		windowTitleLabel.setBounds(12, 13, 85, 16);
 		frame.getContentPane().add(windowTitleLabel);

@@ -53,7 +53,7 @@ public class RegisterView {
      */
     public void initialize() {
         frame = new JFrame();
-        frame.getContentPane().setFont(new Font("Tahoma", Font.BOLD, 11));
+        frame.getContentPane().setFont(new Font("Open Sans", Font.BOLD, 11));
         frame.getContentPane().setForeground(new Color(128, 128, 128));
         frame.setResizable(false);
         frame.setTitle("Global Music");
@@ -101,7 +101,7 @@ public class RegisterView {
 
         JLabel lblTitleLabel = new JLabel("Please fill in all the fields marked with *");
         lblTitleLabel.setForeground(SystemColor.activeCaption);
-        lblTitleLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
+        lblTitleLabel.setFont(new Font("Open Sans", Font.BOLD, 18));
         lblTitleLabel.setBounds(38, 23, 638, 32);
         frame.getContentPane().add(lblTitleLabel);
         lblTitleLabel.setVisible(true);
@@ -122,7 +122,7 @@ public class RegisterView {
 
 
         JLabel lblAllFields = new JLabel("All * fields are required !");
-        lblAllFields.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblAllFields.setFont(new Font("Open Sans", Font.BOLD, 14));
         lblAllFields.setForeground(Color.RED);
         lblAllFields.setBounds(976, 561, 214, 14);
         frame.getContentPane().add(lblAllFields);
@@ -137,7 +137,7 @@ public class RegisterView {
                 }
             }
         });
-        btnExitButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
+        btnExitButton.setFont(new Font("Open Sans", Font.PLAIN, 25));
         btnExitButton.setForeground(SystemColor.inactiveCaption);
         btnExitButton.setBounds(1205, 13, 63, 53);
         btnExitButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -169,7 +169,7 @@ public class RegisterView {
 
 
         JLabel lblTitle = new JLabel("Title");
-        lblTitle.setFont(new Font("Tahoma", Font.BOLD, 13));
+        lblTitle.setFont(new Font("Open Sans", Font.BOLD, 13));
         lblTitle.setForeground(SystemColor.inactiveCaption);
         lblTitle.setBounds(38, 66, 56, 16);
         frame.getContentPane().add(lblTitle);
@@ -190,7 +190,7 @@ public class RegisterView {
 
         JLabel lblFirstName = new JLabel("First Name *");
         lblFirstName.setForeground(SystemColor.inactiveCaption);
-        lblFirstName.setFont(new Font("Tahoma", Font.BOLD, 13));
+        lblFirstName.setFont(new Font("Open Sans", Font.BOLD, 13));
         lblFirstName.setBounds(38, 130, 82, 16);
         frame.getContentPane().add(lblFirstName);
         lblFirstName.setVisible(true);
@@ -207,7 +207,7 @@ public class RegisterView {
 
         JLabel lblLastName = new JLabel("Last Name *");
         lblLastName.setForeground(SystemColor.inactiveCaption);
-        lblLastName.setFont(new Font("Tahoma", Font.BOLD, 13));
+        lblLastName.setFont(new Font("Open Sans", Font.BOLD, 13));
         lblLastName.setBounds(301, 130, 82, 16);
         frame.getContentPane().add(lblLastName);
         lblLastName.setVisible(true);
@@ -224,7 +224,7 @@ public class RegisterView {
 
         JLabel lblAddressOne = new JLabel("Address 1 *");
         lblAddressOne.setForeground(SystemColor.inactiveCaption);
-        lblAddressOne.setFont(new Font("Tahoma", Font.BOLD, 13));
+        lblAddressOne.setFont(new Font("Open Sans", Font.BOLD, 13));
         lblAddressOne.setBounds(38, 200, 100, 16);
         frame.getContentPane().add(lblAddressOne);
         lblAddressOne.setVisible(true);
@@ -241,7 +241,7 @@ public class RegisterView {
 
         JLabel lblAddressTwo = new JLabel("Address 2");
         lblAddressTwo.setForeground(SystemColor.inactiveCaption);
-        lblAddressTwo.setFont(new Font("Tahoma", Font.BOLD, 13));
+        lblAddressTwo.setFont(new Font("Open Sans", Font.BOLD, 13));
         lblAddressTwo.setBounds(301, 200, 82, 16);
         frame.getContentPane().add(lblAddressTwo);
         lblAddressTwo.setVisible(true);
@@ -259,7 +259,7 @@ public class RegisterView {
 
         JLabel lblTown = new JLabel("Town *");
         lblTown.setForeground(SystemColor.inactiveCaption);
-        lblTown.setFont(new Font("Tahoma", Font.BOLD, 13));
+        lblTown.setFont(new Font("Open Sans", Font.BOLD, 13));
         lblTown.setBounds(38, 269, 71, 16);
         frame.getContentPane().add(lblTown);
         lblTown.setVisible(true);
@@ -276,7 +276,7 @@ public class RegisterView {
 
         JLabel lblPostCode = new JLabel("Post Code *");
         lblPostCode.setForeground(SystemColor.inactiveCaption);
-        lblPostCode.setFont(new Font("Tahoma", Font.BOLD, 13));
+        lblPostCode.setFont(new Font("Open Sans", Font.BOLD, 13));
         lblPostCode.setBounds(301, 269, 82, 16);
         frame.getContentPane().add(lblPostCode);
         lblPostCode.setVisible(true);
@@ -293,7 +293,7 @@ public class RegisterView {
 
         JLabel lblEmail = new JLabel("E-mail *");
         lblEmail.setForeground(SystemColor.inactiveCaption);
-        lblEmail.setFont(new Font("Tahoma", Font.BOLD, 13));
+        lblEmail.setFont(new Font("Open Sans", Font.BOLD, 13));
         lblEmail.setBounds(38, 344, 56, 14);
         frame.getContentPane().add(lblEmail);
         lblEmail.setVisible(true);
@@ -324,7 +324,7 @@ public class RegisterView {
 
         JLabel lblPhoneNo = new JLabel("Phone No");
         lblPhoneNo.setForeground(SystemColor.inactiveCaption);
-        lblPhoneNo.setFont(new Font("Tahoma", Font.BOLD, 13));
+        lblPhoneNo.setFont(new Font("Open Sans", Font.BOLD, 13));
         lblPhoneNo.setBounds(301, 344, 71, 14);
         frame.getContentPane().add(lblPhoneNo);
         lblPhoneNo.setVisible(true);
@@ -342,7 +342,7 @@ public class RegisterView {
 
         JLabel lblUsername = new JLabel("Username *");
         lblUsername.setForeground(SystemColor.inactiveCaption);
-        lblUsername.setFont(new Font("Tahoma", Font.BOLD, 13));
+        lblUsername.setFont(new Font("Open Sans", Font.BOLD, 13));
         lblUsername.setBounds(38, 418, 100, 14);
         frame.getContentPane().add(lblUsername);
         lblUsername.setVisible(true);
@@ -373,7 +373,7 @@ public class RegisterView {
 
         JLabel lblPassword = new JLabel("Password *");
         lblPassword.setForeground(SystemColor.inactiveCaption);
-        lblPassword.setFont(new Font("Tahoma", Font.BOLD, 13));
+        lblPassword.setFont(new Font("Open Sans", Font.BOLD, 13));
         lblPassword.setBounds(38, 496, 100, 14);
         frame.getContentPane().add(lblPassword);
         lblPassword.setVisible(true);
@@ -402,7 +402,7 @@ public class RegisterView {
 
         JLabel lblConfirmPassword = new JLabel("Conf Password *");
         lblConfirmPassword.setForeground(SystemColor.inactiveCaption);
-        lblConfirmPassword.setFont(new Font("Tahoma", Font.BOLD, 13));
+        lblConfirmPassword.setFont(new Font("Open Sans", Font.BOLD, 13));
         lblConfirmPassword.setBounds(283, 496, 124, 14);
         frame.getContentPane().add(lblConfirmPassword);
         lblConfirmPassword.setVisible(true);
@@ -434,7 +434,7 @@ public class RegisterView {
 
         JLabel lblOrganizationName = new JLabel("Organization Name *");
         lblOrganizationName.setForeground(SystemColor.inactiveCaption);
-        lblOrganizationName.setFont(new Font("Tahoma", Font.BOLD, 13));
+        lblOrganizationName.setFont(new Font("Open Sans", Font.BOLD, 13));
         lblOrganizationName.setBounds(628, 194, 188, 20);
         frame.getContentPane().add(lblOrganizationName);
         lblOrganizationName.setVisible(false);
@@ -442,7 +442,7 @@ public class RegisterView {
 
         JLabel lblOrganizationEmail = new JLabel("Organization Email");
         lblOrganizationEmail.setForeground(SystemColor.inactiveCaption);
-        lblOrganizationEmail.setFont(new Font("Tahoma", Font.BOLD, 13));
+        lblOrganizationEmail.setFont(new Font("Open Sans", Font.BOLD, 13));
         lblOrganizationEmail.setBounds(958, 196, 129, 17);
         frame.getContentPane().add(lblOrganizationEmail);
         lblOrganizationEmail.setVisible(false);
@@ -450,7 +450,7 @@ public class RegisterView {
 
         JLabel lblPaymentMethod = new JLabel("Payment Method");
         lblPaymentMethod.setForeground(SystemColor.inactiveCaption);
-        lblPaymentMethod.setFont(new Font("Tahoma", Font.BOLD, 13));
+        lblPaymentMethod.setFont(new Font("Open Sans", Font.BOLD, 13));
         lblPaymentMethod.setBounds(965, 267, 137, 14);
         frame.getContentPane().add(lblPaymentMethod);
         lblPaymentMethod.setVisible(false);
@@ -458,7 +458,7 @@ public class RegisterView {
 
         JLabel lblWebAddress = new JLabel("Web Address");
         lblWebAddress.setForeground(SystemColor.inactiveCaption);
-        lblWebAddress.setFont(new Font("Tahoma", Font.BOLD, 13));
+        lblWebAddress.setFont(new Font("Open Sans", Font.BOLD, 13));
         lblWebAddress.setBounds(628, 267, 124, 14);
         frame.getContentPane().add(lblWebAddress);
         lblWebAddress.setVisible(false);
@@ -466,7 +466,7 @@ public class RegisterView {
 
         JLabel lblCardNumber = new JLabel("Card Number *");
         lblCardNumber.setForeground(SystemColor.inactiveCaption);
-        lblCardNumber.setFont(new Font("Tahoma", Font.BOLD, 13));
+        lblCardNumber.setFont(new Font("Open Sans", Font.BOLD, 13));
         lblCardNumber.setBounds(10, 565, 110, 14);
         frame.getContentPane().add(lblCardNumber);
         lblCardNumber.setVisible(true);
@@ -474,7 +474,7 @@ public class RegisterView {
 
         JLabel lblCvv = new JLabel("CVV *");
         lblCvv.setForeground(SystemColor.inactiveCaption);
-        lblCvv.setFont(new Font("Tahoma", Font.BOLD, 13));
+        lblCvv.setFont(new Font("Open Sans", Font.BOLD, 13));
         lblCvv.setBounds(330, 565, 56, 14);
         frame.getContentPane().add(lblCvv);
         lblCvv.setVisible(true);
@@ -604,7 +604,7 @@ public class RegisterView {
                 }
             }
         });
-        chckbxNewCheckBox_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+        chckbxNewCheckBox_1.setFont(new Font("Open Sans", Font.BOLD, 13));
         chckbxNewCheckBox_1.setBounds(771, 129, 188, 23);
         frame.getContentPane().add(chckbxNewCheckBox_1);
         chckbxNewCheckBox_1.setVisible(true);
@@ -613,7 +613,7 @@ public class RegisterView {
 
         JButton btnRegisterButton = new JButton("RegisterView");
         btnRegisterButton.setForeground(SystemColor.inactiveCaption);
-        btnRegisterButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        btnRegisterButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         btnRegisterButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnRegisterButton.setOpaque(false);
         btnRegisterButton.setBorderPainted(false);
@@ -678,7 +678,7 @@ public class RegisterView {
         });
         btnCancelButton.setBounds(766, 516, 120, 40);
         btnCancelButton.setForeground(SystemColor.inactiveCaption);
-        btnCancelButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        btnCancelButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         btnCancelButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnCancelButton.setOpaque(false);
         btnCancelButton.setBorderPainted(false);
@@ -710,7 +710,7 @@ public class RegisterView {
 
 
         JLabel lblImageLabel = new JLabel("Image");
-        lblImageLabel.setFont(new Font("Tahoma", Font.PLAIN, 11));
+        lblImageLabel.setFont(new Font("Open Sans", Font.PLAIN, 11));
         lblImageLabel.setForeground(Color.BLACK);
         lblImageLabel.setIcon(new ImageIcon(HomePageView.class.getResource("Images/Silhouette-Rock-Concert-Wallpaper1.jpg")));
         lblImageLabel.setBounds(0, 0, 1297, 693);

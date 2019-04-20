@@ -63,7 +63,7 @@ public class HomePageView {
         	}
         });
         myAccountButton.setForeground(SystemColor.inactiveCaption);
-        myAccountButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        myAccountButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         myAccountButton.setOpaque(false);
         myAccountButton.setContentAreaFilled(false);
         myAccountButton.setBorderPainted(false);
@@ -80,7 +80,7 @@ public class HomePageView {
             }
         });
         changePassButton.setForeground(SystemColor.inactiveCaption);
-        changePassButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        changePassButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         changePassButton.setOpaque(false);
         changePassButton.setContentAreaFilled(false);
         changePassButton.setBorderPainted(false);
@@ -97,7 +97,7 @@ public class HomePageView {
         	}
         });
         bookingsButton.setForeground(SystemColor.inactiveCaption);
-        bookingsButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        bookingsButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         bookingsButton.setOpaque(false);
         bookingsButton.setContentAreaFilled(false);
         bookingsButton.setBorderPainted(false);
@@ -115,7 +115,7 @@ public class HomePageView {
         });
         logOutButton.setBounds(39, 426, 168, 53);
         logOutButton.setForeground(SystemColor.inactiveCaption);
-        logOutButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        logOutButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         logOutButton.setOpaque(false);
         logOutButton.setContentAreaFilled(false);
         logOutButton.setBorderPainted(false);
@@ -130,7 +130,7 @@ public class HomePageView {
         
         JLabel upcomingLabel = new JLabel("Upcoming");
         upcomingLabel.setForeground(SystemColor.inactiveCaption);
-        upcomingLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        upcomingLabel.setFont(new Font("Open Sans", Font.PLAIN, 20));
         upcomingLabel.setBounds(373, 146, 125, 30);
         frame.getContentPane().add(upcomingLabel);
 
@@ -194,7 +194,7 @@ public class HomePageView {
                 }
             }
         });
-        exitButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
+        exitButton.setFont(new Font("Open Sans", Font.PLAIN, 25));
         exitButton.setBorderPainted(false);
         exitButton.setOpaque(false);
         exitButton.setContentAreaFilled(false);
@@ -250,13 +250,13 @@ public class HomePageView {
         JLabel searchLabel = new JLabel("Search");
         searchLabel.setBounds(665, 79, 63, 16);
         searchLabel.setForeground(SystemColor.inactiveCaption);
-        searchLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        searchLabel.setFont(new Font("Open Sans", Font.PLAIN, 20));
         frame.getContentPane().add(searchLabel);
         
         JLabel searchDateLabel = new JLabel("Search by date");
         searchDateLabel.setBounds(760, 121, 110, 16);
         searchDateLabel.setForeground(SystemColor.inactiveCaption);
-        searchDateLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        searchDateLabel.setFont(new Font("Open Sans", Font.PLAIN, 16));
         frame.getContentPane().add(searchDateLabel);
         
         frame.getRootPane().setDefaultButton(searchButton1);

@@ -84,7 +84,7 @@ public class EventOrganizerView {
 	                }
 	            }
 	        });
-	        btnExitButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
+	        btnExitButton.setFont(new Font("Open Sans", Font.PLAIN, 25));
 	        btnExitButton.setForeground(SystemColor.inactiveCaption);
 	        btnExitButton.setBounds(1205, 13, 63, 53);
 	        btnExitButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -117,7 +117,7 @@ public class EventOrganizerView {
 	        JButton btnEditEvent = new JButton("Edit/Cancel Event");
 	        btnEditEvent.setBounds(10, 164, 202, 60);
 	        btnEditEvent.setForeground(SystemColor.inactiveCaption);
-	        btnEditEvent.setFont(new Font("Tahoma", Font.PLAIN, 20));
+	        btnEditEvent.setFont(new Font("Open Sans", Font.PLAIN, 20));
 	        btnEditEvent.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 	        btnEditEvent.setOpaque(false);
 	        btnEditEvent.setBorderPainted(false);
@@ -135,7 +135,7 @@ public class EventOrganizerView {
 	        JButton btnLogOut = new JButton("Log Out");
 	        btnLogOut.setBounds(22, 264, 121, 53);
 	        btnLogOut.setForeground(SystemColor.inactiveCaption);
-	        btnLogOut.setFont(new Font("Tahoma", Font.PLAIN, 20));
+	        btnLogOut.setFont(new Font("Open Sans", Font.PLAIN, 20));
 	        btnLogOut.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 	        btnLogOut.setOpaque(false);
 	        btnLogOut.setBorderPainted(false);
@@ -167,7 +167,7 @@ public class EventOrganizerView {
 	        JLabel lblEventName = new JLabel("Event Name");
 	        lblEventName.setBounds(496, 187, 99, 21);
 	        lblEventName.setForeground(SystemColor.inactiveCaption);
-	        lblEventName.setFont(new Font("Tahoma", Font.BOLD, 13));
+	        lblEventName.setFont(new Font("Open Sans", Font.BOLD, 13));
 	        frame.getContentPane().add(lblEventName);
 	        
 	        
@@ -182,7 +182,7 @@ public class EventOrganizerView {
 	        
 	        JLabel lblDate = new JLabel("Date");
 	        lblDate.setForeground(SystemColor.inactiveCaption);
-	        lblDate.setFont(new Font("Tahoma", Font.BOLD, 13));
+	        lblDate.setFont(new Font("Open Sans", Font.BOLD, 13));
 	        lblDate.setBounds(496, 250, 99, 21);
 	        frame.getContentPane().add(lblDate);
 	        
@@ -196,7 +196,7 @@ public class EventOrganizerView {
 	        
 	        JLabel lblDuration = new JLabel("Duration");
 	        lblDuration.setForeground(SystemColor.inactiveCaption);
-	        lblDuration.setFont(new Font("Tahoma", Font.BOLD, 13));
+	        lblDuration.setFont(new Font("Open Sans", Font.BOLD, 13));
 	        lblDuration.setBounds(496, 312, 99, 21);
 	        frame.getContentPane().add(lblDuration);
 	        
@@ -211,7 +211,7 @@ public class EventOrganizerView {
 	        
 	        JLabel lblVenue = new JLabel("Venue");
 	        lblVenue.setForeground(SystemColor.inactiveCaption);
-	        lblVenue.setFont(new Font("Tahoma", Font.BOLD, 13));
+	        lblVenue.setFont(new Font("Open Sans", Font.BOLD, 13));
 	        lblVenue.setBounds(878, 187, 99, 21);
 	        frame.getContentPane().add(lblVenue);
 	        
@@ -235,7 +235,7 @@ public class EventOrganizerView {
 	        
 	        JLabel lblPrice = new JLabel("Price");
 	        lblPrice.setForeground(SystemColor.inactiveCaption);
-	        lblPrice.setFont(new Font("Tahoma", Font.BOLD, 13));
+	        lblPrice.setFont(new Font("Open Sans", Font.BOLD, 13));
 	        lblPrice.setBounds(878, 250, 99, 21);
 	        frame.getContentPane().add(lblPrice);
 	        
@@ -250,7 +250,7 @@ public class EventOrganizerView {
 	        
 	        JLabel lblUploadImage = new JLabel("Upload Image");
 	        lblUploadImage.setForeground(SystemColor.inactiveCaption);
-	        lblUploadImage.setFont(new Font("Tahoma", Font.BOLD, 13));
+	        lblUploadImage.setFont(new Font("Open Sans", Font.BOLD, 13));
 	        lblUploadImage.setBounds(878, 316, 99, 21);
 	        frame.getContentPane().add(lblUploadImage);
 	        
@@ -290,7 +290,7 @@ public class EventOrganizerView {
 	        
 	        
 	        JLabel lblPerformers = new JLabel("Performers");
-	        lblPerformers.setFont(new Font("Tahoma", Font.BOLD, 18));
+	        lblPerformers.setFont(new Font("Open Sans", Font.BOLD, 18));
 	        lblPerformers.setForeground(SystemColor.inactiveCaption);
 	        lblPerformers.setBounds(605, 373, 128, 21);
 	        frame.getContentPane().add(lblPerformers);
@@ -298,7 +298,7 @@ public class EventOrganizerView {
 	        
 	        JLabel lblBand_1 = new JLabel("Band 1");
 	        lblBand_1.setForeground(SystemColor.inactiveCaption);
-	        lblBand_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+	        lblBand_1.setFont(new Font("Open Sans", Font.BOLD, 13));
 	        lblBand_1.setBounds(496, 437, 99, 21);
 	        frame.getContentPane().add(lblBand_1);
 	        
@@ -324,7 +324,7 @@ public class EventOrganizerView {
 	        
 	        JLabel lblBand_2 = new JLabel("Band 2");
 	        lblBand_2.setForeground(SystemColor.inactiveCaption);
-	        lblBand_2.setFont(new Font("Tahoma", Font.BOLD, 13));
+	        lblBand_2.setFont(new Font("Open Sans", Font.BOLD, 13));
 	        lblBand_2.setBounds(878, 437, 99, 21);
 	        frame.getContentPane().add(lblBand_2);
 	        
@@ -338,7 +338,7 @@ public class EventOrganizerView {
 	        
 	        JLabel lblBand_3 = new JLabel("Band 3");
 	        lblBand_3.setForeground(SystemColor.inactiveCaption);
-	        lblBand_3.setFont(new Font("Tahoma", Font.BOLD, 13));
+	        lblBand_3.setFont(new Font("Open Sans", Font.BOLD, 13));
 	        lblBand_3.setBounds(496, 499, 99, 21);
 	        frame.getContentPane().add(lblBand_3);
 	        
@@ -351,7 +351,7 @@ public class EventOrganizerView {
 	        
 	        JLabel lblBand_4 = new JLabel("Band 4");
 	        lblBand_4.setForeground(SystemColor.inactiveCaption);
-	        lblBand_4.setFont(new Font("Tahoma", Font.BOLD, 13));
+	        lblBand_4.setFont(new Font("Open Sans", Font.BOLD, 13));
 	        lblBand_4.setBounds(878, 499, 99, 21);
 	        frame.getContentPane().add(lblBand_4);
 	        
@@ -369,7 +369,7 @@ public class EventOrganizerView {
 	        });
 	        btnSaveButton.setOpaque(false);
 	        btnSaveButton.setForeground(SystemColor.inactiveCaption);
-	        btnSaveButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+	        btnSaveButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
 	        btnSaveButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 	        btnSaveButton.setContentAreaFilled(false);
 	        btnSaveButton.setBorderPainted(false);
@@ -387,7 +387,7 @@ public class EventOrganizerView {
 	        
 	        JLabel lblAddNewEvent = new JLabel("Add New Event");
 	        lblAddNewEvent.setForeground(SystemColor.inactiveCaption);
-	        lblAddNewEvent.setFont(new Font("Tahoma", Font.BOLD, 18));
+	        lblAddNewEvent.setFont(new Font("Open Sans", Font.BOLD, 18));
 	        lblAddNewEvent.setBounds(788, 86, 189, 21);
 	        frame.getContentPane().add(lblAddNewEvent);
 	        
@@ -396,7 +396,7 @@ public class EventOrganizerView {
 	        btnCancel.setBounds(623, 566, 121, 23);
 	        btnCancel.setOpaque(false);
 	        btnCancel.setForeground(SystemColor.inactiveCaption);
-	        btnCancel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+	        btnCancel.setFont(new Font("Open Sans", Font.PLAIN, 20));
 	        btnCancel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 	        btnCancel.setContentAreaFilled(false);
 	        btnCancel.setBorderPainted(false);

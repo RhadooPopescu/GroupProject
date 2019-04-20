@@ -109,7 +109,7 @@ public class LoginView {
         });
         btnLogin.setBounds(796, 360, 120, 40);
         btnLogin.setForeground(SystemColor.inactiveCaption);
-        btnLogin.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        btnLogin.setFont(new Font("Open Sans", Font.PLAIN, 20));
         btnLogin.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnLogin.setOpaque(false);
         btnLogin.setBorderPainted(false);
@@ -119,14 +119,14 @@ public class LoginView {
         JLabel lblUsername = new JLabel("Username");
         lblUsername.setForeground(SystemColor.inactiveCaption);
         lblUsername.setBackground(Color.BLACK);
-        lblUsername.setFont(new Font("Tahoma", Font.BOLD, 16));
+        lblUsername.setFont(new Font("Open Sans", Font.BOLD, 16));
         lblUsername.setBounds(488, 191, 122, 48);
         frame.getContentPane().add(lblUsername);
 
         JLabel lblNewLabel_1 = new JLabel("Password");
         lblNewLabel_1.setForeground(SystemColor.inactiveCaption);
         lblNewLabel_1.setBackground(Color.BLACK);
-        lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 16));
+        lblNewLabel_1.setFont(new Font("Open Sans", Font.BOLD, 16));
         lblNewLabel_1.setBounds(488, 278, 122, 39);
         frame.getContentPane().add(lblNewLabel_1);
 
@@ -141,7 +141,7 @@ public class LoginView {
             }
         });
         btnRegister.setForeground(SystemColor.inactiveCaption);
-        btnRegister.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        btnRegister.setFont(new Font("Open Sans", Font.PLAIN, 20));
         btnRegister.setBounds(641, 360, 120, 40);
         btnRegister.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnRegister.setOpaque(false);
@@ -161,7 +161,7 @@ public class LoginView {
                 }
             }
         });
-        btnExitButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
+        btnExitButton.setFont(new Font("Open Sans", Font.PLAIN, 25));
         btnExitButton.setForeground(SystemColor.inactiveCaption);
         btnExitButton.setBounds(1205, 13, 63, 53);
         btnExitButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -214,7 +214,7 @@ public class LoginView {
         frame.getContentPane().add(lblLogo);
 
         JLabel lblImageLabel = new JLabel("Image");
-        lblImageLabel.setFont(new Font("Tahoma", Font.PLAIN, 11));
+        lblImageLabel.setFont(new Font("Open Sans", Font.PLAIN, 11));
         lblImageLabel.setForeground(Color.BLACK);
         lblImageLabel.setIcon(new ImageIcon(LoginView.class.getResource("Images/Silhouette-Rock-Concert-Wallpaper1.jpg")));
         lblImageLabel.setBounds(0, 0, 1297, 693);

@@ -72,7 +72,7 @@ public class MyAccountView {
                 }
             }
         });
-        exitButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
+        exitButton.setFont(new Font("Open Sans", Font.PLAIN, 25));
         exitButton.setBorderPainted(false);
         exitButton.setOpaque(false);
         exitButton.setContentAreaFilled(false);
@@ -103,7 +103,7 @@ public class MyAccountView {
         	}
         });
         searchButton.setForeground(SystemColor.inactiveCaption);
-        searchButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        searchButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         searchButton.setBounds(27, 173, 190, 53);
         searchButton.setOpaque(false);
         searchButton.setContentAreaFilled(false);
@@ -121,7 +121,7 @@ public class MyAccountView {
             }
         });
         changePassButton.setForeground(SystemColor.inactiveCaption);
-        changePassButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        changePassButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         changePassButton.setOpaque(false);
         changePassButton.setContentAreaFilled(false);
         changePassButton.setBorderPainted(false);
@@ -138,7 +138,7 @@ public class MyAccountView {
         	}
         });
         bookingsButton.setForeground(SystemColor.inactiveCaption);
-        bookingsButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        bookingsButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         bookingsButton.setOpaque(false);
         bookingsButton.setContentAreaFilled(false);
         bookingsButton.setBorderPainted(false);
@@ -156,7 +156,7 @@ public class MyAccountView {
         });
         logOutButton.setBounds(39, 408, 168, 53);
         logOutButton.setForeground(SystemColor.inactiveCaption);
-        logOutButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        logOutButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         logOutButton.setOpaque(false);
         logOutButton.setContentAreaFilled(false);
         logOutButton.setBorderPainted(false);
@@ -165,7 +165,7 @@ public class MyAccountView {
 		
 		JLabel existDetailsLabel = new JLabel("Existing Details");
 		existDetailsLabel.setForeground(SystemColor.inactiveCaption);
-		existDetailsLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		existDetailsLabel.setFont(new Font("Open Sans", Font.PLAIN, 20));
 		existDetailsLabel.setBounds(285, 142, 142, 25);
 		frame.getContentPane().add(existDetailsLabel);
 		
@@ -186,7 +186,7 @@ public class MyAccountView {
 		
 		JLabel firstNameLabel = new JLabel("First Name");
 		firstNameLabel.setForeground(SystemColor.inactiveCaption);
-		firstNameLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+		firstNameLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		firstNameLabel.setBounds(285, 257, 69, 16);
 		frame.getContentPane().add(firstNameLabel);
 		
@@ -200,7 +200,7 @@ public class MyAccountView {
 		
 		JLabel lastNameLabel = new JLabel("Last Name");
 		lastNameLabel.setForeground(SystemColor.inactiveCaption);
-		lastNameLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lastNameLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		lastNameLabel.setBounds(601, 257, 69, 16);
 		frame.getContentPane().add(lastNameLabel);
 		
@@ -215,7 +215,7 @@ public class MyAccountView {
 		JLabel address1Label = new JLabel("Address 1");
 		address1Label.setBounds(285, 294, 69, 16);
 		address1Label.setForeground(SystemColor.inactiveCaption);
-		address1Label.setFont(new Font("Tahoma", Font.BOLD, 13));
+		address1Label.setFont(new Font("Open Sans", Font.BOLD, 13));
 		frame.getContentPane().add(address1Label);
 		
 		address2TextField = new JTextField();
@@ -228,7 +228,7 @@ public class MyAccountView {
 		
 		JLabel address2Label = new JLabel("Address 2");
 		address2Label.setForeground(SystemColor.inactiveCaption);
-		address2Label.setFont(new Font("Tahoma", Font.BOLD, 13));
+		address2Label.setFont(new Font("Open Sans", Font.BOLD, 13));
 		address2Label.setBounds(601, 294, 69, 16);
 		frame.getContentPane().add(address2Label);
 		
@@ -242,7 +242,7 @@ public class MyAccountView {
 		JLabel townLabel = new JLabel("Town");
 		townLabel.setBounds(320, 341, 34, 16);
 		townLabel.setForeground(SystemColor.inactiveCaption);
-		townLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+		townLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		frame.getContentPane().add(townLabel);
 		
 		postcodeTextField = new JTextField();
@@ -255,7 +255,7 @@ public class MyAccountView {
 		JLabel postcodeLabel = new JLabel("Postcode");
 		postcodeLabel.setBounds(610, 341, 60, 16);
 		postcodeLabel.setForeground(SystemColor.inactiveCaption);
-		postcodeLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+		postcodeLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		frame.getContentPane().add(postcodeLabel);
 		
 		emailTextField = new JTextField();
@@ -268,7 +268,7 @@ public class MyAccountView {
 		JLabel emailLabel = new JLabel("E-mail");
 		emailLabel.setBounds(316, 382, 38, 20);
 		emailLabel.setForeground(SystemColor.inactiveCaption);
-		emailLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+		emailLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		frame.getContentPane().add(emailLabel);
 		
 		phoneNoTextField = new JTextField();
@@ -282,7 +282,7 @@ public class MyAccountView {
 		JLabel phoneLabel = new JLabel("Phone No");
 		phoneLabel.setBounds(610, 382, 60, 20);
 		phoneLabel.setForeground(SystemColor.inactiveCaption);
-		phoneLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+		phoneLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		frame.getContentPane().add(phoneLabel);
 		
 		cardNoTextField = new JTextField();
@@ -296,7 +296,7 @@ public class MyAccountView {
 		JLabel cardNoLabel = new JLabel("Card No");
 		cardNoLabel.setBounds(304, 427, 50, 16);
 		cardNoLabel.setForeground(SystemColor.inactiveCaption);
-		cardNoLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+		cardNoLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		frame.getContentPane().add(cardNoLabel);
 		
 		cvvTextField = new JTextField();
@@ -309,7 +309,7 @@ public class MyAccountView {
 		
 		JLabel cvvLabel = new JLabel("CVV");
 		cvvLabel.setForeground(SystemColor.inactiveCaption);
-		cvvLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+		cvvLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		cvvLabel.setBounds(644, 427, 26, 16);
 		frame.getContentPane().add(cvvLabel);
 		
@@ -326,7 +326,7 @@ public class MyAccountView {
 		JLabel orgNameLabel = new JLabel("Organization Name");
 		orgNameLabel.setBounds(915, 256, 121, 16);
 		orgNameLabel.setForeground(SystemColor.inactiveCaption);
-		orgNameLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+		orgNameLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		frame.getContentPane().add(orgNameLabel);
 		
 		orgEmailTextField = new JTextField();
@@ -339,7 +339,7 @@ public class MyAccountView {
 		JLabel orgEmailLabel = new JLabel("Organization E-mail");
 		orgEmailLabel.setBounds(912, 298, 124, 16);
 		orgEmailLabel.setForeground(SystemColor.inactiveCaption);
-		orgEmailLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+		orgEmailLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		frame.getContentPane().add(orgEmailLabel);
 		
 		JComboBox<String> paymentComboBox = new JComboBox<String>();
@@ -353,7 +353,7 @@ public class MyAccountView {
 		JLabel paymentLabel = new JLabel("Payment Method");
 		paymentLabel.setBounds(926, 341, 110, 16);
 		paymentLabel.setForeground(SystemColor.inactiveCaption);
-		paymentLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+		paymentLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		frame.getContentPane().add(paymentLabel);
 		
 		webAddressTextField = new JTextField();
@@ -366,7 +366,7 @@ public class MyAccountView {
 		JLabel webAddressLabel = new JLabel("Web Address");
 		webAddressLabel.setBounds(948, 384, 88, 16);
 		webAddressLabel.setForeground(SystemColor.inactiveCaption);
-		webAddressLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+		webAddressLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		frame.getContentPane().add(webAddressLabel);
 		
 		if (User.getType(User.username).equalsIgnoreCase("Customer")) {
@@ -419,7 +419,7 @@ public class MyAccountView {
         saveButton.setBorderPainted(false);
         saveButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         saveButton.setForeground(SystemColor.inactiveCaption);
-        saveButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        saveButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         frame.getContentPane().add(saveButton);
 		
 		JSeparator saveSeparator = new JSeparator();
@@ -431,7 +431,7 @@ public class MyAccountView {
 		JLabel titleLabel = new JLabel("Title");
 		titleLabel.setBounds(322, 212, 34, 16);
 		titleLabel.setForeground(SystemColor.inactiveCaption);
-		titleLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+		titleLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		frame.getContentPane().add(titleLabel);
 		
 		JSeparator separator = new JSeparator();

@@ -67,7 +67,7 @@ public class NewBookingView {
                 }
             }
         });
-        btnExitButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
+        btnExitButton.setFont(new Font("Open Sans", Font.PLAIN, 25));
         btnExitButton.setForeground(SystemColor.inactiveCaption);
         btnExitButton.setBounds(1205, 13, 63, 53);
         btnExitButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -102,7 +102,7 @@ public class NewBookingView {
         
         JLabel lblFeaturingArtists = new JLabel("Featuring Artists");
         lblFeaturingArtists.setForeground(SystemColor.activeCaption);
-        lblFeaturingArtists.setFont(new Font("Tahoma", Font.BOLD, 16));
+        lblFeaturingArtists.setFont(new Font("Open Sans", Font.BOLD, 16));
         lblFeaturingArtists.setBounds(389, 29, 209, 29);
         frame.getContentPane().add(lblFeaturingArtists);
         
@@ -142,7 +142,7 @@ public class NewBookingView {
         btnWebsiteBand_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnWebsiteBand_1.setOpaque(false);
         btnWebsiteBand_1.setForeground(SystemColor.textHighlight);
-        btnWebsiteBand_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        btnWebsiteBand_1.setFont(new Font("Open Sans", Font.PLAIN, 14));
         btnWebsiteBand_1.setContentAreaFilled(false);
         btnWebsiteBand_1.setBorderPainted(false);
         panel.add(btnWebsiteBand_1);
@@ -153,7 +153,7 @@ public class NewBookingView {
         btnWebsiteBand_2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnWebsiteBand_2.setOpaque(false);
         btnWebsiteBand_2.setForeground(SystemColor.textHighlight);
-        btnWebsiteBand_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        btnWebsiteBand_2.setFont(new Font("Open Sans", Font.PLAIN, 14));
         btnWebsiteBand_2.setContentAreaFilled(false);
         btnWebsiteBand_2.setBorderPainted(false);
         panel.add(btnWebsiteBand_2);
@@ -174,7 +174,7 @@ public class NewBookingView {
         btnWebsiteBand_3.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnWebsiteBand_3.setOpaque(false);
         btnWebsiteBand_3.setForeground(SystemColor.textHighlight);
-        btnWebsiteBand_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        btnWebsiteBand_3.setFont(new Font("Open Sans", Font.PLAIN, 14));
         btnWebsiteBand_3.setContentAreaFilled(false);
         btnWebsiteBand_3.setBorderPainted(false);
         panel.add(btnWebsiteBand_3);
@@ -201,7 +201,7 @@ public class NewBookingView {
         btnWebsiteBand_4.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnWebsiteBand_4.setOpaque(false);
         btnWebsiteBand_4.setForeground(SystemColor.textHighlight);
-        btnWebsiteBand_4.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        btnWebsiteBand_4.setFont(new Font("Open Sans", Font.PLAIN, 14));
         btnWebsiteBand_4.setContentAreaFilled(false);
         btnWebsiteBand_4.setBorderPainted(false);
         panel.add(btnWebsiteBand_4);
@@ -210,21 +210,21 @@ public class NewBookingView {
         JLabel lblName = new JLabel("Name");
         lblName.setBounds(46, 372, 46, 14);
         lblName.setForeground(SystemColor.inactiveCaption);
-        lblName.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblName.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblName);
         
         
         JLabel lblDate = new JLabel("Date");
         lblDate.setBounds(46, 414, 46, 14);
         lblDate.setForeground(SystemColor.inactiveCaption);
-        lblDate.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblDate.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblDate);
         
         
         JLabel lblDuration = new JLabel("Duration");
         lblDuration.setBounds(46, 462, 75, 14);
         lblDuration.setForeground(SystemColor.inactiveCaption);
-        lblDuration.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblDuration.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblDuration);
         
         
@@ -239,35 +239,35 @@ public class NewBookingView {
         JLabel lblAvailableTickets = new JLabel("Available Tickets");
         lblAvailableTickets.setBounds(46, 589, 130, 14);
         lblAvailableTickets.setForeground(SystemColor.inactiveCaption);
-        lblAvailableTickets.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblAvailableTickets.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblAvailableTickets);
         
         
         JLabel lblFullPriceTickets = new JLabel("Full Price Tickets");
         lblFullPriceTickets.setBounds(385, 372, 125, 14);
         lblFullPriceTickets.setForeground(SystemColor.inactiveCaption);
-        lblFullPriceTickets.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblFullPriceTickets.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblFullPriceTickets);
         
         
         JLabel lblPrice = new JLabel("Price");
         lblPrice.setBounds(624, 372, 46, 14);
         lblPrice.setForeground(SystemColor.inactiveCaption);
-        lblPrice.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblPrice.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblPrice);
         
         
         JLabel lblStudentDiscountPrice = new JLabel("Student Discount Price");
         lblStudentDiscountPrice.setBounds(389, 430, 171, 14);
         lblStudentDiscountPrice.setForeground(SystemColor.inactiveCaption);
-        lblStudentDiscountPrice.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblStudentDiscountPrice.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblStudentDiscountPrice);
         
         
         JLabel lblPriceStudent = new JLabel("Price");
         lblPriceStudent.setBounds(628, 430, 46, 14);
         lblPriceStudent.setForeground(SystemColor.inactiveCaption);
-        lblPriceStudent.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblPriceStudent.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblPriceStudent);
         
         
@@ -299,14 +299,14 @@ public class NewBookingView {
         JLabel lblCorporateTicketPrice = new JLabel("Corporate Ticket Price");
         lblCorporateTicketPrice.setBounds(389, 498, 171, 14);
         lblCorporateTicketPrice.setForeground(SystemColor.inactiveCaption);
-        lblCorporateTicketPrice.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblCorporateTicketPrice.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblCorporateTicketPrice);
         
         
         JLabel lblPriceCorporate = new JLabel("Price");
         lblPriceCorporate.setBounds(628, 498, 46, 14);
         lblPriceCorporate.setForeground(SystemColor.inactiveCaption);
-        lblPriceCorporate.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblPriceCorporate.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblPriceCorporate);
         
         
@@ -314,21 +314,21 @@ public class NewBookingView {
         JLabel lblTotals = new JLabel("Totals");
         lblTotals.setBounds(389, 554, 75, 14);
         lblTotals.setForeground(SystemColor.inactiveCaption);
-        lblTotals.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblTotals.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblTotals);
         
         
         JLabel lblNoOfTickets = new JLabel("No Of Tickets");
         lblNoOfTickets.setBounds(628, 554, 97, 14);
         lblNoOfTickets.setForeground(SystemColor.inactiveCaption);
-        lblNoOfTickets.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblNoOfTickets.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblNoOfTickets);
         
         
         JLabel lblAmount = new JLabel("Amount");
         lblAmount.setBounds(773, 554, 84, 14);
         lblAmount.setForeground(SystemColor.inactiveCaption);
-        lblAmount.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblAmount.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblAmount);
         
         
@@ -340,7 +340,7 @@ public class NewBookingView {
         });
         btnProceedToBooking.setBounds(715, 615, 209, 23);
         btnProceedToBooking.setForeground(SystemColor.inactiveCaption);
-        btnProceedToBooking.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        btnProceedToBooking.setFont(new Font("Open Sans", Font.PLAIN, 20));
         btnProceedToBooking.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnProceedToBooking.setOpaque(false);
         btnProceedToBooking.setBorderPainted(false);
@@ -356,7 +356,7 @@ public class NewBookingView {
         });
         btnCancel.setOpaque(false);
         btnCancel.setForeground(SystemColor.inactiveCaption);
-        btnCancel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        btnCancel.setFont(new Font("Open Sans", Font.PLAIN, 20));
         btnCancel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnCancel.setContentAreaFilled(false);
         btnCancel.setBorderPainted(false);
@@ -387,7 +387,7 @@ public class NewBookingView {
 
         
         JLabel lblImageLabel = new JLabel("Image");
-        lblImageLabel.setFont(new Font("Tahoma", Font.PLAIN, 11));
+        lblImageLabel.setFont(new Font("Open Sans", Font.PLAIN, 11));
         lblImageLabel.setForeground(Color.BLACK);
         lblImageLabel.setIcon(new ImageIcon(LoginView.class.getResource("Images/Silhouette-Rock-Concert-Wallpaper1.jpg")));
         lblImageLabel.setBounds(0, 0, 1297, 693);

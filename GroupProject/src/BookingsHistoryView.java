@@ -46,7 +46,7 @@ public class BookingsHistoryView {
 			}
 		});
         searchButton.setForeground(SystemColor.inactiveCaption);
-        searchButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        searchButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         searchButton.setBounds(27, 173, 190, 53);
         searchButton.setOpaque(false);
         searchButton.setContentAreaFilled(false);
@@ -64,7 +64,7 @@ public class BookingsHistoryView {
         	}
         });
         myAccountButton.setForeground(SystemColor.inactiveCaption);
-        myAccountButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        myAccountButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         myAccountButton.setOpaque(false);
         myAccountButton.setContentAreaFilled(false);
         myAccountButton.setBorderPainted(false);
@@ -80,7 +80,7 @@ public class BookingsHistoryView {
             }
         });
         changePassButton.setForeground(SystemColor.inactiveCaption);
-        changePassButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        changePassButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         changePassButton.setOpaque(false);
         changePassButton.setContentAreaFilled(false);
         changePassButton.setBorderPainted(false);
@@ -99,7 +99,7 @@ public class BookingsHistoryView {
                 }
             }
         });
-        exitButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
+        exitButton.setFont(new Font("Open Sans", Font.PLAIN, 25));
         exitButton.setBorderPainted(false);
         exitButton.setOpaque(false);
         exitButton.setContentAreaFilled(false);
@@ -131,7 +131,7 @@ public class BookingsHistoryView {
         });
         logOutButton.setBounds(45, 417, 168, 53);
         logOutButton.setForeground(SystemColor.inactiveCaption);
-        logOutButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        logOutButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         logOutButton.setOpaque(false);
         logOutButton.setContentAreaFilled(false);
         logOutButton.setBorderPainted(false);
@@ -200,7 +200,7 @@ public class BookingsHistoryView {
         JLabel bookingsLabel = new JLabel("Booking History");
         bookingsLabel.setBounds(460, 118, 190, 38);
         bookingsLabel.setForeground(SystemColor.inactiveCaption);
-        bookingsLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
+        bookingsLabel.setFont(new Font("Open Sans", Font.PLAIN, 25));
         frame.getContentPane().add(bookingsLabel);
         
         

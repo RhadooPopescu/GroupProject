@@ -53,7 +53,7 @@ public class NewAgentView {
 		frame.setUndecorated(true);
 		
 		JLabel windowTitleLabel = new JLabel("Agent details");
-		windowTitleLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		windowTitleLabel.setFont(new Font("Open Sans", Font.PLAIN, 16));
 		windowTitleLabel.setForeground(SystemColor.inactiveCaption);
 		windowTitleLabel.setBounds(12, 13, 92, 20);
 		frame.getContentPane().add(windowTitleLabel);

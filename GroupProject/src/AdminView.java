@@ -76,7 +76,7 @@ public class AdminView {
                 }
             }
         });
-        btnExitButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
+        btnExitButton.setFont(new Font("Open Sans", Font.PLAIN, 25));
         btnExitButton.setForeground(SystemColor.inactiveCaption);
         btnExitButton.setBounds(1205, 13, 63, 53);
         btnExitButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -109,7 +109,7 @@ public class AdminView {
         JButton btnLogOut = new JButton("Log Out");
         btnLogOut.setBounds(22, 410, 121, 53);
         btnLogOut.setForeground(SystemColor.inactiveCaption);
-        btnLogOut.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        btnLogOut.setFont(new Font("Open Sans", Font.PLAIN, 20));
         btnLogOut.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnLogOut.setOpaque(false);
         btnLogOut.setBorderPainted(false);
@@ -126,7 +126,7 @@ public class AdminView {
         JLabel lblChooseUsername = new JLabel("Choose Username");
         lblChooseUsername.setBounds(48, 56, 130, 14);
         lblChooseUsername.setForeground(SystemColor.inactiveCaption);
-        lblChooseUsername.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblChooseUsername.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblChooseUsername);
         
         
@@ -213,7 +213,7 @@ public class AdminView {
         });
         btnViewEventList.setBounds(27, 173, 190, 53);
         btnViewEventList.setForeground(SystemColor.inactiveCaption);
-        btnViewEventList.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        btnViewEventList.setFont(new Font("Open Sans", Font.PLAIN, 20));
         btnViewEventList.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnViewEventList.setOpaque(false);
         btnViewEventList.setBorderPainted(false);
@@ -224,7 +224,7 @@ public class AdminView {
         JButton btnConfirmBooking = new JButton("Confirm Booking");
         btnConfirmBooking.setBounds(27, 253, 190, 53);
         btnConfirmBooking.setForeground(SystemColor.inactiveCaption);
-        btnConfirmBooking.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        btnConfirmBooking.setFont(new Font("Open Sans", Font.PLAIN, 20));
         btnConfirmBooking.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnConfirmBooking.setOpaque(false);
         btnConfirmBooking.setBorderPainted(false);
@@ -248,7 +248,7 @@ public class AdminView {
         });
         btnGenerateInvoice.setBounds(27, 332, 190, 53);
         btnGenerateInvoice.setForeground(SystemColor.inactiveCaption);
-        btnGenerateInvoice.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        btnGenerateInvoice.setFont(new Font("Open Sans", Font.PLAIN, 20));
         btnGenerateInvoice.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnGenerateInvoice.setOpaque(false);
         btnGenerateInvoice.setBorderPainted(false);

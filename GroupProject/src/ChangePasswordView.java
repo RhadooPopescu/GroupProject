@@ -45,7 +45,7 @@ public class ChangePasswordView {
 		
 		JLabel changePassLabel = new JLabel("Account Security");
 		changePassLabel.setForeground(SystemColor.inactiveCaption);
-		changePassLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		changePassLabel.setFont(new Font("Open Sans", Font.PLAIN, 20));
 		changePassLabel.setBounds(372, 180, 197, 38);
 		frame.getContentPane().add(changePassLabel);
 		
@@ -58,7 +58,7 @@ public class ChangePasswordView {
 			}
 		});
         searchButton.setForeground(SystemColor.inactiveCaption);
-        searchButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        searchButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         searchButton.setBounds(27, 173, 190, 53);
         searchButton.setOpaque(false);
         searchButton.setContentAreaFilled(false);
@@ -75,7 +75,7 @@ public class ChangePasswordView {
         	}
         });
         myAccountButton.setForeground(SystemColor.inactiveCaption);
-        myAccountButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        myAccountButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         myAccountButton.setOpaque(false);
         myAccountButton.setContentAreaFilled(false);
         myAccountButton.setBorderPainted(false);
@@ -92,7 +92,7 @@ public class ChangePasswordView {
         	}
         });
         bookingsButton.setForeground(SystemColor.inactiveCaption);
-        bookingsButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        bookingsButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         bookingsButton.setOpaque(false);
         bookingsButton.setContentAreaFilled(false);
         bookingsButton.setBorderPainted(false);
@@ -111,7 +111,7 @@ public class ChangePasswordView {
                 }
             }
         });
-        exitButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
+        exitButton.setFont(new Font("Open Sans", Font.PLAIN, 25));
         exitButton.setBorderPainted(false);
         exitButton.setOpaque(false);
         exitButton.setContentAreaFilled(false);
@@ -143,7 +143,7 @@ public class ChangePasswordView {
         });
         logOutButton.setBounds(39, 421, 168, 53);
         logOutButton.setForeground(SystemColor.inactiveCaption);
-        logOutButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        logOutButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         logOutButton.setOpaque(false);
         logOutButton.setContentAreaFilled(false);
         logOutButton.setBorderPainted(false);
@@ -152,7 +152,7 @@ public class ChangePasswordView {
         
         JLabel oldPassLabel = new JLabel("Old Password");
         oldPassLabel.setForeground(SystemColor.inactiveCaption);
-        oldPassLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+        oldPassLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
         oldPassLabel.setBounds(401, 275, 87, 16);
         frame.getContentPane().add(oldPassLabel);
         
@@ -183,7 +183,7 @@ public class ChangePasswordView {
         JLabel newPassLabel = new JLabel("New Password");
         newPassLabel.setBounds(394, 320, 94, 16);
         newPassLabel.setForeground(SystemColor.inactiveCaption);
-        newPassLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+        newPassLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
         frame.getContentPane().add(newPassLabel);
         
         JLabel lblBetween5and16 = new JLabel("between 5 and 16 characters");
@@ -212,7 +212,7 @@ public class ChangePasswordView {
         JLabel confPassLabel = new JLabel("Confirm Password");
         confPassLabel.setBounds(372, 366, 116, 16);
         confPassLabel.setForeground(SystemColor.inactiveCaption);
-        confPassLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+        confPassLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
         frame.getContentPane().add(confPassLabel);
         
         JLabel passDontMatchLabel = new JLabel("* passwords don't match");
@@ -252,7 +252,7 @@ public class ChangePasswordView {
         });
         saveButton.setBounds(527, 428, 97, 25);
         saveButton.setForeground(SystemColor.inactiveCaption);
-        saveButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        saveButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         saveButton.setOpaque(false);
         saveButton.setContentAreaFilled(false);
         saveButton.setBorderPainted(false);
