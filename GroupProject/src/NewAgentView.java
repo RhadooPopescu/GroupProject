@@ -123,7 +123,7 @@ public class NewAgentView {
 		JButton addButton = new JButton("Add agent");
 		addButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (nameTxtField.getText().equals(null) | nameTxtField.getText().equals(""))
+				if (nameTxtField.getText() == null | nameTxtField.getText().equals(""))
 					JOptionPane.showMessageDialog(null,"Please fill in all the * fields.");
 
 				else {
@@ -133,7 +133,6 @@ public class NewAgentView {
 					model.insertElementAt("-Add new Agent-",0);
 					NewBandView.agentComboBox.setModel(model); //no errors here :P
 					NewBandView.agentComboBox.setSelectedIndex(model.getSize()-1);
-					agentName = nameTxtField.getText().replace("'", "''");
 					frame.dispose();
 				}
 			}

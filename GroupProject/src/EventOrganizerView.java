@@ -34,6 +34,7 @@ public class EventOrganizerView {
 	 private JTextField venueAddressTextField;
 	 private JTextField venueCapacityTextField;
 	 private ArrayList<String> bandsList;
+	 static JComboBox<String> venueComboBox;
 	
 	    /**
 	     * Launch the application.
@@ -215,11 +216,21 @@ public class EventOrganizerView {
 	        frame.getContentPane().add(lblVenue);
 	        
 	        
-	        JComboBox<String> comboBoxVenue = new JComboBox<String>();
-	        comboBoxVenue.setBounds(987, 188, 159, 20);
-	        comboBoxVenue.setEditable(false);
-	        comboBoxVenue.setBackground(SystemColor.activeCaption);
-	        frame.getContentPane().add(comboBoxVenue);
+	        venueComboBox = new JComboBox<String>();
+	        ArrayList venuesList = Venue.getVenueList();
+	        venuesList.add(0, "-Add Venue-");
+	        venueComboBox.setModel(new DefaultComboBoxModel(venuesList.toArray()));
+	        venueComboBox.setBounds(987, 188, 159, 20);
+	        venueComboBox.setEditable(false);
+	        venueComboBox.setBackground(SystemColor.activeCaption);
+	        venueComboBox.addActionListener(new ActionListener() {
+	        	public void actionPerformed(ActionEvent e) {
+	        		Object selected = venueComboBox.getSelectedItem();
+	        		if (selected.toString().equals("-Add Venue-"))
+	        			new NewVenueView();
+	        	}
+	        });
+	        frame.getContentPane().add(venueComboBox);
 	        
 	        
 	        JLabel lblPrice = new JLabel("Price");
