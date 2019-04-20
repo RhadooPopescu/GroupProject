@@ -5,15 +5,19 @@ import com.github.lgooddatepicker.components.DatePicker;
 import java.awt.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 @SuppressWarnings("serial")
-public class ResultPanel extends Container{
+public class ResultPanel extends JPanel{
     private JPanel panel;
-    private JLabel nameLabel, dateLabel, imageLabel, bandsLabel, venueLabel, priceLabel;
+    private JLabel nameLabel, dateLabel, imageLabel, bandsLabel, priceLabel,noResults;
+    private JTextArea venueLabel;
 
     public ResultPanel(){
     	//////////////////////////////////////
@@ -26,7 +30,7 @@ public class ResultPanel extends Container{
 //        group.setAutoCreateContainerGaps(true);
 //        group.setAutoCreateGaps(true);
 
-        String query = "SELECT E.Name, E.Price, B.Name ArtistName, E.DateOfEvent, E.Image, V.Name Venue" +
+        String query = "SELECT E.Name, E.Price, B.Name ArtistName, E.DateOfEvent, E.Image, V.Name Venue, V.Address" +
                 " FROM tbl_venue V, tbl_event E, tbl_event_band EB, tbl_band B " +
                 "WHERE E.VenueID = V.VenueID AND E.EventID = EB.EventID AND B.BandID = EB.BandID " +
                 "AND E.DateOfEvent>NOW() ORDER BY E.DateOfEvent";
@@ -39,7 +43,7 @@ public class ResultPanel extends Container{
     	this.setBackground(Color.black);
     	this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-        String query ="SELECT E.Name, E.Price, B.Name ArtistName, E.DateOfEvent, E.Image, V.Name Venue" +
+        String query ="SELECT E.Name, E.Price, B.Name ArtistName, E.DateOfEvent, E.Image, V.Name Venue, V.Address" +
                 " FROM tbl_venue V, tbl_event E, tbl_event_band EB, tbl_band B " +
                 "WHERE E.VenueID = V.VenueID AND E.EventID = EB.EventID AND B.BandID = EB.BandID " +
                 "AND (E.Name LIKE '%"+searchCriteria+"%' OR B.Name LIKE '%"+searchCriteria+"%')" +
@@ -49,13 +53,12 @@ public class ResultPanel extends Container{
     }
     
     public ResultPanel(DatePicker datePicker) {
-    	//this.setPreferredSize(new Dimension(200,500));
     	this.setBackground(Color.black);
     	this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         LocalDate dateFromDatePicker = datePicker.getDate();
 
-        String query ="SELECT E.Name, E.Price, B.Name ArtistName, E.DateOfEvent, E.Image, V.Name Venue" +
+        String query ="SELECT E.Name, E.Price, B.Name ArtistName, E.DateOfEvent, E.Image, V.Name Venue, V.Address" +
                 " FROM tbl_venue V, tbl_event E, tbl_event_band EB, tbl_band B " +
                 "WHERE E.VenueID = V.VenueID AND E.EventID = EB.EventID AND B.BandID = EB.BandID " +
                 "AND DateOfEvent = "+ "\"" + dateFromDatePicker.toString() + "\"" + " ORDER BY DateofEvent";
@@ -74,8 +77,9 @@ public class ResultPanel extends Container{
                 String date = rs.getString("DateOfEvent");
                 String image = rs.getString("Image");
                 String venue = rs.getString("Venue");
+                String venueAddress = rs.getString("Address");
                 String artist = rs.getString("ArtistName");
-                float price = rs.getFloat("Price");
+                int price =(int) rs.getFloat("Price");
                 boolean has = false;
                 for (List<String> list : results){
                     if (list.get(0).equals(name)){
@@ -86,7 +90,8 @@ public class ResultPanel extends Container{
                         int index = results.indexOf(results.stream().filter(e -> e.contains(name)).findAny().get());
                         results.get(index).add(artist);
                 } else{
-                    results.add(new ArrayList<>(Arrays.asList(new String[]{name,date,image,venue,String.valueOf(price),artist})));}
+                    results.add(new ArrayList<>(Arrays.asList(new String[]{name,date,image,venue,venueAddress,
+                            String.valueOf(price),artist})));}
 
             }
 
@@ -108,13 +113,21 @@ public class ResultPanel extends Container{
         List<List<String>> results = getResults(query);
         System.out.println(results);
         int size= results.size();
-        this.setPreferredSize(new Dimension(200,150*size));
+        if (size==0){
+            noResults = new JLabel("No results found :(");
+            noResults.setPreferredSize(new Dimension(844, 374));
+            noResults.setHorizontalTextPosition(JLabel.RIGHT);
+            noResults.setVerticalTextPosition(JLabel.CENTER);
+            noResults.setFont(new Font("Open Sans", Font.BOLD, 40));
+            this.setBackground(SystemColor.inactiveCaption);
+            this.add(noResults);
+
+        }
+        this.setPreferredSize(new Dimension(200,140*size));
         for (int i=0;i<size;i++){
             panel = new JPanel();
 
 
-            panel.setForeground(SystemColor.inactiveCaption);
-            panel.setBackground(SystemColor.inactiveCaption);
             panel.setPreferredSize(new Dimension(200, 50));
             panel.setBounds(71, 70, 730, 139);
             panel.setLayout(null);
@@ -127,30 +140,54 @@ public class ResultPanel extends Container{
             panel.add(imageLabel);
 
             nameLabel = new JLabel(results.get(i).get(0));
-            nameLabel.setBounds(174, 13, 95, 23);
+            nameLabel.setFont(new Font("Open Sans", Font.BOLD, 20));
+            nameLabel.setBounds(174, 13, 200, 23);
             panel.add(nameLabel);
 
-            bandsLabel = new JLabel(results.get(i).get(3));
-            bandsLabel.setBounds(185, 85, 345, 41);
+            bandsLabel = new JLabel("Performing live: "+results.get(i).get(6));
+            bandsLabel.setFont(new Font("Open Sans", Font.PLAIN, 12));
+            bandsLabel.setBounds(185, 75, 345, 41);
+            bandsLabel.setToolTipText("Click \"Book Tickets\" for more details...");
             panel.add(bandsLabel);
 
-            dateLabel = new JLabel(results.get(i).get(1));
+
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat finalformat = new SimpleDateFormat("dd/MM/yyyy");
+            String newdate = "";
+            try{
+                Date date = format.parse(results.get(i).get(1));
+                newdate = finalformat.format(date);}
+            catch (ParseException e){
+                System.out.println("error");
+            }
+            dateLabel = new JLabel(newdate);
+            dateLabel.setFont(new Font("Open Sans", Font.PLAIN, 12));
             dateLabel.setBounds(174, 49, 80, 16);
             panel.add(dateLabel);
 
-            JButton bookButton = new JButton("Book");
+            JButton bookButton = new JButton("Book Tickets");
             bookButton.setForeground(SystemColor.inactiveCaption);
             bookButton.setBackground(new Color(0, 0, 128));
-            bookButton.setBounds(569, 34, 135, 43);
+            bookButton.setBounds(650, 34, 135, 43);
             panel.add(bookButton);
 
-            priceLabel = new JLabel("price");
-            priceLabel.setBounds(602, 97, 56, 16);
+            priceLabel = new JLabel("£ " + results.get(i).get(5));
+            priceLabel.setFont(new Font("Open Sans", Font.PLAIN, 18));
+            priceLabel.setBounds(700, 97, 56, 16);
             panel.add(priceLabel);
 
-            venueLabel = new JLabel("venue");
-            venueLabel.setBounds(290, 16, 229, 30);
+            venueLabel = new JTextArea(results.get(i).get(3)+ "\nAddress: " + results.get(i).get(4));
+            venueLabel.setFont(new Font("Open Sans", Font.PLAIN, 12));
+            venueLabel.setBounds(350, 25, 229, 30);
+            venueLabel.setEditable(false);
             panel.add(venueLabel);
+
+            if (i%2==0){
+                venueLabel.setBackground(SystemColor.activeCaption);
+                panel.setBackground(SystemColor.activeCaption);}
+            else{
+                venueLabel.setBackground(SystemColor.inactiveCaption);
+                panel.setBackground(SystemColor.inactiveCaption);}
 
             add(panel);
 

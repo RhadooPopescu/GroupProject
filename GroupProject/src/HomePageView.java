@@ -131,7 +131,7 @@ public class HomePageView {
         JLabel upcomingLabel = new JLabel("Upcoming");
         upcomingLabel.setForeground(SystemColor.inactiveCaption);
         upcomingLabel.setFont(new Font("Open Sans", Font.PLAIN, 20));
-        upcomingLabel.setBounds(373, 146, 125, 30);
+        upcomingLabel.setBounds(373, 146,200 , 30);
         frame.getContentPane().add(upcomingLabel);
 
         DatePickerSettings dateSettings = new DatePickerSettings();
@@ -142,7 +142,7 @@ public class HomePageView {
         DatePicker datePicker = new DatePicker(dateSettings);
         dateSettings.setDateRangeLimits(LocalDate.now(),null);
         datePicker.getComponentDateTextField().setBackground(SystemColor.activeCaption);
-        datePicker.getComponentToggleCalendarButton().setText("Date");
+        datePicker.getComponentToggleCalendarButton().setText("Select Date");
         datePicker.setBounds(872, 115, 168, 30);
         frame.getContentPane().add(datePicker);
         
@@ -159,7 +159,7 @@ public class HomePageView {
         searchButton1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	scrollPane.setViewportView(new ResultPanel(searchTxtField.getText().replace("'", "''")));
-            }
+            	upcomingLabel.setText("Search Results");            }
         });
         searchButton1.setBounds(1052, 72, 30, 30);
         frame.getContentPane().add(searchButton1);
@@ -173,7 +173,8 @@ public class HomePageView {
             	
             	try {
 					scrollPane.setViewportView(new ResultPanel(datePicker));
-				} catch (Exception e1) {
+                    upcomingLabel.setText("Search Results");
+                } catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
@@ -253,8 +254,8 @@ public class HomePageView {
         searchLabel.setFont(new Font("Open Sans", Font.PLAIN, 20));
         frame.getContentPane().add(searchLabel);
         
-        JLabel searchDateLabel = new JLabel("Search by date");
-        searchDateLabel.setBounds(760, 121, 110, 16);
+        JLabel searchDateLabel = new JLabel("or Search by date");
+        searchDateLabel.setBounds(730, 121, 150, 20);
         searchDateLabel.setForeground(SystemColor.inactiveCaption);
         searchDateLabel.setFont(new Font("Open Sans", Font.PLAIN, 16));
         frame.getContentPane().add(searchDateLabel);
