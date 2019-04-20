@@ -261,9 +261,24 @@ public class User {
 		}
     	return details;
     }
+    
+    static int getUserId(String username) {
+    	String query = "SELECT * FROM tbl_user WHERE Username = '" + username + "';";
+    	int ID = 0;
+    	try {
+    		ResultSet rs = Connect.selectStm(query);
+        	rs.next();
+        	ID = rs.getInt("UserID");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException f) {
+            System.out.println(f.getMessage());
+        }
+    	return ID;
+    }
 
     public static void main(String[] args) {
-        ArrayList<String> test = User.detailsList("cerbisor");
-        System.out.println(test);
+    	int ID = User.getUserId("cerbisor");
+        System.out.println(ID);
     }
 }

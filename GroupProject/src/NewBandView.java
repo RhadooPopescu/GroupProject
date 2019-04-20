@@ -6,6 +6,7 @@ import java.awt.SystemColor;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import java.awt.Font;
 import javax.swing.JButton;
@@ -206,6 +207,11 @@ public class NewBandView extends JFrame {
 				else {
 					int agentID = Agent.getAgentId(agentComboBox.getSelectedItem().toString());					
 					new Band(nameTxtField.getText().replace("'", "''"),genreTxtField.getText().replace("'", "''"),linkTxtField.getText().replace("'", "''"),agentID);
+					DefaultListModel performersModel = new DefaultListModel();
+					for(int i = 0; i < Band.getBands().size(); i++) {
+						performersModel.addElement(Band.getBands().toArray()[i]);
+			        	EventOrganizerView.allPerformersList.setModel(performersModel);
+			        }
 					JOptionPane.showMessageDialog(null,"Band added.");
 				}
 			}

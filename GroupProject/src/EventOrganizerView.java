@@ -6,12 +6,17 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.ScrollPane;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.awt.event.ActionEvent;
@@ -22,19 +27,24 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+import javax.swing.JList;
+import com.github.lgooddatepicker.components.DatePicker;
+import com.github.lgooddatepicker.components.DatePickerSettings;
 
 public class EventOrganizerView {
 
 	 private JFrame frame;
 	 private JTextField textEventName;
 	 private JTextField textDuration;
-	 private JTextField textDate;
 	 private JTextField textFieldPrice;
 	 private JTextField venueNameTextField;
 	 private JTextField venueAddressTextField;
 	 private JTextField venueCapacityTextField;
 	 private ArrayList<String> bandsList;
 	 static JComboBox<String> venueComboBox;
+	 static JList allPerformersList;
 	
 	    /**
 	     * Launch the application.
@@ -150,10 +160,10 @@ public class EventOrganizerView {
 	        frame.getContentPane().add(btnLogOut);
 
 	        JSeparator separator_1 = new JSeparator();
+	        separator_1.setOpaque(true);
 	        separator_1.setBounds(23, 207, 178, 3);
 	        separator_1.setBackground(SystemColor.inactiveCaption);
 	        separator_1.setForeground(SystemColor.inactiveCaption);
-	        separator_1.setOpaque(true);
 	        frame.getContentPane().add(separator_1);
 
 	        JSeparator separator_2 = new JSeparator();
@@ -173,11 +183,23 @@ public class EventOrganizerView {
 	        
 	        
 	        textEventName = new JTextField();
-	        textEventName.setBounds(605, 188, 159, 20);
+	        textEventName.setBounds(605, 188, 168, 20);
 	        textEventName.setBackground(SystemColor.activeCaption);
 	        textEventName.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
 	        frame.getContentPane().add(textEventName);
 	        textEventName.setColumns(10);
+	        
+	        DatePickerSettings dateSettings = new DatePickerSettings();
+	        dateSettings.setFormatForDatesCommonEra("dd/MM/yyyy");
+	        dateSettings.setAllowKeyboardEditing(false);
+	        dateSettings.setAllowEmptyDates(false);
+
+	        DatePicker datePicker = new DatePicker(dateSettings);
+	        dateSettings.setDateRangeLimits(LocalDate.now(),null);
+	        datePicker.getComponentDateTextField().setBackground(SystemColor.activeCaption);
+	        datePicker.getComponentToggleCalendarButton().setText("Date");
+	        datePicker.setBounds(604, 250, 168, 22);
+	        frame.getContentPane().add(datePicker);
 	        
 	        
 	        JLabel lblDate = new JLabel("Date");
@@ -186,13 +208,6 @@ public class EventOrganizerView {
 	        lblDate.setBounds(496, 250, 99, 21);
 	        frame.getContentPane().add(lblDate);
 	        
-	        textDate = new JTextField();
-	        textDate.setColumns(10);
-	        textDate.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-	        textDate.setBackground(SystemColor.activeCaption);
-	        textDate.setBounds(605, 251, 159, 20);
-	        frame.getContentPane().add(textDate);
-	        
 	        
 	        JLabel lblDuration = new JLabel("Duration");
 	        lblDuration.setForeground(SystemColor.inactiveCaption);
@@ -200,12 +215,30 @@ public class EventOrganizerView {
 	        lblDuration.setBounds(496, 312, 99, 21);
 	        frame.getContentPane().add(lblDuration);
 	        
+	        JLabel durationFormatLabel = new JLabel("Invalid Number");
+	        durationFormatLabel.setForeground(Color.RED);
+	        durationFormatLabel.setVisible(false);
+	        durationFormatLabel.setBounds(605, 337, 139, 16);
+	        frame.getContentPane().add(durationFormatLabel);
+	        
 	        
 	        textDuration = new JTextField();
 	        textDuration.setColumns(10);
 	        textDuration.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
 	        textDuration.setBackground(SystemColor.activeCaption);
-	        textDuration.setBounds(605, 313, 159, 20);
+	        textDuration.setBounds(605, 313, 168, 20);
+	        textDuration.addFocusListener(new FocusAdapter() {
+				@Override
+				public void focusLost(FocusEvent e) {
+					try {
+						Integer.parseInt(textDuration.getText());
+						durationFormatLabel.setVisible(false);
+					}catch(NumberFormatException n) {
+						textDuration.setText("");
+						durationFormatLabel.setVisible(true);
+					}
+				}
+			});
 	        frame.getContentPane().add(textDuration);
 	        
 	        
@@ -233,6 +266,14 @@ public class EventOrganizerView {
 	        frame.getContentPane().add(venueComboBox);
 	        
 	        
+	        
+	        JLabel priceFormatLabel = new JLabel("Invalid Number");
+	        priceFormatLabel.setForeground(Color.RED);
+	        priceFormatLabel.setVisible(false);
+	        priceFormatLabel.setBounds(987, 271, 89, 16);
+	        frame.getContentPane().add(priceFormatLabel);
+	        
+	        
 	        JLabel lblPrice = new JLabel("Price");
 	        lblPrice.setForeground(SystemColor.inactiveCaption);
 	        lblPrice.setFont(new Font("Open Sans", Font.BOLD, 13));
@@ -245,6 +286,18 @@ public class EventOrganizerView {
 	        textFieldPrice.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
 	        textFieldPrice.setBackground(SystemColor.activeCaption);
 	        textFieldPrice.setBounds(987, 251, 159, 20);
+	        textFieldPrice.addFocusListener(new FocusAdapter() {
+				@Override
+				public void focusLost(FocusEvent e) {
+					try {
+						Float.parseFloat(textFieldPrice.getText());
+						priceFormatLabel.setVisible(false);
+					}catch(NumberFormatException n) {
+						textFieldPrice.setText("");
+						priceFormatLabel.setVisible(true);
+					}
+				}
+			});
 	        frame.getContentPane().add(textFieldPrice);
 	        
 	        
@@ -289,99 +342,42 @@ public class EventOrganizerView {
 	        frame.getContentPane().add(btnUploadButton);
 	        
 	        
-	        JLabel lblPerformers = new JLabel("Performers");
-	        lblPerformers.setFont(new Font("Open Sans", Font.BOLD, 18));
+	        JLabel lblPerformers = new JLabel("Available Performers");
+	        lblPerformers.setFont(new Font("Dialog", Font.BOLD, 18));
 	        lblPerformers.setForeground(SystemColor.inactiveCaption);
-	        lblPerformers.setBounds(605, 373, 128, 21);
+	        lblPerformers.setBounds(605, 373, 189, 21);
 	        frame.getContentPane().add(lblPerformers);
-	        
-	        
-	        JLabel lblBand_1 = new JLabel("Band 1");
-	        lblBand_1.setForeground(SystemColor.inactiveCaption);
-	        lblBand_1.setFont(new Font("Open Sans", Font.BOLD, 13));
-	        lblBand_1.setBounds(496, 437, 99, 21);
-	        frame.getContentPane().add(lblBand_1);
 	        
 	        
 	        
 	        this.bandsList = Band.getBands();
-	        this.bandsList.add(0, "Add or Choose");  //getting the desired details and just adding the default option for opening a new window as the first one.
-	        
-	        JComboBox<String> comboBoxBand_1 = new JComboBox<String>();
-	        comboBoxBand_1.setModel(new DefaultComboBoxModel(this.bandsList.toArray()));
-	        comboBoxBand_1.addActionListener(new ActionListener() {
-	        	public void actionPerformed(ActionEvent e) {
-	                Object selected = comboBoxBand_1.getSelectedItem();
-	                if(selected.toString().equals("Add or Choose"))
-	                	new NewBandView();
-
-	        	}
-	        });
-	        comboBoxBand_1.setBounds(605, 438, 159, 20);
-	        comboBoxBand_1.setBackground(SystemColor.activeCaption);
-	        frame.getContentPane().add(comboBoxBand_1);
-	        
-	        
-	        JLabel lblBand_2 = new JLabel("Band 2");
-	        lblBand_2.setForeground(SystemColor.inactiveCaption);
-	        lblBand_2.setFont(new Font("Open Sans", Font.BOLD, 13));
-	        lblBand_2.setBounds(878, 437, 99, 21);
-	        frame.getContentPane().add(lblBand_2);
-	        
-	        
-	        JComboBox<String> comboBoxBand_2 = new JComboBox<String>();
-	        comboBoxBand_2.setBackground(SystemColor.activeCaption);
-	        comboBoxBand_2.setBounds(987, 438, 159, 20);
-	        frame.getContentPane().add(comboBoxBand_2);
+	        this.bandsList.add(0, "Add or Choose");
 	        
 	        
 	        
-	        JLabel lblBand_3 = new JLabel("Band 3");
-	        lblBand_3.setForeground(SystemColor.inactiveCaption);
-	        lblBand_3.setFont(new Font("Open Sans", Font.BOLD, 13));
-	        lblBand_3.setBounds(496, 499, 99, 21);
-	        frame.getContentPane().add(lblBand_3);
-	        
-	        
-	        JComboBox<String> comboBoxBand_3 = new JComboBox<String>();
-	        comboBoxBand_3.setBackground(SystemColor.activeCaption);
-	        comboBoxBand_3.setBounds(605, 500, 159, 20);
-	        frame.getContentPane().add(comboBoxBand_3);
-	        
-	        
-	        JLabel lblBand_4 = new JLabel("Band 4");
-	        lblBand_4.setForeground(SystemColor.inactiveCaption);
-	        lblBand_4.setFont(new Font("Open Sans", Font.BOLD, 13));
-	        lblBand_4.setBounds(878, 499, 99, 21);
-	        frame.getContentPane().add(lblBand_4);
-	        
-	        
-	        JComboBox<String> comboBoxBand_4 = new JComboBox<String>();
-	        comboBoxBand_4.setBackground(SystemColor.activeCaption);
-	        comboBoxBand_4.setBounds(987, 500, 159, 20);
-	        frame.getContentPane().add(comboBoxBand_4);
-	        
-	        
-	        JButton btnSaveButton = new JButton("Save");
-	        btnSaveButton.addActionListener(new ActionListener() {
+	        JButton btnAddEventButton = new JButton("Add Event");
+	        btnAddEventButton.addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent arg0) {
+	        		LocalDate eventDate = datePicker.getDate();
+	        		new Event("stringID",textEventName.getText().replace("'", "''"),Float.parseFloat(textFieldPrice.getText()),User.getUserId("cerbisor"), 
+	        				Venue.getVenueId(venueComboBox.getSelectedItem().toString()),eventDate.toString(),"image",Integer.parseInt(textDuration.getText()));
 	        	}
 	        });
-	        btnSaveButton.setOpaque(false);
-	        btnSaveButton.setForeground(SystemColor.inactiveCaption);
-	        btnSaveButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
-	        btnSaveButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-	        btnSaveButton.setContentAreaFilled(false);
-	        btnSaveButton.setBorderPainted(false);
-	        btnSaveButton.setBounds(1005, 551, 121, 53);
-	        frame.getContentPane().add(btnSaveButton);
+	        btnAddEventButton.setOpaque(false);
+	        btnAddEventButton.setForeground(SystemColor.inactiveCaption);
+	        btnAddEventButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
+	        btnAddEventButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+	        btnAddEventButton.setContentAreaFilled(false);
+	        btnAddEventButton.setBorderPainted(false);
+	        btnAddEventButton.setBounds(1005, 551, 141, 53);
+	        frame.getContentPane().add(btnAddEventButton);
 	        
 	        
 	        JSeparator separator_4 = new JSeparator();
 	        separator_4.setOpaque(true);
 	        separator_4.setForeground(SystemColor.inactiveCaption);
 	        separator_4.setBackground(SystemColor.inactiveCaption);
-	        separator_4.setBounds(1027, 588, 89, 3);
+	        separator_4.setBounds(1020, 588, 110, 3);
 	        frame.getContentPane().add(separator_4);
 	        separator_4.setVisible(true);
 	        
@@ -391,36 +387,103 @@ public class EventOrganizerView {
 	        lblAddNewEvent.setBounds(788, 86, 189, 21);
 	        frame.getContentPane().add(lblAddNewEvent);
 	        
-	        
-	        JButton btnCancel = new JButton("Cancel");
-	        btnCancel.setBounds(623, 566, 121, 23);
-	        btnCancel.setOpaque(false);
-	        btnCancel.setForeground(SystemColor.inactiveCaption);
-	        btnCancel.setFont(new Font("Open Sans", Font.PLAIN, 20));
-	        btnCancel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-	        btnCancel.setContentAreaFilled(false);
-	        btnCancel.setBorderPainted(false);
-	        frame.getContentPane().add(btnCancel);
-	        
-	        
-	        JSeparator separatorCancel = new JSeparator();
-	        separatorCancel.setBounds(644, 588, 89, 3);
-	        separatorCancel.setOpaque(true);
-	        separatorCancel.setForeground(SystemColor.inactiveCaption);
-	        separatorCancel.setBackground(SystemColor.inactiveCaption);
-	        frame.getContentPane().add(separatorCancel);
-	        
 	       
 	        JLabel lblLogo = new JLabel("");
 	        lblLogo.setIcon(new ImageIcon(LoginView.class.getResource("Images/Logo.jpg")));
 	        lblLogo.setBounds(186, 583, 200, 96);
 	        frame.getContentPane().add(lblLogo);
-
+	        
+	        ArrayList<String> bandsAvailable = Band.getBands();
+	        
+	        JScrollPane scrollPane = new JScrollPane();
+	        scrollPane.setBounds(605, 407, 189, 140);
+	        frame.getContentPane().add(scrollPane);
+	        
+	        DefaultListModel allPerformersModel = new DefaultListModel();
+	        for(int i = 0; i < bandsAvailable.size(); i++) {
+	        	allPerformersModel.addElement(bandsAvailable.get(i));
+	        }
+	        
+	        allPerformersList = new JList(allPerformersModel);
+	        scrollPane.setViewportView(allPerformersList);
+	        allPerformersList.setBackground(SystemColor.activeCaption);
+	        
+	        JScrollPane scrollPane_1 = new JScrollPane();
+	        scrollPane_1.setBounds(957, 407, 189, 140);
+	        frame.getContentPane().add(scrollPane_1);
+	        
+	        DefaultListModel addedPerformersModel = new DefaultListModel();
+	        
+	        JList addedPerfList = new JList(addedPerformersModel);
+	        addedPerfList.setBackground(SystemColor.activeCaption);
+	        scrollPane_1.setViewportView(addedPerfList);
+	        
+	        JLabel performersAddedLabel = new JLabel("Added Performers");
+	        performersAddedLabel.setBounds(957, 377, 169, 16);
+	        performersAddedLabel.setFont(new Font("Open Sans", Font.BOLD, 18));
+	        performersAddedLabel.setForeground(SystemColor.inactiveCaption);
+	        frame.getContentPane().add(performersAddedLabel);
+	        
+	        JButton addPerformerButton = new JButton("Add to Event ->");
+	        addPerformerButton.addActionListener(new ActionListener() {
+	        	public void actionPerformed(ActionEvent e) {
+	        		String addedBand = (String) allPerformersList.getSelectedValue();
+	        		if(addedPerformersModel.contains(addedBand))
+	        			JOptionPane.showMessageDialog(null,"Band already added.");
+	        		else
+	        			addedPerformersModel.addElement(addedBand);
+	        		
+	        	}
+	        });
+	        addPerformerButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+	        addPerformerButton.setFont(new Font("Dialog", Font.PLAIN, 18));
+	        addPerformerButton.setBounds(793, 467, 167, 25);
+	        addPerformerButton.setContentAreaFilled(false);
+	        addPerformerButton.setOpaque(false);
+	        addPerformerButton.setBorderPainted(false);
+	        addPerformerButton.setForeground(SystemColor.inactiveCaption);
+	        frame.getContentPane().add(addPerformerButton);
+	        
+	        JSeparator separator = new JSeparator();
+	        separator.setBackground(SystemColor.inactiveCaption);
+	        separator.setForeground(SystemColor.inactiveCaption);
+	        separator.setOpaque(true);
+	        separator.setBounds(805, 490, 140, 3);
+	        frame.getContentPane().add(separator);
+	        
+	        JButton addNewPerfButton = new JButton("Add Performer");
+	        addNewPerfButton.addActionListener(new ActionListener() {
+	        	public void actionPerformed(ActionEvent e) {
+	        		new NewBandView();
+	        	}
+	        });
+	        addNewPerfButton.setBounds(439, 467, 154, 25);
+	        addNewPerfButton.setOpaque(false);
+	        addNewPerfButton.setContentAreaFilled(false);
+	        addNewPerfButton.setBorderPainted(false);
+	        addNewPerfButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+	        addNewPerfButton.setFont(new Font("Dialog", Font.PLAIN, 18));
+	        addNewPerfButton.setForeground(SystemColor.inactiveCaption);
+	        frame.getContentPane().add(addNewPerfButton);
+	        
+	        JSeparator separator_3 = new JSeparator();
+	        separator_3.setOpaque(true);
+	        separator_3.setBackground(SystemColor.inactiveCaption);
+	        separator_3.setBounds(448, 490, 135, 3);
+	        frame.getContentPane().add(separator_3);
+	        
+	        
 	        JLabel lblImageLabel = new JLabel("Image");
-	        lblImageLabel.setForeground(Color.BLACK);
+	        lblImageLabel.setOpaque(true);
+	        lblImageLabel.setBackground(SystemColor.inactiveCaption);
+	        lblImageLabel.setForeground(SystemColor.inactiveCaption);
 	        lblImageLabel.setIcon(new ImageIcon(LoginView.class.getResource("Images/Silhouette-Rock-Concert-Wallpaper1.jpg")));
 	        lblImageLabel.setBounds(0, 0, 1280, 690);
 	        frame.getContentPane().add(lblImageLabel);
+	        
+	        
+	        
+	       
 	        
 	        
 	        

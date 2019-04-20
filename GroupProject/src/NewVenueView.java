@@ -65,7 +65,7 @@ public class NewVenueView {
 		frame.setUndecorated(true);
 		
 		JLabel windowTitleLabel = new JLabel("Venue details");
-		windowTitleLabel.setFont(new Font("Open Sans", Font.PLAIN, 16));
+		windowTitleLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		windowTitleLabel.setForeground(SystemColor.inactiveCaption);
 		windowTitleLabel.setBounds(12, 13, 99, 16);
 		frame.getContentPane().add(windowTitleLabel);
@@ -162,7 +162,7 @@ public class NewVenueView {
 				JOptionPane.showMessageDialog(null, "Venue added.");
 				DefaultComboBoxModel model = new DefaultComboBoxModel(Venue.getVenueList().toArray());
 				model.insertElementAt("-Add Venue-",0);
-				EventOrganizerView.venueComboBox.setModel(model); //no errors here :P
+				EventOrganizerView.venueComboBox.setModel(model);
 				EventOrganizerView.venueComboBox.setSelectedIndex(model.getSize()-1);
 				frame.dispose();
 				}

@@ -4,14 +4,38 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Event {
-	
+	private String ID;
 	private String name = "";
-	private Date date ;
+	private String date ;
+	private int organizerId;
+	private int venueId;
 	private int duration;
-	private int price;
+	private float price;
+	private String image;
 	
-	public Event() {
+	public Event(String ID, String name, float price, int organizerId, int venueId, String date, String image, int duration) {
+		this.ID = ID;
+		this.name = name;
+		this.price = price;
+		this.organizerId = organizerId;
+		this.venueId = venueId;
+		this.date = date;
+		this.image = image;
+		this.duration = duration;
+		
+		String query = "INSERT INTO tbl_event VALUES('"+ this.ID +"','" + this.name + "'," + this.price + "," + this.organizerId + "," + this.venueId + ",'" + this.date + "'"
+				+ ",null," + this.duration + ");";
+		try {
+            Connect.updateData(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException k) {
+            System.out.println(k.getMessage());
+        }
+		
 	}	
+	
+	
 	
 	static ArrayList<String> getEventsList() {
 		String query = "SELECT Name FROM `tbl_event`;";
@@ -38,16 +62,6 @@ public class Event {
 	
 	public String getName() {
 		return name;
-	}
-	
-	
-	public void setDate(Date date) {
-		this.date = date;
-	}
-	
-	
-	public Date getDate() {
-		return date;
 	}
 	
 	
