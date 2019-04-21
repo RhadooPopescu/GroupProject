@@ -240,7 +240,7 @@ public class MyAccountView {
 		frame.getContentPane().add(townTextField);
 		
 		JLabel townLabel = new JLabel("Town");
-		townLabel.setBounds(320, 341, 34, 16);
+		townLabel.setBounds(320, 341, 47, 16);
 		townLabel.setForeground(SystemColor.inactiveCaption);
 		townLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		frame.getContentPane().add(townLabel);
@@ -266,7 +266,7 @@ public class MyAccountView {
 		frame.getContentPane().add(emailTextField);
 		
 		JLabel emailLabel = new JLabel("E-mail");
-		emailLabel.setBounds(316, 382, 38, 20);
+		emailLabel.setBounds(316, 382, 70, 20);
 		emailLabel.setForeground(SystemColor.inactiveCaption);
 		emailLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		frame.getContentPane().add(emailLabel);
@@ -280,7 +280,7 @@ public class MyAccountView {
 
 		
 		JLabel phoneLabel = new JLabel("Phone No");
-		phoneLabel.setBounds(610, 382, 60, 20);
+		phoneLabel.setBounds(610, 382, 69, 20);
 		phoneLabel.setForeground(SystemColor.inactiveCaption);
 		phoneLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		frame.getContentPane().add(phoneLabel);
@@ -294,7 +294,7 @@ public class MyAccountView {
 
 		
 		JLabel cardNoLabel = new JLabel("Card No");
-		cardNoLabel.setBounds(304, 427, 50, 16);
+		cardNoLabel.setBounds(304, 427, 63, 16);
 		cardNoLabel.setForeground(SystemColor.inactiveCaption);
 		cardNoLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		frame.getContentPane().add(cardNoLabel);
@@ -310,7 +310,7 @@ public class MyAccountView {
 		JLabel cvvLabel = new JLabel("CVV");
 		cvvLabel.setForeground(SystemColor.inactiveCaption);
 		cvvLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
-		cvvLabel.setBounds(644, 427, 26, 16);
+		cvvLabel.setBounds(644, 427, 63, 16);
 		frame.getContentPane().add(cvvLabel);
 		
 		
