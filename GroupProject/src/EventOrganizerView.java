@@ -349,30 +349,6 @@ public class EventOrganizerView {
 	        frame.getContentPane().add(lblPerformers);
 	        
 	        
-	        
-	        this.bandsList = Band.getBands();
-	        this.bandsList.add(0, "Add or Choose");
-	        
-	        
-	        
-	        JButton btnAddEventButton = new JButton("Add Event");
-	        btnAddEventButton.addActionListener(new ActionListener() {
-	        	public void actionPerformed(ActionEvent arg0) {
-	        		LocalDate eventDate = datePicker.getDate();
-	        		new Event("stringID",textEventName.getText().replace("'", "''"),Float.parseFloat(textFieldPrice.getText()),User.getUserId("cerbisor"), 
-	        				Venue.getVenueId(venueComboBox.getSelectedItem().toString()),eventDate.toString(),"image",Integer.parseInt(textDuration.getText()));
-	        	}
-	        });
-	        btnAddEventButton.setOpaque(false);
-	        btnAddEventButton.setForeground(SystemColor.inactiveCaption);
-	        btnAddEventButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
-	        btnAddEventButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-	        btnAddEventButton.setContentAreaFilled(false);
-	        btnAddEventButton.setBorderPainted(false);
-	        btnAddEventButton.setBounds(1005, 551, 141, 53);
-	        frame.getContentPane().add(btnAddEventButton);
-	        
-	        
 	        JSeparator separator_4 = new JSeparator();
 	        separator_4.setOpaque(true);
 	        separator_4.setForeground(SystemColor.inactiveCaption);
@@ -424,8 +400,8 @@ public class EventOrganizerView {
 	        performersAddedLabel.setForeground(SystemColor.inactiveCaption);
 	        frame.getContentPane().add(performersAddedLabel);
 	        
-	        JButton addPerformerButton = new JButton("Add to Event ->");
-	        addPerformerButton.addActionListener(new ActionListener() {
+	        JButton addPerformerToEvent = new JButton("Add to Event ->");
+	        addPerformerToEvent.addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent e) {
 	        		String addedBand = (String) allPerformersList.getSelectedValue();
 	        		if(addedPerformersModel.contains(addedBand))
@@ -435,14 +411,14 @@ public class EventOrganizerView {
 	        		
 	        	}
 	        });
-	        addPerformerButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-	        addPerformerButton.setFont(new Font("Dialog", Font.PLAIN, 18));
-	        addPerformerButton.setBounds(793, 467, 167, 25);
-	        addPerformerButton.setContentAreaFilled(false);
-	        addPerformerButton.setOpaque(false);
-	        addPerformerButton.setBorderPainted(false);
-	        addPerformerButton.setForeground(SystemColor.inactiveCaption);
-	        frame.getContentPane().add(addPerformerButton);
+	        addPerformerToEvent.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+	        addPerformerToEvent.setFont(new Font("Dialog", Font.PLAIN, 18));
+	        addPerformerToEvent.setBounds(793, 467, 167, 25);
+	        addPerformerToEvent.setContentAreaFilled(false);
+	        addPerformerToEvent.setOpaque(false);
+	        addPerformerToEvent.setBorderPainted(false);
+	        addPerformerToEvent.setForeground(SystemColor.inactiveCaption);
+	        frame.getContentPane().add(addPerformerToEvent);
 	        
 	        JSeparator separator = new JSeparator();
 	        separator.setBackground(SystemColor.inactiveCaption);
@@ -472,6 +448,24 @@ public class EventOrganizerView {
 	        separator_3.setBounds(448, 490, 135, 3);
 	        frame.getContentPane().add(separator_3);
 	        
+	        JButton btnAddEventButton = new JButton("Add Event");
+	        btnAddEventButton.addActionListener(new ActionListener() {
+	        	public void actionPerformed(ActionEvent arg0) {
+	        		LocalDate eventDate = datePicker.getDate();
+	        		new Event("stringID",textEventName.getText().replace("'", "''"),Float.parseFloat(textFieldPrice.getText()),User.getUserId("cerbisor"), 
+	        				Venue.getVenueId(venueComboBox.getSelectedItem().toString()),eventDate.toString(),"image",Integer.parseInt(textDuration.getText()));
+	        		
+	        	}
+	        });
+	        btnAddEventButton.setOpaque(false);
+	        btnAddEventButton.setForeground(SystemColor.inactiveCaption);
+	        btnAddEventButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
+	        btnAddEventButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+	        btnAddEventButton.setContentAreaFilled(false);
+	        btnAddEventButton.setBorderPainted(false);
+	        btnAddEventButton.setBounds(1005, 551, 141, 53);
+	        frame.getContentPane().add(btnAddEventButton);
+	        
 	        
 	        JLabel lblImageLabel = new JLabel("Image");
 	        lblImageLabel.setOpaque(true);
@@ -480,14 +474,5 @@ public class EventOrganizerView {
 	        lblImageLabel.setIcon(new ImageIcon(LoginView.class.getResource("Images/Silhouette-Rock-Concert-Wallpaper1.jpg")));
 	        lblImageLabel.setBounds(0, 0, 1280, 690);
 	        frame.getContentPane().add(lblImageLabel);
-	        
-	        
-	        
-	       
-	        
-	        
-	        
-	        
-	        
 	    }
 }

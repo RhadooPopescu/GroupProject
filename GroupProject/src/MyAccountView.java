@@ -324,9 +324,9 @@ public class MyAccountView {
 		frame.getContentPane().add(orgNameTextField);
 		
 		JLabel orgNameLabel = new JLabel("Organization Name");
-		orgNameLabel.setBounds(915, 256, 121, 16);
+		orgNameLabel.setBounds(906, 257, 142, 16);
 		orgNameLabel.setForeground(SystemColor.inactiveCaption);
-		orgNameLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
+		orgNameLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
 		frame.getContentPane().add(orgNameLabel);
 		
 		orgEmailTextField = new JTextField();
@@ -337,7 +337,7 @@ public class MyAccountView {
 		frame.getContentPane().add(orgEmailTextField);
 		
 		JLabel orgEmailLabel = new JLabel("Organization E-mail");
-		orgEmailLabel.setBounds(912, 298, 124, 16);
+		orgEmailLabel.setBounds(906, 298, 142, 16);
 		orgEmailLabel.setForeground(SystemColor.inactiveCaption);
 		orgEmailLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		frame.getContentPane().add(orgEmailLabel);
@@ -396,9 +396,6 @@ public class MyAccountView {
 		orgEmailTextField.setText(details.get(12));
 		paymentComboBox.setSelectedItem(details.get(13));
 		webAddressTextField.setText(details.get(14));
-		
-
-
 		
 		
 		JButton saveButton = new JButton("Save");
