@@ -10,25 +10,19 @@ import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
-import java.awt.ScrollPane;
-import java.awt.event.ActionListener;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Scanner;
-import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import javax.swing.JTextField;
 import javax.swing.border.MatteBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.JList;
 import com.github.lgooddatepicker.components.DatePicker;
@@ -46,6 +40,8 @@ public class EventOrganizerView {
 	 private ArrayList<String> bandsList;
 	 static JComboBox<String> venueComboBox;
 	 static JList allPerformersList;
+	 private String imageName = "";
+	 private JLabel lblImageName;
 	
 	    /**
 	     * Launch the application.
@@ -287,18 +283,20 @@ public class EventOrganizerView {
 	        textFieldPrice.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
 	        textFieldPrice.setBackground(SystemColor.activeCaption);
 	        textFieldPrice.setBounds(987, 251, 159, 20);
-	        textFieldPrice.addFocusListener(new FocusAdapter() {
+	        textFieldPrice.addFocusListener(new FocusListener() {
+				@Override
+				public void focusGained(FocusEvent e) { }
 				@Override
 				public void focusLost(FocusEvent e) {
-					try {
-						Float.parseFloat(textFieldPrice.getText());
-						priceFormatLabel.setVisible(false);
-					}catch(NumberFormatException n) {
-						textFieldPrice.setText("");
-						priceFormatLabel.setVisible(true);
+						try {
+							Float.parseFloat(textFieldPrice.getText());
+							priceFormatLabel.setVisible(false);
+						}catch(NumberFormatException n) {
+							textFieldPrice.setText("");
+							priceFormatLabel.setVisible(true);
+						}
 					}
-				}
-			});
+				});
 	        frame.getContentPane().add(textFieldPrice);
 	        
 	        
@@ -307,33 +305,36 @@ public class EventOrganizerView {
 	        lblUploadImage.setFont(new Font("Open Sans", Font.BOLD, 13));
 	        lblUploadImage.setBounds(878, 316, 99, 21);
 	        frame.getContentPane().add(lblUploadImage);
+
+			lblImageName = new JLabel("");
+			lblImageName.setBounds(987, 335, 159, 23);
+			lblImageName.setForeground(SystemColor.inactiveCaption);
+			lblImageName.setFont(new Font("Open Sans", Font.PLAIN, 12));
+			frame.getContentPane().add(lblImageName);
 	        
 	        
 	        JButton btnUploadButton = new JButton("");
 	        btnUploadButton.addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent arg0) {
 	        		JFileChooser fileChooser = new JFileChooser();
-					fileChooser.setFileFilter(new FileNameExtensionFilter("JPG images","jpg"));
-					StringBuilder sb = new StringBuilder();
+					fileChooser.setFileFilter(new FileNameExtensionFilter("Images","jpg","png","jpeg"));
 
 					try {
 						if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
-							java.io.File file = fileChooser.getSelectedFile();
-							Scanner input = new Scanner(file);
-							
-							while (input.hasNext()) {
-								sb.append(input.nextLine());
-								sb.append("\n");
-							}
-							input.close();
-						}
-						else {
-							sb.append("No file selected.");
+							File file = fileChooser.getSelectedFile();
+							imageName = file.getName();
+							lblImageName.setText(imageName);
+
+							Files.copy(file.toPath(),Paths.get(System.getProperty("user.dir")+"/GroupProject/src/"+Main.EVENT_IMAGE_DIR+file.getName()),
+									java.nio.file.StandardCopyOption.REPLACE_EXISTING,
+									java.nio.file.StandardCopyOption.COPY_ATTRIBUTES,
+									java.nio.file.LinkOption.NOFOLLOW_LINKS );
+						}else {
+							imageName = "No file selected!";
 						}
 					}catch(Exception e1) {
 						e1.printStackTrace();
 					}
-	        		
 	        	}
 	        });
 	        btnUploadButton.setBorderPainted(false);
@@ -453,10 +454,11 @@ public class EventOrganizerView {
 	        btnAddEventButton.addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent arg0) {
 	        		LocalDate eventDate = datePicker.getDate();
-	        		new Event("008",textEventName.getText().replace("'", "''"),Float.parseFloat(textFieldPrice.getText()),User.getUserId(User.username), 
-	        				Venue.getVenueId(venueComboBox.getSelectedItem().toString()),eventDate.toString(),"image",Integer.parseInt(textDuration.getText()));
+	        		new Event(textEventName.getText().replace("'", "''"),Float.parseFloat(textFieldPrice.getText()),User.getUserId(User.username),
+	        				Venue.getVenueId(venueComboBox.getSelectedItem().toString()),eventDate.toString(),imageName,Integer.parseInt(textDuration.getText()));
+	        		int EventID = Event.getEventId(textEventName.getText().replace("'","''"));
 	        		for (int i = 0; i < addedPerfList.getModel().getSize(); i++) {
-	        			String query = "INSERT INTO tbl_event_band VALUES('001'," + Band.getPerfID(addedPerfList.getModel().getElementAt(i).toString())+ ";";
+	        			String query = "INSERT INTO tbl_event_band VALUES("+EventID+"," + Band.getPerfID(addedPerfList.getModel().getElementAt(i).toString().replace("'","''"))+ ");";
 	        			try {
 	        	            Connect.updateData(query);
 	        	        } catch (SQLException e) {

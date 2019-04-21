@@ -7,16 +7,18 @@ public class Band {
 	private String name = "";
 	private String genre = "";
 	private String link = "";
+	private String image = "";
 	private int agent;
 	
-	public Band(String name, String genre, String link, int ID) {
+	public Band(String name, String genre, String link,String image, int ID) {
 		if (this.link == null)
 				this.link = "";
 		this.name = name;
 		this.genre = genre;
+		this.image = image;
 		this.agent = ID;
 		
-		String query = "INSERT INTO tbl_band VALUES(DEFAULT,'"+ this.name + "','" + this.genre + "'," + null + ", '" + this.link +"', '" + this.agent + "');";
+		String query = "INSERT INTO tbl_band VALUES(DEFAULT,'"+ this.name + "','" + this.genre + "','" + this.image + "', '" + this.link +"', '" + this.agent + "');";
 		try {
             Connect.updateData(query);
         } catch (SQLException e) {
@@ -43,8 +45,8 @@ public class Band {
         return bandsList;
 	}
 	
-	static int getPerfID(String username) {
-		String query = "SELECT * FROM tbl_band WHERE Name = '" + username + "';";
+	static int getPerfID(String bandName) {
+		String query = "SELECT * FROM tbl_band WHERE Name = '" + bandName + "';";
     	int ID = 0;
     	try {
     		ResultSet rs = Connect.selectStm(query);

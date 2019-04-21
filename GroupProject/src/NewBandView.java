@@ -11,6 +11,9 @@ import javax.swing.ImageIcon;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.awt.event.ActionEvent;
@@ -29,6 +32,9 @@ public class NewBandView extends JFrame {
 	private JTextField genreTxtField;
 	private JTextField linkTxtField;
 	static JComboBox<String> agentComboBox; //this is a combobox
+	private String imageName = "";
+	private JLabel lblImageName;
+
 	/**
 	 * Launch the application.
 	 */
@@ -154,27 +160,31 @@ public class NewBandView extends JFrame {
 			}
 		});
 		frame.getContentPane().add(agentComboBox);
+
+		lblImageName = new JLabel("");
+		lblImageName.setBounds(245,123, 159, 23);
+		lblImageName.setForeground(SystemColor.inactiveCaption);
+		lblImageName.setFont(new Font("Open Sans", Font.PLAIN, 12));
+		frame.getContentPane().add(lblImageName);
 		
 		JButton uploadButton = new JButton();
 		uploadButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent arg0) {
 				JFileChooser fileChooser = new JFileChooser();
-				fileChooser.setFileFilter(new FileNameExtensionFilter("JPG images","jpg"));
-				StringBuilder sb = new StringBuilder();
+				fileChooser.setFileFilter(new FileNameExtensionFilter("Images","jpg","png","jpeg"));
 
 				try {
 					if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
-						java.io.File file = fileChooser.getSelectedFile();
-						Scanner input = new Scanner(file);
-						
-						while (input.hasNext()) {
-							sb.append(input.nextLine());
-							sb.append("\n");
-						}
-						input.close();
-					}
-					else {
-						sb.append("No file selected.");
+						File file = fileChooser.getSelectedFile();
+						imageName = file.getName();
+						lblImageName.setText(imageName);
+
+						Files.copy(file.toPath(), Paths.get(System.getProperty("user.dir")+"/GroupProject/src/"+Main.ARTIST_IMAGE_DIR+file.getName()),
+								java.nio.file.StandardCopyOption.REPLACE_EXISTING,
+								java.nio.file.StandardCopyOption.COPY_ATTRIBUTES,
+								java.nio.file.LinkOption.NOFOLLOW_LINKS );
+					}else {
+						imageName = "No file selected!";
 					}
 				}catch(Exception e1) {
 					e1.printStackTrace();
@@ -200,16 +210,19 @@ public class NewBandView extends JFrame {
         addButton.setBorderPainted(false);
 		addButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if ( (nameTxtField.getText() == null | nameTxtField.getText().isEmpty()) | (genreTxtField.getText() == null | 
-						genreTxtField.getText().isEmpty()) | agentComboBox.getSelectedItem().toString().equals("-Add new Agent-")) {
+				if ( (nameTxtField.getText() == null || nameTxtField.getText().isEmpty()) || (genreTxtField.getText() == null ||
+						genreTxtField.getText().isEmpty()) || agentComboBox.getSelectedItem().toString().equals("-Add new Agent-")) {
 					JOptionPane.showMessageDialog(null,"Please fill in all the * fields.");
+				}
+				else if(lblImageName.getText().equals("")){
+					JOptionPane.showMessageDialog(null,"No Image Selected!");
 				}
 				else {
 					int agentID = Agent.getAgentId(agentComboBox.getSelectedItem().toString());					
-					new Band(nameTxtField.getText().replace("'", "''"),genreTxtField.getText().replace("'", "''"),linkTxtField.getText().replace("'", "''"),agentID);
+					new Band(nameTxtField.getText().replace("'", "''"),genreTxtField.getText().replace("'", "''"),linkTxtField.getText().replace("'", "''"),imageName,agentID);
 					DefaultListModel performersModel = new DefaultListModel();
 					for(int i = 0; i < Band.getBands().size(); i++) {
-						performersModel.addElement(Band.getBands().toArray()[i]);
+						performersModel.addElement(Band.getBands().get(i));
 			        	EventOrganizerView.allPerformersList.setModel(performersModel);
 			        }
 					JOptionPane.showMessageDialog(null,"Band added.");

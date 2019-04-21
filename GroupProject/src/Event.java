@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Event {
-	private String ID;
+	private int ID;
 	private String name = "";
 	private String date ;
 	private int organizerId;
@@ -13,8 +13,8 @@ public class Event {
 	private float price;
 	private String image;
 	
-	public Event(String ID, String name, float price, int organizerId, int venueId, String date, String image, int duration) {
-		this.ID = ID;
+	public Event(String name, float price, int organizerId, int venueId, String date, String image, int duration) {
+
 		this.name = name;
 		this.price = price;
 		this.organizerId = organizerId;
@@ -23,8 +23,8 @@ public class Event {
 		this.image = image;
 		this.duration = duration;
 		
-		String query = "INSERT INTO tbl_event VALUES('"+ this.ID +"','" + this.name + "'," + this.price + "," + this.organizerId + "," + this.venueId + ",'" + this.date + "'"
-				+ ",null," + this.duration + ");";
+		String query = "INSERT INTO tbl_event VALUES(DEFAULT,'" + this.name + "'," + this.price + "," + this.organizerId + "," + this.venueId + ",'" + this.date + "','"
+				+ this.image+"'," + this.duration + ");";
 		try {
             Connect.updateData(query);
         } catch (SQLException e) {
@@ -90,7 +90,7 @@ public class Event {
 		try {
             ResultSet rs = Connect.selectStm(query);
             rs.next();
-            ID = Integer.parseInt(rs.getString("EventID"));
+            ID = rs.getInt("EventID");
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException f) {

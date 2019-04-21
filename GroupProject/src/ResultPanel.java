@@ -3,6 +3,8 @@ import javax.swing.*;
 import com.github.lgooddatepicker.components.DatePicker;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -119,9 +121,8 @@ public class ResultPanel extends JPanel{
             noResults.setHorizontalTextPosition(JLabel.RIGHT);
             noResults.setVerticalTextPosition(JLabel.CENTER);
             noResults.setFont(new Font("Open Sans", Font.BOLD, 40));
-            this.setBackground(SystemColor.inactiveCaption);
+            this.setBackground(SystemColor.activeCaption);
             this.add(noResults);
-
         }
         this.setPreferredSize(new Dimension(200,140*size));
         for (int i=0;i<size;i++){
@@ -134,7 +135,7 @@ public class ResultPanel extends JPanel{
 
             imageLabel = new JLabel("image");
             imageLabel.setBounds(12, 13, 135, 109);
-            ImageIcon img = new ImageIcon((results.get(i).get(2)));
+            ImageIcon img = new ImageIcon((HomePageView.class.getResource(Main.EVENT_IMAGE_DIR+results.get(i).get(2))));
             Image image = img.getImage().getScaledInstance(135,109,Image.SCALE_SMOOTH);
             imageLabel.setIcon(new ImageIcon(image));
             panel.add(imageLabel);
@@ -144,7 +145,13 @@ public class ResultPanel extends JPanel{
             nameLabel.setBounds(174, 13, 200, 23);
             panel.add(nameLabel);
 
-            bandsLabel = new JLabel("Performing live: "+results.get(i).get(6));
+
+            String artists = "Performing live: ";
+            int artistAmount = results.get(i).size();
+            for (int b = 6; b<artistAmount;b++){
+                artists += (results.get(i).get(b) + ", ");
+            }
+            bandsLabel = new JLabel(artists);
             bandsLabel.setFont(new Font("Open Sans", Font.PLAIN, 12));
             bandsLabel.setBounds(185, 75, 345, 41);
             bandsLabel.setToolTipText("Click \"Book Tickets\" for more details...");
@@ -169,6 +176,11 @@ public class ResultPanel extends JPanel{
             bookButton.setForeground(SystemColor.inactiveCaption);
             bookButton.setBackground(new Color(0, 0, 128));
             bookButton.setBounds(650, 34, 135, 43);
+            bookButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new NewBookingView();}
+            });
             panel.add(bookButton);
 
             priceLabel = new JLabel("£ " + results.get(i).get(5));
