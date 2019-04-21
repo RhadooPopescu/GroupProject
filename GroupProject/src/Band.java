@@ -42,6 +42,21 @@ public class Band {
         }
         return bandsList;
 	}
+	
+	static int getPerfID(String username) {
+		String query = "SELECT * FROM tbl_band WHERE Name = '" + username + "';";
+    	int ID = 0;
+    	try {
+    		ResultSet rs = Connect.selectStm(query);
+        	rs.next();
+        	ID = rs.getInt("BandID");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException f) {
+            System.out.println(f.getMessage());
+        }
+    	return ID;
+	}
 }
 
 

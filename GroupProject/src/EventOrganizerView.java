@@ -16,6 +16,7 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -452,9 +453,18 @@ public class EventOrganizerView {
 	        btnAddEventButton.addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent arg0) {
 	        		LocalDate eventDate = datePicker.getDate();
-	        		new Event("stringID",textEventName.getText().replace("'", "''"),Float.parseFloat(textFieldPrice.getText()),User.getUserId("cerbisor"), 
+	        		new Event("008",textEventName.getText().replace("'", "''"),Float.parseFloat(textFieldPrice.getText()),User.getUserId(User.username), 
 	        				Venue.getVenueId(venueComboBox.getSelectedItem().toString()),eventDate.toString(),"image",Integer.parseInt(textDuration.getText()));
-	        		
+	        		for (int i = 0; i < addedPerfList.getModel().getSize(); i++) {
+	        			String query = "INSERT INTO tbl_event_band VALUES('001'," + Band.getPerfID(addedPerfList.getModel().getElementAt(i).toString())+ ";";
+	        			try {
+	        	            Connect.updateData(query);
+	        	        } catch (SQLException e) {
+	        	            e.printStackTrace();
+	        	        } catch (ClassNotFoundException e1) {
+	        	            e1.printStackTrace();
+	        	        }//BASICALLY THIS IS THE CODE BUT RIGHT NOW IT THROWS SQL EXCEPTIONS BECAUSE OF THE CONSTRAINTS 
+	        		}
 	        	}
 	        });
 	        btnAddEventButton.setOpaque(false);
