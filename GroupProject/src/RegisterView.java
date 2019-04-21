@@ -611,14 +611,14 @@ public class RegisterView {
 
 
 
-        JButton btnRegisterButton = new JButton("RegisterView");
+        JButton btnRegisterButton = new JButton("Register");
         btnRegisterButton.setForeground(SystemColor.inactiveCaption);
         btnRegisterButton.setFont(new Font("Open Sans", Font.PLAIN, 20));
         btnRegisterButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnRegisterButton.setOpaque(false);
         btnRegisterButton.setBorderPainted(false);
         btnRegisterButton.setContentAreaFilled(false);
-        btnRegisterButton.setBounds(981, 516, 120, 40);
+        btnRegisterButton.setBounds(981, 516, 140, 40);
         frame.getContentPane().add(btnRegisterButton);
         btnRegisterButton.setVisible(true);
         btnRegisterButton.addActionListener(new ActionListener() {
