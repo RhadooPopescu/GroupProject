@@ -182,36 +182,21 @@ public class User {
         return users;
     }
 
-    public static String getType(String username) {
-        String query = "SELECT Type FROM tbl_user WHERE Username='" + username + "';";
-        String type = "";
+    public static String getData(String username, String field) {
+        String query = "SELECT "+ field+" FROM tbl_user WHERE Username='" + username + "';";
+        String data = "";
         try {
             ResultSet rs = Connect.selectStm(query);
             rs.next();
-            type = rs.getString("Type");
+            data = rs.getString(field);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException f) {
             System.out.println(f.getMessage());
         }
-        return type;
+        return data;
     }
-    
-    static String getPass(String username) {
-    	String query = "Select Pass FROM tbl_user WHERE Username = '" + username + "';";
-    	String pass = "";
-    	
-    	try {
-    		ResultSet rs = Connect.selectStm(query);
-        	rs.next();
-        	pass = rs.getString("Pass");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException f) {
-            System.out.println(f.getMessage());
-        }
-    	return pass;
-    }
+
     
     static void updatePass(String newPass, String username) {
     	String query = "UPDATE tbl_user SET Pass='" + newPass + "' WHERE Username='" + username + "'"; 

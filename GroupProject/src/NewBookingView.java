@@ -7,6 +7,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.*;
 
 public class NewBookingView {
@@ -19,6 +22,8 @@ public class NewBookingView {
     JButton btnProceedToBooking;
 
     JLabel lblAmount,lblTotalTickets,lblNotEnoughTickets;
+
+    JScrollPane bandPanel;
 
 	private JFrame frame;
 
@@ -95,7 +100,7 @@ public class NewBookingView {
         minimizeButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         minimizeButton.setBounds(1154, 20, 63, 38);
         frame.getContentPane().add(minimizeButton);
-        
+
         lblFestivalImage = new JLabel("Festival Image");
         lblFestivalImage.setBounds(33, 74, 200, 237);
         frame.getContentPane().add(lblFestivalImage);
@@ -106,105 +111,104 @@ public class NewBookingView {
         lblFeaturingArtists.setBounds(389, 29, 209, 29);
         frame.getContentPane().add(lblFeaturingArtists);
         
-        JPanel panel = new JPanel();
-        panel.setBackground(SystemColor.activeCaption);
-        panel.setBounds(385, 74, 768, 237);
-        frame.getContentPane().add(panel);
-        panel.setLayout(null);
+        bandPanel = new JScrollPane();
+        bandPanel.setBackground(SystemColor.RED);
+        bandPanel.setBounds(385, 74, 768, 248);
+        frame.getContentPane().add(bandPanel);
         
-        JLabel lblImageBand_1 = new JLabel("New label");
-        lblImageBand_1.setBounds(0, 0, 173, 140);
-        panel.add(lblImageBand_1);
-        
-        JLabel lblImageBand_2 = new JLabel("New label");
-        lblImageBand_2.setBounds(199, 0, 173, 140);
-        panel.add(lblImageBand_2);
-        
-        JLabel lblImageBand_3 = new JLabel("New label");
-        lblImageBand_3.setBounds(394, 0, 173, 140);
-        panel.add(lblImageBand_3);
-
-        JLabel lblImageBand_4 = new JLabel("New label");
-        lblImageBand_4.setBounds(595, 0, 173, 140);
-        panel.add(lblImageBand_4);
-        
-        JLabel lblBandName_1 = new JLabel("Name");
-        lblBandName_1.setBounds(10, 151, 77, 14);
-        panel.add(lblBandName_1);
-        
-        JLabel lblBandGenre_1 = new JLabel("Genre");
-        lblBandGenre_1.setBounds(10, 182, 46, 14);
-        panel.add(lblBandGenre_1);
-        
-        
-        JButton btnWebsiteBand_1 = new JButton("Website");
-        btnWebsiteBand_1.setBounds(-8, 201, 87, 23);
-        btnWebsiteBand_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnWebsiteBand_1.setOpaque(false);
-        btnWebsiteBand_1.setForeground(SystemColor.textHighlight);
-        btnWebsiteBand_1.setFont(new Font("Open Sans", Font.PLAIN, 14));
-        btnWebsiteBand_1.setContentAreaFilled(false);
-        btnWebsiteBand_1.setBorderPainted(false);
-        panel.add(btnWebsiteBand_1);
-        
-        
-        JButton btnWebsiteBand_2 = new JButton("Website");
-        btnWebsiteBand_2.setBounds(166, 201, 89, 23);
-        btnWebsiteBand_2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnWebsiteBand_2.setOpaque(false);
-        btnWebsiteBand_2.setForeground(SystemColor.textHighlight);
-        btnWebsiteBand_2.setFont(new Font("Open Sans", Font.PLAIN, 14));
-        btnWebsiteBand_2.setContentAreaFilled(false);
-        btnWebsiteBand_2.setBorderPainted(false);
-        panel.add(btnWebsiteBand_2);
-        
-        
-        JLabel lblBandGenre_2 = new JLabel("Genre");
-        lblBandGenre_2.setBounds(187, 182, 46, 14);
-        panel.add(lblBandGenre_2);
-        
-        
-        JLabel lblBandName_2 = new JLabel("Name");
-        lblBandName_2.setBounds(187, 151, 77, 14);
-        panel.add(lblBandName_2);
-        
-        
-        JButton btnWebsiteBand_3 = new JButton("Website");
-        btnWebsiteBand_3.setBounds(362, 201, 89, 23);
-        btnWebsiteBand_3.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnWebsiteBand_3.setOpaque(false);
-        btnWebsiteBand_3.setForeground(SystemColor.textHighlight);
-        btnWebsiteBand_3.setFont(new Font("Open Sans", Font.PLAIN, 14));
-        btnWebsiteBand_3.setContentAreaFilled(false);
-        btnWebsiteBand_3.setBorderPainted(false);
-        panel.add(btnWebsiteBand_3);
-        
-        JLabel lblBandGenre_3 = new JLabel("Genre");
-        lblBandGenre_3.setBounds(383, 182, 46, 14);
-        panel.add(lblBandGenre_3);
-        
-        JLabel lblBandName_3 = new JLabel("Name");
-        lblBandName_3.setBounds(383, 151, 77, 14);
-        panel.add(lblBandName_3);
-        
-        JLabel lblBandGenre_4 = new JLabel("Genre");
-        lblBandGenre_4.setBounds(587, 182, 46, 14);
-        panel.add(lblBandGenre_4);
-        
-        JLabel lblBandName_4 = new JLabel("Name");
-        lblBandName_4.setBounds(587, 151, 77, 14);
-        panel.add(lblBandName_4);
-        
-        
-        JButton btnWebsiteBand_4 = new JButton("Website");
-        btnWebsiteBand_4.setBounds(567, 203, 89, 23);
-        btnWebsiteBand_4.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnWebsiteBand_4.setOpaque(false);
-        btnWebsiteBand_4.setForeground(SystemColor.textHighlight);
-        btnWebsiteBand_4.setFont(new Font("Open Sans", Font.PLAIN, 14));
-        btnWebsiteBand_4.setContentAreaFilled(false);
-        btnWebsiteBand_4.setBorderPainted(false);
-        panel.add(btnWebsiteBand_4);
+//        JLabel lblImageBand_1 = new JLabel("New label");
+//        lblImageBand_1.setBounds(0, 0, 173, 140);
+//        panel.add(lblImageBand_1);
+//
+//        JLabel lblImageBand_2 = new JLabel("New label");
+//        lblImageBand_2.setBounds(199, 0, 173, 140);
+//        panel.add(lblImageBand_2);
+//
+//        JLabel lblImageBand_3 = new JLabel("New label");
+//        lblImageBand_3.setBounds(394, 0, 173, 140);
+//        panel.add(lblImageBand_3);
+//
+//        JLabel lblImageBand_4 = new JLabel("New label");
+//        lblImageBand_4.setBounds(595, 0, 173, 140);
+//        panel.add(lblImageBand_4);
+//
+//        JLabel lblBandName_1 = new JLabel("Name");
+//        lblBandName_1.setBounds(10, 151, 77, 14);
+//        panel.add(lblBandName_1);
+//
+//        JLabel lblBandGenre_1 = new JLabel("Genre");
+//        lblBandGenre_1.setBounds(10, 182, 46, 14);
+//        panel.add(lblBandGenre_1);
+//
+//
+//        JButton btnWebsiteBand_1 = new JButton("Website");
+//        btnWebsiteBand_1.setBounds(-8, 201, 87, 23);
+//        btnWebsiteBand_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+//        btnWebsiteBand_1.setOpaque(false);
+//        btnWebsiteBand_1.setForeground(SystemColor.textHighlight);
+//        btnWebsiteBand_1.setFont(new Font("Open Sans", Font.PLAIN, 14));
+//        btnWebsiteBand_1.setContentAreaFilled(false);
+//        btnWebsiteBand_1.setBorderPainted(false);
+//        panel.add(btnWebsiteBand_1);
+//
+//
+//        JButton btnWebsiteBand_2 = new JButton("Website");
+//        btnWebsiteBand_2.setBounds(166, 201, 89, 23);
+//        btnWebsiteBand_2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+//        btnWebsiteBand_2.setOpaque(false);
+//        btnWebsiteBand_2.setForeground(SystemColor.textHighlight);
+//        btnWebsiteBand_2.setFont(new Font("Open Sans", Font.PLAIN, 14));
+//        btnWebsiteBand_2.setContentAreaFilled(false);
+//        btnWebsiteBand_2.setBorderPainted(false);
+//        panel.add(btnWebsiteBand_2);
+//
+//
+//        JLabel lblBandGenre_2 = new JLabel("Genre");
+//        lblBandGenre_2.setBounds(187, 182, 46, 14);
+//        panel.add(lblBandGenre_2);
+//
+//
+//        JLabel lblBandName_2 = new JLabel("Name");
+//        lblBandName_2.setBounds(187, 151, 77, 14);
+//        panel.add(lblBandName_2);
+//
+//
+//        JButton btnWebsiteBand_3 = new JButton("Website");
+//        btnWebsiteBand_3.setBounds(362, 201, 89, 23);
+//        btnWebsiteBand_3.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+//        btnWebsiteBand_3.setOpaque(false);
+//        btnWebsiteBand_3.setForeground(SystemColor.textHighlight);
+//        btnWebsiteBand_3.setFont(new Font("Open Sans", Font.PLAIN, 14));
+//        btnWebsiteBand_3.setContentAreaFilled(false);
+//        btnWebsiteBand_3.setBorderPainted(false);
+//        panel.add(btnWebsiteBand_3);
+//
+//        JLabel lblBandGenre_3 = new JLabel("Genre");
+//        lblBandGenre_3.setBounds(383, 182, 46, 14);
+//        panel.add(lblBandGenre_3);
+//
+//        JLabel lblBandName_3 = new JLabel("Name");
+//        lblBandName_3.setBounds(383, 151, 77, 14);
+//        panel.add(lblBandName_3);
+//
+//        JLabel lblBandGenre_4 = new JLabel("Genre");
+//        lblBandGenre_4.setBounds(587, 182, 46, 14);
+//        panel.add(lblBandGenre_4);
+//
+//        JLabel lblBandName_4 = new JLabel("Name");
+//        lblBandName_4.setBounds(587, 151, 77, 14);
+//        panel.add(lblBandName_4);
+//
+//
+//        JButton btnWebsiteBand_4 = new JButton("Website");
+//        btnWebsiteBand_4.setBounds(567, 203, 89, 23);
+//        btnWebsiteBand_4.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+//        btnWebsiteBand_4.setOpaque(false);
+//        btnWebsiteBand_4.setForeground(SystemColor.textHighlight);
+//        btnWebsiteBand_4.setFont(new Font("Open Sans", Font.PLAIN, 14));
+//        btnWebsiteBand_4.setContentAreaFilled(false);
+//        btnWebsiteBand_4.setBorderPainted(false);
+//        panel.add(btnWebsiteBand_4);
         
         
         lblName = new JLabel("Name");
@@ -239,7 +243,7 @@ public class NewBookingView {
         
         
         lblAvailableTickets = new JLabel("Available Tickets");
-        lblAvailableTickets.setBounds(46, 554, 200, 20);
+        lblAvailableTickets.setBounds(46, 554, 250, 20);
         lblAvailableTickets.setForeground(SystemColor.inactiveCaption);
         lblAvailableTickets.setFont(new Font("Open Sans", Font.BOLD, 20));
         frame.getContentPane().add(lblAvailableTickets);
@@ -329,6 +333,10 @@ public class NewBookingView {
                     btnProceedToBooking.setEnabled(false);
                     lblNotEnoughTickets.setVisible(true);
                 }
+                else if(totalTickets==0){
+                    btnProceedToBooking.setEnabled(false);
+                    lblNotEnoughTickets.setVisible(false);
+                }
                 else{
                     btnProceedToBooking.setEnabled(true);
                     lblNotEnoughTickets.setVisible(false);
@@ -353,7 +361,7 @@ public class NewBookingView {
         lblCorpPriceValue.setFont(new Font("Open Sans", Font.BOLD, 14));
         //frame.getContentPane().add(lblCorpPriceValue);
 
-        if (User.getType(User.username).equalsIgnoreCase("organization")){
+        if (User.getData(User.username,"Type").equalsIgnoreCase("organization")){
             frame.getContentPane().add(lblCorpPriceValue);
             frame.getContentPane().add(lblCorporateTicketPrice);
             frame.getContentPane().add(comboBoxCorporatePrice);
@@ -407,6 +415,47 @@ public class NewBookingView {
         btnProceedToBooking.setOpaque(false);
         btnProceedToBooking.setBorderPainted(false);
         btnProceedToBooking.setContentAreaFilled(false);
+        btnProceedToBooking.setEnabled(false);
+        btnProceedToBooking.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String bookingNo = User.username+String.valueOf(new Timestamp(System.currentTimeMillis()).getTime());
+                float price = Float.parseFloat(lblAmount.getText());
+                int customerID = User.getUserId(User.username);
+                int eventID = Event.getEventId(lblName.getText());
+
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                String date = format.format(new Date());
+
+                String status;
+                int paid;
+                int noOfSeats = Integer.parseInt(lblTotalTickets.getText());
+
+                String msg ="Total Tickets: "+lblTotalTickets.getText()+
+                        "\nAmount to be paid: "+lblAmount.getText()+"£\n";
+
+                String paymentMethod = User.getData(User.username,"PaymentMethod");
+                if(paymentMethod.equalsIgnoreCase("On Booking")){
+                    msg +=  "Card No: "+ User.getData(User.username,"CardNo")+
+                            " Card CVV: "+User.getData(User.username,"CVVCode");
+                    status = "pending";
+                    paid = 1;
+                }
+                else{
+                    msg+="This will be added to your monthly invoice";
+                    status = "confirmed";
+                    paid = 0;
+                }
+
+
+
+                int confirmBooking = JOptionPane.showConfirmDialog(null,msg,"Confirm Booking?",JOptionPane.OK_CANCEL_OPTION);
+                if (confirmBooking==0){
+                    new Booking(bookingNo,price,customerID,eventID,date,status,paid,noOfSeats);
+                    JOptionPane.showMessageDialog(null,"Booking Complete!!");
+                }
+            }
+        });
         frame.getContentPane().add(btnProceedToBooking);
 
         

@@ -369,7 +369,7 @@ public class MyAccountView {
 		webAddressLabel.setFont(new Font("Open Sans", Font.BOLD, 13));
 		frame.getContentPane().add(webAddressLabel);
 		
-		if (User.getType(User.username).equalsIgnoreCase("Customer")) {
+		if (User.getData(User.username,"Type").equalsIgnoreCase("Customer")) {
 			orgNameTextField.setVisible(false);
 			orgNameLabel.setVisible(false);
 			orgEmailTextField.setVisible(false);

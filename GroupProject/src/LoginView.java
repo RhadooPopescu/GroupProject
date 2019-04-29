@@ -81,13 +81,13 @@ public class LoginView {
                 user.setUsername(usernameField.getText().replace("'", "''"));
                 user.setPassword(new String(passwordField.getPassword()));
                 if (user.loginCheck()) {
-                    if (User.getType(User.username).equalsIgnoreCase("Customer") ||
-                            User.getType(User.username).equalsIgnoreCase("organization"))
+                    if (User.getData(User.username,"Type").equalsIgnoreCase("Customer") ||
+                            User.getData(User.username,"Type").equalsIgnoreCase("organization"))
                     {
                         new HomePageView();
                         frame.setVisible(false);
                     }
-                    else if (User.getType(User.username).equalsIgnoreCase("organizer"))
+                    else if (User.getData(User.username,"Type").equalsIgnoreCase("organizer"))
                     {
                         new EventOrganizerView();
                         frame.setVisible(false);

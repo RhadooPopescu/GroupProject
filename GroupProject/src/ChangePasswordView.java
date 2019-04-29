@@ -169,7 +169,7 @@ public class ChangePasswordView {
         	
         	@Override
         	public void focusLost(FocusEvent e) {
-        		if (!(User.getPass(User.username).equals(String.valueOf(oldPassField.getPassword()))))
+        		if (!(User.getData(User.username,"Pass").equals(String.valueOf(oldPassField.getPassword()))))
         			incorrectPassLabel.setVisible(true);
         		else
         			incorrectPassLabel.setVisible(false);
@@ -242,7 +242,7 @@ public class ChangePasswordView {
         JButton saveButton = new JButton("Save");
         saveButton.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
-        		if (String.valueOf(oldPassField.getPassword()).equals(User.getPass(User.username)) && String.valueOf(newPassField.getPassword()).equals(
+        		if (String.valueOf(oldPassField.getPassword()).equals(User.getData(User.username,"Pass")) && String.valueOf(newPassField.getPassword()).equals(
         				String.copyValueOf(confPassField.getPassword()))) {
     				User.updatePass(newPassField.getPassword().toString().replace("'", "''"), User.username);
     				JOptionPane.showMessageDialog(null,"Password changed!");

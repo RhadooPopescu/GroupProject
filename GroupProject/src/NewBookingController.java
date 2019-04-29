@@ -21,6 +21,7 @@ public class NewBookingController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         NewBookingView newBooking = new NewBookingView();
         setEventDetails(eventID,newBooking);
+        newBooking.bandPanel.setViewportView(new BandDetailsPanel(eventID));
     }
 
     public void setEventDetails(int eventID,NewBookingView newBooking){

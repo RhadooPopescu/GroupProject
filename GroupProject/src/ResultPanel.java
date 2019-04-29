@@ -138,7 +138,7 @@ public class ResultPanel extends JPanel{
 
             imageLabel = new JLabel("image");
             imageLabel.setBounds(12, 13, 135, 109);
-            ImageIcon img = new ImageIcon((HomePageView.class.getResource(Main.EVENT_IMAGE_DIR+results.get(i).get(3))));
+            ImageIcon img = new ImageIcon((HomePageView.class.getResource(Main.EVENT_IMAGE_DIR+eventDetails.get(3))));
             Image image = img.getImage().getScaledInstance(imageLabel.getWidth(),imageLabel.getHeight(),Image.SCALE_SMOOTH);
             imageLabel.setIcon(new ImageIcon(image));
             panel.add(imageLabel);
@@ -180,11 +180,7 @@ public class ResultPanel extends JPanel{
             bookButton.setBackground(new Color(0, 0, 128));
             bookButton.setBounds(650, 34, 135, 43);
             bookButton.addActionListener(new NewBookingController(Integer.parseInt(eventDetails.get(0))));
-//            bookButton.addActionListener(new ActionListener() {
-//                @Override
-//                public void actionPerformed(ActionEvent e) {
-//                    new NewBookingView(Integer.parseInt(eventDetails.get(0)));}
-//            });
+
             panel.add(bookButton);
 
             priceLabel = new JLabel("£ " + results.get(i).get(6));
