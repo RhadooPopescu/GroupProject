@@ -32,7 +32,7 @@ public class ResultPanel extends JPanel{
 //        group.setAutoCreateContainerGaps(true);
 //        group.setAutoCreateGaps(true);
 
-        String query = "SELECT E.Name, E.Price, B.Name ArtistName, E.DateOfEvent, E.Image, V.Name Venue, V.Address" +
+        String query = "SELECT E.EventID, E.Name, E.Price, B.Name ArtistName, E.DateOfEvent, E.Image, V.Name Venue, V.Address" +
                 " FROM tbl_venue V, tbl_event E, tbl_event_band EB, tbl_band B " +
                 "WHERE E.VenueID = V.VenueID AND E.EventID = EB.EventID AND B.BandID = EB.BandID " +
                 "AND E.DateOfEvent>NOW() ORDER BY E.DateOfEvent";
@@ -45,7 +45,7 @@ public class ResultPanel extends JPanel{
     	this.setBackground(Color.black);
     	this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-        String query ="SELECT E.Name, E.Price, B.Name ArtistName, E.DateOfEvent, E.Image, V.Name Venue, V.Address" +
+        String query ="SELECT E.EventID, E.Name, E.Price, B.Name ArtistName, E.DateOfEvent, E.Image, V.Name Venue, V.Address" +
                 " FROM tbl_venue V, tbl_event E, tbl_event_band EB, tbl_band B " +
                 "WHERE E.VenueID = V.VenueID AND E.EventID = EB.EventID AND B.BandID = EB.BandID " +
                 "AND (E.Name LIKE '%"+searchCriteria+"%' OR B.Name LIKE '%"+searchCriteria+"%')" +
@@ -60,7 +60,7 @@ public class ResultPanel extends JPanel{
 
         LocalDate dateFromDatePicker = datePicker.getDate();
 
-        String query ="SELECT E.Name, E.Price, B.Name ArtistName, E.DateOfEvent, E.Image, V.Name Venue, V.Address" +
+        String query ="SELECT E.EventID, E.Name, E.Price, B.Name ArtistName, E.DateOfEvent, E.Image, V.Name Venue, V.Address" +
                 " FROM tbl_venue V, tbl_event E, tbl_event_band EB, tbl_band B " +
                 "WHERE E.VenueID = V.VenueID AND E.EventID = EB.EventID AND B.BandID = EB.BandID " +
                 "AND DateOfEvent = "+ "\"" + dateFromDatePicker.toString() + "\"" + " ORDER BY DateofEvent";
@@ -75,6 +75,7 @@ public class ResultPanel extends JPanel{
         try {
             rs = Connect.selectStm(query);
             while(rs.next()){
+                int ID = rs.getInt("EventID");
                 String name = rs.getString("Name");
                 String date = rs.getString("DateOfEvent");
                 String image = rs.getString("Image");
@@ -84,7 +85,7 @@ public class ResultPanel extends JPanel{
                 int price =(int) rs.getFloat("Price");
                 boolean has = false;
                 for (List<String> list : results){
-                    if (list.get(0).equals(name)){
+                    if (list.get(1).equals(name)){
                         has =true;
                     }
                 }
@@ -92,7 +93,7 @@ public class ResultPanel extends JPanel{
                         int index = results.indexOf(results.stream().filter(e -> e.contains(name)).findAny().get());
                         results.get(index).add(artist);
                 } else{
-                    results.add(new ArrayList<>(Arrays.asList(new String[]{name,date,image,venue,venueAddress,
+                    results.add(new ArrayList<>(Arrays.asList(new String[]{String.valueOf(ID),name,date,image,venue,venueAddress,
                             String.valueOf(price),artist})));}
 
             }
@@ -126,6 +127,8 @@ public class ResultPanel extends JPanel{
         }
         this.setPreferredSize(new Dimension(200,140*size));
         for (int i=0;i<size;i++){
+            List<String> eventDetails = results.get(i);
+
             panel = new JPanel();
 
 
@@ -135,21 +138,21 @@ public class ResultPanel extends JPanel{
 
             imageLabel = new JLabel("image");
             imageLabel.setBounds(12, 13, 135, 109);
-            ImageIcon img = new ImageIcon((HomePageView.class.getResource(Main.EVENT_IMAGE_DIR+results.get(i).get(2))));
-            Image image = img.getImage().getScaledInstance(135,109,Image.SCALE_SMOOTH);
+            ImageIcon img = new ImageIcon((HomePageView.class.getResource(Main.EVENT_IMAGE_DIR+results.get(i).get(3))));
+            Image image = img.getImage().getScaledInstance(imageLabel.getWidth(),imageLabel.getHeight(),Image.SCALE_SMOOTH);
             imageLabel.setIcon(new ImageIcon(image));
             panel.add(imageLabel);
 
-            nameLabel = new JLabel(results.get(i).get(0));
+            nameLabel = new JLabel(eventDetails.get(1));
             nameLabel.setFont(new Font("Open Sans", Font.BOLD, 20));
             nameLabel.setBounds(174, 13, 200, 23);
             panel.add(nameLabel);
 
 
             String artists = "Performing live: ";
-            int artistAmount = results.get(i).size();
-            for (int b = 6; b<artistAmount;b++){
-                artists += (results.get(i).get(b) + ", ");
+            int artistAmount = eventDetails.size();
+            for (int b = 7; b<artistAmount;b++){
+                artists += (eventDetails.get(b) + ", ");
             }
             bandsLabel = new JLabel(artists);
             bandsLabel.setFont(new Font("Open Sans", Font.PLAIN, 12));
@@ -162,33 +165,34 @@ public class ResultPanel extends JPanel{
             SimpleDateFormat finalformat = new SimpleDateFormat("dd/MM/yyyy");
             String newdate = "";
             try{
-                Date date = format.parse(results.get(i).get(1));
+                Date date = format.parse(eventDetails.get(2));
                 newdate = finalformat.format(date);}
             catch (ParseException e){
                 System.out.println("error");
             }
-            dateLabel = new JLabel(newdate);
+            dateLabel = new JLabel("Starting: "+newdate);
             dateLabel.setFont(new Font("Open Sans", Font.PLAIN, 12));
-            dateLabel.setBounds(174, 49, 80, 16);
+            dateLabel.setBounds(170, 49, 80, 16);
             panel.add(dateLabel);
 
             JButton bookButton = new JButton("Book Tickets");
             bookButton.setForeground(SystemColor.inactiveCaption);
             bookButton.setBackground(new Color(0, 0, 128));
             bookButton.setBounds(650, 34, 135, 43);
-            bookButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    new NewBookingView();}
-            });
+            bookButton.addActionListener(new NewBookingController(Integer.parseInt(eventDetails.get(0))));
+//            bookButton.addActionListener(new ActionListener() {
+//                @Override
+//                public void actionPerformed(ActionEvent e) {
+//                    new NewBookingView(Integer.parseInt(eventDetails.get(0)));}
+//            });
             panel.add(bookButton);
 
-            priceLabel = new JLabel("£ " + results.get(i).get(5));
+            priceLabel = new JLabel("£ " + results.get(i).get(6));
             priceLabel.setFont(new Font("Open Sans", Font.PLAIN, 18));
             priceLabel.setBounds(700, 97, 56, 16);
             panel.add(priceLabel);
 
-            venueLabel = new JTextArea(results.get(i).get(3)+ "\nAddress: " + results.get(i).get(4));
+            venueLabel = new JTextArea(results.get(i).get(4)+ "\nAddress: " + results.get(i).get(4));
             venueLabel.setFont(new Font("Open Sans", Font.PLAIN, 12));
             venueLabel.setBounds(350, 25, 229, 30);
             venueLabel.setEditable(false);

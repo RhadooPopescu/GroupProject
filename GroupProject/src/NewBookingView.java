@@ -7,17 +7,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.ImageIcon;
-import javax.swing.JTextArea;
-import javax.swing.JComboBox;
-import javax.swing.JSeparator;
+import javax.swing.*;
 
 public class NewBookingView {
+
+    int availableTickets;
+
+    JLabel lblFestivalImage,lblName,lblDate,lblDuration,lblAvailableTickets,lblPrice,lblPriceStudent, lblCorpPriceValue;
+    JTextArea txtVenue;
+
+    JButton btnProceedToBooking;
+
+    JLabel lblAmount,lblTotalTickets,lblNotEnoughTickets;
 
 	private JFrame frame;
 
@@ -40,9 +41,8 @@ public class NewBookingView {
 	/**
 	 * Create the application.
 	 */
-	public NewBookingView() {
-		initialize();
-	}
+	public NewBookingView(){initialize();}
+
 
 	/**
 	 * Initialize the contents of the frame.
@@ -96,8 +96,8 @@ public class NewBookingView {
         minimizeButton.setBounds(1154, 20, 63, 38);
         frame.getContentPane().add(minimizeButton);
         
-        JLabel lblFestivalImage = new JLabel("Festival Image");
-        lblFestivalImage.setBounds(33, 74, 190, 237);
+        lblFestivalImage = new JLabel("Festival Image");
+        lblFestivalImage.setBounds(33, 74, 200, 237);
         frame.getContentPane().add(lblFestivalImage);
         
         JLabel lblFeaturingArtists = new JLabel("Featuring Artists");
@@ -123,7 +123,7 @@ public class NewBookingView {
         JLabel lblImageBand_3 = new JLabel("New label");
         lblImageBand_3.setBounds(394, 0, 173, 140);
         panel.add(lblImageBand_3);
-        
+
         JLabel lblImageBand_4 = new JLabel("New label");
         lblImageBand_4.setBounds(595, 0, 173, 140);
         panel.add(lblImageBand_4);
@@ -207,39 +207,41 @@ public class NewBookingView {
         panel.add(btnWebsiteBand_4);
         
         
-        JLabel lblName = new JLabel("Name");
-        lblName.setBounds(46, 372, 46, 14);
+        lblName = new JLabel("Name");
+        lblName.setBounds(46, 372, 200, 20);
         lblName.setForeground(SystemColor.inactiveCaption);
-        lblName.setFont(new Font("Open Sans", Font.BOLD, 14));
+        lblName.setFont(new Font("Open Sans", Font.BOLD, 20));
         frame.getContentPane().add(lblName);
         
         
-        JLabel lblDate = new JLabel("Date");
-        lblDate.setBounds(46, 414, 46, 14);
+        lblDate = new JLabel("Date");
+        lblDate.setBounds(46, 414, 200, 14);
         lblDate.setForeground(SystemColor.inactiveCaption);
         lblDate.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblDate);
         
         
-        JLabel lblDuration = new JLabel("Duration");
-        lblDuration.setBounds(46, 462, 75, 14);
+        lblDuration = new JLabel("Duration");
+        lblDuration.setBounds(46, 454, 200, 14);
         lblDuration.setForeground(SystemColor.inactiveCaption);
         lblDuration.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblDuration);
         
         
-        JTextArea txtVenue = new JTextArea();
-        txtVenue.setBackground(SystemColor.inactiveCaption);
+        txtVenue = new JTextArea();
+        txtVenue.setOpaque(false);
+        txtVenue.setForeground(SystemColor.inactiveCaption);
+        txtVenue.setFont(new Font("Open Sans",Font.BOLD,14));
         txtVenue.setLineWrap(true);
         txtVenue.setText("Venue      Address      ");
-        txtVenue.setBounds(46, 500, 97, 68);
+        txtVenue.setBounds(46, 494, 200, 40);
         frame.getContentPane().add(txtVenue);
         
         
-        JLabel lblAvailableTickets = new JLabel("Available Tickets");
-        lblAvailableTickets.setBounds(46, 589, 130, 14);
+        lblAvailableTickets = new JLabel("Available Tickets");
+        lblAvailableTickets.setBounds(46, 554, 200, 20);
         lblAvailableTickets.setForeground(SystemColor.inactiveCaption);
-        lblAvailableTickets.setFont(new Font("Open Sans", Font.BOLD, 14));
+        lblAvailableTickets.setFont(new Font("Open Sans", Font.BOLD, 20));
         frame.getContentPane().add(lblAvailableTickets);
         
         
@@ -248,9 +250,14 @@ public class NewBookingView {
         lblFullPriceTickets.setForeground(SystemColor.inactiveCaption);
         lblFullPriceTickets.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblFullPriceTickets);
+
+        JLabel lblPoundSymbol = new JLabel("£");
+        lblPoundSymbol.setBounds(632,345,20,20);
+        lblPoundSymbol.setForeground(SystemColor.inactiveCaption);
+        lblPoundSymbol.setFont(new Font("Open Sans", Font.BOLD, 18));
+        frame.getContentPane().add(lblPoundSymbol);
         
-        
-        JLabel lblPrice = new JLabel("Price");
+        lblPrice = new JLabel("Price");
         lblPrice.setBounds(624, 372, 46, 14);
         lblPrice.setForeground(SystemColor.inactiveCaption);
         lblPrice.setFont(new Font("Open Sans", Font.BOLD, 14));
@@ -264,8 +271,8 @@ public class NewBookingView {
         frame.getContentPane().add(lblStudentDiscountPrice);
         
         
-        JLabel lblPriceStudent = new JLabel("Price");
-        lblPriceStudent.setBounds(628, 430, 46, 14);
+        lblPriceStudent = new JLabel("Price");
+        lblPriceStudent.setBounds(624, 430, 46, 14);
         lblPriceStudent.setForeground(SystemColor.inactiveCaption);
         lblPriceStudent.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblPriceStudent);
@@ -275,70 +282,125 @@ public class NewBookingView {
         lblStudentIdNeeded.setForeground(Color.RED);
         lblStudentIdNeeded.setBounds(389, 452, 179, 14);
         frame.getContentPane().add(lblStudentIdNeeded);
-        
-        
-        JComboBox<String> comboBoxFullPrice = new JComboBox<String>();
+
+        JLabel lblNoOfTickets = new JLabel("No of Tickets");
+        lblNoOfTickets.setBounds(763,345,100,20);
+        lblNoOfTickets.setForeground(SystemColor.inactiveCaption);
+        lblNoOfTickets.setFont(new Font("Open Sans", Font.BOLD, 16));
+        frame.getContentPane().add(lblNoOfTickets);
+
+
+
+        Integer[] intList = new Integer[]{0,1,2,3,4,5,6,7,8,9,10};
+
+        JComboBox<Integer> comboBoxFullPrice = new JComboBox<Integer>(intList);
         comboBoxFullPrice.setBackground(SystemColor.activeCaption);
         comboBoxFullPrice.setBounds(773, 371, 84, 20);
         frame.getContentPane().add(comboBoxFullPrice);
         
-        
-        JComboBox<String> comboBoxStudentPrice = new JComboBox<String>();
+        JComboBox<Integer> comboBoxStudentPrice = new JComboBox<Integer>(intList);
         comboBoxStudentPrice.setBackground(SystemColor.activeCaption);
         comboBoxStudentPrice.setBounds(773, 427, 84, 20);
         frame.getContentPane().add(comboBoxStudentPrice);
         
-        
-        JComboBox<String> comboBoxCorporatePrice = new JComboBox<String>();
+        JComboBox<Integer> comboBoxCorporatePrice = new JComboBox<Integer>(intList);
         comboBoxCorporatePrice.setBackground(SystemColor.activeCaption);
         comboBoxCorporatePrice.setBounds(773, 495, 84, 20);
-        frame.getContentPane().add(comboBoxCorporatePrice);
-        
-        
-        
+        //frame.getContentPane().add(comboBoxCorporatePrice);
+
+
+
+        ActionListener updateTotal = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int fullPriceTickets = (int)comboBoxFullPrice.getSelectedItem();
+                int studentTickets = (int)comboBoxStudentPrice.getSelectedItem();
+                int corporateTickets = (int)comboBoxCorporatePrice.getSelectedItem();
+                int totalTickets = fullPriceTickets + studentTickets + corporateTickets;
+
+                float totalAmount = fullPriceTickets*Float.parseFloat(lblPrice.getText())+
+                        studentTickets*Float.parseFloat(lblPriceStudent.getText())+
+                        corporateTickets*Float.parseFloat(lblCorpPriceValue.getText());
+
+                lblAmount.setText(String.valueOf(totalAmount));
+                lblTotalTickets.setText(String.valueOf(totalTickets));
+
+                if (totalTickets>availableTickets){
+                    btnProceedToBooking.setEnabled(false);
+                    lblNotEnoughTickets.setVisible(true);
+                }
+                else{
+                    btnProceedToBooking.setEnabled(true);
+                    lblNotEnoughTickets.setVisible(false);
+                }
+            }
+        };
+
+        comboBoxCorporatePrice.addActionListener(updateTotal);
+        comboBoxFullPrice.addActionListener(updateTotal);
+        comboBoxStudentPrice.addActionListener(updateTotal);
+
         JLabel lblCorporateTicketPrice = new JLabel("Corporate Ticket Price");
         lblCorporateTicketPrice.setBounds(389, 498, 171, 14);
         lblCorporateTicketPrice.setForeground(SystemColor.inactiveCaption);
         lblCorporateTicketPrice.setFont(new Font("Open Sans", Font.BOLD, 14));
-        frame.getContentPane().add(lblCorporateTicketPrice);
+        //frame.getContentPane().add(lblCorporateTicketPrice);
         
         
-        JLabel lblPriceCorporate = new JLabel("Price");
-        lblPriceCorporate.setBounds(628, 498, 46, 14);
-        lblPriceCorporate.setForeground(SystemColor.inactiveCaption);
-        lblPriceCorporate.setFont(new Font("Open Sans", Font.BOLD, 14));
-        frame.getContentPane().add(lblPriceCorporate);
+        lblCorpPriceValue = new JLabel("Price");
+        lblCorpPriceValue.setBounds(624, 498, 46, 14);
+        lblCorpPriceValue.setForeground(SystemColor.inactiveCaption);
+        lblCorpPriceValue.setFont(new Font("Open Sans", Font.BOLD, 14));
+        //frame.getContentPane().add(lblCorpPriceValue);
+
+        if (User.getType(User.username).equalsIgnoreCase("organization")){
+            frame.getContentPane().add(lblCorpPriceValue);
+            frame.getContentPane().add(lblCorporateTicketPrice);
+            frame.getContentPane().add(comboBoxCorporatePrice);
+        }
         
         
-        
-        JLabel lblTotals = new JLabel("Totals");
-        lblTotals.setBounds(389, 554, 75, 14);
+        JLabel lblTotals = new JLabel("Totals:");
+        lblTotals.setBounds(549, 554, 75, 20);
         lblTotals.setForeground(SystemColor.inactiveCaption);
-        lblTotals.setFont(new Font("Open Sans", Font.BOLD, 14));
+        lblTotals.setFont(new Font("Open Sans", Font.BOLD, 20));
         frame.getContentPane().add(lblTotals);
-        
-        
-        JLabel lblNoOfTickets = new JLabel("No Of Tickets");
-        lblNoOfTickets.setBounds(628, 554, 97, 14);
-        lblNoOfTickets.setForeground(SystemColor.inactiveCaption);
-        lblNoOfTickets.setFont(new Font("Open Sans", Font.BOLD, 14));
-        frame.getContentPane().add(lblNoOfTickets);
-        
-        
-        JLabel lblAmount = new JLabel("Amount");
-        lblAmount.setBounds(773, 554, 84, 14);
+
+        lblAmount = new JLabel("0.0");
+        lblAmount.setBounds(628, 554, 97, 20);
         lblAmount.setForeground(SystemColor.inactiveCaption);
-        lblAmount.setFont(new Font("Open Sans", Font.BOLD, 14));
+        lblAmount.setFont(new Font("Open Sans", Font.BOLD, 20));
         frame.getContentPane().add(lblAmount);
         
+
+
+        lblTotalTickets = new JLabel("0");
+        lblTotalTickets.setBounds(773, 554, 84, 20);
+        lblTotalTickets.setForeground(SystemColor.inactiveCaption);
+        lblTotalTickets.setFont(new Font("Open Sans", Font.BOLD, 20));
+        frame.getContentPane().add(lblTotalTickets);
+
+        JLabel lblVAT = new JLabel("VAT(20%) is included");
+        lblVAT.setBounds(389,556,200,14);
+        lblVAT.setForeground(SystemColor.inactiveCaption);
+        lblVAT.setFont(new Font("Open Sans",Font.PLAIN,14));
+        frame.getContentPane().add(lblVAT);
+
+        lblNotEnoughTickets = new JLabel("There aren't enough tickets available :(");
+        lblNotEnoughTickets.setBounds(600,574,300,14);
+        lblNotEnoughTickets.setFont(new Font("Open Sans",Font.BOLD,12));
+        lblNotEnoughTickets.setForeground(Color.RED);
+        lblNotEnoughTickets.setVisible(false);
+        frame.getContentPane().add(lblNotEnoughTickets);
         
         
-        JButton btnProceedToBooking = new JButton("Proceed To Booking");
+        
+        btnProceedToBooking = new JButton("Proceed To Booking");
         btnProceedToBooking.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         	}
         });
-        btnProceedToBooking.setBounds(715, 615, 209, 23);
+        btnProceedToBooking.setBounds(715, 615, 250, 23);
         btnProceedToBooking.setForeground(SystemColor.inactiveCaption);
         btnProceedToBooking.setFont(new Font("Open Sans", Font.PLAIN, 20));
         btnProceedToBooking.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -346,6 +408,7 @@ public class NewBookingView {
         btnProceedToBooking.setBorderPainted(false);
         btnProceedToBooking.setContentAreaFilled(false);
         frame.getContentPane().add(btnProceedToBooking);
+
         
         
         JButton btnCancel = new JButton("Cancel");
@@ -360,7 +423,7 @@ public class NewBookingView {
         btnCancel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnCancel.setContentAreaFilled(false);
         btnCancel.setBorderPainted(false);
-        btnCancel.setBounds(489, 615, 92, 23);
+        btnCancel.setBounds(489, 615, 100, 23);
         frame.getContentPane().add(btnCancel);
         
         
@@ -373,7 +436,7 @@ public class NewBookingView {
         
         
         JSeparator separatorProceed = new JSeparator();
-        separatorProceed.setBounds(717, 638, 207, 3);
+        separatorProceed.setBounds(733, 638, 207, 3);
         separatorProceed.setBackground(SystemColor.inactiveCaption);
         separatorProceed.setForeground(SystemColor.inactiveCaption);
         separatorProceed.setOpaque(true);
@@ -395,7 +458,22 @@ public class NewBookingView {
 
         frame.setVisible(true);
         
-        
-        
-	}
+
+        }
+//        public List<Object> getEventDetails(int eventID){
+//	        List<Object> eventDetails = new ArrayList<>();
+//	        String query = "SELECT * from tbl_event WHERE EventID="+eventID+";";
+//	        try{
+//                ResultSet rs = Connect.selectStm(query);
+//                rs.next();
+//
+//                eventDetails.add(rs.getString("Name"));
+//                float eventPrice = rs.getFloat("Price");
+//                eventDetails.add(eventPrice);
+//                String eventDate = rs.getString("DateOFEvent");
+//                String eventImage = rs.getString("Image");
+//                int eventDuration = rs.getInt("Duration");
+//
+//        }
+//	}
 }

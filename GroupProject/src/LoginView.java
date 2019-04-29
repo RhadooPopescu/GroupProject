@@ -9,8 +9,8 @@ import java.awt.event.MouseEvent;
 public class LoginView {
 
 	private JFrame frame;
-    private JTextField usernameField;
-    private JPasswordField passwordField;
+    JTextField usernameField;
+    JPasswordField passwordField;
 
     /**
      * Launch the application.
