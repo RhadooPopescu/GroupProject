@@ -35,7 +35,7 @@ public class ResultPanel extends JPanel{
         String query = "SELECT E.EventID, E.Name, E.Price, B.Name ArtistName, E.DateOfEvent, E.Image, V.Name Venue, V.Address" +
                 " FROM tbl_venue V, tbl_event E, tbl_event_band EB, tbl_band B " +
                 "WHERE E.VenueID = V.VenueID AND E.EventID = EB.EventID AND B.BandID = EB.BandID " +
-                "AND E.DateOfEvent>NOW() ORDER BY E.DateOfEvent";
+                "AND E.DateOfEvent>=NOW() ORDER BY E.DateOfEvent";
 
         createPanels(query);
 
@@ -172,7 +172,7 @@ public class ResultPanel extends JPanel{
             }
             dateLabel = new JLabel("Starting: "+newdate);
             dateLabel.setFont(new Font("Open Sans", Font.PLAIN, 12));
-            dateLabel.setBounds(170, 49, 80, 16);
+            dateLabel.setBounds(170, 49, 120, 16);
             panel.add(dateLabel);
 
             JButton bookButton = new JButton("Book Tickets");

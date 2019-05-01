@@ -20,11 +20,11 @@ public class NewBookingController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         NewBookingView newBooking = new NewBookingView();
-        setEventDetails(eventID,newBooking);
+        setEventDetails(newBooking);
         newBooking.bandPanel.setViewportView(new BandDetailsPanel(eventID));
     }
 
-    public void setEventDetails(int eventID,NewBookingView newBooking){
+    public void setEventDetails(NewBookingView newBooking){
         String query = "SELECT V.Name venueName,V.Address, V.Capacity, E.*, SUM(NoOfSeats) booked " +
                 "FROM tbl_venue V,tbl_booking B,tbl_event E " +
                 "WHERE E.EventID= "+ eventID +
