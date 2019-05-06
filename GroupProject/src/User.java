@@ -1,6 +1,7 @@
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class User {
     private int userID, cardCVV;
@@ -165,7 +166,7 @@ public class User {
 		}
     }
 
-    public static ArrayList<String> userList() {
+    public static String[] userList() {
         String query = "SELECT Username FROM tbl_user;";
         ArrayList<String> users = new ArrayList<>();
         try {
@@ -179,7 +180,9 @@ public class User {
         } catch (ClassNotFoundException k) {
             System.out.println(k.getMessage());
         }
-        return users;
+        Object[] objDetails = users.toArray();
+    	String[] finalUsers = Arrays.copyOf(objDetails,objDetails.length,String[].class);
+        return finalUsers;
     }
 
     public static String getData(String username, String field) {
@@ -244,6 +247,7 @@ public class User {
 		} catch (NullPointerException f){
 			f.printStackTrace();
 		}
+    	
     	return details;
     }
     

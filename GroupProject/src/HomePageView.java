@@ -12,6 +12,7 @@ import javax.swing.border.MatteBorder;
 
 public class HomePageView {
 
+	JButton searchButton;
     JFrame frame;
     JPanel newPanel;
     //private String username;
@@ -63,7 +64,7 @@ public class HomePageView {
         frame.add(c);
 
 
-        JButton searchButton = new JButton("Search events");
+        searchButton = new JButton("Search events");
         searchButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 new HomePageView();

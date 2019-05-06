@@ -27,7 +27,7 @@ public class MyAccountView extends JPanel {
 	private JTextField orgNameTextField;
 	private JTextField orgEmailTextField;
 	private JTextField webAddressTextField;
-	
+	public JButton saveButton;
 
 
 	
@@ -276,7 +276,7 @@ public class MyAccountView extends JPanel {
 		webAddressTextField.setText(details.get(14));
 		
 		
-		JButton saveButton = new JButton("Save");
+		saveButton = new JButton("Save");
 		saveButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				User.updateDetails(User.username, titleComboBox.getSelectedItem().toString(), firstNameTextField.getText().replace("'", "''"), 
@@ -326,6 +326,10 @@ public class MyAccountView extends JPanel {
         invalidCVVLabel.setBounds(432, 400, 100, 16);
         this.add(invalidCVVLabel);
         invalidCVVLabel.setVisible(false);
+        
+
+
 
 	}
+
 }

@@ -1,4 +1,6 @@
+import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -21,11 +23,11 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JTextField;
 import javax.swing.BoxLayout;
+import javax.swing.JComboBox;
 
 public class AdminView {
 
 	private JFrame frame;
-    private JTextField textChooseUsername;
     private JTable tableConfirmBooking;
 
 
@@ -128,6 +130,17 @@ public class AdminView {
         lblChooseUsername.setForeground(SystemColor.inactiveCaption);
         lblChooseUsername.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblChooseUsername);
+        
+        JComboBox<String> comboBoxUsername = new JComboBox<String>(User.userList());
+        comboBoxUsername.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		User.username = comboBoxUsername.getSelectedItem().toString();
+        		new PopUp();
+        	}
+        });
+        comboBoxUsername.setBackground(SystemColor.activeCaption);
+        comboBoxUsername.setBounds(204, 55, 182, 25);
+        frame.getContentPane().add(comboBoxUsername);
         
         
         JScrollPane scrollPaneViewEvent = new JScrollPane();
@@ -256,27 +269,6 @@ public class AdminView {
         frame.getContentPane().add(btnGenerateInvoice);
 
 
-        textChooseUsername = new JTextField();
-        textChooseUsername.setBackground(SystemColor.activeCaption);
-        textChooseUsername.setBorder(new MatteBorder(2, 2, 2, 2, (Color) SystemColor.activeCaption));
-        textChooseUsername.setBounds(190, 49, 198, 31);
-        frame.getContentPane().add(textChooseUsername);
-        textChooseUsername.setColumns(10);
-
-
-        JButton btnSearchButton = new JButton("");
-        btnSearchButton.setBorderPainted(false);
-        btnSearchButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnSearchButton.setIcon(new ImageIcon(LoginView.class.getResource("Images/SearchIcon.png")));
-        btnSearchButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        btnSearchButton.setBounds(409, 49, 30, 30);
-        frame.getContentPane().add(btnSearchButton);
-
-
 
         JSeparator separatorViewEvent = new JSeparator();
         separatorViewEvent.setBounds(41, 212, 159, 3);
@@ -321,7 +313,7 @@ public class AdminView {
         frame.getContentPane().add(lblImageLabel);
         
         
-
+   
 
     }
 }
