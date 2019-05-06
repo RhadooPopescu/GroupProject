@@ -325,7 +325,7 @@ public class EventOrganizerView {
 							imageName = file.getName();
 							lblImageName.setText(imageName);
 
-							Files.copy(file.toPath(),Paths.get(System.getProperty("user.dir")+"/GroupProject/src/"+Main.EVENT_IMAGE_DIR+file.getName()),
+							Files.copy(file.toPath(),Paths.get(System.getProperty("user.dir")+"/src/"+Main.EVENT_IMAGE_DIR+file.getName()),
 									java.nio.file.StandardCopyOption.REPLACE_EXISTING,
 									java.nio.file.StandardCopyOption.COPY_ATTRIBUTES,
 									java.nio.file.LinkOption.NOFOLLOW_LINKS );
