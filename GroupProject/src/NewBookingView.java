@@ -159,7 +159,7 @@ public class NewBookingView {
         lblFullPriceTickets.setFont(new Font("Open Sans", Font.BOLD, 14));
         frame.getContentPane().add(lblFullPriceTickets);
 
-        JLabel lblPoundSymbol = new JLabel("£");
+        JLabel lblPoundSymbol = new JLabel("\u00A3");
         lblPoundSymbol.setBounds(632, 345, 20, 20);
         lblPoundSymbol.setForeground(SystemColor.inactiveCaption);
         lblPoundSymbol.setFont(new Font("Open Sans", Font.BOLD, 18));
@@ -330,7 +330,7 @@ public class NewBookingView {
                 int noOfSeats = Integer.parseInt(lblTotalTickets.getText());
 
                 String msg = "Total Tickets: " + lblTotalTickets.getText() +
-                        "\nAmount to be paid: " + lblAmount.getText() + "£\n";
+                        "\nAmount to be paid: " + lblAmount.getText() + "\u00A3\n";
 
                 String paymentMethod = User.getData(User.username, "PaymentMethod");
                 if (paymentMethod.equalsIgnoreCase("On Booking")) {

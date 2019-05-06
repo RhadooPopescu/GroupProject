@@ -183,7 +183,7 @@ public class ResultPanel extends JPanel{
 
             panel.add(bookButton);
 
-            priceLabel = new JLabel("£ " + results.get(i).get(6));
+            priceLabel = new JLabel("\u00A3 " + results.get(i).get(6));
             priceLabel.setFont(new Font("Open Sans", Font.PLAIN, 18));
             priceLabel.setBounds(700, 97, 56, 16);
             panel.add(priceLabel);

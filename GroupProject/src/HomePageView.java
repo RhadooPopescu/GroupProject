@@ -56,7 +56,7 @@ public class HomePageView {
         c.setBounds(250,50,1000,550);
         c.setLayout(new CardLayout());
         c.add("Search",new SearchEventsPanel());
-        //c.add("History",new BookingsHistoryView());
+        c.add("History",new BookingsHistoryView());
         c.add("MyAccount", new MyAccountView());
         c.add("Password",new ChangePasswordView());
         ((CardLayout)c.getLayout()).first(c);
