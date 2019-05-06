@@ -42,7 +42,7 @@ public class BookingHistoryController
         table.getTableHeader().setFont(new Font("Open Sans",Font.BOLD,18));
         table.setRowHeight(30);
         //setCellsAlignment(table,SwingConstants.CENTER);
-        table.setDefaultRenderer(Object.class,getNewRenderedTable(table));
+        getNewRenderedTable(table);
 
     }
 
@@ -101,27 +101,29 @@ public class BookingHistoryController
         }
     }
 
-    private DefaultTableCellRenderer getNewRenderedTable(JTable table) {
-            DefaultTableCellRenderer renderer = new DefaultTableCellRenderer(){
+    private void getNewRenderedTable(JTable table) {
+            table.setDefaultRenderer(Object.class,new DefaultTableCellRenderer(){
             @Override
             public Component getTableCellRendererComponent(JTable table,
                                                            Object value, boolean isSelected, boolean hasFocus, int row, int col) {
-                String status = (String)table.getModel().getValueAt(row, 5);
-                System.out.println("Status: "+status);
+                DefaultTableCellRenderer renderer = (DefaultTableCellRenderer) super.getTableCellRendererComponent(table,value,isSelected,hasFocus,row,col);
+                String status = (String)table.getModel().getValueAt(row, 6);
+                //System.out.println("Status: "+status);
 
-                this.setHorizontalAlignment(SwingConstants.CENTER);
+                renderer.setHorizontalAlignment(SwingConstants.CENTER);
 
-                if ("\u2611".equals(status)) {
-                    System.out.println("HELLOOOO");
+                renderer.setText(value.toString());
+                if ("pending".equalsIgnoreCase(status)) {
+                    //System.out.println("HELLOOOO");
+                    setBackground(Color.PINK);
                 } else {
+                    //System.out.println("BYEEEEE");
                     setBackground(table.getBackground());
                     setForeground(table.getForeground());
                 }
                 return this;
             }
-        };
-            return renderer;
-
+        });
     }
 }
 
