@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5224a42a-e2ff-4b6c-a01a-74456b41b5f2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/LGoodDatePicker_10_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_15.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/GroupProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GroupProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/LGoodDatePicker-10.3.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/LGoodDatePicker-10.3.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/mysql-connector-java-8.0.15.jar" beforeDir="false" afterPath="$PROJECT_DIR$/mysql-connector-java-8.0.15.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/AdminView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AdminView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/Band.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Band.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/BandDetailsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BandDetailsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/BookingHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookingHistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/BookingsHistoryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookingsHistoryView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/ChangePasswordView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChangePasswordView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Connect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/EditEventView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditEventView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/EventOrganizerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventOrganizerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/FrameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/HomePageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HomePageView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/Images/Artist_Images/Logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/Artist_Images/Logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/Images/Event_Images/Logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/Event_Images/Logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/Images/Event_Images/computer_programming.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/Event_Images/computer_programming.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/Images/Event_Images/html.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/Event_Images/html.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/Images/Logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/Logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/Images/SearchIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/SearchIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/Images/Silhouette-Rock-Concert-Wallpaper1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/Silhouette-Rock-Concert-Wallpaper1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/Images/UploadButton.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/UploadButton.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/Images/rsz_silhouette-rock-concert-wallpaper1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/rsz_silhouette-rock-concert-wallpaper1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/MyAccountView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyAccountView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/NewAgentView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewAgentView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/NewBandView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewBandView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/NewBookingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewBookingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/NewBookingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewBookingView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/NewVenueView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewVenueView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/PopUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PopUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/RegisterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/ResultPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResultPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/SearchEventsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchEventsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupProject/src/Venue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Venue.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RegisterView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-590">
+              <caret line="613" column="57" selection-start-line="613" selection-start-column="57" selection-end-line="613" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NewBookingView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="204" column="79" selection-start-line="204" selection-start-column="79" selection-end-line="204" selection-end-column="79" />
+              <folding>
+                <element signature="e#1255#1256#0" expanded="true" />
+                <element signature="e#1283#1284#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Connect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-297">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/SearchEventsPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2065">
+              <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BookingsHistoryView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BookingHistoryController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="120" column="56" selection-start-line="120" selection-start-column="56" selection-end-line="120" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NewBandView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="181" column="105" selection-start-line="181" selection-start-column="105" selection-end-line="181" selection-end-column="105" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/EventOrganizerView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-750">
+              <caret line="186" column="41" selection-start-line="186" selection-start-column="41" selection-end-line="186" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ResultPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-627">
+              <caret line="140" selection-start-line="140" selection-end-line="140" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>upco</find>
+      <find>Sc</find>
+      <find>&quot;Tahoma&quot;</find>
+      <find>&quot;Calibri&quot;</find>
+      <find>Book</find>
+      <find>or Se</find>
+      <find>upload</find>
+      <find>£</find>
+      <find>frame.getContentPane().add</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>&quot;Open Sans&quot;</replace>
+      <replace>this.add</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/GroupProject/src/BookingsPage.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/Connect.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/HomePage.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/MyAccountWindow.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/Agent.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/NewAgentView.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/Main.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/Event.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/Band.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/NewBandView.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/EventOrganizerView.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/RegisterView.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/NewVenueView.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/Model.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/BandDetailsPanel.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/LoginView.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/BookingClass.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/Booking.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/NewBookingController.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/ResultPanel.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/SearchEventsPanel.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/ChangePasswordView.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/MyAccountView.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/BookingsHistoryView.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/HomePageView.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/User.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/NewBookingView.java" />
+        <option value="$PROJECT_DIR$/GroupProject/src/BookingHistoryController.java" />
+        <option value="$PROJECT_DIR$/src/BookingHistoryController.java" />
+        <option value="$PROJECT_DIR$/src/NewBandView.java" />
+        <option value="$PROJECT_DIR$/src/EventOrganizerView.java" />
+        <option value="$PROJECT_DIR$/src/SearchEventsPanel.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="420" />
+    <option name="y" value="88" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="grPr2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grPr2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="grPr2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grPr2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="grPr2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557176118382" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/LGoodDatePicker-10.3.1.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\aran0\IdeaProjects\grPr2\GroupProject\src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aran0\IdeaProjects\grPr2" />
+      <recent name="C:\Users\aran0\IdeaProjects\grPr2\GroupProject\src\Images" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.LoginView">
+    <configuration name="EventOrganizerView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="EventOrganizerView" />
+      <module name="grPr2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LoginView" />
+      <module name="grPr2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="grPr2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Model" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Model" />
+      <module name="grPr2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NewBookingView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="NewBookingView" />
+      <module name="grPr2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.LoginView" />
+        <item itemvalue="Application.NewBookingView" />
+        <item itemvalue="Application.Model" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.EventOrganizerView" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5224a42a-e2ff-4b6c-a01a-74456b41b5f2" name="Default Changelist" comment="" />
+      <created>1554747862524</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554747862524</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Added Connect+User class&#10;&#10;Login and Register are functional">
+      <created>1554748071440</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1554748071440</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added ResultPanels, edited Homepage">
+      <created>1554750343908</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1554750343908</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ResultPanel with BoxLayout">
+      <created>1554750894525</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1554750894525</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ResultPanel with BoxLayout">
+      <created>1554752594370</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1554752594370</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Typo corrected in Bookings">
+      <created>1554920467799</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1554920467799</updated>
+    </task>
+    <task id="LOCAL-00006" summary="HomePage has no Upcoming for now, no worries&#10;&#10;Added Search by band in search, added bands in artist label&#10;need to add bands in upcoming query too.">
+      <created>1554924498914</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1554924498914</updated>
+    </task>
+    <task id="LOCAL-00007" summary="ResultPanel class almost complete.&#10;&#10;Queries finished and checked, reformed the code a bit&#10;Missing assignment of values to all fields.">
+      <created>1554943418126</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1554943418126</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Renamed Classes, Created Image folder, updated directories&#10;&#10;All GUI-related classes are now named SomethingView.&#10;All images are saved in a separate folder in the src.&#10;Got rid of 2 ifs in MyAccountView&#10;Updated the ResultPanel a bit">
+      <created>1555185443765</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1555185443765</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add New Agent Complete, Restricted Search by Date&#10;&#10;Add new agent combobox is now refreshed after adding a new agent with it as the selected value.&#10;Plus some corrections on the Agent Class.&#10;&#10;Also added a restriction on search by date so users can only search for future dates.">
+      <created>1555537465988</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1555537465988</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Random commit so Daniel can pull again xD&#10;&#10;Pull, and pay attention to the pop ups :P">
+      <created>1555625881925</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1555625881925</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Random commit so Daniel can pull again AGAIN xD&#10;&#10;Pull, and pay attention to the pop ups :P">
+      <created>1555626414572</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1555626414572</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Changed the font. Everywhere :D Let me know if ya like">
+      <created>1555774471450</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1555774471450</updated>
+    </task>
+    <task id="LOCAL-00013" summary="HomePageView and ResultPanels Upgraded&#10;&#10;On HomePage: Minor aesthetic changes&#10;On Results Panels: &#10;Put values from db to corresponding labels&#10;Handles the case of no search results&#10;Added venue address&#10;Design changes&#10;&#10;Missing only the multiple artists(now showing only one) :)">
+      <created>1555782058331</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1555782058331</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added Upload image to event and band&#10;&#10;Band.java : changes on constructors&#10;Event.java : same&#10;EventOrganizerView.java:&#10;-Upload Button working -with edited filters&#10;-Image name saved on db&#10;-Image copied from user dir to project dir&#10;-Added label to show file name uploaded&#10;-Added MsgBox if no image is uploaded&#10;&#10;-Missing checker of empty fields on &quot;Add event&quot;, it throws errors now if fields are empty&#10;-Missing Remove Performer from event&#10;&#10;NewBokingView.java:&#10;-Upload Button working - with edited filters&#10;-Image name saved on db&#10;-Image copied from user dir to project dir&#10;-Added label to show file name uploaded&#10;-Added MsgBox if no image is uploaded&#10;&#10;Created Main.java to start the application (also includes 2 constants used to get the directories to save the images)&#10;&#10;ResultPanel.java :&#10;ActionListener to Book Tickets button">
+      <created>1555883683753</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1555883683753</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Made Register Button bigger to fit the text (fonts side-effect :D)">
+      <created>1555883851307</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1555883851307</updated>
+    </task>
+    <task id="LOCAL-00016" summary="NewBookingView is *almost* ready.&#10;&#10;Connected the search result with the view, populated the fields, calculated prices and totals, took a ridiculous amount of time to add some new labels and resize some others -_-&#10;&#10; Missing a new class similar to ResultPanel to make the band panel, since we don't have a fixed number of bands anymore and *kinda important* the action listener for the Proceed to Booking.&#10; &#10; I'll also try to make a text file with things missing or not working properly and also a list with completed classes-views.&#10; &#10; Enjoy your vacation &lt;3">
+      <created>1556567106180</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1556567106212</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Booking class built, NewBookingView complete&#10;&#10;NewBooking now has the scrollPane to display bands and is actually writing to the db.&#10;Fun features: Made the links work! they open in the default browser!&#10;Msg before booking changes depanding on users payment method&#10;Button is inactive if the user has picked no tickets, or if there aren't enough available.&#10;&#10;On to Booking History :)">
+      <created>1556578867673</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1556578867713</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Booking History half way there(have to make the table pretty)&#10;&#10;Minor changes in the other classes. &#10;New classes are support for existing ones :)">
+      <created>1556741998149</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1556741998149</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info id="Designer" order="0" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49756098" visible="true" weight="0.21633889" />
+      <window_info id="Structure" order="6" sideWeight="0.502439" side_tool="true" weight="0.24962178" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.3721634" side_tool="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="2" sideWeight="0.6278366" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="3" sideWeight="0.49621785" weight="0.2618658" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.70423603" visible="true" weight="0.38297874" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="right" id="Theme Preview" order="0" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Palette&#9;" order="2" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.022692889" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added Connect+User class&#10;&#10;Login and Register are functional" />
+    <MESSAGE value="Added ResultPanels, edited Homepage" />
+    <MESSAGE value="ResultPanel with BoxLayout" />
+    <MESSAGE value="Typo corrected in Bookings" />
+    <MESSAGE value="HomePage has no Upcoming for now, no worries&#10;&#10;Added Search by band in search, added bands in artist label&#10;need to add bands in upcoming query too." />
+    <MESSAGE value="ResultPanel class almost complete.&#10;&#10;Queries finished and checked, reformed the code a bit&#10;Missing assignment of values to all fields." />
+    <MESSAGE value="Renamed Classes, Created Image folder, updated directories&#10;&#10;All GUI-related classes are now named SomethingView.&#10;All images are saved in a separate folder in the src.&#10;Got rid of 2 ifs in MyAccountView&#10;Updated the ResultPanel a bit" />
+    <MESSAGE value="Add New Agent Complete, Restricted Search by Date&#10;&#10;Add new agent combobox is now refreshed after adding a new agent with it as the selected value.&#10;Plus some corrections on the Agent Class.&#10;&#10;Also added a restriction on search by date so users can only search for future dates." />
+    <MESSAGE value="Random commit so Daniel can pull again xD&#10;&#10;Pull, and pay attention to the pop ups :P" />
+    <MESSAGE value="Random commit so Daniel can pull again AGAIN xD&#10;&#10;Pull, and pay attention to the pop ups :P" />
+    <MESSAGE value="Changed the font. Everywhere :D Let me know if ya like" />
+    <MESSAGE value="HomePageView and ResultPanels Upgraded&#10;&#10;On HomePage: Minor aesthetic changes&#10;On Results Panels: &#10;Put values from db to corresponding labels&#10;Handles the case of no search results&#10;Added venue address&#10;Design changes&#10;&#10;Missing only the multiple artists(now showing only one) :)" />
+    <MESSAGE value="Added Upload image to event and band&#10;&#10;Band.java : changes on constructors&#10;Event.java : same&#10;EventOrganizerView.java:&#10;-Upload Button working -with edited filters&#10;-Image name saved on db&#10;-Image copied from user dir to project dir&#10;-Added label to show file name uploaded&#10;-Added MsgBox if no image is uploaded&#10;&#10;-Missing checker of empty fields on &quot;Add event&quot;, it throws errors now if fields are empty&#10;-Missing Remove Performer from event&#10;&#10;NewBokingView.java:&#10;-Upload Button working - with edited filters&#10;-Image name saved on db&#10;-Image copied from user dir to project dir&#10;-Added label to show file name uploaded&#10;-Added MsgBox if no image is uploaded&#10;&#10;Created Main.java to start the application (also includes 2 constants used to get the directories to save the images)&#10;&#10;ResultPanel.java :&#10;ActionListener to Book Tickets button" />
+    <MESSAGE value="Made Register Button bigger to fit the text (fonts side-effect :D)" />
+    <MESSAGE value="NewBookingView is *almost* ready.&#10;&#10;Connected the search result with the view, populated the fields, calculated prices and totals, took a ridiculous amount of time to add some new labels and resize some others -_-&#10;&#10; Missing a new class similar to ResultPanel to make the band panel, since we don't have a fixed number of bands anymore and *kinda important* the action listener for the Proceed to Booking.&#10; &#10; I'll also try to make a text file with things missing or not working properly and also a list with completed classes-views.&#10; &#10; Enjoy your vacation &lt;3" />
+    <MESSAGE value="Booking class built, NewBookingView complete&#10;&#10;NewBooking now has the scrollPane to display bands and is actually writing to the db.&#10;Fun features: Made the links work! they open in the default browser!&#10;Msg before booking changes depanding on users payment method&#10;Button is inactive if the user has picked no tickets, or if there aren't enough available.&#10;&#10;On to Booking History :)" />
+    <MESSAGE value="Booking History half way there(have to make the table pretty)&#10;&#10;Minor changes in the other classes. &#10;New classes are support for existing ones :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Booking History half way there(have to make the table pretty)&#10;&#10;Minor changes in the other classes. &#10;New classes are support for existing ones :)" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/GroupProject/src/frame.java" />
+    <entry file="file://$PROJECT_DIR$/src/Agent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="79" column="19" lean-forward="true" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
+          <folding>
+            <element signature="e#1426#1427#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
+            <element signature="e#1538#1539#0" expanded="true" />
+            <element signature="e#1610#1611#0" expanded="true" />
+            <element signature="e#1658#1659#0" expanded="true" />
+            <element signature="e#1722#1723#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EditEventView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="269" column="69" lean-forward="true" selection-start-line="269" selection-start-column="69" selection-end-line="269" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NewAgentView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="132" column="58" lean-forward="true" selection-start-line="132" selection-start-column="58" selection-end-line="132" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Venue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.desktop/javax/swing/ImageIcon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="216" selection-start-line="216" selection-end-line="216" />
+          <folding>
+            <element signature="e#6742#6743#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Images/Event_Images/Pooja_kalash_png_colour_ful.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Images/Event_Images/sagicho-1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NewVenueView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="175" column="52" selection-start-line="175" selection-start-column="52" selection-end-line="175" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GroupProject/src/Model.java" />
+    <entry file="file://$PROJECT_DIR$/src/Band.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LoginView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1819">
+          <caret line="113" column="34" selection-start-line="113" selection-start-column="34" selection-end-line="113" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="100" selection-start-line="6" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Booking.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BandDetailsPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="89" column="60" selection-start-line="89" selection-start-column="60" selection-end-line="89" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NewBookingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ChangePasswordView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="158" column="37" selection-start-line="158" selection-start-column="37" selection-end-line="158" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyAccountView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="267" column="38" selection-start-line="267" selection-start-column="38" selection-end-line="267" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HomePageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RegisterView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-590">
+          <caret line="613" column="57" selection-start-line="613" selection-start-column="57" selection-end-line="613" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BookingsHistoryView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2065">
+          <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ResultPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-627">
+          <caret line="140" selection-start-line="140" selection-end-line="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BookingHistoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="120" column="56" selection-start-line="120" selection-start-column="56" selection-end-line="120" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NewBandView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="181" column="105" selection-start-line="181" selection-start-column="105" selection-end-line="181" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventOrganizerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-750">
+          <caret line="186" column="41" selection-start-line="186" selection-start-column="41" selection-end-line="186" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NewBookingView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="204" column="79" selection-start-line="204" selection-start-column="79" selection-end-line="204" selection-end-column="79" />
+          <folding>
+            <element signature="e#1255#1256#0" expanded="true" />
+            <element signature="e#1283#1284#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Connect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-297">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SearchEventsPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>grPr2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>mysql-connector-java-8.0.15</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

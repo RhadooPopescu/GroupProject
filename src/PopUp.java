@@ -34,7 +34,7 @@ public class PopUp extends JFrame {
         setResizable(false);
         setTitle("Global Music");
         setBounds(100, 100, 1280, 690);
-        //setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setUndecorated(true);
         MyAccountView panel = new MyAccountView();
@@ -48,9 +48,9 @@ public class PopUp extends JFrame {
         JButton btnExitButton = new JButton("X");
         btnExitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	int reply = JOptionPane.showConfirmDialog(null, "Proceed without changes?", "No changes?", JOptionPane.YES_NO_OPTION);
+            	int reply = JOptionPane.showConfirmDialog(null, "Are you sure?", "Exit?", JOptionPane.YES_NO_OPTION);
                 if (reply == JOptionPane.YES_OPTION) {
-                  dispose();
+                  System.exit(0);
                 }
             }
         });
