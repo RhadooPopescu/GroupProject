@@ -3,135 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5224a42a-e2ff-4b6c-a01a-74456b41b5f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/LGoodDatePicker-10.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/AdminView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/AdminView$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/AdminView$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/AdminView$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/AdminView$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/AdminView$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/AdminView$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/AdminView$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/AdminView$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/AdminView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/Agent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/Band.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/BandDetailsPanel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/BandDetailsPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/Booking.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/BookingHistoryController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/BookingHistoryController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/BookingHistoryController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/BookingsHistoryView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/ChangePasswordView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/ChangePasswordView$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/ChangePasswordView$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/ChangePasswordView$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/ChangePasswordView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/Connect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EditEventView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EditEventView$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EditEventView$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EditEventView$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EditEventView$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EditEventView$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EditEventView$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EditEventView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/Event.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EventOrganizerView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EventOrganizerView$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EventOrganizerView$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EventOrganizerView$12.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EventOrganizerView$13.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EventOrganizerView$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EventOrganizerView$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EventOrganizerView$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EventOrganizerView$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EventOrganizerView$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EventOrganizerView$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EventOrganizerView$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EventOrganizerView$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/EventOrganizerView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/FrameTest$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/FrameTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/HomePageView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/HomePageView$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/HomePageView$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/HomePageView$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/HomePageView$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/HomePageView$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/HomePageView$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/HomePageView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/Images/Artist_Images/Logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/Images/Event_Images/Logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/Images/Event_Images/computer_programming.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/Images/Event_Images/html.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/Images/Logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/Images/SearchIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/Images/Silhouette-Rock-Concert-Wallpaper1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/Images/UploadButton.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/Images/rsz_silhouette-rock-concert-wallpaper1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/LoginView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/LoginView$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/LoginView$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/LoginView$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/LoginView$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/LoginView$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/LoginView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/MyAccountView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/MyAccountView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewAgentView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewAgentView$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewAgentView$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewAgentView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewBandView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewBandView$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewBandView$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewBandView$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewBandView$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewBandView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewBookingController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewBookingView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewBookingView$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewBookingView$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewBookingView$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewBookingView$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewBookingView$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewBookingView$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewBookingView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewVenueView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewVenueView$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewVenueView$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewVenueView$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/NewVenueView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/PopUp$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/PopUp$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/PopUp$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/PopUp$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/PopUp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/RegisterView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/RegisterView$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/RegisterView$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/RegisterView$12.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/RegisterView$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/RegisterView$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/RegisterView$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/RegisterView$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/RegisterView$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/RegisterView$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/RegisterView$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/RegisterView$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/RegisterView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/ResultPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/SearchEventsPanel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/SearchEventsPanel$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/SearchEventsPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/bin/Venue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GroupProject/mysql-connector-java-8.0.15.jar" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -343,11 +214,6 @@
             </path>
             <path>
               <item name="grPr2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grPr2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="grPr2" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -359,7 +225,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557176867501" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557177387917" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/LGoodDatePicker-10.3.1.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -579,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557176222287</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Restart :D">
+      <created>1557176952618</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1557176952618</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -682,7 +555,8 @@
     <MESSAGE value="Booking class built, NewBookingView complete&#10;&#10;NewBooking now has the scrollPane to display bands and is actually writing to the db.&#10;Fun features: Made the links work! they open in the default browser!&#10;Msg before booking changes depanding on users payment method&#10;Button is inactive if the user has picked no tickets, or if there aren't enough available.&#10;&#10;On to Booking History :)" />
     <MESSAGE value="Booking History half way there(have to make the table pretty)&#10;&#10;Minor changes in the other classes. &#10;New classes are support for existing ones :)" />
     <MESSAGE value="Booking History Complete! :D" />
-    <option name="LAST_COMMIT_MESSAGE" value="Booking History Complete! :D" />
+    <MESSAGE value="Restart :D" />
+    <option name="LAST_COMMIT_MESSAGE" value="Restart :D" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
